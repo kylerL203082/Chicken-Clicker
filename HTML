@@ -1,0 +1,2725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chicken Farm Empire</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        linear-gradient(rgba(9,17,15,.70),rgba(9,17,15,.88)),
+        radial-gradient(circle at top,#314c32,#101a16 65%);
+    color:#f3f0df;
+    min-height:100vh;
+}
+
+button,input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.topbar{
+    min-height:80px;
+    background:#111918;
+    border-bottom:2px solid #43564c;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:12px 22px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 4px 18px rgba(0,0,0,.4);
+}
+
+.leftTop{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+#getChickenBtn{
+    border:2px solid #edc368;
+    background:#7b5319;
+    color:white;
+    border-radius:8px;
+    padding:14px 22px;
+    font-weight:bold;
+    font-size:17px;
+    box-shadow:
+        inset 0 0 12px rgba(255,211,115,.25),
+        0 0 12px rgba(237,195,104,.15);
+}
+
+#getChickenBtn:hover{
+    background:#986923;
+}
+
+#getChickenBtn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.logoArea{
+    text-align:center;
+}
+
+.logoArea h1{
+    margin:0;
+    font-size:25px;
+    letter-spacing:2px;
+}
+
+.logoArea small{
+    color:#d5b469;
+}
+
+.topStats{
+    display:flex;
+    gap:24px;
+    font-size:15px;
+}
+
+.statTop strong{
+    display:block;
+    font-size:18px;
+    color:#f3ca72;
+}
+
+.game{
+    max-width:1500px;
+    margin:auto;
+    padding:22px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:rgba(16,25,23,.92);
+    border:1px solid #45554d;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 5px 15px rgba(0,0,0,.28);
+}
+
+.statCard .title{
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#b9b9ae;
+    font-size:12px;
+}
+
+.statCard .number{
+    margin-top:6px;
+    font-size:29px;
+    font-weight:bold;
+    color:#f2c76d;
+}
+
+.statCard .sub{
+    margin-top:4px;
+    color:#a8b2aa;
+    font-size:13px;
+}
+
+.controlsRow{
+    display:grid;
+    grid-template-columns:1.25fr 1fr;
+    gap:18px;
+    margin-bottom:22px;
+}
+
+.pricePanel h2,
+.levelPanel h2{
+    margin-top:0;
+    margin-bottom:12px;
+}
+
+.priceDisplay{
+    font-size:37px;
+    font-weight:bold;
+    color:#7bd98e;
+    margin:8px 0;
+}
+
+.priceSlider{
+    width:100%;
+    accent-color:#e1ae51;
+}
+
+.interestMeter,
+.levelMeter{
+    width:100%;
+    height:16px;
+    background:#26302d;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #49584f;
+}
+
+#interestBar{
+    height:100%;
+    width:100%;
+    background:linear-gradient(90deg,#68c56f,#e8cb58);
+    transition:width .25s;
+}
+
+#levelBar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#c5973f,#f0d57a);
+}
+
+.controlInfo{
+    margin-top:11px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    color:#c0c6bf;
+    font-size:14px;
+}
+
+.upgradeFarmBtn{
+    width:100%;
+    margin-top:14px;
+    padding:12px;
+    border-radius:7px;
+    border:1px solid #e9c265;
+    background:#6d4d1d;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.upgradeFarmBtn:hover{
+    background:#8c6324;
+}
+
+.upgradeFarmBtn:disabled{
+    background:#303734;
+    color:#777;
+    border-color:#505753;
+    cursor:not-allowed;
+}
+
+.sectionTitle{
+    text-align:center;
+    margin:32px 0 7px;
+    font-size:27px;
+    letter-spacing:2px;
+}
+
+.sectionSubtitle{
+    text-align:center;
+    color:#a5aea8;
+    margin-bottom:18px;
+}
+
+.treeWrapper{
+    width:100%;
+    overflow-x:auto;
+    padding-bottom:15px;
+}
+
+.tree{
+    width:1160px;
+    height:710px;
+    margin:auto;
+    position:relative;
+    background:
+        radial-gradient(circle at center,rgba(177,137,53,.13),transparent 28%),
+        linear-gradient(90deg,rgba(29,87,47,.08),transparent 35%),
+        linear-gradient(-90deg,rgba(82,73,151,.08),transparent 35%),
+        #101817;
+    border:1px solid #3d4b45;
+    border-radius:13px;
+    overflow:hidden;
+}
+
+.tree svg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    inset:0;
+    pointer-events:none;
+}
+
+.treeLine{
+    stroke:#65726c;
+    stroke-width:3;
+    opacity:.48;
+}
+
+.treeLine.active{
+    stroke:#e8c56d;
+    opacity:1;
+    filter:drop-shadow(0 0 4px rgba(232,197,109,.6));
+}
+
+.branchLabel{
+    position:absolute;
+    top:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+    font-size:16px;
+    color:#c6c9c5;
+}
+
+.productionLabel{
+    left:118px;
+}
+
+.marketingLabel{
+    right:135px;
+}
+
+.automationLabel{
+    left:50%;
+    transform:translateX(-50%);
+    top:640px;
+}
+
+.centerNode{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    position:absolute;
+    left:520px;
+    top:270px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:5px solid #b8974f;
+    background:
+        radial-gradient(circle,#55451f,#181e1b 70%);
+    box-shadow:
+        0 0 30px rgba(218,180,88,.28),
+        inset 0 0 20px rgba(221,179,79,.15);
+    z-index:3;
+    font-weight:bold;
+    color:#f6d784;
+}
+
+.node{
+    position:absolute;
+    width:92px;
+    height:92px;
+    border-radius:50%;
+    background:#17201e;
+    border:4px solid #65716c;
+    color:#aeb6b1;
+    z-index:5;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:11px;
+    padding:6px;
+    transition:.18s;
+    user-select:none;
+}
+
+.node:hover{
+    transform:scale(1.07);
+}
+
+.node .icon{
+    font-size:22px;
+    margin-bottom:3px;
+}
+
+.node .cost{
+    font-size:10px;
+    margin-top:3px;
+    color:#d8b662;
+}
+
+.node.available{
+    border-color:#e6c16a;
+    color:white;
+    box-shadow:0 0 15px rgba(230,193,106,.38);
+}
+
+.node.bought{
+    border-color:#ffdc78;
+    background:#40351b;
+    color:#fff1bf;
+    box-shadow:
+        0 0 14px rgba(255,218,120,.55),
+        inset 0 0 12px rgba(255,215,112,.18);
+}
+
+.node.locked{
+    opacity:.42;
+    filter:grayscale(.65);
+}
+
+.node.production.available{
+    background:#193224;
+}
+
+.node.marketing.available{
+    background:#29233e;
+}
+
+.node.automation.available{
+    background:#27313e;
+}
+
+.tooltip{
+    position:fixed;
+    background:#080d0c;
+    border:1px solid #d2ad5d;
+    padding:12px;
+    width:235px;
+    pointer-events:none;
+    opacity:0;
+    z-index:999;
+    border-radius:7px;
+    font-size:13px;
+    box-shadow:0 5px 20px rgba(0,0,0,.6);
+}
+
+.tooltip strong{
+    color:#f2c76b;
+}
+
+.tooltip .toolDesc{
+    color:#cbd0cc;
+    margin-top:5px;
+    line-height:1.35;
+}
+
+.tooltip .toolReq{
+    color:#da9d65;
+    margin-top:7px;
+}
+
+.bottomPanels{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:20px;
+}
+
+.log{
+    height:160px;
+    overflow:auto;
+    background:#0c1211;
+    border:1px solid #36413c;
+    border-radius:7px;
+    padding:10px;
+    font-size:13px;
+    color:#aeb6b1;
+}
+
+.logEntry{
+    margin-bottom:5px;
+    border-bottom:1px solid #202926;
+    padding-bottom:5px;
+}
+
+.rules{
+    line-height:1.6;
+    color:#c4cac5;
+}
+
+.rules strong{
+    color:#edc96f;
+}
+
+.saveButtons{
+    display:flex;
+    gap:9px;
+    margin-top:13px;
+}
+
+.smallBtn{
+    padding:9px 13px;
+    border:1px solid #59645f;
+    border-radius:6px;
+    background:#252e2a;
+    color:white;
+}
+
+.smallBtn:hover{
+    background:#34413b;
+}
+
+.resetBtn{
+    border-color:#814947;
+    background:#442422;
+}
+
+@media(max-width:900px){
+
+    .dashboard{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .controlsRow,
+    .bottomPanels{
+        grid-template-columns:1fr;
+    }
+
+    .topbar{
+        flex-wrap:wrap;
+    }
+
+    .logoArea{
+        order:-1;
+        width:100%;
+    }
+
+    .topStats{
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div class="leftTop">
+        <button id="getChickenBtn" onclick="getChicken()">
+            🐔 Get Chicken
+        </button>
+
+        <div>
+            <div>
+                Chickens:
+                <strong id="topChickens">1</strong>
+            </div>
+
+            <small id="chickenCooldown">
+                Ready
+            </small>
+        </div>
+    </div>
+
+    <div class="logoArea">
+        <h1>🐔 CHICKEN FARM EMPIRE</h1>
+        <small id="farmNameTop">Backyard Coop — Level 1</small>
+    </div>
+
+    <div class="topStats">
+
+        <div class="statTop">
+            <span>Money</span>
+            <strong id="topMoney">$0.00</strong>
+        </div>
+
+        <div class="statTop">
+            <span>Eggs</span>
+            <strong id="topEggs">0</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="game">
+
+    <div class="dashboard">
+
+        <div class="card statCard">
+            <div class="title">Chickens</div>
+            <div class="number" id="chickenStat">1</div>
+            <div class="sub">
+                Producing eggs around the clock
+            </div>
+        </div>
+
+        <div class="card statCard">
+            <div class="title">Egg Inventory</div>
+            <div class="number" id="eggStat">0</div>
+            <div class="sub" id="eggRateText">
+                0.08 eggs/sec
+            </div>
+        </div>
+
+        <div class="card statCard">
+            <div class="title">Money</div>
+            <div class="number" id="moneyStat">$0.00</div>
+            <div class="sub" id="incomeText">
+                $0.00/sec
+            </div>
+        </div>
+
+        <div class="card statCard">
+            <div class="title">Public Interest</div>
+            <div class="number" id="interestStat">100%</div>
+            <div class="sub" id="salesRateText">
+                Market demand
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="controlsRow">
+
+        <div class="card pricePanel">
+
+            <h2>🥚 Egg Market</h2>
+
+            <div>
+                Your Selling Price
+            </div>
+
+            <div class="priceDisplay" id="priceDisplay">
+                $0.20
+            </div>
+
+            <input
+                id="priceSlider"
+                class="priceSlider"
+                type="range"
+                min="1"
+                max="99"
+                value="20"
+                oninput="changePrice(this.value)"
+            >
+
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#929a95;">
+                <span>$0.01</span>
+                <span>$0.99</span>
+            </div>
+
+            <div style="margin-top:17px;">
+                Public Interest
+            </div>
+
+            <div class="interestMeter">
+                <div id="interestBar"></div>
+            </div>
+
+            <div class="controlInfo">
+
+                <div>
+                    Interest:
+                    <strong id="interestText">100%</strong>
+                </div>
+
+                <div>
+                    Eggs selling:
+                    <strong id="marketSpeedText">0/sec</strong>
+                </div>
+
+                <div>
+                    Egg production:
+                    <strong id="productionText">0/sec</strong>
+                </div>
+
+                <div>
+                    Revenue:
+                    <strong id="revenueText">$0/sec</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card levelPanel">
+
+            <h2>🏡 Farm Level</h2>
+
+            <div style="font-size:24px;font-weight:bold;color:#f2c86e;" id="levelName">
+                Level 1 — Backyard Coop
+            </div>
+
+            <p id="levelDescription" style="color:#adb5af;">
+                A tiny backyard operation with big ambitions.
+            </p>
+
+            <div class="levelMeter">
+                <div id="levelBar"></div>
+            </div>
+
+            <div class="controlInfo">
+
+                <div>
+                    Required chickens:
+                    <strong id="levelChickenReq">10</strong>
+                </div>
+
+                <div>
+                    Upgrade cost:
+                    <strong id="levelMoneyReq">$25</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="upgradeFarmBtn"
+                id="upgradeFarmBtn"
+                onclick="upgradeFarm()"
+            >
+                Upgrade Farm
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="sectionTitle">
+        FARM TALENT TREE
+    </h2>
+
+    <div class="sectionSubtitle">
+        Buy upgrades as your farm grows. Connected upgrades must be unlocked in order.
+    </div>
+
+
+    <div class="treeWrapper">
+
+        <div class="tree" id="upgradeTree">
+
+            <div class="branchLabel productionLabel">
+                PRODUCTION
+            </div>
+
+            <div class="branchLabel marketingLabel">
+                MARKETING
+            </div>
+
+            <div class="branchLabel automationLabel">
+                AUTOMATION
+            </div>
+
+
+            <svg viewBox="0 0 1160 710">
+
+                <!-- PRODUCTION -->
+
+                <line
+                    id="line-center-feed"
+                    class="treeLine"
+                    x1="580" y1="330"
+                    x2="420" y2="280"
+                />
+
+                <line
+                    id="line-feed-nest"
+                    class="treeLine"
+                    x1="420" y1="280"
+                    x2="300" y2="200"
+                />
+
+                <line
+                    id="line-nest-breed"
+                    class="treeLine"
+                    x1="300" y1="200"
+                    x2="175" y2="120"
+                />
+
+                <line
+                    id="line-breed-precision"
+                    class="treeLine"
+                    x1="175" y1="120"
+                    x2="145" y2="280"
+                />
+
+                <line
+                    id="line-precision-golden"
+                    class="treeLine"
+                    x1="145" y1="280"
+                    x2="250" y2="405"
+                />
+
+
+                <!-- MARKETING -->
+
+                <line
+                    id="line-center-sign"
+                    class="treeLine"
+                    x1="580" y1="330"
+                    x2="735" y2="280"
+                />
+
+                <line
+                    id="line-sign-delivery"
+                    class="treeLine"
+                    x1="735" y1="280"
+                    x2="855" y2="200"
+                />
+
+                <line
+                    id="line-delivery-brand"
+                    class="treeLine"
+                    x1="855" y1="200"
+                    x2="985" y2="120"
+                />
+
+                <line
+                    id="line-brand-grocery"
+                    class="treeLine"
+                    x1="985" y1="120"
+                    x2="1010" y2="280"
+                />
+
+                <line
+                    id="line-grocery-national"
+                    class="treeLine"
+                    x1="1010" y1="280"
+                    x2="910" y2="405"
+                />
+
+
+                <!-- AUTOMATION -->
+
+                <line
+                    id="line-center-conveyor"
+                    class="treeLine"
+                    x1="580" y1="330"
+                    x2="580" y2="465"
+                />
+
+                <line
+                    id="line-conveyor-incubator"
+                    class="treeLine"
+                    x1="580" y1="465"
+                    x2="470" y2="560"
+                />
+
+                <line
+                    id="line-incubator-brooder"
+                    class="treeLine"
+                    x1="470" y1="560"
+                    x2="580" y2="600"
+                />
+
+                <line
+                    id="line-brooder-manager"
+                    class="treeLine"
+                    x1="580" y1="600"
+                    x2="690" y2="560"
+                />
+
+                <line
+                    id="line-manager-robotics"
+                    class="treeLine"
+                    x1="690" y1="560"
+                    x2="800" y2="500"
+                />
+
+            </svg>
+
+
+            <div class="centerNode">
+                🐔<br>
+                YOUR<br>
+                FARM
+            </div>
+
+
+            <!-- Production -->
+
+            <button
+                class="node production"
+                id="node-feed"
+                style="left:374px;top:234px;"
+                onclick="buyUpgrade('feed')"
+            >
+                <span class="icon">🌾</span>
+                Better Feed
+                <span class="cost">$35</span>
+            </button>
+
+            <button
+                class="node production"
+                id="node-nest"
+                style="left:254px;top:154px;"
+                onclick="buyUpgrade('nest')"
+            >
+                <span class="icon">🪺</span>
+                Warm Nests
+                <span class="cost">$120</span>
+            </button>
+
+            <button
+                class="node production"
+                id="node-breed"
+                style="left:129px;top:74px;"
+                onclick="buyUpgrade('breed')"
+            >
+                <span class="icon">🐣</span>
+                Layer Breed
+                <span class="cost">$450</span>
+            </button>
+
+            <button
+                class="node production"
+                id="node-precision"
+                style="left:99px;top:234px;"
+                onclick="buyUpgrade('precision')"
+            >
+                <span class="icon">🧪</span>
+                Precision Feed
+                <span class="cost">$1.6K</span>
+            </button>
+
+            <button
+                class="node production"
+                id="node-golden"
+                style="left:204px;top:359px;"
+                onclick="buyUpgrade('golden')"
+            >
+                <span class="icon">✨</span>
+                Golden Genetics
+                <span class="cost">$8K</span>
+            </button>
+
+
+            <!-- Marketing -->
+
+            <button
+                class="node marketing"
+                id="node-sign"
+                style="left:689px;top:234px;"
+                onclick="buyUpgrade('sign')"
+            >
+                <span class="icon">🪧</span>
+                Roadside Sign
+                <span class="cost">$50</span>
+            </button>
+
+            <button
+                class="node marketing"
+                id="node-delivery"
+                style="left:809px;top:154px;"
+                onclick="buyUpgrade('delivery')"
+            >
+                <span class="icon">🚚</span>
+                Local Delivery
+                <span class="cost">$180</span>
+            </button>
+
+            <button
+                class="node marketing"
+                id="node-brand"
+                style="left:939px;top:74px;"
+                onclick="buyUpgrade('brand')"
+            >
+                <span class="icon">📣</span>
+                Farm Brand
+                <span class="cost">$600</span>
+            </button>
+
+            <button
+                class="node marketing"
+                id="node-grocery"
+                style="left:964px;top:234px;"
+                onclick="buyUpgrade('grocery')"
+            >
+                <span class="icon">🏪</span>
+                Grocery Deal
+                <span class="cost">$2.5K</span>
+            </button>
+
+            <button
+                class="node marketing"
+                id="node-national"
+                style="left:864px;top:359px;"
+                onclick="buyUpgrade('national')"
+            >
+                <span class="icon">📺</span>
+                National Ads
+                <span class="cost">$12K</span>
+            </button>
+
+
+            <!-- Automation -->
+
+            <button
+                class="node automation"
+                id="node-conveyor"
+                style="left:534px;top:419px;"
+                onclick="buyUpgrade('conveyor')"
+            >
+                <span class="icon">⚙️</span>
+                Conveyor
+                <span class="cost">$250</span>
+            </button>
+
+            <button
+                class="node automation"
+                id="node-incubator"
+                style="left:424px;top:514px;"
+                onclick="buyUpgrade('incubator')"
+            >
+                <span class="icon">🔥</span>
+                Incubator
+                <span class="cost">$900</span>
+            </button>
+
+            <button
+                class="node automation"
+                id="node-brooder"
+                style="left:534px;top:554px;"
+                onclick="buyUpgrade('brooder')"
+            >
+                <span class="icon">🐥</span>
+                Auto Brooder
+                <span class="cost">$3.5K</span>
+            </button>
+
+            <button
+                class="node automation"
+                id="node-manager"
+                style="left:644px;top:514px;"
+                onclick="buyUpgrade('manager')"
+            >
+                <span class="icon">👨‍🌾</span>
+                Farm Manager
+                <span class="cost">$6K</span>
+            </button>
+
+            <button
+                class="node automation"
+                id="node-robotics"
+                style="left:754px;top:454px;"
+                onclick="buyUpgrade('robotics')"
+            >
+                <span class="icon">🤖</span>
+                Robotics
+                <span class="cost">$15K</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottomPanels">
+
+        <div class="card">
+
+            <h2>📜 Farm Activity</h2>
+
+            <div
+                class="log"
+                id="gameLog"
+            ></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>How the Economy Works</h2>
+
+            <div class="rules">
+
+                A chicken normally lays
+                <strong>1 egg every 12 seconds</strong>.
+
+                <br><br>
+
+                You choose your selling price between
+                <strong>$0.01 and $0.99 per egg</strong>.
+
+                <br><br>
+
+                Raising prices lowers public interest.
+                Lower interest means eggs sell more slowly.
+
+                <br><br>
+
+                Farm level requirements only require you to
+                <strong>own enough chickens</strong>.
+                Upgrading never removes chickens.
+
+            </div>
+
+            <div class="saveButtons">
+
+                <button
+                    class="smallBtn"
+                    onclick="saveGame(true)"
+                >
+                    Save Game
+                </button>
+
+                <button
+                    class="smallBtn resetBtn"
+                    onclick="resetGame()"
+                >
+                    Reset Game
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="tooltip" id="tooltip">
+
+    <strong id="tooltipTitle"></strong>
+
+    <div
+        class="toolDesc"
+        id="tooltipDescription"
+    ></div>
+
+    <div
+        class="toolReq"
+        id="tooltipRequirement"
+    ></div>
+
+</div>
+
+
+<script>
+const FARM_LEVELS = [
+
+    {
+        level:1,
+        name:"Backyard Coop",
+        chickens:0,
+        cost:0,
+        description:"A tiny backyard operation with big ambitions."
+    },
+
+    {
+        level:2,
+        name:"Family Coop",
+        chickens:10,
+        cost:25,
+        description:"Your flock is becoming a real little business."
+    },
+
+    {
+        level:3,
+        name:"Homestead Farm",
+        chickens:25,
+        cost:100,
+        description:"A proper homestead with room to grow."
+    },
+
+    {
+        level:4,
+        name:"Small Egg Farm",
+        chickens:50,
+        cost:350,
+        description:"Customers around town know your eggs."
+    },
+
+    {
+        level:5,
+        name:"Commercial Farm",
+        chickens:100,
+        cost:1000,
+        description:"Production is starting to become serious."
+    },
+
+    {
+        level:6,
+        name:"County Egg Company",
+        chickens:175,
+        cost:3000,
+        description:"Your eggs are being sold throughout the county."
+    },
+
+    {
+        level:7,
+        name:"Regional Farm",
+        chickens:300,
+        cost:8500,
+        description:"Trucks now move eggs across the region."
+    },
+
+    {
+        level:8,
+        name:"Industrial Egg Co.",
+        chickens:500,
+        cost:22000,
+        description:"Large-scale egg production has begun."
+    },
+
+    {
+        level:9,
+        name:"Egg Corporation",
+        chickens:800,
+        cost:60000,
+        description:"Your company dominates grocery shelves."
+    },
+
+    {
+        level:10,
+        name:"Golden Roost Empire",
+        chickens:1200,
+        cost:150000,
+        description:"You have built an egg empire."
+    }
+
+];
+
+
+const UPGRADES = {
+
+    feed:{
+        name:"Better Feed",
+        branch:"production",
+        cost:35,
+        level:1,
+        requires:null,
+        description:"Higher-quality feed increases egg production by 15%."
+    },
+
+    nest:{
+        name:"Warm Nests",
+        branch:"production",
+        cost:120,
+        level:2,
+        requires:"feed",
+        description:"Comfortable nesting boxes increase egg production another 20%."
+    },
+
+    breed:{
+        name:"Layer Breed",
+        branch:"production",
+        cost:450,
+        level:3,
+        requires:"nest",
+        description:"Specialized laying hens increase egg production by 30%."
+    },
+
+    precision:{
+        name:"Precision Feed",
+        branch:"production",
+        cost:1600,
+        level:5,
+        requires:"breed",
+        description:"Scientific feeding schedules increase production by another 40%."
+    },
+
+    golden:{
+        name:"Golden Genetics",
+        branch:"production",
+        cost:8000,
+        level:7,
+        requires:"precision",
+        description:"Elite genetics double your total egg production."
+    },
+
+
+    sign:{
+        name:"Roadside Sign",
+        branch:"marketing",
+        cost:50,
+        level:1,
+        requires:null,
+        description:"More customers discover your farm. Market demand increases 20%."
+    },
+
+    delivery:{
+        name:"Local Delivery",
+        branch:"marketing",
+        cost:180,
+        level:2,
+        requires:"sign",
+        description:"Deliver eggs around town. Market demand increases another 30%."
+    },
+
+    brand:{
+        name:"Farm Brand",
+        branch:"marketing",
+        cost:600,
+        level:4,
+        requires:"delivery",
+        description:"Customers recognize your brand. High prices hurt public interest less."
+    },
+
+    grocery:{
+        name:"Grocery Deal",
+        branch:"marketing",
+        cost:2500,
+        level:6,
+        requires:"brand",
+        description:"Sell through grocery stores. Market demand increases 60%."
+    },
+
+    national:{
+        name:"National Ads",
+        branch:"marketing",
+        cost:12000,
+        level:8,
+        requires:"grocery",
+        description:"National advertising doubles your total market demand."
+    },
+
+
+    conveyor:{
+        name:"Egg Conveyor",
+        branch:"automation",
+        cost:250,
+        level:2,
+        requires:null,
+        description:"Automated sorting and packing increases selling speed by 25%."
+    },
+
+    incubator:{
+        name:"Incubator",
+        branch:"automation",
+        cost:900,
+        level:4,
+        requires:"conveyor",
+        description:"Automatically adds one new chicken every 30 seconds."
+    },
+
+    brooder:{
+        name:"Auto Brooder",
+        branch:"automation",
+        cost:3500,
+        level:6,
+        requires:"incubator",
+        description:"Improves automatic chicken growth to one chicken every 12 seconds."
+    },
+
+    manager:{
+        name:"Farm Manager",
+        branch:"automation",
+        cost:6000,
+        level:7,
+        requires:"brooder",
+        description:"A professional manager increases egg production and sales by 25%."
+    },
+
+    robotics:{
+        name:"Farm Robotics",
+        branch:"automation",
+        cost:15000,
+        level:9,
+        requires:"manager",
+        description:"Advanced automation adds three chickens every 10 seconds."
+    }
+
+};
+
+
+let state = {
+
+    chickens:1,
+
+    eggs:0,
+
+    money:0,
+
+    eggPrice:0.20,
+
+    farmLevel:1,
+
+    upgrades:{},
+
+    lifetimeEggs:0,
+
+    lifetimeMoney:0,
+
+    lifetimeChickens:1,
+
+    lastUpdate:Date.now(),
+
+    lastChickenClick:0,
+
+    lastAutoChicken:Date.now()
+
+};
+
+
+function formatMoney(number){
+
+    if(number >= 1000000)
+        return "$" + (number / 1000000).toFixed(2) + "M";
+
+    if(number >= 1000)
+        return "$" + (number / 1000).toFixed(2) + "K";
+
+    return "$" + number.toFixed(2);
+
+}
+
+
+function formatNumber(number){
+
+    if(number >= 1000000)
+        return (number / 1000000).toFixed(2) + "M";
+
+    if(number >= 1000)
+        return (number / 1000).toFixed(2) + "K";
+
+    return Math.floor(number).toLocaleString();
+
+}
+
+
+function hasUpgrade(id){
+
+    return !!state.upgrades[id];
+
+}
+
+
+function getProductionMultiplier(){
+
+    let mult = 1;
+
+    if(hasUpgrade("feed"))
+        mult *= 1.15;
+
+    if(hasUpgrade("nest"))
+        mult *= 1.20;
+
+    if(hasUpgrade("breed"))
+        mult *= 1.30;
+
+    if(hasUpgrade("precision"))
+        mult *= 1.40;
+
+    if(hasUpgrade("golden"))
+        mult *= 2;
+
+    if(hasUpgrade("manager"))
+        mult *= 1.25;
+
+    return mult;
+
+}
+
+
+function getEggsPerSecond(){
+
+    const BASE_SECONDS_PER_EGG = 12;
+
+    return (
+        state.chickens /
+        BASE_SECONDS_PER_EGG
+    ) * getProductionMultiplier();
+
+}
+
+
+function getPublicInterest(){
+
+    const minPrice = .01;
+
+    const maxPrice = .99;
+
+    let normalized =
+        (state.eggPrice - minPrice) /
+        (maxPrice - minPrice);
+
+    normalized = Math.max(
+        0,
+        Math.min(1,normalized)
+    );
+
+
+    let penaltyStrength = .92;
+
+    if(hasUpgrade("brand"))
+        penaltyStrength = .72;
+
+
+    let interest =
+        1 -
+        penaltyStrength *
+        Math.pow(normalized,1.18);
+
+
+    interest = Math.max(.08,interest);
+
+    return interest;
+
+}
+
+
+function getMarketMultiplier(){
+
+    let mult = 1;
+
+    if(hasUpgrade("sign"))
+        mult *= 1.20;
+
+    if(hasUpgrade("delivery"))
+        mult *= 1.30;
+
+    if(hasUpgrade("grocery"))
+        mult *= 1.60;
+
+    if(hasUpgrade("national"))
+        mult *= 2;
+
+    if(hasUpgrade("conveyor"))
+        mult *= 1.25;
+
+    if(hasUpgrade("manager"))
+        mult *= 1.25;
+
+    return mult;
+
+}
+
+
+function getBaseMarketCapacity(){
+
+    return 1.25 + (state.farmLevel * .75);
+
+}
+
+
+function getSalesPerSecond(){
+
+    return (
+        getBaseMarketCapacity() *
+        getMarketMultiplier() *
+        getPublicInterest()
+    );
+
+}
+
+
+function changePrice(value){
+
+    state.eggPrice =
+        Number(value) / 100;
+
+    updateUI();
+
+}
+
+
+function canBuyUpgrade(id){
+
+    const upgrade =
+        UPGRADES[id];
+
+    if(!upgrade)
+        return false;
+
+    if(hasUpgrade(id))
+        return false;
+
+    if(
+        state.farmLevel <
+        upgrade.level
+    )
+        return false;
+
+    if(
+        upgrade.requires &&
+        !hasUpgrade(upgrade.requires)
+    )
+        return false;
+
+    if(
+        state.money <
+        upgrade.cost
+    )
+        return false;
+
+    return true;
+
+}
+
+
+function buyUpgrade(id){
+
+    const upgrade =
+        UPGRADES[id];
+
+    if(!upgrade)
+        return;
+
+
+    if(hasUpgrade(id)){
+
+        addLog(
+            upgrade.name +
+            " is already unlocked."
+        );
+
+        return;
+    }
+
+
+    if(
+        state.farmLevel <
+        upgrade.level
+    ){
+
+        addLog(
+            "Farm Level " +
+            upgrade.level +
+            " is required for " +
+            upgrade.name +
+            "."
+        );
+
+        return;
+    }
+
+
+    if(
+        upgrade.requires &&
+        !hasUpgrade(upgrade.requires)
+    ){
+
+        addLog(
+            "You must unlock " +
+            UPGRADES[upgrade.requires].name +
+            " first."
+        );
+
+        return;
+    }
+
+
+    if(
+        state.money <
+        upgrade.cost
+    ){
+
+        addLog(
+            "You need " +
+            formatMoney(upgrade.cost) +
+            " to buy " +
+            upgrade.name +
+            "."
+        );
+
+        return;
+    }
+
+
+    state.money -=
+        upgrade.cost;
+
+    state.upgrades[id] =
+        true;
+
+
+    addLog(
+        "Unlocked " +
+        upgrade.name +
+        "!"
+    );
+
+
+    updateUI();
+
+    saveGame();
+
+}
+
+
+function getChicken(){
+
+    const now =
+        Date.now();
+
+    const cooldown =
+        900;
+
+
+    if(
+        now -
+        state.lastChickenClick <
+        cooldown
+    )
+        return;
+
+
+    state.lastChickenClick =
+        now;
+
+    state.chickens += 1;
+
+    state.lifetimeChickens += 1;
+
+    updateUI();
+
+}
+
+
+function upgradeFarm(){
+
+    if(
+        state.farmLevel >=
+        FARM_LEVELS.length
+    )
+        return;
+
+
+    const next =
+        FARM_LEVELS[state.farmLevel];
+
+
+    if(
+        state.chickens <
+        next.chickens
+    ){
+
+        addLog(
+            "You need at least " +
+            next.chickens +
+            " chickens to reach Level " +
+            next.level +
+            "."
+        );
+
+        return;
+    }
+
+
+    if(
+        state.money <
+        next.cost
+    ){
+
+        addLog(
+            "You need " +
+            formatMoney(next.cost) +
+            " to upgrade the farm."
+        );
+
+        return;
+    }
+
+
+    state.money -=
+        next.cost;
+
+    state.farmLevel++;
+
+
+    addLog(
+        "Farm upgraded to Level " +
+        state.farmLevel +
+        " — " +
+        FARM_LEVELS[
+            state.farmLevel - 1
+        ].name +
+        "!"
+    );
+
+
+    updateUI();
+
+    saveGame();
+
+}
+
+
+function addLog(message){
+
+    const log =
+        document.getElementById(
+            "gameLog"
+        );
+
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.className =
+        "logEntry";
+
+
+    div.textContent =
+        new Date().toLocaleTimeString(
+            [],
+            {
+                hour:"2-digit",
+                minute:"2-digit",
+                second:"2-digit"
+            }
+        ) +
+        " — " +
+        message;
+
+
+    log.prepend(div);
+
+
+    while(
+        log.children.length >
+        35
+    ){
+
+        log.removeChild(
+            log.lastChild
+        );
+
+    }
+
+}
+function updateAutoChickens(){
+
+    const now =
+        Date.now();
+
+
+    let amount =
+        0;
+
+    let interval =
+        Infinity;
+
+
+    if(
+        hasUpgrade("robotics")
+    ){
+
+        amount = 3;
+
+        interval = 10000;
+
+    }
+    else if(
+        hasUpgrade("brooder")
+    ){
+
+        amount = 1;
+
+        interval = 12000;
+
+    }
+    else if(
+        hasUpgrade("incubator")
+    ){
+
+        amount = 1;
+
+        interval = 30000;
+
+    }
+
+
+    if(
+        amount === 0
+    )
+        return;
+
+
+    const elapsed =
+        now -
+        state.lastAutoChicken;
+
+
+    if(
+        elapsed >= interval
+    ){
+
+        const batches =
+            Math.floor(
+                elapsed /
+                interval
+            );
+
+
+        const gained =
+            batches *
+            amount;
+
+
+        state.chickens +=
+            gained;
+
+        state.lifetimeChickens +=
+            gained;
+
+
+        state.lastAutoChicken +=
+            batches *
+            interval;
+
+
+        addLog(
+            "Automation raised " +
+            gained +
+            (
+                gained === 1
+                    ? " chicken."
+                    : " chickens."
+            )
+        );
+
+    }
+
+}
+
+
+function gameTick(){
+
+    const now =
+        Date.now();
+
+
+    let dt =
+        (
+            now -
+            state.lastUpdate
+        ) /
+        1000;
+
+
+    dt =
+        Math.min(
+            dt,
+            5
+        );
+
+
+    state.lastUpdate =
+        now;
+
+
+    /*
+        EGG PRODUCTION
+    */
+
+    const produced =
+        getEggsPerSecond() *
+        dt;
+
+
+    state.eggs +=
+        produced;
+
+    state.lifetimeEggs +=
+        produced;
+
+
+    /*
+        AUTOMATIC SALES
+    */
+
+    const potentialSales =
+        getSalesPerSecond() *
+        dt;
+
+
+    const sold =
+        Math.min(
+            state.eggs,
+            potentialSales
+        );
+
+
+    const revenue =
+        sold *
+        state.eggPrice;
+
+
+    state.eggs -=
+        sold;
+
+    state.money +=
+        revenue;
+
+    state.lifetimeMoney +=
+        revenue;
+
+
+    /*
+        AUTO CHICKEN SYSTEM
+    */
+
+    updateAutoChickens();
+
+
+    updateUI();
+
+}
+
+
+function updateUI(){
+
+    const interest =
+        getPublicInterest();
+
+    const production =
+        getEggsPerSecond();
+
+    const sales =
+        getSalesPerSecond();
+
+    const revenue =
+        Math.min(
+            production,
+            sales
+        ) *
+        state.eggPrice;
+
+
+    /*
+        HEADER
+    */
+
+    document.getElementById(
+        "topChickens"
+    ).textContent =
+        formatNumber(
+            state.chickens
+        );
+
+
+    document.getElementById(
+        "topMoney"
+    ).textContent =
+        formatMoney(
+            state.money
+        );
+
+
+    document.getElementById(
+        "topEggs"
+    ).textContent =
+        formatNumber(
+            state.eggs
+        );
+
+
+    document.getElementById(
+        "farmNameTop"
+    ).textContent =
+        FARM_LEVELS[
+            state.farmLevel - 1
+        ].name +
+        " — Level " +
+        state.farmLevel;
+
+
+    /*
+        DASHBOARD
+    */
+
+    document.getElementById(
+        "chickenStat"
+    ).textContent =
+        formatNumber(
+            state.chickens
+        );
+
+
+    document.getElementById(
+        "eggStat"
+    ).textContent =
+        formatNumber(
+            state.eggs
+        );
+
+
+    document.getElementById(
+        "moneyStat"
+    ).textContent =
+        formatMoney(
+            state.money
+        );
+
+
+    document.getElementById(
+        "interestStat"
+    ).textContent =
+        Math.round(
+            interest *
+            100
+        ) +
+        "%";
+
+
+    document.getElementById(
+        "eggRateText"
+    ).textContent =
+        production.toFixed(2) +
+        " eggs/sec";
+
+
+    document.getElementById(
+        "incomeText"
+    ).textContent =
+        formatMoney(revenue) +
+        "/sec estimated";
+
+
+    document.getElementById(
+        "salesRateText"
+    ).textContent =
+        sales.toFixed(2) +
+        " eggs/sec demand";
+
+
+    /*
+        MARKET
+    */
+
+    document.getElementById(
+        "priceDisplay"
+    ).textContent =
+        "$" +
+        state.eggPrice.toFixed(2);
+
+
+    document.getElementById(
+        "priceSlider"
+    ).value =
+        Math.round(
+            state.eggPrice *
+            100
+        );
+
+
+    document.getElementById(
+        "interestText"
+    ).textContent =
+        Math.round(
+            interest *
+            100
+        ) +
+        "%";
+
+
+    document.getElementById(
+        "interestBar"
+    ).style.width =
+        (
+            interest *
+            100
+        ) +
+        "%";
+
+
+    document.getElementById(
+        "marketSpeedText"
+    ).textContent =
+        sales.toFixed(2) +
+        "/sec";
+
+
+    document.getElementById(
+        "productionText"
+    ).textContent =
+        production.toFixed(2) +
+        "/sec";
+
+
+    document.getElementById(
+        "revenueText"
+    ).textContent =
+        formatMoney(revenue) +
+        "/sec";
+
+
+    /*
+        FARM LEVEL
+    */
+
+    const current =
+        FARM_LEVELS[
+            state.farmLevel - 1
+        ];
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent =
+        "Level " +
+        state.farmLevel +
+        " — " +
+        current.name;
+
+
+    document.getElementById(
+        "levelDescription"
+    ).textContent =
+        current.description;
+
+
+    const upgradeButton =
+        document.getElementById(
+            "upgradeFarmBtn"
+        );
+
+
+    if(
+        state.farmLevel >=
+        FARM_LEVELS.length
+    ){
+
+        document.getElementById(
+            "levelChickenReq"
+        ).textContent =
+            "MAX";
+
+
+        document.getElementById(
+            "levelMoneyReq"
+        ).textContent =
+            "MAX";
+
+
+        document.getElementById(
+            "levelBar"
+        ).style.width =
+            "100%";
+
+
+        upgradeButton.textContent =
+            "MAX FARM LEVEL";
+
+
+        upgradeButton.disabled =
+            true;
+
+    }
+    else{
+
+        const next =
+            FARM_LEVELS[
+                state.farmLevel
+            ];
+
+
+        document.getElementById(
+            "levelChickenReq"
+        ).textContent =
+            next.chickens.toLocaleString();
+
+
+        document.getElementById(
+            "levelMoneyReq"
+        ).textContent =
+            formatMoney(
+                next.cost
+            );
+
+
+        const chickenProgress =
+            Math.min(
+                1,
+                state.chickens /
+                next.chickens
+            );
+
+
+        const moneyProgress =
+            Math.min(
+                1,
+                state.money /
+                next.cost
+            );
+
+
+        const totalProgress =
+            (
+                chickenProgress +
+                moneyProgress
+            ) /
+            2;
+
+
+        document.getElementById(
+            "levelBar"
+        ).style.width =
+            (
+                totalProgress *
+                100
+            ) +
+            "%";
+
+
+        upgradeButton.textContent =
+            "Upgrade to Level " +
+            next.level +
+            " — " +
+            formatMoney(
+                next.cost
+            );
+
+
+        upgradeButton.disabled =
+            !(
+                state.chickens >=
+                next.chickens
+                &&
+                state.money >=
+                next.cost
+            );
+
+    }
+
+
+    /*
+        GET CHICKEN BUTTON
+    */
+
+    const elapsedSinceClick =
+        Date.now() -
+        state.lastChickenClick;
+
+
+    const cooldownLeft =
+        Math.max(
+            0,
+            900 -
+            elapsedSinceClick
+        );
+
+
+    const chickenButton =
+        document.getElementById(
+            "getChickenBtn"
+        );
+
+
+    chickenButton.disabled =
+        cooldownLeft > 0;
+
+
+    document.getElementById(
+        "chickenCooldown"
+    ).textContent =
+        cooldownLeft > 0
+            ?
+            (
+                cooldownLeft /
+                1000
+            ).toFixed(1) +
+            " sec"
+            :
+            "Ready";
+
+
+    /*
+        UPGRADE TREE
+    */
+
+    updateUpgradeTree();
+
+}
+
+
+function updateUpgradeTree(){
+
+    Object.keys(
+        UPGRADES
+    ).forEach(
+        id => {
+
+            const upgrade =
+                UPGRADES[id];
+
+
+            const node =
+                document.getElementById(
+                    "node-" +
+                    id
+                );
+
+
+            if(!node)
+                return;
+
+
+            node.classList.remove(
+                "available",
+                "bought",
+                "locked"
+            );
+
+
+            if(
+                hasUpgrade(id)
+            ){
+
+                node.classList.add(
+                    "bought"
+                );
+
+            }
+            else if(
+                state.farmLevel >=
+                upgrade.level
+                &&
+                (
+                    !upgrade.requires
+                    ||
+                    hasUpgrade(
+                        upgrade.requires
+                    )
+                )
+            ){
+
+                node.classList.add(
+                    "available"
+                );
+
+            }
+            else{
+
+                node.classList.add(
+                    "locked"
+                );
+
+            }
+
+        }
+    );
+
+
+    const lines = [
+
+        ["center-feed","feed"],
+        ["feed-nest","nest"],
+        ["nest-breed","breed"],
+        ["breed-precision","precision"],
+        ["precision-golden","golden"],
+
+        ["center-sign","sign"],
+        ["sign-delivery","delivery"],
+        ["delivery-brand","brand"],
+        ["brand-grocery","grocery"],
+        ["grocery-national","national"],
+
+        ["center-conveyor","conveyor"],
+        ["conveyor-incubator","incubator"],
+        ["incubator-brooder","brooder"],
+        ["brooder-manager","manager"],
+        ["manager-robotics","robotics"]
+
+    ];
+
+
+    lines.forEach(
+        pair => {
+
+            const line =
+                document.getElementById(
+                    "line-" +
+                    pair[0]
+                );
+
+
+            if(!line)
+                return;
+
+
+            if(
+                hasUpgrade(
+                    pair[1]
+                )
+            ){
+
+                line.classList.add(
+                    "active"
+                );
+
+            }
+            else{
+
+                line.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+function setupTooltips(){
+
+    const tooltip =
+        document.getElementById(
+            "tooltip"
+        );
+
+
+    Object.keys(
+        UPGRADES
+    ).forEach(
+        id => {
+
+            const node =
+                document.getElementById(
+                    "node-" +
+                    id
+                );
+
+
+            const upgrade =
+                UPGRADES[id];
+
+
+            if(!node)
+                return;
+
+
+            node.addEventListener(
+                "mouseenter",
+                event => {
+
+                    document.getElementById(
+                        "tooltipTitle"
+                    ).textContent =
+                        upgrade.name;
+
+
+                    document.getElementById(
+                        "tooltipDescription"
+                    ).textContent =
+                        upgrade.description;
+
+
+                    let requirement =
+                        "Cost: " +
+                        formatMoney(
+                            upgrade.cost
+                        ) +
+                        " | Farm Level " +
+                        upgrade.level;
+
+
+                    if(
+                        upgrade.requires
+                    ){
+
+                        requirement +=
+                            " | Requires " +
+                            UPGRADES[
+                                upgrade.requires
+                            ].name;
+
+                    }
+
+
+                    if(
+                        hasUpgrade(id)
+                    ){
+
+                        requirement =
+                            "PURCHASED";
+
+                    }
+
+
+                    document.getElementById(
+                        "tooltipRequirement"
+                    ).textContent =
+                        requirement;
+
+
+                    tooltip.style.opacity =
+                        1;
+
+                }
+            );
+
+
+            node.addEventListener(
+                "mousemove",
+                event => {
+
+                    tooltip.style.left =
+                        (
+                            event.clientX +
+                            18
+                        ) +
+                        "px";
+
+
+                    tooltip.style.top =
+                        (
+                            event.clientY +
+                            18
+                        ) +
+                        "px";
+
+                }
+            );
+
+
+            node.addEventListener(
+                "mouseleave",
+                () => {
+
+                    tooltip.style.opacity =
+                        0;
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+function saveGame(manual = false){
+
+    const saveState = {
+        ...state,
+        lastUpdate:Date.now()
+    };
+
+
+    localStorage.setItem(
+        "chickenFarmEmpireSave",
+        JSON.stringify(
+            saveState
+        )
+    );
+
+
+    if(manual){
+
+        addLog(
+            "Game saved."
+        );
+
+    }
+
+}
+
+
+function loadGame(){
+
+    const saved =
+        localStorage.getItem(
+            "chickenFarmEmpireSave"
+        );
+
+
+    if(!saved){
+
+        addLog(
+            "Welcome to Chicken Farm Empire!"
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const parsed =
+            JSON.parse(
+                saved
+            );
+
+
+        state = {
+            ...state,
+            ...parsed,
+            upgrades:{
+                ...parsed.upgrades
+            },
+            lastUpdate:Date.now(),
+            lastAutoChicken:
+                parsed.lastAutoChicken ||
+                Date.now()
+        };
+
+
+        addLog(
+            "Saved farm loaded."
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Save could not be loaded:",
+            error
+        );
+
+    }
+
+}
+
+
+function resetGame(){
+
+    const confirmed =
+        confirm(
+            "Reset your entire chicken farm? This cannot be undone."
+        );
+
+
+    if(!confirmed)
+        return;
+
+
+    localStorage.removeItem(
+        "chickenFarmEmpireSave"
+    );
+
+
+    location.reload();
+
+}
+
+
+/*
+    START GAME
+*/
+
+loadGame();
+
+setupTooltips();
+
+updateUI();
+
+
+setInterval(
+    gameTick,
+    100
+);
+
+
+setInterval(
+    () => saveGame(false),
+    2000
+);
+
+</script>
+
+</body>
+</html>
