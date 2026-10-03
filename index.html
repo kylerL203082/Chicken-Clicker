@@ -6,17 +6,17 @@
 <title>Chicken Farm Empire</title>
 <style>
 :root{
-    --cream:#fbf7e7;
-    --panel:#fffdf5;
-    --panel2:#f9f1cf;
-    --brown:#6b4b22;
-    --brownDark:#503517;
-    --gold:#d4a445;
-    --gold2:#f5c857;
-    --line:#ccb67a;
-    --green:#4fae46;
-    --text:#3d321d;
-    --shadow:0 12px 26px rgba(69,52,16,.18);
+    --cream:#fcf8ea;
+    --cream2:#f6eed2;
+    --brown:#6a4a22;
+    --brown-dark:#4c3316;
+    --gold:#d7a94a;
+    --gold2:#f3c85d;
+    --green:#7dca58;
+    --green2:#6aba49;
+    --text:#3b301d;
+    --panel:#fffdf4;
+    --shadow:0 12px 28px rgba(69,52,16,.15);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -26,14 +26,18 @@ body{
     font-family:Arial,Helvetica,sans-serif;
     color:var(--text);
     background:
-        linear-gradient(to bottom,#95dff7 0,#d8f3fb 220px,#97d86b 221px,#79c852 100%);
+        linear-gradient(to bottom,#95ddf8 0,#dff5fc 220px,#9ada74 221px,#7aca58 100%);
 }
 button,input{font-family:inherit}
 button{cursor:pointer}
+
+/* =========================================================
+   HEADER
+========================================================= */
 .topbar{
     position:sticky;top:0;z-index:1000;min-height:82px;display:grid;grid-template-columns:1.3fr auto 1fr;
-    align-items:center;gap:20px;padding:10px 20px;background:rgba(255,251,232,.96);
-    border-bottom:3px solid #d1ab4f;box-shadow:0 4px 16px rgba(90,74,31,.12);backdrop-filter:blur(4px)
+    align-items:center;gap:20px;padding:10px 20px;background:rgba(255,251,232,.97);
+    border-bottom:3px solid #d5ae50;box-shadow:0 4px 15px rgba(88,68,27,.12);backdrop-filter:blur(4px)
 }
 .leftTop,.actionButtons{display:flex;align-items:center;gap:12px}
 #getChickenBtn,#buyFeedBtn{
@@ -41,22 +45,22 @@ button{cursor:pointer}
     transition:.12s;letter-spacing:.2px
 }
 #getChickenBtn{
-    border:3px solid #8d5b16;background:linear-gradient(#ffd869,#efaf38);color:#5f3a12;
-    box-shadow:inset 0 2px rgba(255,255,255,.72),0 5px 0 #8d5b16
+    border:3px solid #915d18;background:linear-gradient(#ffd96d,#efaf38);color:#5f3a12;
+    box-shadow:inset 0 2px rgba(255,255,255,.72),0 5px 0 #915d18
 }
 #buyFeedBtn{
-    border:3px solid #5b922f;background:linear-gradient(#c0ea83,#82c94c);color:#2a4b17;
-    box-shadow:inset 0 2px rgba(255,255,255,.72),0 5px 0 #5b922f
+    border:3px solid #5b912f;background:linear-gradient(#c4eba0,#91cf5a);color:#2a4b17;
+    box-shadow:inset 0 2px rgba(255,255,255,.72),0 5px 0 #5b912f
 }
 #getChickenBtn:hover,#buyFeedBtn:hover{transform:translateY(-1px)}
 #getChickenBtn:active,#buyFeedBtn:active{transform:translateY(3px)}
 #getChickenBtn:disabled,#buyFeedBtn:disabled{opacity:.58;cursor:not-allowed;transform:none;box-shadow:none}
 .feedMarketInfo{
-    min-width:138px;padding:7px 10px;border-radius:10px;background:#fff8d7;border:2px solid #d4b96c;
+    min-width:138px;padding:8px 10px;border-radius:10px;background:#fff8d7;border:2px solid #d4b96c;
     font-size:11px;line-height:1.45;color:#70521e
 }
-.feedMarketInfo strong{display:block;font-size:14px;color:#3b7726}
-.feedMarketInfo.cheap{background:#e0f7cb;border-color:#68aa4d}
+.feedMarketInfo strong{display:block;font-size:14px;color:#3c7726}
+.feedMarketInfo.cheap{background:#e2f7cf;border-color:#67a94d}
 .feedMarketInfo.expensive{background:#ffe2bf;border-color:#d98d34}
 .logoArea{text-align:center}
 .logoArea h1{margin:0;font-size:27px;letter-spacing:2px;color:#50381a;text-shadow:0 2px #fff}
@@ -64,78 +68,95 @@ button{cursor:pointer}
 .topStats{display:flex;justify-content:flex-end;gap:24px}
 .statTop span{display:block;font-size:11px;color:#796747;text-transform:uppercase;letter-spacing:1px}
 .statTop strong{display:block;font-size:20px;color:#a36b12}
+
+/* =========================================================
+   PAGE
+========================================================= */
 .game{max-width:1550px;margin:auto;padding:22px 18px 60px}
 .farmViewport{width:100%;overflow-x:auto}
+
+/* =========================================================
+   FARM SCENE
+========================================================= */
 .farmShell{
-    position:relative;overflow:hidden;min-width:1180px;min-height:760px;border:4px solid #7f6030;border-radius:26px;
-    background:#8ad15e;box-shadow:0 16px 34px rgba(67,50,18,.2),inset 0 0 0 3px rgba(255,255,255,.22)
+    position:relative;overflow:hidden;min-width:1280px;min-height:780px;border:4px solid #7f6030;border-radius:28px;
+    background:#86d15d;box-shadow:0 18px 34px rgba(67,50,18,.18),inset 0 0 0 3px rgba(255,255,255,.22)
 }
 .farmSky{
-    position:absolute;left:0;right:0;top:0;height:210px;
+    position:absolute;left:0;right:0;top:0;height:230px;
     background:
-        radial-gradient(circle at 14% 24%,rgba(255,255,255,.95) 0 20px,transparent 21px),
-        radial-gradient(circle at 18% 26%,rgba(255,255,255,.92) 0 28px,transparent 29px),
-        radial-gradient(circle at 21% 23%,rgba(255,255,255,.95) 0 20px,transparent 21px),
-        radial-gradient(circle at 77% 20%,rgba(255,255,255,.92) 0 20px,transparent 21px),
-        radial-gradient(circle at 80% 23%,rgba(255,255,255,.95) 0 28px,transparent 29px),
-        linear-gradient(#81d4f5,#d9f1fa);
+        radial-gradient(circle at 15% 25%,rgba(255,255,255,.96) 0 19px,transparent 20px),
+        radial-gradient(circle at 18% 24%,rgba(255,255,255,.94) 0 28px,transparent 29px),
+        radial-gradient(circle at 22% 25%,rgba(255,255,255,.95) 0 20px,transparent 21px),
+        radial-gradient(circle at 74% 18%,rgba(255,255,255,.95) 0 20px,transparent 21px),
+        radial-gradient(circle at 77% 17%,rgba(255,255,255,.94) 0 27px,transparent 28px),
+        radial-gradient(circle at 80% 18%,rgba(255,255,255,.95) 0 19px,transparent 20px),
+        linear-gradient(#85d5f5,#dff4fb);
 }
 .sun{
-    position:absolute;right:92px;top:40px;width:90px;height:90px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%,#fff7bc,#ffd962 70%);box-shadow:0 0 42px rgba(255,245,155,.85)
+    position:absolute;right:118px;top:44px;width:92px;height:92px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#fff7c1,#ffd867 70%);box-shadow:0 0 44px rgba(255,244,150,.88)
 }
 .hillsBack{
-    position:absolute;inset:130px -5% auto;height:210px;
+    position:absolute;inset:138px -5% auto;height:230px;
     background:
-        radial-gradient(ellipse at 8% 100%,#6bb455 0 22%,transparent 23%),
-        radial-gradient(ellipse at 28% 100%,#5ea54a 0 26%,transparent 27%),
-        radial-gradient(ellipse at 51% 100%,#73bd5b 0 28%,transparent 29%),
-        radial-gradient(ellipse at 74% 100%,#5ca246 0 26%,transparent 27%),
-        radial-gradient(ellipse at 93% 100%,#71b959 0 20%,transparent 21%);
+        radial-gradient(ellipse at 5% 100%,#73be5c 0 18%,transparent 19%),
+        radial-gradient(ellipse at 25% 100%,#63aa4d 0 23%,transparent 24%),
+        radial-gradient(ellipse at 50% 100%,#78c561 0 24%,transparent 25%),
+        radial-gradient(ellipse at 75% 100%,#5fa747 0 22%,transparent 23%),
+        radial-gradient(ellipse at 95% 100%,#73bb5b 0 19%,transparent 20%);
 }
 .grassTexture{
-    position:absolute;inset:170px 0 0;
+    position:absolute;inset:175px 0 0;
     background:
-        radial-gradient(circle,rgba(255,255,255,.16) 1px,transparent 2px) 0 0/26px 26px,
-        radial-gradient(circle,rgba(62,132,36,.16) 1px,transparent 2px) 10px 14px/34px 34px,
-        linear-gradient(#90da61,#76c34d)
+        radial-gradient(circle,rgba(255,255,255,.14) 1px,transparent 2px) 0 0/28px 28px,
+        radial-gradient(circle,rgba(62,131,37,.16) 1px,transparent 2px) 10px 14px/36px 36px,
+        linear-gradient(#8fda63,#73c34c);
 }
+
+/* =========================================================
+   ROADS / DELIVERY LANE
+========================================================= */
 .road{
-    position:absolute;z-index:5;background:linear-gradient(#d9bb7b,#ccab69);border:2px solid rgba(136,100,43,.12);
-    box-shadow:inset 0 0 0 2px rgba(255,244,208,.15)
+    position:absolute;z-index:4;background:linear-gradient(#dfc68d,#cfb073);
+    border:2px solid rgba(140,101,43,.18);box-shadow:inset 0 0 0 2px rgba(255,244,209,.18)
 }
-.roadMain{
-    right:140px;top:168px;width:104px;height:620px;border-radius:20px;
+.serviceRoad{
+    left:1135px;top:175px;width:96px;height:605px;border-radius:18px
 }
-.roadMain::after{
-    content:"";position:absolute;left:48px;top:0;width:8px;height:100%;
-    background:repeating-linear-gradient(to bottom,rgba(255,241,188,.95) 0 18px,transparent 18px 38px);opacity:.9
+.serviceRoad::after{
+    content:"";position:absolute;left:44px;top:0;width:8px;height:100%;
+    background:repeating-linear-gradient(to bottom,rgba(255,242,197,.95) 0 18px,transparent 18px 42px)
 }
-.roadBarn{
-    left:178px;top:288px;width:642px;height:72px;border-radius:20px;
+.connectorRoad{
+    left:318px;top:316px;width:820px;height:74px;border-radius:20px
 }
-.roadBarn::after{
-    content:"";position:absolute;left:0;right:0;top:32px;height:8px;
-    background:repeating-linear-gradient(to right,rgba(255,241,188,.95) 0 22px,transparent 22px 46px);opacity:.75
+.connectorRoad::after{
+    content:"";position:absolute;left:0;right:0;top:33px;height:8px;
+    background:repeating-linear-gradient(to right,rgba(255,242,197,.85) 0 26px,transparent 26px 52px)
 }
-.building{
-    position:absolute;z-index:18;filter:drop-shadow(0 14px 14px rgba(58,43,17,.18))
-}
+
+/* =========================================================
+   BUILDINGS
+========================================================= */
+.building{position:absolute;z-index:18;filter:drop-shadow(0 14px 14px rgba(58,43,17,.16))}
+
+/* Barn */
 .barn{
-    left:76px;width:280px;height:250px;top:104px;background:linear-gradient(#df4d43,#d54238);
-    border:5px solid #9f332c;border-radius:3px;
+    left:88px;top:98px;width:270px;height:250px;background:linear-gradient(#df4f45,#d13f36);
+    border:5px solid #a1352d;border-radius:4px
 }
 .barnRoof{
-    position:absolute;left:-18px;top:-78px;width:calc(100% + 36px);height:90px;background:linear-gradient(#7e3f2d,#5f2f24);
-    clip-path:polygon(8% 100%,20% 0,80% 0,92% 100%)
+    position:absolute;left:-20px;top:-78px;width:calc(100% + 40px);height:92px;background:linear-gradient(#7a3b2b,#603024);
+    clip-path:polygon(7% 100%,18% 0,82% 0,93% 100%)
 }
 .barnWindow{
-    position:absolute;top:38px;left:50%;transform:translateX(-50%);width:72px;height:72px;background:linear-gradient(#b2e0ef,#87c6d8);
-    border:6px solid #f6e7be;border-radius:2px
+    position:absolute;top:34px;left:50%;transform:translateX(-50%);width:74px;height:74px;background:linear-gradient(#b4dfef,#88c8db);
+    border:6px solid #f6e7be
 }
 .barnDoor{
-    position:absolute;left:50%;bottom:0;width:124px;height:158px;transform:translateX(-50%);
-    background:linear-gradient(#82402c,#733626);border:6px solid #f6e7be
+    position:absolute;left:50%;bottom:0;width:122px;height:160px;transform:translateX(-50%);
+    background:linear-gradient(#86412c,#743626);border:6px solid #f6e7be
 }
 .barnDoor::before,.barnDoor::after{
     content:"";position:absolute;left:50%;top:-2px;width:5px;height:107%;background:#f6e7be;transform-origin:center
@@ -143,163 +164,211 @@ button{cursor:pointer}
 .barnDoor::before{transform:translateX(-50%) rotate(36deg)}
 .barnDoor::after{transform:translateX(-50%) rotate(-36deg)}
 .barnBadge{
-    position:absolute;z-index:5;left:50%;top:-26px;transform:translateX(-50%);white-space:nowrap;padding:8px 14px;border-radius:10px;
-    background:#fff4cc;border:3px solid #9d7627;color:#6a4215;font-size:14px;font-weight:900;box-shadow:0 8px 14px rgba(68,49,12,.12)
+    position:absolute;z-index:5;left:50%;top:-28px;transform:translateX(-50%);white-space:nowrap;padding:8px 14px;border-radius:10px;
+    background:#fff4cc;border:3px solid #9d7627;color:#6a4215;font-size:14px;font-weight:900;box-shadow:0 8px 14px rgba(68,49,12,.10)
 }
-.farmShell.barn-level-1 .barn{width:240px;height:218px;top:124px}
-.farmShell.barn-level-2 .barn{width:255px;height:228px;top:114px}
-.farmShell.barn-level-3 .barn{width:265px;height:235px;top:108px}
-.farmShell.barn-level-4 .barn{width:280px;height:248px;top:100px}
-.farmShell.barn-level-5 .barn{width:292px;height:260px;top:92px}
-.farmShell.barn-level-6 .barn{width:305px;height:272px;top:84px}
-.farmShell.barn-level-7 .barn{width:318px;height:284px;top:76px}
-.farmShell.barn-level-8 .barn{width:332px;height:298px;top:68px}
-.farmShell.barn-level-9 .barn{width:346px;height:312px;top:58px}
-.farmShell.barn-level-10 .barn{width:362px;height:326px;top:48px}
+
+/* Barn level scaling */
+.farmShell.barn-level-1 .barn{width:235px;height:215px;top:128px}
+.farmShell.barn-level-2 .barn{width:248px;height:225px;top:120px}
+.farmShell.barn-level-3 .barn{width:258px;height:235px;top:112px}
+.farmShell.barn-level-4 .barn{width:270px;height:250px;top:98px}
+.farmShell.barn-level-5 .barn{width:282px;height:262px;top:90px}
+.farmShell.barn-level-6 .barn{width:296px;height:276px;top:80px}
+.farmShell.barn-level-7 .barn{width:310px;height:290px;top:70px}
+.farmShell.barn-level-8 .barn{width:324px;height:304px;top:60px}
+.farmShell.barn-level-9 .barn{width:340px;height:318px;top:48px}
+.farmShell.barn-level-10 .barn{width:356px;height:332px;top:38px}
+
+/* Barn additions */
 .barnWing{
-    display:none;position:absolute;z-index:17;left:84px;top:356px;width:214px;height:94px;border:4px solid #9f332c;
-    background:linear-gradient(#cf463d,#b93c33);border-radius:3px
+    display:none;position:absolute;z-index:17;left:106px;top:364px;width:218px;height:88px;border:4px solid #9f332c;
+    background:linear-gradient(#cf463d,#ba3c33);border-radius:4px
 }
 .barnWing::before{
-    content:"";position:absolute;left:-12px;top:-34px;width:224px;height:42px;background:linear-gradient(#684033,#553126);
+    content:"";position:absolute;left:-12px;top:-34px;width:228px;height:42px;background:linear-gradient(#694033,#563126);
     clip-path:polygon(8% 100%,16% 0,84% 0,92% 100%)
 }
 .barnWing2{
-    display:none;position:absolute;z-index:16;left:116px;top:455px;width:246px;height:82px;border:4px solid #99322b;
-    background:linear-gradient(#c6433a,#ad372f);border-radius:3px
+    display:none;position:absolute;z-index:16;left:136px;top:462px;width:246px;height:78px;border:4px solid #99322b;
+    background:linear-gradient(#c8433b,#ae3730);border-radius:4px
 }
 .barnWing2::before{
-    content:"";position:absolute;left:-12px;top:-32px;width:256px;height:40px;background:linear-gradient(#684033,#553126);
+    content:"";position:absolute;left:-12px;top:-32px;width:256px;height:40px;background:linear-gradient(#694033,#563126);
     clip-path:polygon(8% 100%,16% 0,84% 0,92% 100%)
 }
 .poultryHouse{
-    display:none;position:absolute;z-index:16;left:96px;bottom:34px;width:300px;height:74px;background:#efe8d6;
+    display:none;position:absolute;z-index:16;left:102px;bottom:34px;width:302px;height:72px;background:#efe8d6;
     border:4px solid #7a786f;border-radius:8px
 }
 .poultryHouse::before{
-    content:"POULTRY HOUSE";position:absolute;left:50%;top:24px;transform:translateX(-50%);color:#595b56;font-size:14px;font-weight:900;letter-spacing:1px
+    content:"POULTRY HOUSE";position:absolute;left:50%;top:24px;transform:translateX(-50%);
+    color:#595b56;font-size:14px;font-weight:900;letter-spacing:1px
 }
 .farmShell.barn-level-4 .barnWing,.farmShell.barn-level-5 .barnWing,.farmShell.barn-level-6 .barnWing,
 .farmShell.barn-level-7 .barnWing,.farmShell.barn-level-8 .barnWing,.farmShell.barn-level-9 .barnWing,.farmShell.barn-level-10 .barnWing{display:block}
 .farmShell.barn-level-7 .barnWing2,.farmShell.barn-level-8 .barnWing2,.farmShell.barn-level-9 .barnWing2,.farmShell.barn-level-10 .barnWing2{display:block}
 .farmShell.barn-level-9 .poultryHouse,.farmShell.barn-level-10 .poultryHouse{display:block}
-.storageShed{
-    position:absolute;z-index:18;right:74px;bottom:72px;width:260px;height:132px;border:4px solid #738089;
-    background:linear-gradient(#dbe2e4,#c8d0d2);border-radius:6px
-}
-.storageShed::before{
-    content:"EGG STORAGE";position:absolute;left:50%;top:52px;transform:translateX(-50%);
-    color:#4f606c;font-size:18px;font-weight:900;white-space:nowrap
-}
-.storageShed::after{
-    content:"";position:absolute;left:-18px;top:-54px;width:calc(100% + 36px);height:62px;background:linear-gradient(#607482,#4e6270);
-    clip-path:polygon(50% 0,100% 100%,0 100%)
-}
-.farmShell.storage-level-2 .storageShed{width:275px;height:138px}
-.farmShell.storage-level-3 .storageShed{width:290px;height:144px}
-.farmShell.storage-level-4 .storageShed{width:305px;height:150px}
-.farmShell.storage-level-5 .storageShed{width:320px;height:158px}
-.farmShell.storage-level-6 .storageShed{width:336px;height:166px}
-.farmShell.storage-level-7 .storageShed{width:352px;height:174px}
-.farmShell.storage-level-8 .storageShed{width:368px;height:182px}
-.farmShell.storage-level-9 .storageShed{width:386px;height:190px}
-.farmShell.storage-level-10 .storageShed{width:404px;height:198px}
+
+/* Hen house */
 .coop{
-    left:478px;top:220px;width:208px;height:142px;background:linear-gradient(#f2d26d,#e7c55c);border:4px solid #9b6a1f;border-radius:4px
+    left:450px;top:214px;width:222px;height:152px;background:linear-gradient(#f2d26f,#e5bf52);
+    border:4px solid #9d6a1f;border-radius:4px
 }
 .coopRoof{
-    position:absolute;left:-18px;top:-54px;width:244px;height:70px;background:linear-gradient(#b84a34,#993a28);
+    position:absolute;left:-20px;top:-58px;width:260px;height:74px;background:linear-gradient(#b84a35,#9b3d2b);
     clip-path:polygon(10% 100%,20% 0,80% 0,90% 100%)
 }
 .coopDoor{
-    position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:72px;height:88px;background:linear-gradient(#75471d,#633818);
-    border:5px solid #906021
+    position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:76px;height:94px;background:linear-gradient(#7a4a1f,#673a17);
+    border:5px solid #905f1f
 }
-.coopSign{position:absolute;top:28px;left:30px;font-size:15px;font-weight:900;color:#6c4616;letter-spacing:.8px}
-.silo{
-    right:130px;top:118px;width:96px;height:272px;border:5px solid #889397;
-    background:repeating-linear-gradient(0deg,#c8cfd1 0,#c8cfd1 14px,#bcc4c6 14px,#bcc4c6 18px);border-radius:18px 18px 8px 8px
-}
-.silo::before{
-    content:"";position:absolute;left:-5px;top:-60px;width:96px;height:76px;border:5px solid #868f92;
-    background:linear-gradient(#b7bec1,#a5aeb1);border-radius:50% 50% 18% 18%
-}
+.coopSign{position:absolute;top:30px;left:28px;font-size:15px;font-weight:900;color:#6c4616;letter-spacing:.8px}
+
+/* Farm house */
 .farmHouse{
-    right:298px;top:206px;width:224px;height:150px;background:linear-gradient(#ece8d7,#e0ddcb);border:4px solid #a09f90;border-radius:4px
+    left:720px;top:190px;width:248px;height:182px;background:linear-gradient(#efeada,#e2ddcb);
+    border:4px solid #a2a092;border-radius:4px
 }
 .houseRoof{
-    position:absolute;left:-28px;top:-88px;width:280px;height:90px;background:linear-gradient(#5e7384,#516474);
+    position:absolute;left:-30px;top:-84px;width:306px;height:86px;background:linear-gradient(#627686,#526676);
     clip-path:polygon(50% 0,100% 100%,0 100%)
 }
 .houseDoor{
-    position:absolute;bottom:0;left:50%;width:54px;height:90px;transform:translateX(-50%);background:linear-gradient(#ae6540,#9d5938)
+    position:absolute;bottom:0;left:50%;width:56px;height:100px;transform:translateX(-50%);background:linear-gradient(#b56b44,#9e5a39)
 }
+
+/* Silo */
+.silo{
+    left:1008px;top:154px;width:86px;height:278px;border:5px solid #879396;
+    background:repeating-linear-gradient(0deg,#cbd2d4 0,#cbd2d4 14px,#bcc3c6 14px,#bcc3c6 18px);border-radius:18px 18px 8px 8px
+}
+.silo::before{
+    content:"";position:absolute;left:-5px;top:-58px;width:86px;height:74px;border:5px solid #869094;
+    background:linear-gradient(#b8c0c2,#a9b2b5);border-radius:50% 50% 18% 18%
+}
+
+/* Egg storage */
+.storageShed{
+    position:absolute;z-index:18;left:820px;bottom:76px;width:270px;height:144px;border:4px solid #738089;
+    background:linear-gradient(#dde3e4,#cbd2d4);border-radius:6px
+}
+.storageShed::before{
+    content:"EGG STORAGE";position:absolute;left:50%;top:56px;transform:translateX(-50%);
+    color:#50606d;font-size:18px;font-weight:900;white-space:nowrap;letter-spacing:.5px
+}
+.storageShed::after{
+    content:"";position:absolute;left:-18px;top:-58px;width:calc(100% + 36px);height:66px;background:linear-gradient(#627584,#526571);
+    clip-path:polygon(50% 0,100% 100%,0 100%)
+}
+.farmShell.storage-level-2 .storageShed{width:286px;height:150px}
+.farmShell.storage-level-3 .storageShed{width:302px;height:156px}
+.farmShell.storage-level-4 .storageShed{width:320px;height:162px}
+.farmShell.storage-level-5 .storageShed{width:336px;height:170px}
+.farmShell.storage-level-6 .storageShed{width:352px;height:178px}
+.farmShell.storage-level-7 .storageShed{width:368px;height:186px}
+.farmShell.storage-level-8 .storageShed{width:384px;height:194px}
+.farmShell.storage-level-9 .storageShed{width:400px;height:202px}
+.farmShell.storage-level-10 .storageShed{width:416px;height:210px}
+
+/* =========================================================
+   DECOR
+========================================================= */
+.feedPile{
+    position:absolute;z-index:20;left:390px;top:414px;width:102px;height:86px;border-radius:16px 16px 10px 10px;
+    background:linear-gradient(#f0c97a,#e3b55f);border:4px solid #9a7024;box-shadow:0 8px 14px rgba(67,46,12,.15)
+}
+.feedPile::before{content:"🌾";position:absolute;left:50%;top:8px;transform:translateX(-50%);font-size:30px}
+.feedPile::after{content:"FEED";position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-size:12px;font-weight:900;color:#694919;letter-spacing:1px}
+
 .cropField{
-    position:absolute;z-index:6;right:180px;top:470px;width:250px;height:186px;border:4px solid #8b7131;
-    background:repeating-linear-gradient(18deg,#dec54a 0 16px,#c8aa32 16px 28px);border-radius:2px;transform:rotate(-2deg)
+    position:absolute;z-index:6;left:68px;bottom:82px;width:252px;height:170px;border:4px solid #8c7232;
+    background:repeating-linear-gradient(18deg,#dec54a 0 16px,#caa934 16px 28px);border-radius:3px;transform:rotate(-2deg)
 }
 .pond{
-    position:absolute;z-index:7;left:484px;top:544px;width:170px;height:120px;
-    background:radial-gradient(ellipse at 42% 35%,#93ebff,#39a9d5 70%);border:7px solid #5f964f;border-radius:50%
+    position:absolute;z-index:7;left:356px;top:578px;width:148px;height:92px;
+    background:radial-gradient(ellipse at 42% 35%,#93ebff,#39a9d5 70%);border:6px solid #5f964f;border-radius:50%
 }
+
+/* =========================================================
+   CHICKEN YARD
+========================================================= */
 .fence{
-    position:absolute;z-index:30;height:14px;background:
-    repeating-linear-gradient(90deg,#f4e3ad 0 11px,#9e7f44 12px 14px,transparent 14px 34px);
+    position:absolute;z-index:26;height:14px;background:
+    repeating-linear-gradient(90deg,#f4e4b0 0 11px,#9f8144 12px 14px,transparent 14px 34px);
     border-top:5px solid #ead59c;border-bottom:3px solid #b08f55
 }
-.fence.top{left:430px;top:486px;width:380px}
-.fence.bottom{left:430px;top:695px;width:380px}
-.fence.left{left:423px;top:494px;width:210px;transform:rotate(90deg);transform-origin:left center}
-.fence.right{left:803px;top:494px;width:210px;transform:rotate(90deg);transform-origin:left center}
-.chickenYard{position:absolute;z-index:25;left:440px;top:500px;width:360px;height:180px}
+.fence.top{left:530px;top:510px;width:312px}
+.fence.bottom{left:530px;top:704px;width:312px}
+.fence.left{left:523px;top:518px;width:198px;transform:rotate(90deg);transform-origin:left center}
+.fence.right{left:835px;top:518px;width:198px;transform:rotate(90deg);transform-origin:left center}
+
+.chickenYard{
+    position:absolute;z-index:25;left:542px;top:524px;width:288px;height:160px;
+}
 .yardLabel{
-    position:absolute;z-index:45;left:50%;top:-18px;transform:translateX(-50%);padding:8px 16px;border-radius:12px;
-    background:rgba(255,249,208,.96);border:3px solid #ac7f2a;font-size:14px;font-weight:900;color:#6d4b17;letter-spacing:.6px;
-    box-shadow:0 8px 14px rgba(68,49,12,.1)
+    position:absolute;z-index:45;left:50%;top:-20px;transform:translateX(-50%);padding:8px 16px;border-radius:12px;
+    background:rgba(255,249,208,.97);border:3px solid #ac7f2a;font-size:13px;font-weight:900;color:#6d4b17;letter-spacing:.6px;
+    box-shadow:0 8px 14px rgba(68,49,12,.08)
 }
 .chickenSprite{
-    position:absolute;z-index:40;width:28px;height:28px;font-size:23px;line-height:28px;text-align:center;
-    filter:drop-shadow(0 3px 2px rgba(64,47,24,.22));transform-origin:center bottom;user-select:none
+    position:absolute;z-index:40;width:26px;height:26px;font-size:22px;line-height:26px;text-align:center;
+    filter:drop-shadow(0 3px 2px rgba(64,47,24,.2));transform-origin:center bottom;user-select:none
 }
 .chickenSprite.walking{
-    animation:chickenEnter 1.25s cubic-bezier(.14,.69,.33,1.03),chickenBob .65s ease-in-out 1.25s infinite alternate
+    animation:chickenEnter 1.25s cubic-bezier(.14,.69,.33,1.03),chickenBob .7s ease-in-out 1.25s infinite alternate
 }
 .chickenSprite.idle{animation:chickenBob 1.2s ease-in-out infinite alternate}
 @keyframes chickenEnter{
-    0%{left:-180px;top:-120px;transform:scale(.7) rotate(-8deg)}
+    0%{left:-140px;top:-100px;transform:scale(.72) rotate(-8deg)}
     100%{transform:scale(1) rotate(0)}
 }
 @keyframes chickenBob{from{margin-top:0}to{margin-top:-4px}}
 .flockOverflow{
-    position:absolute;z-index:60;right:-6px;bottom:-12px;padding:10px 14px;border-radius:12px;background:#fff7cc;border:3px solid #ae7c22;
-    font-size:14px;font-weight:900;color:#624313;box-shadow:0 10px 16px rgba(73,54,15,.12)
+    position:absolute;z-index:60;right:-8px;bottom:-14px;padding:10px 14px;border-radius:12px;background:#fff7cc;border:3px solid #ae7c22;
+    font-size:14px;font-weight:900;color:#624313;box-shadow:0 10px 16px rgba(73,54,15,.10)
 }
-.feedPile{
-    position:absolute;z-index:42;left:384px;top:365px;width:90px;height:78px;border-radius:16px 16px 10px 10px;background:linear-gradient(#f0c97a,#e3b55f);
-    border:4px solid #9a7024;box-shadow:0 8px 14px rgba(67,46,12,.18)
-}
-.feedPile::before{content:"🌾";position:absolute;left:50%;top:8px;transform:translateX(-50%);font-size:28px}
-.feedPile::after{content:"FEED";position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-size:12px;font-weight:900;color:#694919;letter-spacing:.8px}
+
+/* =========================================================
+   DELIVERY TRUCK
+========================================================= */
 .deliveryTruck{
-    display:none;position:absolute;z-index:55;right:155px;top:650px;font-size:40px;filter:drop-shadow(0 6px 8px rgba(44,33,12,.25))
+    display:none;position:absolute;z-index:12;left:1153px;top:670px;width:58px;height:88px;pointer-events:none
 }
 .farmShell.wholesale-on .deliveryTruck{display:block;animation:truckDrive 10s linear infinite}
 @keyframes truckDrive{
-    0%{transform:translateY(90px)}
-    100%{transform:translateY(-500px)}
+    0%{transform:translateY(95px)}
+    100%{transform:translateY(-560px)}
 }
+.truckBox{
+    position:absolute;left:10px;bottom:24px;width:34px;height:26px;border-radius:4px;background:linear-gradient(#f4d048,#d7ad2f);
+    border:3px solid #b48d1f;box-shadow:0 4px 7px rgba(54,40,12,.15)
+}
+.truckCab{
+    position:absolute;left:40px;bottom:24px;width:14px;height:22px;border-radius:4px 4px 2px 2px;background:linear-gradient(#5dc0f0,#2590c8);
+    border:3px solid #1f6e97;border-left:none
+}
+.truckWheel,.truckWheel2{
+    position:absolute;bottom:15px;width:12px;height:12px;border-radius:50%;background:#40464a;border:2px solid #222
+}
+.truckWheel{left:14px}
+.truckWheel2{left:40px}
+
+/* =========================================================
+   HUD
+========================================================= */
 .farmHud{
     position:absolute;z-index:80;left:18px;top:18px;display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:10px
 }
 .hudCard{
     padding:9px 12px;min-width:152px;border-radius:12px;background:rgba(255,253,239,.96);border:2px solid #d9b560;
-    box-shadow:0 6px 12px rgba(66,44,10,.12)
+    box-shadow:0 6px 12px rgba(66,44,10,.10)
 }
 .hudCard span{display:block;font-size:10px;color:#7c6841;letter-spacing:1px;text-transform:uppercase}
 .hudCard strong{font-size:16px;color:#4f391a}
 .infrastructureFlag{
     position:absolute;z-index:85;right:18px;top:18px;padding:12px 16px;border-radius:12px;background:rgba(255,250,221,.95);
-    border:3px solid #b17c20;box-shadow:0 8px 14px rgba(67,47,12,.14)
+    border:3px solid #b17c20;box-shadow:0 8px 14px rgba(67,47,12,.10)
 }
 .infrastructureFlag strong{display:block;color:#744a14}
 .infrastructureFlag small{color:#8a733e}
@@ -308,9 +377,13 @@ button{cursor:pointer}
     background:#fff0a9;border:3px solid #d88722;color:#70430f;font-size:12px;font-weight:900;box-shadow:0 8px 16px rgba(68,48,12,.12)
 }
 .farmAlert.danger{background:#ffd5c3;border-color:#c64c32;color:#7c2619}
+
+/* =========================================================
+   PANELS
+========================================================= */
 .dashboard{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
 .panel{
-    position:relative;padding:20px;border:3px solid #cdab58;border-radius:18px;background:linear-gradient(var(--panel),var(--panel2));
+    position:relative;padding:20px;border:3px solid #cdab58;border-radius:18px;background:linear-gradient(var(--panel),var(--cream2));
     box-shadow:0 8px 0 #8b672b,var(--shadow)
 }
 .panel h2{margin:0 0 14px;color:#5f441c}
@@ -362,6 +435,10 @@ button{cursor:pointer}
 .feedEventBox.good strong{color:#357321}
 .feedEventBox.bad{background:#ffe0c4;border-color:#d57b32}
 .feedEventBox.bad strong{color:#9b461e}
+
+/* =========================================================
+   INFRASTRUCTURE
+========================================================= */
 .infrastructureSection{margin-top:34px}
 .sectionHeader{text-align:center;margin-bottom:18px}
 .sectionHeader h2{margin:0;font-size:29px;color:#684617}
@@ -369,7 +446,7 @@ button{cursor:pointer}
 .infraGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .infraCard{
     padding:20px;border:3px solid #b4812c;border-radius:16px;background:linear-gradient(#fff9d8,#f6e3a6);
-    box-shadow:0 6px 0 #795720,0 11px 20px rgba(73,54,15,.18)
+    box-shadow:0 6px 0 #795720,0 11px 20px rgba(73,54,15,.16)
 }
 .infraIcon{font-size:38px}
 .infraTitle{font-size:22px;font-weight:900;color:#664516}
@@ -382,9 +459,13 @@ button{cursor:pointer}
     color:#563511;font-weight:900;box-shadow:0 4px 0 #815317
 }
 .infraBtn:disabled{cursor:not-allowed;color:#9b927a;border-color:#b6aa8c;background:#ddd7c4;box-shadow:none}
+
+/* =========================================================
+   TALENT TREE
+========================================================= */
 .treeSection{
     margin-top:38px;padding:22px 14px 28px;border-radius:22px;border:4px solid #8b6727;background:linear-gradient(#fff2ae,#f1d378);
-    box-shadow:0 10px 0 #674a20,0 15px 30px rgba(78,57,20,.2)
+    box-shadow:0 10px 0 #674a20,0 15px 30px rgba(78,57,20,.18)
 }
 .sectionTitle{margin:0;text-align:center;color:#684617;letter-spacing:3px}
 .sectionSubtitle{text-align:center;color:#927333;margin:7px 0 18px}
@@ -441,6 +522,10 @@ button{cursor:pointer}
     content:"✓";position:absolute;right:-5px;top:-5px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:50%;
     background:#148840;border:2px solid white;color:white;font-size:11px;font-weight:900
 }
+
+/* =========================================================
+   BOTTOM
+========================================================= */
 .bottomPanels{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
 .log{
     height:180px;overflow:auto;padding:10px;border:2px solid #d2bd7e;border-radius:8px;background:#fffbea;font-size:13px
@@ -457,6 +542,10 @@ button{cursor:pointer}
 .tooltip strong{color:#925a11}
 .toolDesc{margin-top:5px}
 .toolReq{margin-top:7px;color:#9e6416;font-weight:bold}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 @media(max-width:1250px){
     .topbar{grid-template-columns:1fr;text-align:center}
     .leftTop,.topStats{justify-content:center}
@@ -474,239 +563,248 @@ button{cursor:pointer}
 </style>
 </head>
 <body>
+
 <header class="topbar">
-<div class="leftTop">
-<div class="actionButtons">
-<button id="getChickenBtn" onclick="getChicken()">🐔 Get Chicken</button>
-<button id="buyFeedBtn" onclick="buyFeed()">🌾 Buy 10 Feed</button>
-</div>
-<div class="feedMarketInfo" id="feedMarketInfo">
-Feed:
-<strong id="headerFeed">100 / 150</strong>
-<span id="headerFeedPrice">$15.00 each</span><br>
-<span id="feedCountdown">Market: 30s</span>
-</div>
-</div>
-<div class="logoArea">
-<h1>🐔 CHICKEN FARM EMPIRE</h1>
-<small id="farmNameTop">Barn Lv. 1 • Storage Lv. 1</small>
-</div>
-<div class="topStats">
-<div class="statTop"><span>Chickens</span><strong id="topChickens">1</strong></div>
-<div class="statTop"><span>Money</span><strong id="topMoney">$0.00</strong></div>
-<div class="statTop"><span>Eggs</span><strong id="topEggs">0</strong></div>
-<div class="statTop"><span>Feed</span><strong id="topFeed">100</strong></div>
-</div>
+    <div class="leftTop">
+        <div class="actionButtons">
+            <button id="getChickenBtn" onclick="getChicken()">🐔 Get Chicken</button>
+            <button id="buyFeedBtn" onclick="buyFeed()">🌾 Buy 10 Feed</button>
+        </div>
+        <div class="feedMarketInfo" id="feedMarketInfo">
+            Feed:
+            <strong id="headerFeed">100 / 150</strong>
+            <span id="headerFeedPrice">$15.00 each</span><br>
+            <span id="feedCountdown">Market: 30s</span>
+        </div>
+    </div>
+
+    <div class="logoArea">
+        <h1>🐔 CHICKEN FARM EMPIRE</h1>
+        <small id="farmNameTop">Barn Lv. 1 • Storage Lv. 1</small>
+    </div>
+
+    <div class="topStats">
+        <div class="statTop"><span>Chickens</span><strong id="topChickens">1</strong></div>
+        <div class="statTop"><span>Money</span><strong id="topMoney">$0.00</strong></div>
+        <div class="statTop"><span>Eggs</span><strong id="topEggs">0</strong></div>
+        <div class="statTop"><span>Feed</span><strong id="topFeed">100</strong></div>
+    </div>
 </header>
 
 <main class="game">
-<div class="farmViewport">
-<section class="farmShell barn-level-1 storage-level-1" id="farmScene">
-<div class="farmSky"></div>
-<div class="sun"></div>
-<div class="hillsBack"></div>
-<div class="grassTexture"></div>
+    <div class="farmViewport">
+        <section class="farmShell barn-level-1 storage-level-1" id="farmScene">
+            <div class="farmSky"></div>
+            <div class="sun"></div>
+            <div class="hillsBack"></div>
+            <div class="grassTexture"></div>
 
-<div class="road roadMain"></div>
-<div class="road roadBarn"></div>
+            <div class="road serviceRoad"></div>
+            <div class="road connectorRoad"></div>
 
-<div class="farmHud">
-<div class="hudCard"><span>Chickens</span><strong id="farmChickenCount">1</strong></div>
-<div class="hudCard"><span>Barn Capacity</span><strong id="farmBarnCapacity">1 / 40</strong></div>
-<div class="hudCard"><span>Feed Storage</span><strong id="farmFeedCount">100 / 150</strong></div>
-<div class="hudCard"><span>Egg Inventory</span><strong id="farmEggCount">0</strong></div>
-<div class="hudCard"><span>Egg Storage</span><strong id="farmStorageCount">0 / 500</strong></div>
-<div class="hudCard"><span>Income</span><strong id="farmIncome">$0.00/sec</strong></div>
-</div>
+            <div class="farmHud">
+                <div class="hudCard"><span>Chickens</span><strong id="farmChickenCount">1</strong></div>
+                <div class="hudCard"><span>Barn Capacity</span><strong id="farmBarnCapacity">1 / 40</strong></div>
+                <div class="hudCard"><span>Feed Storage</span><strong id="farmFeedCount">100 / 150</strong></div>
+                <div class="hudCard"><span>Egg Inventory</span><strong id="farmEggCount">0</strong></div>
+                <div class="hudCard"><span>Egg Storage</span><strong id="farmStorageCount">0 / 500</strong></div>
+                <div class="hudCard"><span>Income</span><strong id="farmIncome">$0.00/sec</strong></div>
+            </div>
 
-<div class="infrastructureFlag">
-<strong>Infrastructure</strong>
-<small id="infrastructureSmall">Barn 1 • Storage 1 • Distribution 0</small>
-</div>
+            <div class="infrastructureFlag">
+                <strong>Infrastructure</strong>
+                <small id="infrastructureSmall">Barn 1 • Storage 1 • Distribution 0</small>
+            </div>
 
-<div class="farmAlert" id="farmAlert"></div>
+            <div class="farmAlert" id="farmAlert"></div>
 
-<div class="building barn">
-<div class="barnRoof"></div>
-<div class="barnWindow"></div>
-<div class="barnDoor"></div>
-<div class="barnBadge" id="barnBadge">BARN LV. 1</div>
-</div>
+            <div class="building barn">
+                <div class="barnRoof"></div>
+                <div class="barnWindow"></div>
+                <div class="barnDoor"></div>
+                <div class="barnBadge" id="barnBadge">BARN LV. 1</div>
+            </div>
 
-<div class="barnWing"></div>
-<div class="barnWing2"></div>
-<div class="poultryHouse"></div>
+            <div class="barnWing"></div>
+            <div class="barnWing2"></div>
+            <div class="poultryHouse"></div>
 
-<div class="building coop">
-<div class="coopRoof"></div>
-<div class="coopSign">HEN HOUSE</div>
-<div class="coopDoor"></div>
-</div>
+            <div class="building coop">
+                <div class="coopRoof"></div>
+                <div class="coopSign">HEN HOUSE</div>
+                <div class="coopDoor"></div>
+            </div>
 
-<div class="building silo"></div>
+            <div class="building farmHouse">
+                <div class="houseRoof"></div>
+                <div class="houseDoor"></div>
+            </div>
 
-<div class="building farmHouse">
-<div class="houseRoof"></div>
-<div class="houseDoor"></div>
-</div>
+            <div class="building silo"></div>
+            <div class="storageShed"></div>
+            <div class="feedPile"></div>
+            <div class="cropField"></div>
+            <div class="pond"></div>
 
-<div class="storageShed"></div>
-<div class="feedPile"></div>
-<div class="cropField"></div>
-<div class="pond"></div>
+            <div class="fence top"></div>
+            <div class="fence bottom"></div>
+            <div class="fence left"></div>
+            <div class="fence right"></div>
 
-<div class="fence top"></div>
-<div class="fence bottom"></div>
-<div class="fence left"></div>
-<div class="fence right"></div>
+            <div class="chickenYard" id="chickenYard">
+                <div class="yardLabel">🐔 CHICKEN YARD</div>
+                <div class="flockOverflow" id="flockOverflow" style="display:none;"></div>
+            </div>
 
-<div class="chickenYard" id="chickenYard">
-<div class="yardLabel">🐔 CHICKEN YARD</div>
-<div class="flockOverflow" id="flockOverflow" style="display:none;"></div>
-</div>
+            <div class="deliveryTruck" id="deliveryTruck">
+                <div class="truckBox"></div>
+                <div class="truckCab"></div>
+                <div class="truckWheel"></div>
+                <div class="truckWheel2"></div>
+            </div>
+        </section>
+    </div>
 
-<div class="deliveryTruck" id="deliveryTruck">🚚</div>
-</section>
-</div>
+    <section class="dashboard">
+        <div class="panel">
+            <h2>🥚 Retail Egg Market</h2>
+            <div>Your Selling Price</div>
+            <div class="priceDisplay" id="priceDisplay">$0.20</div>
+            <input id="priceSlider" class="priceSlider" type="range" min="1" max="99" value="20" oninput="changePrice(this.value)">
+            <div class="rangeLabels"><span>$0.01</span><span>$0.99</span></div>
 
-<section class="dashboard">
-<div class="panel">
-<h2>🥚 Retail Egg Market</h2>
-<div>Your Selling Price</div>
-<div class="priceDisplay" id="priceDisplay">$0.20</div>
-<input id="priceSlider" class="priceSlider" type="range" min="1" max="99" value="20" oninput="changePrice(this.value)">
-<div class="rangeLabels"><span>$0.01</span><span>$0.99</span></div>
+            <h3>Public Interest</h3>
+            <div class="interestMeter"><div id="interestBar"></div></div>
 
-<h3>Public Interest</h3>
-<div class="interestMeter"><div id="interestBar"></div></div>
+            <div class="infoGrid">
+                <div class="infoCell"><span>Public Interest</span><strong id="interestText">100%</strong></div>
+                <div class="infoCell"><span>Retail Demand</span><strong id="retailSpeedText">0/sec</strong></div>
+                <div class="infoCell"><span>Egg Production</span><strong id="productionText">0/sec</strong></div>
+                <div class="infoCell"><span>Income</span><strong id="revenueText">$0/sec</strong></div>
+            </div>
 
-<div class="infoGrid">
-<div class="infoCell"><span>Public Interest</span><strong id="interestText">100%</strong></div>
-<div class="infoCell"><span>Retail Demand</span><strong id="retailSpeedText">0/sec</strong></div>
-<div class="infoCell"><span>Egg Production</span><strong id="productionText">0/sec</strong></div>
-<div class="infoCell"><span>Income</span><strong id="revenueText">$0/sec</strong></div>
-</div>
+            <div class="feedPanel">
+                <h3>🌾 Feed Market</h3>
+                <div class="feedMarketGrid">
+                    <div class="feedBox"><span>Feed Owned</span><strong id="feedOwnedText">100</strong></div>
+                    <div class="feedBox"><span>Feed Capacity</span><strong id="feedCapacityText">150</strong></div>
+                    <div class="feedBox"><span>Current Price</span><strong id="feedPriceText">$15.00 / feed</strong></div>
+                    <div class="feedBox"><span id="feedBagLabel">10-Feed Bag</span><strong id="feedBagCostText">$150.00</strong></div>
+                </div>
 
-<div class="feedPanel">
-<h3>🌾 Feed Market</h3>
-<div class="feedMarketGrid">
-<div class="feedBox"><span>Feed Owned</span><strong id="feedOwnedText">100</strong></div>
-<div class="feedBox"><span>Feed Capacity</span><strong id="feedCapacityText">150</strong></div>
-<div class="feedBox"><span>Current Price</span><strong id="feedPriceText">$15.00 / feed</strong></div>
-<div class="feedBox"><span id="feedBagLabel">10-Feed Bag</span><strong id="feedBagCostText">$150.00</strong></div>
-</div>
+                <div class="feedCapacityTitle">Feed Silo Capacity</div>
+                <div class="feedCapacityMeter"><div id="feedCapacityBar"></div></div>
+                <div class="feedCapacityText" id="feedStorageText">100 / 150 feed stored</div>
 
-<div class="feedCapacityTitle">Feed Silo Capacity</div>
-<div class="feedCapacityMeter"><div id="feedCapacityBar"></div></div>
-<div class="feedCapacityText" id="feedStorageText">100 / 150 feed stored</div>
+                <div class="feedEventBox" id="feedEventBox">
+                    <strong id="feedEventTitle">🌾 Normal Feed Market</strong>
+                    <div id="feedEventDescription">No special market event is active.</div>
+                </div>
 
-<div class="feedEventBox" id="feedEventBox">
-<strong id="feedEventTitle">🌾 Normal Feed Market</strong>
-<div id="feedEventDescription">No special market event is active.</div>
-</div>
+                <p id="feedMarketMessage" style="margin:10px 0 0;font-size:12px;color:#557636;">Normal feed prices range from $10 to $20 per feed.</p>
+            </div>
+        </div>
 
-<p id="feedMarketMessage" style="margin:10px 0 0;font-size:12px;color:#557636;">Normal feed prices range from $10 to $20 per feed.</p>
-</div>
-</div>
+        <div class="panel">
+            <h2>🚚 Wholesale & Storage</h2>
+            <div class="wholesaleStatus" id="wholesaleStatus">
+                <strong id="wholesaleTitle">Wholesale Locked</strong>
+                <p id="wholesaleDescription" style="margin:7px 0 0;font-size:13px;">Purchase Distribution Level 1 to unlock wholesale.</p>
+                <div class="toggleRow">
+                    <span>Auto-sell surplus eggs</span>
+                    <label class="switch">
+                        <input type="checkbox" id="wholesaleToggle" onchange="toggleWholesale(this.checked)">
+                        <span class="sliderSwitch"></span>
+                    </label>
+                </div>
+            </div>
 
-<div class="panel">
-<h2>🚚 Wholesale & Storage</h2>
-<div class="wholesaleStatus" id="wholesaleStatus">
-<strong id="wholesaleTitle">Wholesale Locked</strong>
-<p id="wholesaleDescription" style="margin:7px 0 0;font-size:13px;">Purchase Distribution Level 1 to unlock wholesale.</p>
-<div class="toggleRow">
-<span>Auto-sell surplus eggs</span>
-<label class="switch">
-<input type="checkbox" id="wholesaleToggle" onchange="toggleWholesale(this.checked)">
-<span class="sliderSwitch"></span>
-</label>
-</div>
-</div>
+            <div class="infoGrid">
+                <div class="infoCell"><span>Wholesale Price</span><strong id="wholesalePriceText">Locked</strong></div>
+                <div class="infoCell"><span>Wholesale Capacity</span><strong id="wholesaleSpeedText">Locked</strong></div>
+                <div class="infoCell"><span>Total Sales Capacity</span><strong id="totalSalesText">0/sec</strong></div>
+                <div class="infoCell"><span>Storage Capacity</span><strong id="storageCapacityText">500 eggs</strong></div>
+            </div>
 
-<div class="infoGrid">
-<div class="infoCell"><span>Wholesale Price</span><strong id="wholesalePriceText">Locked</strong></div>
-<div class="infoCell"><span>Wholesale Capacity</span><strong id="wholesaleSpeedText">Locked</strong></div>
-<div class="infoCell"><span>Total Sales Capacity</span><strong id="totalSalesText">0/sec</strong></div>
-<div class="infoCell"><span>Storage Capacity</span><strong id="storageCapacityText">500 eggs</strong></div>
-</div>
+            <h3>Egg Storage</h3>
+            <div class="storageMeter"><div id="storageBar"></div></div>
+            <div id="storageText" style="margin-top:6px;font-weight:bold;">0 / 500 eggs</div>
+            <div class="storageWarningText" id="storageWarningText">Storage has room available.</div>
+        </div>
+    </section>
 
-<h3>Egg Storage</h3>
-<div class="storageMeter"><div id="storageBar"></div></div>
-<div id="storageText" style="margin-top:6px;font-weight:bold;">0 / 500 eggs</div>
-<div class="storageWarningText" id="storageWarningText">Storage has room available.</div>
-</div>
-</section>
+    <section class="infrastructureSection">
+        <div class="sectionHeader">
+            <h2>🏗️ FARM INFRASTRUCTURE</h2>
+            <p>Barn, egg storage and distribution are upgraded separately.</p>
+        </div>
 
-<section class="infrastructureSection">
-<div class="sectionHeader">
-<h2>🏗️ FARM INFRASTRUCTURE</h2>
-<p>Barn, egg storage and distribution are upgraded separately.</p>
-</div>
-<div class="infraGrid">
-<div class="infraCard">
-<div class="infraIcon">🏚️</div>
-<div class="infraTitle">Chicken Barn</div>
-<div class="infraLevel" id="barnLevelText">Level 1 / 10</div>
-<div class="infraStat">Current capacity: <strong id="barnCurrentCapacity">40 chickens</strong></div>
-<div class="infraNext" id="barnNextText">Next barn holds 150 chickens.</div>
-<button class="infraBtn" id="barnUpgradeBtn" onclick="upgradeBarn()">Upgrade Barn</button>
-</div>
+        <div class="infraGrid">
+            <div class="infraCard">
+                <div class="infraIcon">🏚️</div>
+                <div class="infraTitle">Chicken Barn</div>
+                <div class="infraLevel" id="barnLevelText">Level 1 / 10</div>
+                <div class="infraStat">Current capacity: <strong id="barnCurrentCapacity">40 chickens</strong></div>
+                <div class="infraNext" id="barnNextText">Next barn holds 150 chickens.</div>
+                <button class="infraBtn" id="barnUpgradeBtn" onclick="upgradeBarn()">Upgrade Barn</button>
+            </div>
 
-<div class="infraCard">
-<div class="infraIcon">📦</div>
-<div class="infraTitle">Egg Storage</div>
-<div class="infraLevel" id="storageLevelText">Level 1 / 10</div>
-<div class="infraStat">Current capacity: <strong id="storageCurrentCapacity">500 eggs</strong></div>
-<div class="infraNext" id="storageNextText">Next storage holds 2,000 eggs.</div>
-<button class="infraBtn" id="storageUpgradeBtn" onclick="upgradeStorage()">Upgrade Storage</button>
-</div>
+            <div class="infraCard">
+                <div class="infraIcon">📦</div>
+                <div class="infraTitle">Egg Storage</div>
+                <div class="infraLevel" id="storageLevelText">Level 1 / 10</div>
+                <div class="infraStat">Current capacity: <strong id="storageCurrentCapacity">500 eggs</strong></div>
+                <div class="infraNext" id="storageNextText">Next storage holds 2,000 eggs.</div>
+                <button class="infraBtn" id="storageUpgradeBtn" onclick="upgradeStorage()">Upgrade Storage</button>
+            </div>
 
-<div class="infraCard">
-<div class="infraIcon">🚚</div>
-<div class="infraTitle">Distribution</div>
-<div class="infraLevel" id="distributionLevelText">Level 0 / 10</div>
-<div class="infraStat">Wholesale network: <strong id="distributionCurrentText">Not established</strong></div>
-<div class="infraNext" id="distributionNextText">Purchase your first wholesale contract.</div>
-<button class="infraBtn" id="distributionUpgradeBtn" onclick="upgradeDistribution()">Unlock Distribution</button>
-</div>
-</div>
-</section>
+            <div class="infraCard">
+                <div class="infraIcon">🚚</div>
+                <div class="infraTitle">Distribution</div>
+                <div class="infraLevel" id="distributionLevelText">Level 0 / 10</div>
+                <div class="infraStat">Wholesale network: <strong id="distributionCurrentText">Not established</strong></div>
+                <div class="infraNext" id="distributionNextText">Purchase your first wholesale contract.</div>
+                <button class="infraBtn" id="distributionUpgradeBtn" onclick="upgradeDistribution()">Unlock Distribution</button>
+            </div>
+        </div>
+    </section>
 
-<section class="treeSection">
-<h2 class="sectionTitle">FARM TALENT TREE</h2>
-<div class="sectionSubtitle">Production, operations and sales upgrades all fit into one compact farm talent tree.</div>
-<div class="treeWrapper">
-<div class="tree" id="upgradeTree">
-<div class="treeProgress" id="treeProgress">0 / 45 UPGRADES OWNED</div>
-<div class="branchLabel productionLabel" id="productionLabel">PRODUCTION & FLOCK 0/15</div>
-<div class="branchLabel marketingLabel" id="marketingLabel">SALES & DISTRIBUTION 0/15</div>
-<div class="branchLabel operationsLabel" id="operationsLabel">FARM OPERATIONS 0/15</div>
-<svg id="treeLines" viewBox="0 0 1180 780" preserveAspectRatio="none"></svg>
-<div class="centerNode"><div><span>🐔</span>YOUR<br>FARM</div></div>
-</div>
-</div>
-</section>
+    <section class="treeSection">
+        <h2 class="sectionTitle">FARM TALENT TREE</h2>
+        <div class="sectionSubtitle">Production, operations and sales upgrades all fit into one compact farm talent tree.</div>
+        <div class="treeWrapper">
+            <div class="tree" id="upgradeTree">
+                <div class="treeProgress" id="treeProgress">0 / 45 UPGRADES OWNED</div>
+                <div class="branchLabel productionLabel" id="productionLabel">PRODUCTION & FLOCK 0/15</div>
+                <div class="branchLabel marketingLabel" id="marketingLabel">SALES & DISTRIBUTION 0/15</div>
+                <div class="branchLabel operationsLabel" id="operationsLabel">FARM OPERATIONS 0/15</div>
+                <svg id="treeLines" viewBox="0 0 1180 780" preserveAspectRatio="none"></svg>
+                <div class="centerNode"><div><span>🐔</span>YOUR<br>FARM</div></div>
+            </div>
+        </div>
+    </section>
 
-<div class="bottomPanels">
-<div class="panel">
-<h2>📜 Farm Activity</h2>
-<div class="log" id="gameLog"></div>
-</div>
-<div class="panel">
-<h2>Farm Rules</h2>
-<p>Every new chicken consumes <strong>1 feed</strong>. New farms begin with <strong>100 feed</strong>.</p>
-<p>Normal feed prices range from <strong>$10–$20 per feed</strong>. Temporary feed-market events can move that price higher or lower.</p>
-<p>Feed storage starts at <strong>150</strong>, and larger feed capacity comes from your operations upgrades.</p>
-<button class="smallBtn" onclick="saveGame(true)">Save Game</button>
-<button class="smallBtn resetBtn" onclick="resetGame()">Reset Game</button>
-</div>
-</div>
+    <div class="bottomPanels">
+        <div class="panel">
+            <h2>📜 Farm Activity</h2>
+            <div class="log" id="gameLog"></div>
+        </div>
+
+        <div class="panel">
+            <h2>Farm Rules</h2>
+            <p>Every new chicken consumes <strong>1 feed</strong>. New farms begin with <strong>100 feed</strong>.</p>
+            <p>Normal feed prices range from <strong>$10–$20 per feed</strong>. Temporary feed-market events can move that price higher or lower.</p>
+            <p>Feed storage starts at <strong>150</strong>, and larger feed capacity comes from your operations upgrades.</p>
+            <button class="smallBtn" onclick="saveGame(true)">Save Game</button>
+            <button class="smallBtn resetBtn" onclick="resetGame()">Reset Game</button>
+        </div>
+    </div>
 </main>
 
 <div class="tooltip" id="tooltip">
-<strong id="tooltipTitle"></strong>
-<div class="toolDesc" id="tooltipDescription"></div>
-<div class="toolReq" id="tooltipRequirement"></div>
+    <strong id="tooltipTitle"></strong>
+    <div class="toolDesc" id="tooltipDescription"></div>
+    <div class="toolReq" id="tooltipRequirement"></div>
 </div>
 
 <script>
@@ -940,8 +1038,8 @@ state.wholesaleEnabled=!!enabled;addLog(state.wholesaleEnabled?"🚚 Wholesale s
 }
 function changePrice(value){state.eggPrice=Number(value)/100;updateUI()}
 function chickenPosition(index){
-const row=Math.floor(index/9),col=index%9,jitterX=(index*37)%17,jitterY=(index*53)%13;
-return{left:7+col*10.1+jitterX*.10,top:18+(row%8)*9.4+jitterY*.24}
+const cols=8,row=Math.floor(index/cols),col=index%cols,jx=(index*37)%14,jy=(index*53)%11;
+return{left:5+col*12+jx*.08,top:16+(row%8)*9.2+jy*.20}
 }
 function createChickenSprite(index,animate=false){
 const yard=document.getElementById("chickenYard");
