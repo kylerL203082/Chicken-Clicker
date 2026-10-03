@@ -58,15 +58,25 @@ button{
     position:sticky;
     top:0;
     z-index:1000;
+
     min-height:82px;
+
     display:grid;
     grid-template-columns:1.3fr auto 1fr;
+
     align-items:center;
+
     gap:20px;
+
     padding:10px 20px;
+
     background:rgba(255,252,222,.97);
+
     border-bottom:4px solid #d3a940;
-    box-shadow:0 4px 15px rgba(76,60,20,.22);
+
+    box-shadow:
+        0 4px 15px
+        rgba(76,60,20,.22);
 }
 
 .leftTop{
@@ -83,32 +93,59 @@ button{
 
 #getChickenBtn,
 #buyFeedBtn{
+
     min-height:54px;
+    min-width:185px;
+
     padding:11px 17px;
+
     border-radius:13px;
+
     font-size:16px;
+
     font-weight:900;
+
     transition:.12s;
 }
 
 #getChickenBtn{
-    min-width:185px;
+
     border:3px solid #8d5917;
-    background:linear-gradient(#ffd463,#efa72f);
+
+    background:
+        linear-gradient(
+            #ffd463,
+            #efa72f
+        );
+
     color:#563316;
+
     box-shadow:
-        inset 0 2px rgba(255,255,255,.65),
-        0 5px 0 #8d5917;
+        inset 0 2px
+        rgba(255,255,255,.65),
+
+        0 5px 0
+        #8d5917;
 }
 
 #buyFeedBtn{
-    min-width:185px;
+
     border:3px solid #477528;
-    background:linear-gradient(#a9df66,#6eb83d);
+
+    background:
+        linear-gradient(
+            #a9df66,
+            #6eb83d
+        );
+
     color:#294719;
+
     box-shadow:
-        inset 0 2px rgba(255,255,255,.65),
-        0 5px 0 #477528;
+        inset 0 2px
+        rgba(255,255,255,.65),
+
+        0 5px 0
+        #477528;
 }
 
 #getChickenBtn:hover,
@@ -130,29 +167,44 @@ button{
 }
 
 .feedMarketInfo{
+
     min-width:115px;
+
     padding:5px 8px;
+
     border-radius:8px;
+
     background:#fff8ce;
+
     border:2px solid #d2b65f;
+
     font-size:11px;
+
     line-height:1.45;
+
     color:#70521e;
 }
 
 .feedMarketInfo strong{
+
     display:block;
+
     font-size:14px;
+
     color:#46772b;
 }
 
 .feedMarketInfo.cheap{
+
     background:#dcf7c8;
+
     border-color:#60a746;
 }
 
 .feedMarketInfo.expensive{
+
     background:#ffe0ba;
+
     border-color:#d98d34;
 }
 
@@ -161,37 +213,58 @@ button{
 }
 
 .logoArea h1{
+
     margin:0;
+
     font-size:27px;
+
     letter-spacing:2px;
+
     color:#4c351a;
-    text-shadow:0 2px #fff;
+
+    text-shadow:
+        0 2px #fff;
 }
 
 .logoArea small{
+
     display:block;
+
     margin-top:3px;
+
     color:#987026;
+
     font-weight:bold;
 }
 
 .topStats{
+
     display:flex;
+
     justify-content:flex-end;
+
     gap:24px;
 }
 
 .statTop span{
+
     display:block;
+
     font-size:11px;
+
     color:#796747;
+
     text-transform:uppercase;
+
     letter-spacing:1px;
 }
 
 .statTop strong{
+
     display:block;
+
     font-size:20px;
+
     color:#a36b12;
 }
 
@@ -201,9 +274,15 @@ button{
 ========================================================= */
 
 .game{
+
     max-width:1550px;
+
     margin:auto;
-    padding:22px 18px 60px;
+
+    padding:
+        22px
+        18px
+        60px;
 }
 
 
@@ -212,69 +291,169 @@ button{
 ========================================================= */
 
 .farmViewport{
+
     width:100%;
+
     overflow-x:auto;
 }
 
 .farmShell{
+
     position:relative;
+
     overflow:hidden;
+
     min-width:1050px;
+
     min-height:700px;
+
     border:5px solid #725025;
+
     border-radius:22px;
+
     background:#79cc4e;
+
     box-shadow:
-        0 12px 30px rgba(77,63,26,.27),
-        inset 0 0 0 4px rgba(255,255,255,.25);
+        0 12px 30px
+        rgba(77,63,26,.27),
+
+        inset 0 0 0 4px
+        rgba(255,255,255,.25);
 }
 
 .farmSky{
+
     position:absolute;
+
     left:0;
     right:0;
     top:0;
+
     height:145px;
+
     background:
-        radial-gradient(circle at 10% 30%,white 0 22px,transparent 23px),
-        radial-gradient(circle at 13% 27%,white 0 31px,transparent 32px),
-        radial-gradient(circle at 16% 31%,white 0 22px,transparent 23px),
-        radial-gradient(circle at 78% 35%,white 0 21px,transparent 22px),
-        radial-gradient(circle at 81% 31%,white 0 29px,transparent 30px),
-        linear-gradient(#71cff5,#bcebf8);
+
+        radial-gradient(
+            circle at 10% 30%,
+            white 0 22px,
+            transparent 23px
+        ),
+
+        radial-gradient(
+            circle at 13% 27%,
+            white 0 31px,
+            transparent 32px
+        ),
+
+        radial-gradient(
+            circle at 16% 31%,
+            white 0 22px,
+            transparent 23px
+        ),
+
+        radial-gradient(
+            circle at 78% 35%,
+            white 0 21px,
+            transparent 22px
+        ),
+
+        radial-gradient(
+            circle at 81% 31%,
+            white 0 29px,
+            transparent 30px
+        ),
+
+        linear-gradient(
+            #71cff5,
+            #bcebf8
+        );
 }
 
 .sun{
+
     position:absolute;
+
     right:70px;
     top:25px;
+
     width:72px;
     height:72px;
+
     border-radius:50%;
+
     background:#ffe66f;
-    box-shadow:0 0 35px #fff59a;
+
+    box-shadow:
+        0 0 35px
+        #fff59a;
 }
 
 .hillsBack{
+
     position:absolute;
+
     top:90px;
     left:-5%;
+
     width:110%;
     height:130px;
+
     background:
-        radial-gradient(ellipse at 12% 90%,#5fa845 0 22%,transparent 23%),
-        radial-gradient(ellipse at 32% 100%,#4f9840 0 28%,transparent 29%),
-        radial-gradient(ellipse at 55% 100%,#63ab48 0 28%,transparent 29%),
-        radial-gradient(ellipse at 78% 100%,#51933c 0 26%,transparent 27%);
+
+        radial-gradient(
+            ellipse at 12% 90%,
+            #5fa845 0 22%,
+            transparent 23%
+        ),
+
+        radial-gradient(
+            ellipse at 32% 100%,
+            #4f9840 0 28%,
+            transparent 29%
+        ),
+
+        radial-gradient(
+            ellipse at 55% 100%,
+            #63ab48 0 28%,
+            transparent 29%
+        ),
+
+        radial-gradient(
+            ellipse at 78% 100%,
+            #51933c 0 26%,
+            transparent 27%
+        );
 }
 
 .grassTexture{
+
     position:absolute;
-    inset:140px 0 0;
+
+    inset:
+        140px 0 0;
+
     background:
-        radial-gradient(circle,rgba(255,255,255,.17) 1px,transparent 2px) 0 0/22px 22px,
-        radial-gradient(circle,rgba(52,125,37,.18) 1px,transparent 2px) 8px 12px/26px 26px,
-        linear-gradient(#82d354,#69ba45);
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.17)
+            1px,
+            transparent 2px
+        )
+        0 0 / 22px 22px,
+
+        radial-gradient(
+            circle,
+            rgba(52,125,37,.18)
+            1px,
+            transparent 2px
+        )
+        8px 12px / 26px 26px,
+
+        linear-gradient(
+            #82d354,
+            #69ba45
+        );
 }
 
 
@@ -283,25 +462,40 @@ button{
 ========================================================= */
 
 .road{
+
     position:absolute;
+
     z-index:4;
+
     background:#d9b171;
-    border:3px solid rgba(121,83,31,.22);
+
+    border:3px solid
+        rgba(121,83,31,.22);
 }
 
 .roadMain{
+
     left:47%;
+
     top:145px;
+
     width:120px;
+
     height:610px;
+
     transform:rotate(2deg);
 }
 
 .roadCross{
+
     left:21%;
+
     top:445px;
+
     width:800px;
+
     height:105px;
+
     transform:rotate(-3deg);
 }
 
@@ -311,19 +505,34 @@ button{
 ========================================================= */
 
 .building{
+
     position:absolute;
+
     z-index:20;
-    filter:drop-shadow(0 10px 7px rgba(65,47,20,.25));
+
+    filter:
+        drop-shadow(
+            0 10px 7px
+            rgba(65,47,20,.25)
+        );
 }
 
 .barn{
+
     left:4%;
+
     width:150px;
+
     height:120px;
+
     top:250px;
+
     background:#dc4a40;
+
     border:5px solid #8c3029;
+
     border-radius:4px;
+
     transition:
         width .4s,
         height .4s,
@@ -331,47 +540,89 @@ button{
 }
 
 .barnRoof{
+
     position:absolute;
+
     left:-18px;
     top:-50px;
-    width:calc(100% + 36px);
+
+    width:
+        calc(100% + 36px);
+
     height:60px;
+
     background:#52392d;
-    clip-path:polygon(14% 0,86% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            14% 0,
+            86% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .barnWindow{
+
     position:absolute;
+
     top:15%;
+
     left:50%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     width:24%;
+
     height:22%;
+
     background:#91dbed;
-    border:4px solid #f3ddb0;
+
+    border:4px solid
+        #f3ddb0;
 }
 
 .barnDoor{
+
     position:absolute;
+
     left:50%;
+
     bottom:0;
+
     width:31%;
+
     min-width:42px;
+
     height:60%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     background:#773728;
-    border:4px solid #f3ddb0;
+
+    border:4px solid
+        #f3ddb0;
 }
 
 .barnDoor::before,
 .barnDoor::after{
+
     content:"";
+
     position:absolute;
+
     left:48%;
+
     top:-4px;
+
     width:4px;
+
     height:108%;
+
     background:#f3ddb0;
+
     transform-origin:center;
 }
 
@@ -384,18 +635,32 @@ button{
 }
 
 .barnBadge{
+
     position:absolute;
+
     z-index:5;
+
     left:50%;
+
     top:7px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     white-space:nowrap;
+
     padding:4px 7px;
+
     border-radius:5px;
+
     background:#fff0b8;
+
     border:2px solid #87591a;
+
     color:#6a4215;
+
     font-size:10px;
+
     font-weight:900;
 }
 
@@ -470,72 +735,137 @@ button{
 ========================================================= */
 
 .barnWing{
+
     display:none;
+
     position:absolute;
+
     z-index:18;
+
     left:3%;
+
     top:365px;
+
     width:245px;
+
     height:75px;
+
     border:5px solid #8c3029;
+
     background:#c94239;
 }
 
 .barnWing::before{
+
     content:"";
+
     position:absolute;
+
     left:-10px;
+
     top:-30px;
+
     width:255px;
+
     height:35px;
+
     background:#4f392e;
-    clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            8% 0,
+            92% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .barnWing2{
+
     display:none;
+
     position:absolute;
+
     z-index:17;
+
     left:2%;
+
     top:425px;
+
     width:300px;
+
     height:70px;
+
     border:5px solid #8c3029;
+
     background:#bb3b34;
 }
 
 .barnWing2::before{
+
     content:"";
+
     position:absolute;
+
     left:-10px;
+
     top:-28px;
+
     width:310px;
+
     height:33px;
+
     background:#4f392e;
-    clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            7% 0,
+            93% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .poultryHouse{
+
     display:none;
+
     position:absolute;
+
     z-index:16;
+
     left:2%;
+
     bottom:30px;
+
     width:330px;
+
     height:58px;
+
     background:#ede5ce;
+
     border:5px solid #74766f;
+
     border-radius:6px;
 }
 
 .poultryHouse::before{
+
     content:"POULTRY HOUSE";
+
     position:absolute;
+
     left:50%;
+
     top:17px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     color:#595b56;
+
     font-size:11px;
+
     font-weight:900;
 }
 
@@ -567,52 +897,120 @@ button{
 ========================================================= */
 
 .storageShed{
+
     position:absolute;
+
     z-index:20;
+
     right:3%;
+
     bottom:45px;
+
     width:125px;
+
     height:78px;
+
     border:5px solid #666e70;
+
     background:#d8e0df;
+
     border-radius:4px;
+
     transition:
         width .4s,
         height .4s;
 }
 
 .storageShed::before{
+
     content:"EGG STORAGE";
+
     position:absolute;
+
     left:50%;
+
     top:29px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     white-space:nowrap;
+
     color:#586062;
+
     font-size:10px;
+
     font-weight:900;
 }
 
 .storageShed::after{
+
     content:"";
+
     position:absolute;
+
     left:-10px;
+
     top:-33px;
-    width:calc(100% + 20px);
+
+    width:
+        calc(100% + 20px);
+
     height:38px;
+
     background:#56676c;
-    clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            8% 0,
+            92% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
-.farmShell.storage-level-2 .storageShed{width:145px}
-.farmShell.storage-level-3 .storageShed{width:165px}
-.farmShell.storage-level-4 .storageShed{width:185px;height:85px}
-.farmShell.storage-level-5 .storageShed{width:205px;height:90px}
-.farmShell.storage-level-6 .storageShed{width:225px;height:95px}
-.farmShell.storage-level-7 .storageShed{width:245px;height:100px}
-.farmShell.storage-level-8 .storageShed{width:265px;height:105px}
-.farmShell.storage-level-9 .storageShed{width:285px;height:110px}
-.farmShell.storage-level-10 .storageShed{width:310px;height:120px}
+.farmShell.storage-level-2 .storageShed{
+    width:145px;
+}
+
+.farmShell.storage-level-3 .storageShed{
+    width:165px;
+}
+
+.farmShell.storage-level-4 .storageShed{
+    width:185px;
+    height:85px;
+}
+
+.farmShell.storage-level-5 .storageShed{
+    width:205px;
+    height:90px;
+}
+
+.farmShell.storage-level-6 .storageShed{
+    width:225px;
+    height:95px;
+}
+
+.farmShell.storage-level-7 .storageShed{
+    width:245px;
+    height:100px;
+}
+
+.farmShell.storage-level-8 .storageShed{
+    width:265px;
+    height:105px;
+}
+
+.farmShell.storage-level-9 .storageShed{
+    width:285px;
+    height:110px;
+}
+
+.farmShell.storage-level-10 .storageShed{
+    width:310px;
+    height:120px;
+}
 
 
 /* =========================================================
@@ -620,51 +1018,92 @@ button{
 ========================================================= */
 
 .coop{
+
     left:31%;
+
     top:280px;
+
     width:145px;
+
     height:100px;
+
     background:#f6d06d;
+
     border:5px solid #97631d;
 }
 
 .coopRoof{
+
     position:absolute;
+
     left:-15px;
+
     top:-42px;
+
     width:170px;
+
     height:48px;
+
     background:#b34731;
-    clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .coopDoor{
+
     position:absolute;
+
     left:50%;
+
     bottom:0;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     width:45px;
+
     height:58px;
+
     border:4px solid #744621;
+
     background:#5d3d20;
 }
 
 .coopSign{
+
     position:absolute;
+
     top:12px;
+
     left:10px;
+
     font-size:11px;
+
     font-weight:900;
+
     color:#6d4719;
 }
 
 .silo{
+
     right:6%;
+
     top:220px;
+
     width:80px;
+
     height:190px;
+
     border:5px solid #7d8588;
+
     background:
+
         repeating-linear-gradient(
             0deg,
             #cdd3d2 0,
@@ -672,125 +1111,213 @@ button{
             #b6bfbe 13px,
             #b6bfbe 15px
         );
-    border-radius:10px 10px 5px 5px;
+
+    border-radius:
+        10px 10px 5px 5px;
 }
 
 .silo::before{
+
     content:"";
+
     position:absolute;
+
     left:-5px;
+
     top:-46px;
+
     width:80px;
+
     height:58px;
+
     border:5px solid #777f81;
+
     background:#b3babb;
-    border-radius:50% 50% 10% 10%;
+
+    border-radius:
+        50% 50% 10% 10%;
 }
 
 .farmHouse{
+
     right:18%;
+
     top:290px;
+
     width:160px;
+
     height:110px;
+
     background:#f8f4df;
+
     border:5px solid #8f8b70;
 }
 
 .houseRoof{
+
     position:absolute;
+
     left:-18px;
+
     top:-50px;
+
     width:185px;
+
     height:60px;
+
     background:#536a7a;
-    clip-path:polygon(50% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 100%,
+            0 100%
+        );
 }
 
 .houseDoor{
+
     position:absolute;
+
     bottom:0;
+
     left:50%;
+
     width:35px;
+
     height:62px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     background:#9b563a;
 }
 
 
 /* =========================================================
-   DECORATION
+   FARM DECOR
 ========================================================= */
 
 .cropField{
+
     position:absolute;
+
     z-index:6;
+
     right:5%;
+
     top:455px;
+
     width:250px;
+
     height:140px;
+
     border:5px solid #8a6d2e;
+
     background:
+
         repeating-linear-gradient(
             15deg,
             #d8b541 0 13px,
             #b99730 14px 21px
         );
-    transform:rotate(2deg);
+
+    transform:
+        rotate(2deg);
 }
 
 .pond{
+
     position:absolute;
+
     z-index:7;
+
     left:35%;
+
     top:530px;
+
     width:175px;
+
     height:95px;
+
     background:
-        radial-gradient(ellipse at 40% 35%,#82e8ff,#36abd5 68%);
+
+        radial-gradient(
+            ellipse at 40% 35%,
+            #82e8ff,
+            #36abd5 68%
+        );
+
     border:8px solid #598f4f;
+
     border-radius:50%;
 }
 
 .fence{
+
     position:absolute;
+
     z-index:30;
+
     height:13px;
+
     background:
+
         repeating-linear-gradient(
             90deg,
             #f2e2a6 0 9px,
             #9a7a3f 10px 12px,
             transparent 13px 36px
         );
+
     border-top:5px solid #e3cb88;
+
     border-bottom:3px solid #ae8d50;
 }
 
 .fence.top{
+
     left:28%;
+
     top:410px;
+
     width:38%;
 }
 
 .fence.bottom{
+
     left:28%;
+
     top:620px;
+
     width:38%;
 }
 
 .fence.left{
+
     left:27%;
+
     top:418px;
+
     width:210px;
-    transform:rotate(90deg);
+
+    transform:
+        rotate(90deg);
+
     transform-origin:left center;
 }
 
 .fence.right{
+
     left:66%;
+
     top:418px;
+
     width:210px;
-    transform:rotate(90deg);
+
+    transform:
+        rotate(90deg);
+
     transform-origin:left center;
 }
 
@@ -800,143 +1327,271 @@ button{
 ========================================================= */
 
 .chickenYard{
+
     position:absolute;
+
     z-index:25;
+
     left:28%;
+
     top:420px;
+
     width:38%;
+
     height:195px;
 }
 
 .yardLabel{
+
     position:absolute;
+
     z-index:45;
+
     left:50%;
+
     top:6px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     padding:6px 12px;
+
     border-radius:9px;
-    background:rgba(255,249,208,.94);
+
+    background:
+        rgba(255,249,208,.94);
+
     border:2px solid #a77c2b;
+
     font-size:11px;
+
     font-weight:900;
+
     color:#6d4b17;
 }
 
 .chickenSprite{
+
     position:absolute;
+
     z-index:40;
+
     width:28px;
+
     height:28px;
+
     font-size:23px;
+
     line-height:28px;
+
     text-align:center;
-    filter:drop-shadow(0 3px 2px rgba(64,47,24,.25));
-    transform-origin:center bottom;
+
+    filter:
+        drop-shadow(
+            0 3px 2px
+            rgba(64,47,24,.25)
+        );
+
+    transform-origin:
+        center bottom;
+
     user-select:none;
 }
 
 .chickenSprite.walking{
+
     animation:
-        chickenEnter 1.25s cubic-bezier(.14,.69,.33,1.03),
-        chickenBob .65s ease-in-out 1.25s infinite alternate;
+
+        chickenEnter
+        1.25s
+        cubic-bezier(.14,.69,.33,1.03),
+
+        chickenBob
+        .65s
+        ease-in-out
+        1.25s
+        infinite
+        alternate;
 }
 
 .chickenSprite.idle{
-    animation:chickenBob 1.2s ease-in-out infinite alternate;
+
+    animation:
+
+        chickenBob
+        1.2s
+        ease-in-out
+        infinite
+        alternate;
 }
 
 @keyframes chickenEnter{
+
     0%{
+
         left:-260px;
+
         top:-140px;
-        transform:scale(.7) rotate(-8deg);
+
+        transform:
+            scale(.7)
+            rotate(-8deg);
     }
 
+
     100%{
-        transform:scale(1) rotate(0);
+
+        transform:
+            scale(1)
+            rotate(0);
     }
 }
 
 @keyframes chickenBob{
-    from{margin-top:0}
-    to{margin-top:-4px}
+
+    from{
+        margin-top:0;
+    }
+
+    to{
+        margin-top:-4px;
+    }
 }
 
 .flockOverflow{
+
     position:absolute;
+
     z-index:60;
+
     right:5px;
+
     bottom:4px;
+
     padding:7px 10px;
+
     border-radius:7px;
+
     background:#fff7c9;
+
     border:2px solid #a97926;
+
     font-size:11px;
+
     font-weight:900;
+
     color:#624313;
 }
 
 
 /* =========================================================
-   FEED BAG ON FARM
+   FEED BAG
 ========================================================= */
 
 .feedPile{
+
     position:absolute;
+
     z-index:42;
+
     left:23%;
+
     top:360px;
+
     width:80px;
+
     height:65px;
-    border-radius:15px 15px 9px 9px;
+
+    border-radius:
+        15px 15px 9px 9px;
+
     background:#e9bd65;
+
     border:4px solid #906720;
-    box-shadow:0 6px 8px rgba(67,46,12,.2);
+
+    box-shadow:
+        0 6px 8px
+        rgba(67,46,12,.2);
 }
 
 .feedPile::before{
+
     content:"🌾";
+
     position:absolute;
+
     left:50%;
+
     top:5px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     font-size:25px;
 }
 
 .feedPile::after{
+
     content:"FEED";
+
     position:absolute;
+
     left:50%;
+
     bottom:6px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     font-size:10px;
+
     font-weight:900;
+
     color:#694919;
 }
 
 
 /* =========================================================
-   TRUCK
+   DELIVERY TRUCK
 ========================================================= */
 
 .deliveryTruck{
+
     display:none;
+
     position:absolute;
+
     z-index:55;
+
     left:48%;
+
     top:590px;
+
     font-size:42px;
 }
 
 .farmShell.wholesale-on .deliveryTruck{
+
     display:block;
-    animation:truckDrive 9s linear infinite;
+
+    animation:
+        truckDrive
+        9s
+        linear
+        infinite;
 }
 
 @keyframes truckDrive{
-    0%{transform:translateY(100px)}
-    100%{transform:translateY(-450px)}
+
+    0%{
+        transform:
+            translateY(100px);
+    }
+
+    100%{
+        transform:
+            translateY(-450px);
+    }
 }
 
 
@@ -945,51 +1600,92 @@ button{
 ========================================================= */
 
 .farmHud{
+
     position:absolute;
+
     z-index:80;
+
     left:18px;
+
     top:18px;
+
     display:grid;
-    grid-template-columns:repeat(2,minmax(135px,1fr));
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(135px,1fr)
+        );
+
     gap:8px;
 }
 
 .hudCard{
+
     padding:8px 11px;
+
     min-width:145px;
+
     border-radius:10px;
-    background:rgba(255,253,229,.94);
+
+    background:
+        rgba(255,253,229,.94);
+
     border:2px solid #d4aa48;
-    box-shadow:0 4px 9px rgba(66,44,10,.15);
+
+    box-shadow:
+        0 4px 9px
+        rgba(66,44,10,.15);
 }
 
 .hudCard span{
+
     display:block;
+
     font-size:9px;
+
     color:#7c6841;
+
     letter-spacing:1px;
+
     text-transform:uppercase;
 }
 
 .hudCard strong{
+
     font-size:16px;
+
     color:#4f391a;
 }
 
 .infrastructureFlag{
+
     position:absolute;
+
     z-index:85;
+
     right:18px;
+
     top:18px;
+
     padding:11px 14px;
+
     border-radius:10px;
-    background:rgba(255,249,207,.95);
+
+    background:
+        rgba(255,249,207,.95);
+
     border:3px solid #b17c20;
-    box-shadow:0 5px 10px rgba(67,47,12,.2);
+
+    box-shadow:
+        0 5px 10px
+        rgba(67,47,12,.2);
 }
 
 .infrastructureFlag strong{
+
     display:block;
+
     color:#744a14;
 }
 
@@ -998,24 +1694,40 @@ button{
 }
 
 .farmAlert{
+
     display:none;
+
     position:absolute;
+
     z-index:90;
+
     right:18px;
+
     top:105px;
+
     max-width:340px;
+
     padding:9px 12px;
+
     border-radius:9px;
+
     background:#fff0a9;
+
     border:3px solid #d88722;
+
     color:#70430f;
+
     font-size:12px;
+
     font-weight:900;
 }
 
 .farmAlert.danger{
+
     background:#ffd0ba;
+
     border-color:#c64c32;
+
     color:#7c2619;
 }
 
@@ -1025,107 +1737,198 @@ button{
 ========================================================= */
 
 .dashboard{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
+
     margin-top:22px;
 }
 
 .panel{
+
     position:relative;
+
     padding:20px;
+
     border:4px solid #c89c3f;
+
     border-radius:17px;
-    background:linear-gradient(rgba(255,255,255,.96),rgba(255,249,216,.96));
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,249,216,.96)
+        );
+
     box-shadow:
-        0 7px 0 #8b672b,
-        0 12px 22px rgba(74,57,18,.18);
+
+        0 7px 0
+        #8b672b,
+
+        0 12px 22px
+        rgba(74,57,18,.18);
 }
 
 .panel h2{
+
     margin:0 0 14px;
+
     color:#5f441c;
 }
 
 .priceDisplay{
-    margin:5px 0 12px;
+
+    margin:
+        5px 0 12px;
+
     font-size:40px;
+
     color:#28924b;
+
     font-weight:900;
 }
 
 .priceSlider{
+
     width:100%;
+
     accent-color:#f0ad32;
 }
 
 .rangeLabels{
+
     display:flex;
-    justify-content:space-between;
+
+    justify-content:
+        space-between;
+
     color:#8e805d;
+
     font-size:12px;
 }
 
 .interestMeter,
 .storageMeter{
+
     width:100%;
+
     height:19px;
+
     overflow:hidden;
+
     border-radius:20px;
+
     background:#e7dfbf;
+
     border:2px solid #9d8a59;
 }
 
 #interestBar{
+
     height:100%;
-    background:linear-gradient(90deg,#50bf5b,#f4d44d);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #50bf5b,
+            #f4d44d
+        );
 }
 
 #storageBar{
+
     height:100%;
+
     width:0%;
-    background:linear-gradient(90deg,#54b958,#e5ce3f);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #54b958,
+            #e5ce3f
+        );
 }
 
 #storageBar.warning{
-    background:linear-gradient(90deg,#e8c13d,#eb812e);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e8c13d,
+            #eb812e
+        );
 }
 
 #storageBar.full{
-    background:linear-gradient(90deg,#e45a34,#bb2e2e);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e45a34,
+            #bb2e2e
+        );
 }
 
 .infoGrid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:9px;
+
     margin-top:13px;
 }
 
 .infoCell{
+
     padding:8px 10px;
+
     border-radius:7px;
+
     background:#fff9d9;
+
     border:1px solid #dcc57f;
 }
 
 .infoCell span{
+
     display:block;
+
     color:#8b7850;
+
     font-size:10px;
+
     text-transform:uppercase;
 }
 
 .infoCell strong{
+
     color:#594018;
+
     font-size:14px;
 }
 
 .wholesaleStatus{
+
     margin:10px 0;
+
     padding:11px;
+
     border-radius:9px;
+
     background:#fff4cb;
+
     border:2px solid #d5b65c;
 }
 
@@ -1134,61 +1937,99 @@ button{
 }
 
 .toggleRow{
+
     display:flex;
+
     align-items:center;
-    justify-content:space-between;
+
+    justify-content:
+        space-between;
+
     gap:12px;
+
     margin-top:12px;
 }
 
 .switch{
+
     position:relative;
+
     display:inline-block;
+
     width:58px;
+
     height:30px;
 }
 
 .switch input{
+
     opacity:0;
+
     width:0;
+
     height:0;
 }
 
 .sliderSwitch{
+
     position:absolute;
+
     cursor:pointer;
+
     inset:0;
+
     background:#aaa38e;
+
     transition:.25s;
+
     border-radius:30px;
+
     border:2px solid #756f5c;
 }
 
 .sliderSwitch::before{
+
     content:"";
+
     position:absolute;
+
     width:21px;
+
     height:21px;
+
     left:3px;
+
     top:2px;
+
     background:white;
+
     border-radius:50%;
+
     transition:.25s;
 }
 
-.switch input:checked + .sliderSwitch{
+.switch input:checked +
+.sliderSwitch{
     background:#49ad58;
 }
 
-.switch input:checked + .sliderSwitch::before{
-    transform:translateX(27px);
+.switch input:checked +
+.sliderSwitch::before{
+
+    transform:
+        translateX(27px);
 }
 
 .storageWarningText{
+
     min-height:34px;
+
     margin-top:8px;
+
     color:#8f6724;
+
     font-size:12px;
+
     font-weight:bold;
 }
 
@@ -1198,44 +2039,70 @@ button{
 
 
 /* =========================================================
-   FEED MARKET PANEL
+   FEED MARKET
 ========================================================= */
 
 .feedPanel{
+
     margin-top:18px;
+
     padding:15px;
+
     border:3px solid #7aa548;
+
     border-radius:13px;
-    background:linear-gradient(#effbd9,#d5efaa);
+
+    background:
+        linear-gradient(
+            #effbd9,
+            #d5efaa
+        );
 }
 
 .feedPanel h3{
+
     margin:0 0 10px;
+
     color:#446b25;
 }
 
 .feedMarketGrid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:8px;
 }
 
 .feedBox{
+
     padding:9px;
+
     border-radius:8px;
-    background:rgba(255,255,255,.62);
+
+    background:
+        rgba(255,255,255,.62);
+
     border:1px solid #9abd68;
 }
 
 .feedBox span{
+
     display:block;
+
     font-size:10px;
+
     color:#647b42;
+
     text-transform:uppercase;
 }
 
 .feedBox strong{
+
     font-size:15px;
+
     color:#395a21;
 }
 
@@ -1249,35 +2116,59 @@ button{
 }
 
 .sectionHeader{
+
     text-align:center;
+
     margin-bottom:18px;
 }
 
 .sectionHeader h2{
+
     margin:0;
+
     font-size:29px;
+
     color:#684617;
 }
 
 .sectionHeader p{
+
     margin:6px 0 0;
+
     color:#705b35;
 }
 
 .infraGrid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:18px;
 }
 
 .infraCard{
+
     padding:20px;
+
     border:4px solid #b4812c;
+
     border-radius:16px;
-    background:linear-gradient(#fff9d8,#f6e3a6);
+
+    background:
+        linear-gradient(
+            #fff9d8,
+            #f6e3a6
+        );
+
     box-shadow:
-        0 6px 0 #795720,
-        0 11px 20px rgba(73,54,15,.18);
+
+        0 6px 0
+        #795720,
+
+        0 11px 20px
+        rgba(73,54,15,.18);
 }
 
 .infraIcon{
@@ -1285,22 +2176,34 @@ button{
 }
 
 .infraTitle{
+
     font-size:22px;
+
     font-weight:900;
+
     color:#664516;
 }
 
 .infraLevel{
+
     margin-top:3px;
+
     color:#98701e;
+
     font-weight:bold;
 }
 
 .infraStat{
+
     margin-top:12px;
+
     padding:10px;
+
     border-radius:8px;
-    background:rgba(255,255,255,.58);
+
+    background:
+        rgba(255,255,255,.58);
+
     border:1px solid #d7bd72;
 }
 
@@ -1309,291 +2212,568 @@ button{
 }
 
 .infraNext{
+
     margin-top:10px;
+
     min-height:50px;
+
     font-size:13px;
+
     color:#715b30;
 }
 
 .infraBtn{
+
     width:100%;
+
     margin-top:10px;
+
     padding:12px;
+
     border:3px solid #815317;
+
     border-radius:9px;
-    background:linear-gradient(#ffd15d,#efa934);
+
+    background:
+
+        linear-gradient(
+            #ffd15d,
+            #efa934
+        );
+
     color:#563511;
+
     font-weight:900;
-    box-shadow:0 4px 0 #815317;
+
+    box-shadow:
+        0 4px 0
+        #815317;
 }
 
 .infraBtn:disabled{
+
     cursor:not-allowed;
+
     color:#9b927a;
+
     border-color:#b6aa8c;
+
     background:#ddd7c4;
+
     box-shadow:none;
 }
 
 
 /* =========================================================
-   TALENT TREE
+   NEW COMPACT TALENT TREE
 ========================================================= */
 
 .treeSection{
+
     margin-top:38px;
-    padding:24px 15px 30px;
+
+    padding:
+        22px
+        14px
+        28px;
+
     border-radius:22px;
+
     border:5px solid #8b6727;
+
     background:
-        radial-gradient(circle at 50% 4%,rgba(247,220,119,.95),transparent 15%),
-        linear-gradient(#fff2ae,#f3d77a);
+        linear-gradient(
+            #fff2ae,
+            #f1d378
+        );
+
     box-shadow:
-        0 10px 0 #674a20,
-        0 15px 30px rgba(78,57,20,.2);
+
+        0 10px 0
+        #674a20,
+
+        0 15px 30px
+        rgba(78,57,20,.2);
 }
 
 .sectionTitle{
+
     margin:0;
+
     text-align:center;
+
     color:#684617;
+
     letter-spacing:3px;
 }
 
 .sectionSubtitle{
+
     text-align:center;
+
     color:#927333;
-    margin:7px 0 22px;
+
+    margin:
+        7px 0 18px;
 }
 
 .treeWrapper{
+
+    width:100%;
+
     overflow-x:auto;
-    overflow-y:hidden;
-    padding-bottom:8px;
 }
 
 .tree{
+
     position:relative;
-    width:1550px;
-    height:1550px;
+
+    width:1180px;
+
+    height:780px;
+
     margin:auto;
-    border-radius:18px;
-    border:4px solid #9b772d;
+
     overflow:hidden;
+
+    border-radius:18px;
+
+    border:4px solid #9b772d;
+
     background:
-        linear-gradient(90deg,rgba(73,172,61,.10),transparent 32%),
-        linear-gradient(-90deg,rgba(91,128,213,.10),transparent 32%),
+
+        radial-gradient(
+            circle at 50% 46%,
+            rgba(255,218,79,.35),
+            transparent 17%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(73,172,61,.10),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            -90deg,
+            rgba(72,117,199,.10),
+            transparent 34%
+        ),
+
         repeating-linear-gradient(
             0deg,
             rgba(255,255,255,.05) 0,
-            rgba(255,255,255,.05) 38px,
-            rgba(170,132,55,.04) 39px,
-            rgba(170,132,55,.04) 40px
+            rgba(255,255,255,.05) 39px,
+            rgba(151,117,53,.05) 40px
         ),
-        #f8efc9;
+
+        #f7efca;
 }
 
 .tree svg{
+
     position:absolute;
+
     inset:0;
+
     width:100%;
+
     height:100%;
+
     pointer-events:none;
 }
 
 .treeLine{
-    stroke:#9c8a5e;
-    stroke-width:4;
-    opacity:.55;
+
+    stroke:#94876b;
+
+    stroke-width:3;
+
+    opacity:.62;
 }
 
 .treeLine.active{
-    stroke:#35a953;
-    stroke-width:7;
+
+    stroke:#2eaa54;
+
+    stroke-width:6;
+
     opacity:1;
-    filter:drop-shadow(0 0 4px #7cff94);
-}
 
-.branchLabel{
-    position:absolute;
-    z-index:4;
-    top:145px;
-    font-size:17px;
-    font-weight:900;
-    letter-spacing:2px;
-    padding:7px 12px;
-    border-radius:9px;
-    background:rgba(255,250,218,.88);
-    border:2px solid rgba(143,105,37,.35);
-}
-
-.productionLabel{
-    left:122px;
-    color:#317e36;
-}
-
-.automationLabel{
-    left:640px;
-    color:#996022;
-}
-
-.marketingLabel{
-    right:90px;
-    color:#3768a5;
+    filter:
+        drop-shadow(
+            0 0 5px
+            #68ff90
+        );
 }
 
 .centerNode{
+
     position:absolute;
-    z-index:5;
-    left:725px;
-    top:24px;
-    width:100px;
-    height:100px;
+
+    z-index:10;
+
+    left:530px;
+
+    top:300px;
+
+    width:120px;
+
+    height:120px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
     border:6px solid #8a5d18;
-    background:linear-gradient(#ffd95f,#eaa433);
-    color:#5c3914;
-    font-weight:900;
-    box-shadow:
-        0 0 0 7px #fff3ad,
-        0 8px 15px rgba(85,58,16,.25);
-}
 
-.node{
-    position:absolute;
-    z-index:8;
-    width:82px;
-    height:82px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:5px;
-    text-align:center;
-    border-radius:50%;
-    border:4px solid #9b8758;
-    background:#fff8d9;
-    color:#66563a;
-    font-size:9.5px;
-    line-height:1.08;
-    font-weight:bold;
-    box-shadow:0 5px 7px rgba(83,65,24,.16);
-    transition:.15s;
-}
-
-.node:hover{
-    transform:scale(1.08);
-    z-index:20;
-}
-
-.node .icon{
-    font-size:20px;
-    line-height:1;
-    margin-bottom:2px;
-}
-
-.node .cost{
-    margin-top:3px;
-    color:#a16c17;
-    font-size:8.5px;
-}
-
-.node.available{
-    border-color:#e5a922;
-    background:#fff1a6;
-    color:#583b10;
-    box-shadow:
-        0 0 0 3px rgba(255,220,78,.28),
-        0 5px 8px rgba(83,65,24,.16);
-}
-
-.node.locked{
-    opacity:.37;
-    filter:grayscale(.85);
-}
-
-.node.bought{
-    opacity:1;
-    color:white;
-    border:5px solid #ffdd57;
     background:
-        radial-gradient(circle at 50% 35%,#58cf67,#238644 72%);
+        radial-gradient(
+            circle at 50% 30%,
+            #ffdf69,
+            #e9a62e
+        );
+
+    color:#5c3914;
+
+    font-size:15px;
+
+    font-weight:900;
+
     box-shadow:
-        0 0 0 4px #fff2a8,
-        0 0 18px #6cff89;
-    transform:scale(1.05);
+
+        0 0 0 7px
+        #fff3ad,
+
+        0 0 25px
+        rgba(255,195,52,.45);
 }
 
-.node.bought::after{
-    content:"✓";
+.centerNode span{
+
+    display:block;
+
+    font-size:25px;
+
+    margin-bottom:3px;
+}
+
+.branchLabel{
+
     position:absolute;
-    right:-5px;
-    top:-5px;
-    width:22px;
-    height:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#197f3b;
-    border:2px solid white;
-    color:white;
-    font-size:12px;
+
+    z-index:12;
+
+    padding:
+        8px 13px;
+
+    border-radius:9px;
+
+    background:
+        rgba(255,250,218,.95);
+
+    border:2px solid
+        rgba(143,105,37,.35);
+
+    font-size:15px;
+
     font-weight:900;
+
+    letter-spacing:1.5px;
+
+    white-space:nowrap;
+}
+
+.productionLabel{
+
+    left:32px;
+
+    top:28px;
+
+    color:#2d853c;
+}
+
+.operationsLabel{
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:
+        translateX(-50%);
+
+    color:#a25e1d;
+}
+
+.marketingLabel{
+
+    right:32px;
+
+    top:28px;
+
+    color:#306cac;
 }
 
 .treeProgress{
+
     position:absolute;
-    z-index:6;
-    top:105px;
+
+    z-index:12;
+
     left:50%;
-    transform:translateX(-50%);
-    padding:6px 12px;
+
+    top:24px;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        7px 13px;
+
     border-radius:8px;
+
     background:#fff7c9;
+
     border:2px solid #b78a35;
+
     color:#704c18;
+
     font-size:12px;
+
     font-weight:900;
 }
+
+.node{
+
+    position:absolute;
+
+    z-index:8;
+
+    width:66px;
+
+    height:66px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:4px;
+
+    border-radius:50%;
+
+    border:4px solid #93886d;
+
+    background:#fff9dc;
+
+    color:#5f533e;
+
+    font-size:8.2px;
+
+    line-height:1.03;
+
+    text-align:center;
+
+    font-weight:900;
+
+    box-shadow:
+        0 4px 7px
+        rgba(72,57,23,.16);
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
+}
+
+.node:hover{
+
+    transform:
+        scale(1.12);
+
+    z-index:25;
+}
+
+.node .icon{
+
+    display:block;
+
+    font-size:18px;
+
+    line-height:18px;
+
+    margin-bottom:2px;
+}
+
+.node .nodeName{
+
+    display:block;
+
+    max-width:57px;
+}
+
+.node .cost{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#a16c17;
+
+    font-size:7.5px;
+}
+
+.node.available{
+
+    border-color:#e0a923;
+
+    background:#fff0a0;
+
+    color:#573a10;
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(255,222,93,.26),
+
+        0 4px 7px
+        rgba(72,57,23,.16);
+}
+
+.node.locked{
+
+    opacity:.34;
+
+    filter:
+        grayscale(.9);
+}
+
+.node.bought{
+
+    opacity:1;
+
+    color:white;
+
+    border:5px solid #ffda55;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            #54cc69,
+            #218744 72%
+        );
+
+    box-shadow:
+
+        0 0 0 4px
+        #fff0a5,
+
+        0 0 18px
+        #65f18a;
+}
+
+.node.bought .cost{
+    color:#fff1ad;
+}
+
+.node.bought::after{
+
+    content:"✓";
+
+    position:absolute;
+
+    right:-5px;
+
+    top:-5px;
+
+    width:20px;
+
+    height:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#148840;
+
+    border:2px solid white;
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
 
 /* =========================================================
    BOTTOM
 ========================================================= */
 
 .bottomPanels{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
+
     margin-top:30px;
 }
 
 .log{
+
     height:180px;
+
     overflow:auto;
+
     padding:10px;
+
     border:2px solid #d2bd7e;
+
     border-radius:8px;
+
     background:#fffbea;
+
     font-size:13px;
 }
 
 .logEntry{
+
     padding:5px 0;
-    border-bottom:1px solid #ebddb2;
+
+    border-bottom:
+        1px solid #ebddb2;
 }
 
 .smallBtn{
+
     margin-top:12px;
+
     padding:9px 13px;
+
     border-radius:7px;
+
     border:2px solid #956622;
+
     background:#f6c858;
+
     color:#573913;
+
     font-weight:bold;
 }
 
@@ -1602,17 +2782,30 @@ button{
 }
 
 .tooltip{
+
     position:fixed;
+
     z-index:9999;
-    width:255px;
+
+    width:265px;
+
     padding:13px;
+
     pointer-events:none;
+
     opacity:0;
+
     border-radius:9px;
+
     border:3px solid #9e7121;
+
     background:#fff8ce;
+
     color:#574419;
-    box-shadow:0 8px 20px rgba(72,51,15,.3);
+
+    box-shadow:
+        0 8px 20px
+        rgba(72,51,15,.3);
 }
 
 .tooltip strong{
@@ -1624,8 +2817,11 @@ button{
 }
 
 .toolReq{
+
     margin-top:7px;
+
     color:#9e6416;
+
     font-weight:bold;
 }
 
@@ -1637,40 +2833,47 @@ button{
 @media(max-width:1250px){
 
     .topbar{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
         text-align:center;
     }
 
     .leftTop,
     .topStats{
+
         justify-content:center;
     }
-
 }
 
 @media(max-width:1150px){
 
     .dashboard,
     .infraGrid{
-        grid-template-columns:1fr;
-    }
 
+        grid-template-columns:
+            1fr;
+    }
 }
 
 @media(max-width:700px){
 
     .actionButtons{
+
         flex-direction:column;
     }
 
     .leftTop{
+
         flex-direction:column;
     }
 
     .bottomPanels{
-        grid-template-columns:1fr;
-    }
 
+        grid-template-columns:
+            1fr;
+    }
 }
 
 </style>
@@ -1712,6 +2915,7 @@ id="feedMarketInfo"
 >
 
 Feed:
+
 <strong id="headerFeed">
 3
 </strong>
@@ -1748,6 +2952,7 @@ Barn Lv. 1 • Storage Lv. 1
 
 
 <div class="topStats">
+
 
 <div class="statTop">
 
@@ -1800,6 +3005,7 @@ Feed
 
 </div>
 
+
 </div>
 
 
@@ -1811,7 +3017,7 @@ Feed
 
 
 <!-- =====================================================
-     FARM WORLD
+     FARM
 ===================================================== -->
 
 <div class="farmViewport">
@@ -1944,8 +3150,6 @@ id="farmAlert"
 
 
 
-<!-- BARN -->
-
 <div class="building barn">
 
 <div class="barnRoof"></div>
@@ -1971,8 +3175,6 @@ BARN LV. 1
 <div class="poultryHouse"></div>
 
 
-
-<!-- COOP -->
 
 <div class="building coop">
 
@@ -2002,9 +3204,7 @@ HEN HOUSE
 
 <div class="storageShed"></div>
 
-
 <div class="feedPile"></div>
-
 
 <div class="cropField"></div>
 
@@ -2056,7 +3256,7 @@ id="deliveryTruck"
 
 
 <!-- =====================================================
-     MARKET PANELS
+     MARKET
 ===================================================== -->
 
 <section class="dashboard">
@@ -2418,13 +3618,16 @@ Barn, storage and distribution are upgraded separately.
 
 <div class="infraCard">
 
+
 <div class="infraIcon">
 🏚️
 </div>
 
+
 <div class="infraTitle">
 Chicken Barn
 </div>
+
 
 <div
 class="infraLevel"
@@ -2432,6 +3635,7 @@ id="barnLevelText"
 >
 Level 1 / 10
 </div>
+
 
 <div class="infraStat">
 
@@ -2443,12 +3647,14 @@ Current capacity:
 
 </div>
 
+
 <div
 class="infraNext"
 id="barnNextText"
 >
 Next barn holds 150 chickens.
 </div>
+
 
 <button
 class="infraBtn"
@@ -2458,19 +3664,23 @@ onclick="upgradeBarn()"
 Upgrade Barn
 </button>
 
+
 </div>
 
 
 
 <div class="infraCard">
 
+
 <div class="infraIcon">
 📦
 </div>
 
+
 <div class="infraTitle">
 Egg Storage
 </div>
+
 
 <div
 class="infraLevel"
@@ -2478,6 +3688,7 @@ id="storageLevelText"
 >
 Level 1 / 10
 </div>
+
 
 <div class="infraStat">
 
@@ -2489,12 +3700,14 @@ Current capacity:
 
 </div>
 
+
 <div
 class="infraNext"
 id="storageNextText"
 >
 Next storage holds 2,000 eggs.
 </div>
+
 
 <button
 class="infraBtn"
@@ -2504,19 +3717,23 @@ onclick="upgradeStorage()"
 Upgrade Storage
 </button>
 
+
 </div>
 
 
 
 <div class="infraCard">
 
+
 <div class="infraIcon">
 🚚
 </div>
 
+
 <div class="infraTitle">
 Distribution
 </div>
+
 
 <div
 class="infraLevel"
@@ -2524,6 +3741,7 @@ id="distributionLevelText"
 >
 Level 0 / 10
 </div>
+
 
 <div class="infraStat">
 
@@ -2535,12 +3753,14 @@ Not established
 
 </div>
 
+
 <div
 class="infraNext"
 id="distributionNextText"
 >
 Purchase your first wholesale contract.
 </div>
+
 
 <button
 class="infraBtn"
@@ -2549,6 +3769,7 @@ onclick="upgradeDistribution()"
 >
 Unlock Distribution
 </button>
+
 
 </div>
 
@@ -2561,26 +3782,32 @@ Unlock Distribution
 
 
 <!-- =====================================================
-     TALENT TREE
+     COMPACT TALENT TREE
 ===================================================== -->
 
 <section class="treeSection">
+
 
 <h2 class="sectionTitle">
 FARM TALENT TREE
 </h2>
 
+
 <div class="sectionSubtitle">
-45 upgrades across production, operations, and sales. The late-game tiers now cost millions and billions,
-and they include feed, barn, storage, wholesale, and distribution systems added since the original tree.
+All 45 upgrades now fit into one compact radial-style tree.
+Choose different paths through production, farm operations, and sales.
 </div>
 
+
+
 <div class="treeWrapper">
+
 
 <div
 class="tree"
 id="upgradeTree"
 >
+
 
 <div
 class="treeProgress"
@@ -2589,44 +3816,62 @@ id="treeProgress"
 0 / 45 UPGRADES OWNED
 </div>
 
+
 <div
 class="branchLabel productionLabel"
 id="productionLabel"
 >
-PRODUCTION & FLOCK
+PRODUCTION & FLOCK 0/15
 </div>
 
-<div
-class="branchLabel automationLabel"
-id="automationLabel"
->
-FARM OPERATIONS
-</div>
 
 <div
 class="branchLabel marketingLabel"
 id="marketingLabel"
 >
-SALES & DISTRIBUTION
+SALES & DISTRIBUTION 0/15
 </div>
+
+
+<div
+class="branchLabel operationsLabel"
+id="operationsLabel"
+>
+FARM OPERATIONS 0/15
+</div>
+
 
 <svg
 id="treeLines"
-viewBox="0 0 1550 1550"
+viewBox="0 0 1180 780"
 preserveAspectRatio="none"
 ></svg>
 
+
 <div class="centerNode">
-🐔<br>
+
+<div>
+
+<span>
+🐔
+</span>
+
 YOUR<br>
 FARM
-</div>
 
 </div>
 
 </div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
+
 
 
 <div class="bottomPanels">
@@ -2654,20 +3899,21 @@ Farm Rules
 </h2>
 
 <p>
-Every new chicken now consumes <strong>1 feed</strong>.
-This applies to manually added chickens and automatic chickens from the talent tree.
+Every new chicken consumes <strong>1 feed</strong>.
+This applies to manual chickens and automatic hatchery chickens.
 </p>
 
 <p>
-The feed market starts with small bags of <strong>10 feed</strong>.
-Operations upgrades can unlock larger feed bags and bulk-feed discounts.
-Feed prices randomly change every 25–45 seconds.
+Feed prices still use the current system in this version.
+We have not yet applied the planned $10–$20 feed market.
 </p>
 
 <p>
-If you have no feed, no new chickens can be produced.
-Existing chickens continue laying eggs normally.
+Purchased skills are bright green with a check mark.
+Available skills are gold.
+Locked skills are faded.
 </p>
+
 
 <button
 class="smallBtn"
@@ -2676,12 +3922,14 @@ onclick="saveGame(true)"
 Save Game
 </button>
 
+
 <button
 class="smallBtn resetBtn"
 onclick="resetGame()"
 >
 Reset Game
 </button>
+
 
 </div>
 
@@ -2769,140 +4017,60 @@ Math.random() *
 
 
 /* =========================================================
-   BARN UPGRADES
+   BARN
 ========================================================= */
 
 const BARN_LEVELS = [
 
-{
-level:1,
-capacity:40,
-cost:0
-},
+{level:1,capacity:40,cost:0},
 
-{
-level:2,
-capacity:150,
-cost:150
-},
+{level:2,capacity:150,cost:150},
 
-{
-level:3,
-capacity:450,
-cost:800
-},
+{level:3,capacity:450,cost:800},
 
-{
-level:4,
-capacity:1000,
-cost:3500
-},
+{level:4,capacity:1000,cost:3500},
 
-{
-level:5,
-capacity:2000,
-cost:12000
-},
+{level:5,capacity:2000,cost:12000},
 
-{
-level:6,
-capacity:4000,
-cost:40000
-},
+{level:6,capacity:4000,cost:40000},
 
-{
-level:7,
-capacity:8000,
-cost:125000
-},
+{level:7,capacity:8000,cost:125000},
 
-{
-level:8,
-capacity:16000,
-cost:400000
-},
+{level:8,capacity:16000,cost:400000},
 
-{
-level:9,
-capacity:32000,
-cost:1200000
-},
+{level:9,capacity:32000,cost:1200000},
 
-{
-level:10,
-capacity:75000,
-cost:4000000
-}
+{level:10,capacity:75000,cost:4000000}
 
 ];
 
 
 
 /* =========================================================
-   STORAGE UPGRADES
+   STORAGE
 ========================================================= */
 
 const STORAGE_LEVELS = [
 
-{
-level:1,
-capacity:500,
-cost:0
-},
+{level:1,capacity:500,cost:0},
 
-{
-level:2,
-capacity:2000,
-cost:100
-},
+{level:2,capacity:2000,cost:100},
 
-{
-level:3,
-capacity:6000,
-cost:500
-},
+{level:3,capacity:6000,cost:500},
 
-{
-level:4,
-capacity:15000,
-cost:2500
-},
+{level:4,capacity:15000,cost:2500},
 
-{
-level:5,
-capacity:40000,
-cost:8500
-},
+{level:5,capacity:40000,cost:8500},
 
-{
-level:6,
-capacity:100000,
-cost:28000
-},
+{level:6,capacity:100000,cost:28000},
 
-{
-level:7,
-capacity:250000,
-cost:90000
-},
+{level:7,capacity:250000,cost:90000},
 
-{
-level:8,
-capacity:600000,
-cost:280000
-},
+{level:8,capacity:600000,cost:280000},
 
-{
-level:9,
-capacity:1500000,
-cost:850000
-},
+{level:9,capacity:1500000,cost:850000},
 
-{
-level:10,
-capacity:4000000,
-cost:2500000
-}
+{level:10,capacity:4000000,cost:2500000}
 
 ];
 
@@ -2997,460 +4165,1050 @@ multiplier:5
 
 /* =========================================================
    TALENT TREE
+
+   15 PRODUCTION
+   15 OPERATIONS
+   15 SALES
+
+   Each branch now starts from one main node
+   and splits into multiple paths.
 ========================================================= */
-    const UPGRADES = {
+
+const UPGRADES = {
+
+
+/* =====================================================
+   PRODUCTION ROOT
+===================================================== */
 
 feed:{
+
 name:"Better Feed",
+
 cost:75,
+
 requires:null,
-description:"Better feed increases egg production by 12%.",
+
+description:
+"Better feed increases egg production by 12%.",
+
 icon:"🌾",
+
 branch:"production",
-order:1
+
+path:"root",
+
+step:1
+
 },
+
+
+
+/* PRODUCTION PATH A */
 
 nest:{
+
 name:"Warm Nests",
+
 cost:300,
+
 requires:"feed",
-description:"Comfortable nesting boxes increase egg production by 15%.",
+
+description:
+"Comfortable nests increase production by 15%.",
+
 icon:"🪺",
+
 branch:"production",
-order:2
+
+path:"A",
+
+step:1
+
 },
+
 
 breed:{
+
 name:"Layer Breed",
+
 cost:1200,
+
 requires:"nest",
-description:"Specialized laying hens increase egg production by 20%.",
+
+description:
+"Specialized laying hens increase production by 20%.",
+
 icon:"🐣",
+
 branch:"production",
-order:3
+
+path:"A",
+
+step:2
+
 },
+
 
 precision:{
+
 name:"Precision Feed",
+
 cost:6000,
+
 requires:"breed",
-description:"Scientific feeding increases egg production by 25%.",
+
+description:
+"Precision feeding increases production by 25%.",
+
 icon:"🧪",
+
 branch:"production",
-order:4
+
+path:"A",
+
+step:3
+
 },
+
 
 golden:{
+
 name:"Golden Genetics",
+
 cost:30000,
+
 requires:"precision",
-description:"Elite genetics increases total egg production by 50%.",
+
+description:
+"Elite genetics increases production by 50%.",
+
 icon:"✨",
+
 branch:"production",
-order:5
+
+path:"A",
+
+step:4
+
 },
+
+
+
+/* PRODUCTION PATH B */
 
 minerals:{
+
 name:"Mineral Blend",
+
 cost:120000,
-requires:"golden",
-description:"A premium mineral program increases egg production by 18%.",
+
+requires:"feed",
+
+description:
+"Premium minerals increase production by 18%.",
+
 icon:"🧂",
+
 branch:"production",
-order:6
+
+path:"B",
+
+step:1
+
 },
+
 
 climate:{
-name:"Climate-Controlled Coops",
+
+name:"Climate Control",
+
 cost:450000,
+
 requires:"minerals",
-description:"Climate control increases egg production by 20%.",
+
+description:
+"Climate-controlled housing increases production by 20%.",
+
 icon:"🌡️",
+
 branch:"production",
-order:7
+
+path:"B",
+
+step:2
+
 },
+
 
 vet:{
-name:"Veterinary Program",
+
+name:"Vet Program",
+
 cost:1500000,
+
 requires:"climate",
-description:"A flock health program increases production by 18%.",
+
+description:
+"A flock health program increases production by 18%.",
+
 icon:"🩺",
+
 branch:"production",
-order:8
+
+path:"B",
+
+step:3
+
 },
+
 
 selective:{
-name:"Selective Breeding Lab",
+
+name:"Selective Breeding",
+
 cost:5000000,
+
 requires:"vet",
-description:"Selective breeding increases egg production by 25%.",
+
+description:
+"Selective breeding increases production by 25%.",
+
 icon:"🧬",
+
 branch:"production",
-order:9
+
+path:"B",
+
+step:4
+
 },
+
 
 hatcheryGenetics:{
+
 name:"Hatchery Genetics",
+
 cost:15000000,
+
 requires:"selective",
-description:"Advanced hatchery genetics increase production by 30%.",
+
+description:
+"Advanced hatchery genetics increase production by 30%.",
+
 icon:"🥚",
+
 branch:"production",
-order:10
+
+path:"B",
+
+step:5
+
 },
+
+
+
+/* PRODUCTION PATH C */
 
 biosecure:{
+
 name:"Biosecure Housing",
+
 cost:50000000,
-requires:"hatcheryGenetics",
-description:"Biosecure housing increases production by 15%.",
+
+requires:"feed",
+
+description:
+"Biosecure housing increases production by 15%.",
+
 icon:"🛡️",
+
 branch:"production",
-order:11
+
+path:"C",
+
+step:1
+
 },
+
 
 nutritionAI:{
+
 name:"Nutrition AI",
+
 cost:150000000,
+
 requires:"biosecure",
-description:"AI nutrition planning increases production by 25%.",
+
+description:
+"AI nutrition planning increases production by 25%.",
+
 icon:"🧠",
+
 branch:"production",
-order:12
+
+path:"C",
+
+step:2
+
 },
+
 
 eliteLayers:{
-name:"Elite Layer Lines",
+
+name:"Elite Layers",
+
 cost:450000000,
+
 requires:"nutritionAI",
-description:"Elite layer lines increase production by 35%.",
+
+description:
+"Elite layer lines increase production by 35%.",
+
 icon:"🏅",
+
 branch:"production",
-order:13
+
+path:"C",
+
+step:3
+
 },
+
 
 genomic:{
+
 name:"Genomic Optimization",
+
 cost:1500000000,
+
 requires:"eliteLayers",
-description:"Genomic optimization increases production by 45%.",
+
+description:
+"Genomic optimization increases production by 45%.",
+
 icon:"🔬",
+
 branch:"production",
-order:14
+
+path:"C",
+
+step:4
+
 },
+
 
 legendary:{
+
 name:"Legendary Flock",
+
 cost:5000000000,
+
 requires:"genomic",
-description:"Your final production upgrade doubles egg output.",
+
+description:
+"The ultimate flock doubles egg production.",
+
 icon:"👑",
+
 branch:"production",
-order:15
+
+path:"C",
+
+step:5
+
 },
 
-sign:{
-name:"Roadside Sign",
-cost:100,
-requires:null,
-description:"Retail egg demand increases by 15%.",
-icon:"🪧",
-branch:"marketing",
-order:1
-},
 
-delivery:{
-name:"Local Delivery",
-cost:450,
-requires:"sign",
-description:"Retail demand rises 20% and wholesale capacity rises 20%.",
-icon:"🚚",
-branch:"marketing",
-order:2
-},
 
-brand:{
-name:"Farm Brand",
-cost:2000,
-requires:"delivery",
-description:"Customers tolerate higher retail prices.",
-icon:"📣",
-branch:"marketing",
-order:3
-},
-
-grocery:{
-name:"Grocery Deal",
-cost:10000,
-requires:"brand",
-description:"Retail demand rises 35% and wholesale capacity rises 30%.",
-icon:"🏪",
-branch:"marketing",
-order:4
-},
-
-national:{
-name:"National Ads",
-cost:50000,
-requires:"grocery",
-description:"Retail demand rises 50% and wholesale capacity rises 40%.",
-icon:"📺",
-branch:"marketing",
-order:5
-},
-
-farmersMarkets:{
-name:"Farmers Market Network",
-cost:200000,
-requires:"national",
-description:"A market network increases retail demand and minimum public interest.",
-icon:"🧺",
-branch:"marketing",
-order:6
-},
-
-restaurantContracts:{
-name:"Restaurant Contracts",
-cost:750000,
-requires:"farmersMarkets",
-description:"Restaurant contracts increase wholesale demand by 50%.",
-icon:"🍳",
-branch:"marketing",
-order:7
-},
-
-dynamicPricing:{
-name:"Dynamic Pricing",
-cost:2500000,
-requires:"restaurantContracts",
-description:"Smarter pricing reduces the public-interest penalty at high egg prices.",
-icon:"📈",
-branch:"marketing",
-order:8
-},
-
-regionalDistributor:{
-name:"Regional Distributor",
-cost:8000000,
-requires:"dynamicPricing",
-description:"Regional distribution increases wholesale demand by 60%.",
-icon:"🗺️",
-branch:"marketing",
-order:9
-},
-
-chainDeal:{
-name:"Grocery Chain Deal",
-cost:25000000,
-requires:"regionalDistributor",
-description:"Major chain placement increases retail and wholesale demand.",
-icon:"🛒",
-branch:"marketing",
-order:10
-},
-
-premiumBrand:{
-name:"Premium Branding",
-cost:80000000,
-requires:"chainDeal",
-description:"Premium branding further improves price tolerance and public interest.",
-icon:"⭐",
-branch:"marketing",
-order:11
-},
-
-exportLicense:{
-name:"Export License",
-cost:250000000,
-requires:"premiumBrand",
-description:"Export access increases wholesale demand by 80%.",
-icon:"🌎",
-branch:"marketing",
-order:12
-},
-
-nationalRetailer:{
-name:"National Retailer",
-cost:800000000,
-requires:"exportLicense",
-description:"National retail placement greatly increases retail demand.",
-icon:"🏬",
-branch:"marketing",
-order:13
-},
-
-globalDistribution:{
-name:"Global Distribution",
-cost:2500000000,
-requires:"nationalRetailer",
-description:"Global distribution doubles late-game wholesale reach.",
-icon:"✈️",
-branch:"marketing",
-order:14
-},
-
-householdName:{
-name:"Household Name",
-cost:8000000000,
-requires:"globalDistribution",
-description:"Your brand becomes a household name, massively increasing demand and price tolerance.",
-icon:"🏆",
-branch:"marketing",
-order:15
-},
+/* =====================================================
+   OPERATIONS ROOT
+===================================================== */
 
 conveyor:{
+
 name:"Egg Conveyor",
+
 cost:650,
+
 requires:null,
-description:"Wholesale capacity rises 25% and egg storage increases 25%.",
+
+description:
+"Wholesale capacity rises 25% and egg storage increases 25%.",
+
 icon:"⚙️",
+
 branch:"operations",
-order:1
+
+path:"root",
+
+step:1
+
 },
+
+
+
+/* OPERATIONS PATH A */
 
 incubator:{
+
 name:"Incubator",
+
 cost:3000,
+
 requires:"conveyor",
-description:"Automatically raises one chicken every 30 seconds. Each chicken consumes 1 feed.",
+
+description:
+"Automatically raises one chicken every 30 seconds using 1 feed.",
+
 icon:"🔥",
+
 branch:"operations",
-order:2
+
+path:"A",
+
+step:1
+
 },
+
 
 brooder:{
+
 name:"Auto Brooder",
+
 cost:12000,
+
 requires:"incubator",
-description:"Automatically raises one chicken every 12 seconds. Each chicken consumes 1 feed.",
+
+description:
+"Automatically raises one chicken every 12 seconds.",
+
 icon:"🐥",
+
 branch:"operations",
-order:3
+
+path:"A",
+
+step:2
+
 },
+
 
 manager:{
+
 name:"Farm Manager",
+
 cost:28000,
+
 requires:"brooder",
-description:"Production, retail sales and wholesale distribution increase 20%.",
+
+description:
+"Production and sales increase by 20%.",
+
 icon:"👨‍🌾",
+
 branch:"operations",
-order:4
+
+path:"A",
+
+step:3
+
 },
+
 
 robotics:{
+
 name:"Farm Robotics",
+
 cost:85000,
+
 requires:"manager",
-description:"Raises three chickens every 10 seconds when barn space and feed are available.",
+
+description:
+"Raises three chickens every 10 seconds when feed is available.",
+
 icon:"🤖",
+
 branch:"operations",
-order:5
+
+path:"A",
+
+step:4
+
 },
+
+
+
+/* OPERATIONS PATH B */
 
 feedSilo:{
+
 name:"Feed Silos",
+
 cost:300000,
-requires:"robotics",
-description:"Feed purchases become larger: each feed bag now contains 20 feed.",
+
+requires:"conveyor",
+
+description:
+"Feed purchases increase from 10 feed to 20 feed.",
+
 icon:"🌾",
+
 branch:"operations",
-order:6
+
+path:"B",
+
+step:1
+
 },
+
 
 bulkFeed:{
+
 name:"Bulk Feed Contract",
+
 cost:1000000,
+
 requires:"feedSilo",
-description:"Bulk purchasing reduces effective feed cost by 15%.",
+
+description:
+"Bulk purchasing reduces feed cost by 15%.",
+
 icon:"📄",
+
 branch:"operations",
-order:7
+
+path:"B",
+
+step:2
+
 },
+
 
 grainCoop:{
+
 name:"Grain Co-op",
+
 cost:3000000,
+
 requires:"bulkFeed",
-description:"Feed bags increase to 40 feed and feed costs fall another 10%.",
+
+description:
+"Feed purchases increase to 40 feed and become cheaper.",
+
 icon:"🚜",
+
 branch:"operations",
-order:8
+
+path:"B",
+
+step:3
+
 },
+
 
 barnEngineering:{
+
 name:"Barn Engineering",
+
 cost:10000000,
+
 requires:"grainCoop",
-description:"Better barn layouts increase chicken capacity by 25%.",
+
+description:
+"Improved barn design increases chicken capacity by 25%.",
+
 icon:"🏗️",
+
 branch:"operations",
-order:9
+
+path:"B",
+
+step:4
+
 },
+
 
 highDensity:{
-name:"High-Density Housing",
+
+name:"High Density Housing",
+
 cost:35000000,
+
 requires:"barnEngineering",
-description:"High-density housing increases chicken capacity another 50%.",
+
+description:
+"High-density housing increases chicken capacity another 50%.",
+
 icon:"🏠",
+
 branch:"operations",
-order:10
+
+path:"B",
+
+step:5
+
 },
+
+
+
+/* OPERATIONS PATH C */
 
 coldStorage:{
+
 name:"Cold Storage",
+
 cost:100000000,
-requires:"highDensity",
-description:"Refrigerated storage increases egg storage capacity by 75%.",
+
+requires:"conveyor",
+
+description:
+"Refrigerated storage increases egg capacity by 75%.",
+
 icon:"❄️",
+
 branch:"operations",
-order:11
+
+path:"C",
+
+step:1
+
 },
+
 
 autoPacking:{
+
 name:"Automated Packing",
+
 cost:300000000,
+
 requires:"coldStorage",
-description:"Automated packing increases wholesale capacity by 60% and storage by 15%.",
+
+description:
+"Packing automation improves wholesale sales and storage.",
+
 icon:"📦",
+
 branch:"operations",
-order:12
+
+path:"C",
+
+step:2
+
 },
+
 
 fleetLogistics:{
+
 name:"Fleet Logistics",
+
 cost:900000000,
+
 requires:"autoPacking",
-description:"Fleet logistics increase wholesale capacity by 80%.",
+
+description:
+"Fleet logistics increase wholesale capacity by 80%.",
+
 icon:"🚛",
+
 branch:"operations",
-order:13
+
+path:"C",
+
+step:3
+
 },
+
 
 autonomousHatchery:{
+
 name:"Autonomous Hatchery",
+
 cost:3000000000,
+
 requires:"fleetLogistics",
-description:"Automation raises 8 chickens every 8 seconds when feed and barn space are available.",
+
+description:
+"Raises eight chickens every eight seconds.",
+
 icon:"🏭",
+
 branch:"operations",
-order:14
+
+path:"C",
+
+step:4
+
 },
 
+
 megaSystems:{
+
 name:"Mega Farm Systems",
+
 cost:10000000000,
+
 requires:"autonomousHatchery",
-description:"End-game systems raise 20 chickens every 5 seconds and boost barn, storage, wholesale, and production.",
+
+description:
+"Raises twenty chickens every five seconds and boosts the entire farm.",
+
 icon:"🌐",
+
 branch:"operations",
-order:15
+
+path:"C",
+
+step:5
+
+},
+
+
+
+/* =====================================================
+   SALES ROOT
+===================================================== */
+
+sign:{
+
+name:"Roadside Sign",
+
+cost:100,
+
+requires:null,
+
+description:
+"Retail egg demand increases by 15%.",
+
+icon:"🪧",
+
+branch:"marketing",
+
+path:"root",
+
+step:1
+
+},
+
+
+
+/* SALES PATH A */
+
+delivery:{
+
+name:"Local Delivery",
+
+cost:450,
+
+requires:"sign",
+
+description:
+"Retail and wholesale demand increase.",
+
+icon:"🚚",
+
+branch:"marketing",
+
+path:"A",
+
+step:1
+
+},
+
+
+brand:{
+
+name:"Farm Brand",
+
+cost:2000,
+
+requires:"delivery",
+
+description:
+"Customers tolerate higher retail prices.",
+
+icon:"📣",
+
+branch:"marketing",
+
+path:"A",
+
+step:2
+
+},
+
+
+grocery:{
+
+name:"Grocery Deal",
+
+cost:10000,
+
+requires:"brand",
+
+description:
+"Grocery placement increases retail and wholesale demand.",
+
+icon:"🏪",
+
+branch:"marketing",
+
+path:"A",
+
+step:3
+
+},
+
+
+national:{
+
+name:"National Ads",
+
+cost:50000,
+
+requires:"grocery",
+
+description:
+"National advertising greatly increases egg demand.",
+
+icon:"📺",
+
+branch:"marketing",
+
+path:"A",
+
+step:4
+
+},
+
+
+
+/* SALES PATH B */
+
+farmersMarkets:{
+
+name:"Farmers Markets",
+
+cost:200000,
+
+requires:"sign",
+
+description:
+"Farmers markets increase demand and minimum public interest.",
+
+icon:"🧺",
+
+branch:"marketing",
+
+path:"B",
+
+step:1
+
+},
+
+
+restaurantContracts:{
+
+name:"Restaurant Contracts",
+
+cost:750000,
+
+requires:"farmersMarkets",
+
+description:
+"Restaurant contracts increase wholesale demand.",
+
+icon:"🍳",
+
+branch:"marketing",
+
+path:"B",
+
+step:2
+
+},
+
+
+dynamicPricing:{
+
+name:"Dynamic Pricing",
+
+cost:2500000,
+
+requires:"restaurantContracts",
+
+description:
+"Smart pricing reduces the penalty from expensive eggs.",
+
+icon:"📈",
+
+branch:"marketing",
+
+path:"B",
+
+step:3
+
+},
+
+
+regionalDistributor:{
+
+name:"Regional Distributor",
+
+cost:8000000,
+
+requires:"dynamicPricing",
+
+description:
+"Regional distribution increases wholesale demand by 60%.",
+
+icon:"🗺️",
+
+branch:"marketing",
+
+path:"B",
+
+step:4
+
+},
+
+
+chainDeal:{
+
+name:"Grocery Chain",
+
+cost:25000000,
+
+requires:"regionalDistributor",
+
+description:
+"Major grocery chains dramatically expand demand.",
+
+icon:"🛒",
+
+branch:"marketing",
+
+path:"B",
+
+step:5
+
+},
+
+
+
+/* SALES PATH C */
+
+premiumBrand:{
+
+name:"Premium Brand",
+
+cost:80000000,
+
+requires:"sign",
+
+description:
+"Premium branding improves price tolerance.",
+
+icon:"⭐",
+
+branch:"marketing",
+
+path:"C",
+
+step:1
+
+},
+
+
+exportLicense:{
+
+name:"Export License",
+
+cost:250000000,
+
+requires:"premiumBrand",
+
+description:
+"International access increases wholesale demand.",
+
+icon:"🌎",
+
+branch:"marketing",
+
+path:"C",
+
+step:2
+
+},
+
+
+nationalRetailer:{
+
+name:"National Retailer",
+
+cost:800000000,
+
+requires:"exportLicense",
+
+description:
+"National retail placement greatly increases demand.",
+
+icon:"🏬",
+
+branch:"marketing",
+
+path:"C",
+
+step:3
+
+},
+
+
+globalDistribution:{
+
+name:"Global Distribution",
+
+cost:2500000000,
+
+requires:"nationalRetailer",
+
+description:
+"Global distribution doubles late-game wholesale reach.",
+
+icon:"✈️",
+
+branch:"marketing",
+
+path:"C",
+
+step:4
+
+},
+
+
+householdName:{
+
+name:"Household Name",
+
+cost:8000000000,
+
+requires:"globalDistribution",
+
+description:
+"Your eggs become a household brand with enormous demand.",
+
+icon:"🏆",
+
+branch:"marketing",
+
+path:"C",
+
+step:5
+
 }
 
 };
+
 
 
 /* =========================================================
@@ -3608,7 +5366,7 @@ return !!state.upgrades[id];
 
 
 /* =========================================================
-   FEED MARKET
+   FEED
 ========================================================= */
 
 function getFeedBagSize(){
@@ -3781,11 +5539,7 @@ bagSize +
 formatMoney(
 cost
 ) +
-" (" +
-formatMoney(
-getEffectiveFeedPrice()
-) +
-" each)."
+"."
 );
 
 
@@ -3960,31 +5714,47 @@ let mult =
 1;
 
 
-const productionBoosts = {
+const boosts = {
 
 feed:1.12,
+
 nest:1.15,
+
 breed:1.20,
+
 precision:1.25,
+
 golden:1.50,
+
 minerals:1.18,
+
 climate:1.20,
+
 vet:1.18,
+
 selective:1.25,
+
 hatcheryGenetics:1.30,
+
 biosecure:1.15,
+
 nutritionAI:1.25,
+
 eliteLayers:1.35,
+
 genomic:1.45,
+
 legendary:2,
+
 manager:1.20,
+
 megaSystems:1.50
 
 };
 
 
 Object.keys(
-productionBoosts
+boosts
 ).forEach(
 id =>
 {
@@ -3995,7 +5765,7 @@ id
 )
 )
 mult *=
-productionBoosts[id];
+boosts[id];
 
 }
 );
@@ -4124,7 +5894,7 @@ normalized,
 
 
 /* =========================================================
-   RETAIL SALES
+   RETAIL
 ========================================================= */
 
 function getRetailMultiplier(){
@@ -4133,22 +5903,29 @@ let mult =
 1;
 
 
-const retailBoosts = {
+const boosts = {
 
 sign:1.15,
+
 delivery:1.20,
+
 grocery:1.35,
+
 national:1.50,
+
 farmersMarkets:1.25,
+
 chainDeal:1.50,
+
 nationalRetailer:1.75,
+
 householdName:2
 
 };
 
 
 Object.keys(
-retailBoosts
+boosts
 ).forEach(
 id =>
 {
@@ -4159,7 +5936,7 @@ id
 )
 )
 mult *=
-retailBoosts[id];
+boosts[id];
 
 }
 );
@@ -4243,28 +6020,41 @@ let mult =
 1;
 
 
-const wholesaleBoosts = {
+const boosts = {
 
 delivery:1.20,
+
 grocery:1.30,
+
 national:1.40,
+
 restaurantContracts:1.50,
+
 regionalDistributor:1.60,
+
 chainDeal:1.40,
+
 exportLicense:1.80,
+
 globalDistribution:2,
+
 conveyor:1.25,
+
 manager:1.20,
+
 robotics:1.25,
+
 autoPacking:1.60,
+
 fleetLogistics:1.80,
+
 megaSystems:1.50
 
 };
 
 
 Object.keys(
-wholesaleBoosts
+boosts
 ).forEach(
 id =>
 {
@@ -4275,7 +6065,7 @@ id
 )
 )
 mult *=
-wholesaleBoosts[id];
+boosts[id];
 
 }
 );
@@ -4312,19 +6102,11 @@ getWholesaleTalentMultiplier()
 }
 
 
-function getTotalSalesCapacity(){
-
-return (
-getRetailSalesPerSecond() +
-getWholesaleSalesPerSecond()
-);
-
-}
-
-
 function toggleWholesale(enabled){
 
-if(!wholesaleUnlocked())
+if(
+!wholesaleUnlocked()
+)
 {
 
 state.wholesaleEnabled =
@@ -4751,7 +6533,9 @@ getChickenCapacity()
 )
 {
 
-if(!barnFullLogged)
+if(
+!barnFullLogged
+)
 {
 
 addLog(
@@ -4776,7 +6560,9 @@ state.feed <
 )
 {
 
-if(!noFeedLogged)
+if(
+!noFeedLogged
+)
 {
 
 addLog(
@@ -4956,9 +6742,7 @@ false;
 addLog(
 "📦 Egg storage upgraded to Level " +
 state.storageLevel +
-"! Base capacity is now " +
-getStorage().capacity.toLocaleString() +
-" eggs."
+"."
 );
 
 
@@ -5060,12 +6844,16 @@ const upgrade =
 UPGRADES[id];
 
 
-if(!upgrade)
+if(
+!upgrade
+)
 return;
 
 
 if(
-hasUpgrade(id)
+hasUpgrade(
+id
+)
 )
 {
 
@@ -5149,7 +6937,7 @@ saveGame();
 
 
 /* =========================================================
-   LOG
+   ACTIVITY LOG
 ========================================================= */
 
 function addLog(message){
@@ -5201,10 +6989,8 @@ log.lastChild
 }
 
 }
-
-
-/* =========================================================
-   AUTOMATIC CHICKENS
+    /* =========================================================
+   AUTO CHICKENS
 ========================================================= */
 
 function updateAutoChickens(){
@@ -5308,19 +7094,7 @@ getBarnSpaceRemaining()
 
 if(
 room <=
-0
-)
-{
-
-state.lastAutoChicken =
-now;
-
-return;
-
-}
-
-
-if(
+0 ||
 state.feed <
 1
 )
@@ -5358,17 +7132,13 @@ batches *
 amount;
 
 
-const possibleFromFeed =
-Math.floor(
-state.feed
-);
-
-
 const gained =
 Math.min(
 wanted,
 room,
-possibleFromFeed
+Math.floor(
+state.feed
+)
 );
 
 
@@ -5396,10 +7166,6 @@ state.lifetimeChickens +=
 gained;
 
 
-noFeedLogged =
-false;
-
-
 renderFarmChickens(
 true
 );
@@ -5420,38 +7186,12 @@ gained +
 " feed."
 );
 
-
-if(
-state.chickens >=
-getChickenCapacity()
-)
-{
-
-addLog(
-"🏚️ Barn capacity reached."
-);
-
-}
-
-
-if(
-state.feed <
-1
-)
-{
-
-addLog(
-"🌾 Automation has stopped because the farm is out of feed."
-);
-
-}
-
 }
 
 
 
 /* =========================================================
-   ESTIMATED INCOME
+   ESTIMATED REVENUE
 ========================================================= */
 
 function getEstimatedRevenuePerSecond(){
@@ -5551,15 +7291,11 @@ state.lastUpdate =
 now;
 
 
-/* FEED MARKET */
-
 updateFeedMarket();
 
 
 
-/* =====================================================
-   PRODUCE EGGS
-===================================================== */
+/* PRODUCE */
 
 const productionRate =
 getEggsPerSecond();
@@ -5577,14 +7313,10 @@ state.eggs
 );
 
 
-const requestedProduction =
-productionRate *
-dt;
-
-
 const produced =
 Math.min(
-requestedProduction,
+productionRate *
+dt,
 availableStorage
 );
 
@@ -5595,7 +7327,6 @@ produced;
 
 state.lifetimeEggs +=
 produced;
-
 
 
 if(
@@ -5610,7 +7341,7 @@ if(
 {
 
 addLog(
-"⚠️ Egg storage is full. Production has paused until inventory is sold."
+"⚠️ Egg storage is full. Production has paused."
 );
 
 
@@ -5634,9 +7365,7 @@ false;
 
 
 
-/* =====================================================
-   RETAIL SALES
-===================================================== */
+/* RETAIL */
 
 const retailCapacity =
 getRetailSalesPerSecond() *
@@ -5668,9 +7397,7 @@ retailRevenue;
 
 
 
-/* =====================================================
-   WHOLESALE SALES
-===================================================== */
+/* WHOLESALE */
 
 const wholesaleCapacity =
 getWholesaleSalesPerSecond() *
@@ -5701,10 +7428,6 @@ state.lifetimeMoney +=
 wholesaleRevenue;
 
 
-
-/* =====================================================
-   AUTOMATION
-===================================================== */
 
 updateAutoChickens();
 
@@ -5790,9 +7513,7 @@ Date.now()
 
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 document.getElementById(
 "topChickens"
@@ -5863,9 +7584,7 @@ state.distributionLevel;
 
 
 
-/* =====================================================
-   FEED MARKET COLOR
-===================================================== */
+/* FEED MARKET COLOR */
 
 const feedMarketInfo =
 document.getElementById(
@@ -5904,9 +7623,7 @@ feedMarketInfo.classList.add(
 
 
 
-/* =====================================================
-   BUY FEED BUTTON
-===================================================== */
+/* BUY FEED */
 
 const buyFeedButton =
 document.getElementById(
@@ -5929,9 +7646,7 @@ feedBagCost;
 
 
 
-/* =====================================================
-   FARM HUD
-===================================================== */
+/* FARM HUD */
 
 document.getElementById(
 "farmChickenCount"
@@ -6014,9 +7729,7 @@ barnCapacity
 
 
 
-/* =====================================================
-   FARM ALERT
-===================================================== */
+/* ALERT */
 
 const farmAlert =
 document.getElementById(
@@ -6045,7 +7758,7 @@ farmAlert.classList.add(
 
 
 farmAlert.textContent =
-"⚠️ Inventory exceeds storage capacity. Egg production is paused.";
+"⚠️ Inventory exceeds storage capacity.";
 
 }
 else if(
@@ -6064,7 +7777,7 @@ farmAlert.classList.add(
 
 
 farmAlert.textContent =
-"⚠️ EGG STORAGE FULL — upgrade storage or sell more eggs.";
+"⚠️ EGG STORAGE FULL";
 
 }
 else if(
@@ -6078,7 +7791,7 @@ farmAlert.style.display =
 
 
 farmAlert.textContent =
-"🏚️ Barn full — purchase the next barn upgrade.";
+"🏚️ Barn full — upgrade your barn.";
 
 }
 else if(
@@ -6092,7 +7805,7 @@ farmAlert.style.display =
 
 
 farmAlert.textContent =
-"🌾 OUT OF FEED — buy feed before adding more chickens.";
+"🌾 OUT OF FEED";
 
 }
 else if(
@@ -6119,9 +7832,7 @@ farmAlert.style.display =
 
 
 
-/* =====================================================
-   RETAIL MARKET
-===================================================== */
+/* RETAIL */
 
 document.getElementById(
 "priceDisplay"
@@ -6187,9 +7898,7 @@ estimatedRevenue
 
 
 
-/* =====================================================
-   FEED MARKET PANEL
-===================================================== */
+/* FEED */
 
 document.getElementById(
 "feedOwnedText"
@@ -6236,7 +7945,7 @@ state.feedPricePerUnit <=
 {
 
 feedMessage.textContent =
-"🔥 Very cheap feed! This is a good time to stock up.";
+"🔥 Very cheap feed! Good time to buy.";
 
 }
 else if(
@@ -6256,7 +7965,7 @@ state.feedPricePerUnit >=
 {
 
 feedMessage.textContent =
-"Feed is expensive right now. The market will change in " +
+"Feed is expensive. Market changes in " +
 feedSecondsRemaining +
 " seconds.";
 
@@ -6265,7 +7974,7 @@ else
 {
 
 feedMessage.textContent =
-"Feed prices are average. Next market change in " +
+"Feed prices are average. Market changes in " +
 feedSecondsRemaining +
 " seconds.";
 
@@ -6273,9 +7982,7 @@ feedSecondsRemaining +
 
 
 
-/* =====================================================
-   WHOLESALE
-===================================================== */
+/* WHOLESALE */
 
 const wholesaleToggle =
 document.getElementById(
@@ -6321,7 +8028,7 @@ document.getElementById(
 "wholesaleDescription"
 ).textContent =
 getDistribution().name +
-" automatically moves excess eggs at a discounted price.";
+" automatically moves excess eggs.";
 
 }
 else
@@ -6349,7 +8056,7 @@ document.getElementById(
 document.getElementById(
 "wholesaleDescription"
 ).textContent =
-"Purchase Distribution Level 1 to unlock wholesale sales.";
+"Purchase Distribution Level 1 to unlock wholesale.";
 
 }
 
@@ -6405,9 +8112,7 @@ storageCapacity
 
 
 
-/* =====================================================
-   STORAGE
-===================================================== */
+/* STORAGE */
 
 const storageBar =
 document.getElementById(
@@ -6490,7 +8195,7 @@ storageCapacity
 {
 
 storageWarning.textContent =
-"OVER CAPACITY: no eggs were deleted, but new production is paused.";
+"OVER CAPACITY: new egg production is paused.";
 
 
 storageWarning.classList.add(
@@ -6505,7 +8210,7 @@ storageRatio >=
 {
 
 storageWarning.textContent =
-"Storage is full. Upgrade storage or improve distribution.";
+"Storage is full.";
 
 
 storageWarning.classList.add(
@@ -6520,7 +8225,7 @@ storageRatio >=
 {
 
 storageWarning.textContent =
-"Storage is almost full. Consider wholesale, a lower price or a storage upgrade.";
+"Storage is almost full.";
 
 }
 else
@@ -6533,9 +8238,7 @@ storageWarning.textContent =
 
 
 
-/* =====================================================
-   BARN INFRASTRUCTURE
-===================================================== */
+/* BARN INFRASTRUCTURE */
 
 document.getElementById(
 "barnLevelText"
@@ -6616,9 +8319,7 @@ next.cost;
 
 
 
-/* =====================================================
-   STORAGE INFRASTRUCTURE
-===================================================== */
+/* STORAGE INFRASTRUCTURE */
 
 document.getElementById(
 "storageLevelText"
@@ -6699,9 +8400,7 @@ next.cost;
 
 
 
-/* =====================================================
-   DISTRIBUTION INFRASTRUCTURE
-===================================================== */
+/* DISTRIBUTION INFRASTRUCTURE */
 
 document.getElementById(
 "distributionLevelText"
@@ -6793,9 +8492,7 @@ next.cost;
 
 
 
-/* =====================================================
-   GET CHICKEN BUTTON
-===================================================== */
+/* GET CHICKEN BUTTON */
 
 const cooldownLeft =
 Math.max(
@@ -6856,11 +8553,6 @@ chickenButton.textContent =
 }
 
 
-
-/* =====================================================
-   WORLD
-===================================================== */
-
 updateFarmAppearance();
 
 
@@ -6874,8 +8566,142 @@ updateUpgradeTree();
 
 
 /* =========================================================
-   TALENT TREE
+   COMPACT TALENT TREE LAYOUT
 ========================================================= */
+
+/*
+The tree uses one central farm node.
+
+Each category has one gateway node.
+
+Each gateway then splits into 3 paths.
+
+This makes all 45 talents visible in roughly
+the same space that the old 15-talent tree used.
+*/
+
+
+const TREE_CENTER = {
+
+x:590,
+
+y:360
+
+};
+
+
+const TREE_ROOTS = {
+
+production:{
+
+x:440,
+
+y:360
+
+},
+
+operations:{
+
+x:590,
+
+y:500
+
+},
+
+marketing:{
+
+x:740,
+
+y:360
+
+}
+
+};
+
+
+
+const TREE_PATH_ANGLES = {
+
+production:{
+
+A:145,
+
+B:180,
+
+C:215
+
+},
+
+operations:{
+
+A:55,
+
+B:90,
+
+C:125
+
+},
+
+marketing:{
+
+A:-35,
+
+B:0,
+
+C:35
+
+}
+
+};
+
+
+
+const TREE_PATH_SPACING = {
+
+production:83,
+
+operations:78,
+
+marketing:83
+
+};
+
+
+
+function polarPoint(
+origin,
+angleDegrees,
+distance
+)
+{
+
+const radians =
+angleDegrees *
+Math.PI /
+180;
+
+
+return {
+
+x:
+origin.x +
+Math.cos(
+radians
+) *
+distance,
+
+y:
+origin.y +
+Math.sin(
+radians
+) *
+distance
+
+};
+
+}
+
+
 
 function getUpgradePosition(id){
 
@@ -6883,73 +8709,53 @@ const upgrade =
 UPGRADES[id];
 
 
-const y =
-190 +
-(
-upgrade.order -
-1
-) *
-88;
-
-
-let x =
-0;
-
-
 if(
-upgrade.branch ===
-"production"
+upgrade.path ===
+"root"
 )
 {
 
-x =
-upgrade.order %
-2 ===
-1
-?
-135
-:
-250;
-
-}
-else if(
-upgrade.branch ===
-"operations"
-)
-{
-
-x =
-upgrade.order %
-2 ===
-1
-?
-665
-:
-780;
-
-}
-else
-{
-
-x =
-upgrade.order %
-2 ===
-1
-?
-1180
-:
-1295;
+return TREE_ROOTS[
+upgrade.branch
+];
 
 }
 
 
-return {
-x,
-y
-};
+const root =
+TREE_ROOTS[
+upgrade.branch
+];
+
+
+const angle =
+TREE_PATH_ANGLES[
+upgrade.branch
+][
+upgrade.path
+];
+
+
+const spacing =
+TREE_PATH_SPACING[
+upgrade.branch
+];
+
+
+return polarPoint(
+root,
+angle,
+spacing *
+upgrade.step
+);
 
 }
 
+
+
+/* =========================================================
+   RENDER TREE
+========================================================= */
 
 function renderUpgradeTree(){
 
@@ -6977,12 +8783,6 @@ node.remove()
 
 svg.innerHTML =
 "";
-
-
-const center = {
-x:775,
-y:74
-};
 
 
 Object.keys(
@@ -7017,12 +8817,18 @@ id;
 
 
 button.style.left =
-position.x +
+(
+position.x -
+33
+) +
 "px";
 
 
 button.style.top =
-position.y +
+(
+position.y -
+33
+) +
 "px";
 
 
@@ -7033,6 +8839,7 @@ buyUpgrade(
 id
 )
 );
+
 
 
 const icon =
@@ -7049,14 +8856,20 @@ icon.textContent =
 upgrade.icon;
 
 
+
 const name =
 document.createElement(
 "span"
 );
 
 
+name.className =
+"nodeName";
+
+
 name.textContent =
 upgrade.name;
+
 
 
 const cost =
@@ -7075,6 +8888,7 @@ upgrade.cost
 );
 
 
+
 button.append(
 icon,
 name,
@@ -7087,8 +8901,11 @@ button
 );
 
 
-let from =
-center;
+
+/* DRAW CONNECTION */
+
+let fromPosition =
+TREE_CENTER;
 
 
 if(
@@ -7096,20 +8913,10 @@ upgrade.requires
 )
 {
 
-const parentPosition =
+fromPosition =
 getUpgradePosition(
 upgrade.requires
 );
-
-
-from = {
-x:
-parentPosition.x +
-41,
-y:
-parentPosition.y +
-41
-};
 
 }
 
@@ -7123,27 +8930,25 @@ document.createElementNS(
 
 line.setAttribute(
 "x1",
-from.x
+fromPosition.x
 );
 
 
 line.setAttribute(
 "y1",
-from.y
+fromPosition.y
 );
 
 
 line.setAttribute(
 "x2",
-position.x +
-41
+position.x
 );
 
 
 line.setAttribute(
 "y2",
-position.y +
-41
+position.y
 );
 
 
@@ -7170,6 +8975,11 @@ line
 }
 
 
+
+/* =========================================================
+   UPDATE TREE
+========================================================= */
+
 function updateUpgradeTree(){
 
 let owned =
@@ -7177,9 +8987,13 @@ let owned =
 
 
 const branchOwned = {
+
 production:0,
+
 operations:0,
+
 marketing:0
+
 };
 
 
@@ -7200,7 +9014,9 @@ id
 );
 
 
-if(!node)
+if(
+!node
+)
 return;
 
 
@@ -7277,6 +9093,7 @@ id
 );
 
 
+
 document.getElementById(
 "treeProgress"
 ).textContent =
@@ -7297,7 +9114,7 @@ branchOwned.production +
 
 
 document.getElementById(
-"automationLabel"
+"operationsLabel"
 ).textContent =
 "FARM OPERATIONS " +
 branchOwned.operations +
@@ -7344,7 +9161,9 @@ const upgrade =
 UPGRADES[id];
 
 
-if(!node)
+if(
+!node
+)
 return;
 
 
@@ -7422,7 +9241,7 @@ Math.min(
 event.clientX +
 18,
 window.innerWidth -
-275
+285
 );
 
 
@@ -7431,7 +9250,7 @@ Math.min(
 event.clientY +
 18,
 window.innerHeight -
-165
+175
 );
 
 
@@ -7499,7 +9318,9 @@ saveState
 );
 
 
-if(manual)
+if(
+manual
+)
 {
 
 addLog(
@@ -7513,7 +9334,7 @@ addLog(
 
 
 /* =========================================================
-   LOAD + MIGRATION
+   LOAD
 ========================================================= */
 
 function loadGame(){
@@ -7524,7 +9345,9 @@ localStorage.getItem(
 );
 
 
-if(!saved)
+if(
+!saved
+)
 {
 
 state.feedPricePerUnit =
@@ -7579,9 +9402,7 @@ Date.now()
 
 
 
-/*
-Migrate old farm-level saves.
-*/
+/* MIGRATE OLD FARM LEVEL */
 
 if(
 typeof parsed.barnLevel !==
@@ -7619,12 +9440,7 @@ oldLevel -
 
 
 
-/*
-Migrate saves created before feed existed.
-
-We give the player 3 starter feed so an existing
-save does not become completely stuck.
-*/
+/* MIGRATE PRE-FEED SAVES */
 
 if(
 typeof parsed.feed !==
@@ -7675,6 +9491,7 @@ state.feed;
 }
 
 
+
 state.barnLevel =
 Math.max(
 1,
@@ -7721,10 +9538,6 @@ parsed.wholesaleEnabled
 true;
 
 
-/*
-If a saved feed price timer is already expired,
-immediately open a new market price.
-*/
 
 if(
 Date.now() >=
@@ -7742,18 +9555,14 @@ addLog(
 );
 
 
-const storageCapacity =
-getStorageCapacity();
-
-
 if(
 state.eggs >
-storageCapacity
+getStorageCapacity()
 )
 {
 
 addLog(
-"⚠️ Existing egg inventory exceeds current storage. No eggs were deleted."
+"⚠️ Existing egg inventory exceeds current storage."
 );
 
 }
@@ -7785,7 +9594,9 @@ confirm(
 );
 
 
-if(!confirmed)
+if(
+!confirmed
+)
 return;
 
 
