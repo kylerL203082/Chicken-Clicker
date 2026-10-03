@@ -3296,4 +3296,2109 @@ function addLog(message){
         );
     }
 }
-    
+    /* =========================================================
+   AUTOMATION
+========================================================= */
+
+function updateAutoChickens(){
+    const now=Date.now();
+
+    let amount=0;
+    let interval=Infinity;
+
+    if(hasUpgrade("megaSystems")){
+        amount=20;
+        interval=5000;
+    }
+    else if(hasUpgrade("autonomousHatchery")){
+        amount=8;
+        interval=8000;
+    }
+    else if(hasUpgrade("robotics")){
+        amount=3;
+        interval=10000;
+    }
+    else if(hasUpgrade("brooder")){
+        amount=1;
+        interval=12000;
+    }
+    else if(hasUpgrade("incubator")){
+        amount=1;
+        interval=30000;
+    }
+
+    if(amount===0)return;
+
+    amount=
+        Math.max(
+            1,
+            Math.round(
+                amount*
+                getBreedAutomationMultiplier()
+            )
+        );
+
+    const room=
+        Math.floor(
+            getBarnSpaceRemaining()
+        );
+
+    if(
+        room<=0||
+        state.feed<1
+    ){
+        state.lastAutoChicken=now;
+        return;
+    }
+
+    if(
+        !isBreedUnlocked(
+            state.activeBreed
+        )
+    ){
+        state.activeBreed="leghorn";
+    }
+
+    const breed=
+        getActiveBreed();
+
+    const elapsed=
+        now-
+        state.lastAutoChicken;
+
+    if(elapsed<interval)return;
+
+    const batches=
+        Math.floor(
+            elapsed/
+            interval
+        );
+
+    const wanted=
+        batches*
+        amount;
+
+    let affordableByMoney=
+        Infinity;
+
+    if(breed.cost>0){
+        affordableByMoney=
+            Math.floor(
+                state.money/
+                breed.cost
+            );
+    }
+
+    const gained=
+        Math.min(
+            wanted,
+            room,
+            Math.floor(state.feed),
+            affordableByMoney
+        );
+
+    state.lastAutoChicken+=
+        batches*
+        interval;
+
+    if(gained<=0)return;
+
+    state.feed-=gained;
+
+    state.money-=
+        gained*
+        breed.cost;
+
+    addBreedChickens(
+        state.activeBreed,
+        gained
+    );
+
+    addLog(
+        "🐣 Automation raised "+
+        gained+
+        " "+
+        breed.name+
+        (
+            gained===1
+            ?" chicken"
+            :" chickens"
+        )+
+        " and used "+
+        gained+
+        " feed"+
+        (
+            breed.cost>0
+            ?" + "+formatMoney(gained*breed.cost)
+            :""
+        )+
+        "."
+    );
+}
+
+
+/* =========================================================
+   REVENUE
+========================================================= */
+
+function getEstimatedRevenuePerSecond(){
+    const production=
+        getEggsPerSecond();
+
+    const retail=
+        getRetailSalesPerSecond();
+
+    const wholesale=
+        getWholesaleSalesPerSecond();
+
+    const retailSold=
+        Math.min(
+            production,
+            retail
+        );
+
+    const remaining=
+        Math.max(
+            0,
+            production-
+            retailSold
+        );
+
+    const wholesaleSold=
+        Math.min(
+            remaining,
+            wholesale
+        );
+
+    if(
+        state.eggs>
+        production*
+        5
+    ){
+        return (
+            retail*
+            getRetailEggValue()
+        )+
+        (
+            wholesale*
+            getWholesalePrice()
+        );
+    }
+
+    return (
+        retailSold*
+        getRetailEggValue()
+    )+
+    (
+        wholesaleSold*
+        getWholesalePrice()
+    );
+}
+
+
+/* =========================================================
+   GAME LOOP
+========================================================= */
+
+function gameTick(){
+    const now=Date.now();
+
+    let dt=
+        (
+            now-
+            state.lastUpdate
+        )/
+        1000;
+
+    dt=Math.min(dt,5);
+
+    state.lastUpdate=now;
+
+    updateFeedMarket();
+
+
+    /* PRODUCE EGGS */
+
+    const production=
+        getEggsPerSecond();
+
+    const storageCapacity=
+        getStorageCapacity();
+
+    const storageAvailable=
+        Math.max(
+            0,
+            storageCapacity-
+            state.eggs
+        );
+
+    const produced=
+        Math.min(
+            production*
+            dt,
+            storageAvailable
+        );
+
+    state.eggs+=produced;
+    state.lifetimeEggs+=produced;
+
+
+    if(
+        state.eggs>=
+        storageCapacity
+    ){
+        if(!storageFullLogged){
+            addLog(
+                "⚠️ Egg storage is full. Egg production has paused."
+            );
+
+            storageFullLogged=true;
+        }
+    }
+    else if(
+        state.eggs<
+        storageCapacity*
+        .8
+    ){
+        storageFullLogged=false;
+    }
+
+
+    /* RETAIL SALES */
+
+    const retailCapacity=
+        getRetailSalesPerSecond()*
+        dt;
+
+    const retailSold=
+        Math.min(
+            state.eggs,
+            retailCapacity
+        );
+
+    const retailRevenue=
+        retailSold*
+        getRetailEggValue();
+
+    state.eggs-=retailSold;
+    state.money+=retailRevenue;
+    state.lifetimeMoney+=retailRevenue;
+
+
+    /* WHOLESALE SALES */
+
+    const wholesaleCapacity=
+        getWholesaleSalesPerSecond()*
+        dt;
+
+    const wholesaleSold=
+        Math.min(
+            state.eggs,
+            wholesaleCapacity
+        );
+
+    const wholesaleRevenue=
+        wholesaleSold*
+        getWholesalePrice();
+
+    state.eggs-=wholesaleSold;
+    state.money+=wholesaleRevenue;
+    state.lifetimeMoney+=wholesaleRevenue;
+
+
+    updateAutoChickens();
+
+    updateUI();
+}
+
+
+/* =========================================================
+   UPDATE UI
+========================================================= */
+
+function updateUI(){
+    const interest=
+        getPublicInterest();
+
+    const production=
+        getEggsPerSecond();
+
+    const retail=
+        getRetailSalesPerSecond();
+
+    const wholesale=
+        getWholesaleSalesPerSecond();
+
+    const totalSales=
+        retail+
+        wholesale;
+
+    const income=
+        getEstimatedRevenuePerSecond();
+
+    const barnCapacity=
+        getChickenCapacity();
+
+    const storageCapacity=
+        getStorageCapacity();
+
+    const storageRatio=
+        storageCapacity>0
+        ?state.eggs/storageCapacity
+        :0;
+
+    const feedCapacity=
+        getFeedCapacity();
+
+    const feedRatio=
+        feedCapacity>0
+        ?state.feed/feedCapacity
+        :0;
+
+    const feedBagSize=
+        getFeedBagSize();
+
+    const feedPurchaseAmount=
+        getFeedPurchaseAmount();
+
+    const effectiveFeedPrice=
+        getEffectiveFeedPrice();
+
+    const feedBagCost=
+        getFeedBagCost();
+
+    const activeBreed=
+        getActiveBreed();
+
+    const feedSeconds=
+        Math.max(
+            0,
+            Math.ceil(
+                (
+                    state.nextFeedPriceChange-
+                    Date.now()
+                )/
+                1000
+            )
+        );
+
+    const activeFeedEvent=
+        getActiveFeedEvent();
+
+
+    /* HEADER */
+
+    document.getElementById(
+        "topChickens"
+    ).textContent=
+        formatNumber(
+            state.chickens
+        );
+
+    document.getElementById(
+        "topMoney"
+    ).textContent=
+        formatMoney(
+            state.money
+        );
+
+    document.getElementById(
+        "topEggs"
+    ).textContent=
+        formatNumber(
+            state.eggs
+        );
+
+    document.getElementById(
+        "topFeed"
+    ).textContent=
+        formatNumber(
+            state.feed
+        );
+
+    document.getElementById(
+        "farmNameTop"
+    ).textContent=
+        "Barn Lv. "+
+        state.barnLevel+
+        " • Storage Lv. "+
+        state.storageLevel+
+        " • Distribution Lv. "+
+        state.distributionLevel;
+
+
+    /* OVERVIEW */
+
+    document.getElementById(
+        "overviewChickens"
+    ).textContent=
+        formatNumber(
+            state.chickens
+        );
+
+    document.getElementById(
+        "overviewBarnCapacity"
+    ).textContent=
+        "Barn capacity: "+
+        formatNumber(
+            barnCapacity
+        );
+
+    document.getElementById(
+        "overviewEggs"
+    ).textContent=
+        formatNumber(
+            state.eggs
+        );
+
+    document.getElementById(
+        "overviewProduction"
+    ).textContent=
+        production.toFixed(2)+
+        " eggs/sec";
+
+    document.getElementById(
+        "overviewMoney"
+    ).textContent=
+        formatMoney(
+            state.money
+        );
+
+    document.getElementById(
+        "overviewIncome"
+    ).textContent=
+        formatMoney(
+            income
+        )+
+        "/sec";
+
+    document.getElementById(
+        "overviewFeed"
+    ).textContent=
+        formatNumber(
+            state.feed
+        );
+
+    document.getElementById(
+        "overviewFeedCapacity"
+    ).textContent=
+        "Capacity: "+
+        formatNumber(
+            feedCapacity
+        );
+
+    document.getElementById(
+        "overviewInterest"
+    ).textContent=
+        Math.round(
+            interest*
+            100
+        )+
+        "%";
+
+    document.getElementById(
+        "overviewDemand"
+    ).textContent=
+        retail.toFixed(2)+
+        " eggs/sec";
+
+    document.getElementById(
+        "overviewDistribution"
+    ).textContent=
+        "Lv. "+
+        state.distributionLevel;
+
+    document.getElementById(
+        "overviewDistributionName"
+    ).textContent=
+        getDistribution().name;
+
+
+    /* FARM ALERT */
+
+    const alert=
+        document.getElementById(
+            "farmAlert"
+        );
+
+    alert.classList.remove(
+        "danger"
+    );
+
+    if(
+        state.eggs>=
+        storageCapacity
+    ){
+        alert.style.display=
+            "block";
+
+        alert.classList.add(
+            "danger"
+        );
+
+        alert.textContent=
+            "⚠️ Egg storage is full. Production is paused until eggs are sold or storage is upgraded.";
+    }
+    else if(
+        state.chickens>=
+        barnCapacity
+    ){
+        alert.style.display=
+            "block";
+
+        alert.textContent=
+            "🏚️ Your barn is full. Upgrade it before adding more chickens.";
+    }
+    else if(
+        state.feed<1
+    ){
+        alert.style.display=
+            "block";
+
+        alert.textContent=
+            "🌾 You are out of feed.";
+    }
+    else if(
+        state.feed>
+        feedCapacity
+    ){
+        alert.style.display=
+            "block";
+
+        alert.textContent=
+            "🌾 Existing feed is above current capacity. You keep it, but cannot buy more until there is room.";
+    }
+    else if(
+        storageRatio>=
+        .8
+    ){
+        alert.style.display=
+            "block";
+
+        alert.textContent=
+            "⚠️ Egg storage is over 80% full.";
+    }
+    else{
+        alert.style.display=
+            "none";
+    }
+
+
+    /* GET CHICKEN */
+
+    const chickenButton=
+        document.getElementById(
+            "getChickenBtn"
+        );
+
+    const cooldown=
+        Math.max(
+            0,
+            900-
+            (
+                Date.now()-
+                state.lastChickenClick
+            )
+        );
+
+    let chickenPriceText=
+        activeBreed.cost>0
+        ?" + "+formatMoney(activeBreed.cost)
+        :"";
+
+    if(
+        state.chickens>=
+        barnCapacity
+    ){
+        chickenButton.disabled=true;
+
+        chickenButton.textContent=
+            "🏚️ Barn Full";
+    }
+    else if(
+        state.feed<1
+    ){
+        chickenButton.disabled=true;
+
+        chickenButton.textContent=
+            "🌾 Need Feed";
+    }
+    else if(
+        state.money<
+        activeBreed.cost
+    ){
+        chickenButton.disabled=true;
+
+        chickenButton.textContent=
+            activeBreed.icon+
+            " Need "+
+            formatMoney(activeBreed.cost);
+    }
+    else{
+        chickenButton.disabled=
+            cooldown>0;
+
+        chickenButton.textContent=
+            activeBreed.icon+
+            " Get "+
+            activeBreed.name+
+            " — 1 Feed"+
+            chickenPriceText;
+    }
+
+
+    /* BUY FEED */
+
+    const feedButton=
+        document.getElementById(
+            "buyFeedBtn"
+        );
+
+    if(
+        feedPurchaseAmount<=0
+    ){
+        feedButton.disabled=true;
+
+        feedButton.textContent=
+            "🌾 Feed Storage Full";
+    }
+    else{
+        feedButton.disabled=
+            state.money<
+            feedBagCost;
+
+        feedButton.textContent=
+            "🌾 Buy "+
+            feedPurchaseAmount+
+            " Feed — "+
+            formatMoney(
+                feedBagCost
+            );
+    }
+
+
+    /* RETAIL */
+
+    document.getElementById(
+        "priceDisplay"
+    ).textContent=
+        "$"+
+        state.eggPrice.toFixed(2);
+
+    document.getElementById(
+        "priceSlider"
+    ).value=
+        Math.round(
+            state.eggPrice*
+            100
+        );
+
+    document.getElementById(
+        "interestText"
+    ).textContent=
+        Math.round(
+            interest*
+            100
+        )+
+        "%";
+
+    document.getElementById(
+        "interestBar"
+    ).style.width=
+        interest*
+        100+
+        "%";
+
+    document.getElementById(
+        "retailSpeedText"
+    ).textContent=
+        retail.toFixed(2)+
+        "/sec";
+
+    document.getElementById(
+        "productionText"
+    ).textContent=
+        production.toFixed(2)+
+        "/sec";
+
+    document.getElementById(
+        "averageEggValueText"
+    ).textContent=
+        formatMoney(
+            getRetailEggValue()
+        );
+
+    document.getElementById(
+        "revenueText"
+    ).textContent=
+        formatMoney(
+            income
+        )+
+        "/sec";
+
+    document.getElementById(
+        "breedProductionText"
+    ).textContent=
+        formatPercent(
+            getBreedProductionMultiplier()-
+            1
+        );
+
+    document.getElementById(
+        "breedRetailText"
+    ).textContent=
+        formatPercent(
+            getBreedRetailMultiplier()-
+            1
+        );
+
+    document.getElementById(
+        "breedWholesaleText"
+    ).textContent=
+        formatPercent(
+            getBreedWholesaleMultiplier()-
+            1
+        );
+
+
+    /* FEED */
+
+    document.getElementById(
+        "feedOwnedText"
+    ).textContent=
+        formatNumber(
+            state.feed
+        );
+
+    document.getElementById(
+        "feedCapacityText"
+    ).textContent=
+        formatNumber(
+            feedCapacity
+        );
+
+    document.getElementById(
+        "feedPriceText"
+    ).textContent=
+        formatMoney(
+            effectiveFeedPrice
+        )+
+        " / feed";
+
+    document.getElementById(
+        "feedBagLabel"
+    ).textContent=
+        feedBagSize+
+        "-Feed Purchase";
+
+    document.getElementById(
+        "feedBagCostText"
+    ).textContent=
+        feedPurchaseAmount>0
+        ?formatMoney(
+            feedBagCost
+        )
+        :"FULL";
+
+    document.getElementById(
+        "feedStorageText"
+    ).textContent=
+        formatNumber(
+            state.feed
+        )+
+        " / "+
+        formatNumber(
+            feedCapacity
+        )+
+        " feed stored";
+
+    const feedBar=
+        document.getElementById(
+            "feedCapacityBar"
+        );
+
+    feedBar.classList.remove(
+        "warning",
+        "full"
+    );
+
+    feedBar.style.width=
+        Math.min(
+            100,
+            feedRatio*
+            100
+        )+
+        "%";
+
+    if(feedRatio>=1){
+        feedBar.classList.add(
+            "full"
+        );
+    }
+    else if(feedRatio>=.8){
+        feedBar.classList.add(
+            "warning"
+        );
+    }
+
+
+    /* FEED EVENT */
+
+    const feedEventBox=
+        document.getElementById(
+            "feedEventBox"
+        );
+
+    feedEventBox.classList.remove(
+        "good",
+        "bad"
+    );
+
+    if(activeFeedEvent){
+        const secondsLeft=
+            Math.max(
+                0,
+                Math.ceil(
+                    (
+                        state.feedMarketEventEnds-
+                        Date.now()
+                    )/
+                    1000
+                )
+            );
+
+        feedEventBox.classList.add(
+            activeFeedEvent.type
+        );
+
+        document.getElementById(
+            "feedEventTitle"
+        ).textContent=
+            activeFeedEvent.icon+
+            " "+
+            activeFeedEvent.name;
+
+        document.getElementById(
+            "feedEventDescription"
+        ).textContent=
+            activeFeedEvent.description+
+            " Event ends in "+
+            secondsLeft+
+            " seconds.";
+
+        document.getElementById(
+            "feedMarketMessage"
+        ).textContent=
+            "Base feed price: "+
+            formatMoney(
+                state.feedPricePerUnit
+            )+
+            " • Current adjusted price: "+
+            formatMoney(
+                effectiveFeedPrice
+            )+
+            ".";
+    }
+    else{
+        const nextEvent=
+            Math.max(
+                0,
+                Math.ceil(
+                    (
+                        state.nextFeedEventAt-
+                        Date.now()
+                    )/
+                    1000
+                )
+            );
+
+        document.getElementById(
+            "feedEventTitle"
+        ).textContent=
+            "🌾 Normal Feed Market";
+
+        document.getElementById(
+            "feedEventDescription"
+        ).textContent=
+            "No special event is active. Next possible event in about "+
+            nextEvent+
+            " seconds.";
+
+        document.getElementById(
+            "feedMarketMessage"
+        ).textContent=
+            "Normal feed prices range from $10 to $20 per feed.";
+    }
+
+
+    /* WHOLESALE */
+
+    const wholesaleToggle=
+        document.getElementById(
+            "wholesaleToggle"
+        );
+
+    const wholesaleStatus=
+        document.getElementById(
+            "wholesaleStatus"
+        );
+
+    if(wholesaleUnlocked()){
+        wholesaleToggle.disabled=false;
+
+        wholesaleToggle.checked=
+            state.wholesaleEnabled;
+
+        wholesaleStatus.classList.remove(
+            "locked"
+        );
+
+        document.getElementById(
+            "wholesaleTitle"
+        ).textContent=
+            state.wholesaleEnabled
+            ?"Wholesale Network — ACTIVE"
+            :"Wholesale Network — PAUSED";
+
+        document.getElementById(
+            "wholesaleDescription"
+        ).textContent=
+            getDistribution().name+
+            " is handling wholesale egg sales.";
+    }
+    else{
+        wholesaleToggle.disabled=true;
+        wholesaleToggle.checked=false;
+
+        wholesaleStatus.classList.add(
+            "locked"
+        );
+
+        document.getElementById(
+            "wholesaleTitle"
+        ).textContent=
+            "Wholesale Network — LOCKED";
+
+        document.getElementById(
+            "wholesaleDescription"
+        ).textContent=
+            "Purchase Distribution Level 1 to unlock wholesale.";
+    }
+
+    document.getElementById(
+        "wholesalePriceText"
+    ).textContent=
+        wholesaleUnlocked()
+        ?formatMoney(
+            getWholesalePrice()
+        )+
+        " / egg"
+        :"Locked";
+
+    document.getElementById(
+        "wholesaleSpeedText"
+    ).textContent=
+        wholesaleUnlocked()
+        ?(
+            state.wholesaleEnabled
+            ?wholesale.toFixed(2)+"/sec"
+            :"Paused"
+        )
+        :"Locked";
+
+    document.getElementById(
+        "totalSalesText"
+    ).textContent=
+        totalSales.toFixed(2)+
+        "/sec";
+
+    document.getElementById(
+        "storageCapacityText"
+    ).textContent=
+        formatNumber(
+            storageCapacity
+        )+
+        " eggs";
+
+
+    /* STORAGE */
+
+    const storageBar=
+        document.getElementById(
+            "storageBar"
+        );
+
+    storageBar.classList.remove(
+        "warning",
+        "full"
+    );
+
+    storageBar.style.width=
+        Math.min(
+            100,
+            storageRatio*
+            100
+        )+
+        "%";
+
+    if(storageRatio>=1){
+        storageBar.classList.add(
+            "full"
+        );
+    }
+    else if(storageRatio>=.8){
+        storageBar.classList.add(
+            "warning"
+        );
+    }
+
+    document.getElementById(
+        "storageText"
+    ).textContent=
+        formatNumber(
+            state.eggs
+        )+
+        " / "+
+        formatNumber(
+            storageCapacity
+        )+
+        " eggs ("+
+        Math.round(
+            storageRatio*
+            100
+        )+
+        "%)";
+
+    const storageWarning=
+        document.getElementById(
+            "storageWarningText"
+        );
+
+    if(storageRatio>=1){
+        storageWarning.textContent=
+            "Storage full — production is paused.";
+    }
+    else if(storageRatio>=.8){
+        storageWarning.textContent=
+            "Storage is getting full.";
+    }
+    else{
+        storageWarning.textContent=
+            "Storage has room available.";
+    }
+
+
+    /* BARN */
+
+    document.getElementById(
+        "barnLevelText"
+    ).textContent=
+        "Level "+
+        state.barnLevel+
+        " / 10";
+
+    document.getElementById(
+        "barnCurrentCapacity"
+    ).textContent=
+        formatNumber(
+            barnCapacity
+        )+
+        " chickens";
+
+    const barnButton=
+        document.getElementById(
+            "barnUpgradeBtn"
+        );
+
+    if(state.barnLevel>=10){
+        document.getElementById(
+            "barnNextText"
+        ).textContent=
+            "Maximum barn level reached.";
+
+        barnButton.textContent=
+            "MAX BARN LEVEL";
+
+        barnButton.disabled=true;
+    }
+    else{
+        const next=
+            BARN_LEVELS[
+                state.barnLevel
+            ];
+
+        document.getElementById(
+            "barnNextText"
+        ).textContent=
+            "Next capacity: "+
+            next.capacity.toLocaleString()+
+            " chickens • Cost: "+
+            formatMoney(
+                next.cost
+            );
+
+        barnButton.textContent=
+            "Upgrade Barn — "+
+            formatMoney(
+                next.cost
+            );
+
+        barnButton.disabled=
+            state.money<
+            next.cost;
+    }
+
+
+    /* STORAGE INFRASTRUCTURE */
+
+    document.getElementById(
+        "storageLevelText"
+    ).textContent=
+        "Level "+
+        state.storageLevel+
+        " / 10";
+
+    document.getElementById(
+        "storageCurrentCapacity"
+    ).textContent=
+        formatNumber(
+            storageCapacity
+        )+
+        " eggs";
+
+    const storageButton=
+        document.getElementById(
+            "storageUpgradeBtn"
+        );
+
+    if(state.storageLevel>=10){
+        document.getElementById(
+            "storageNextText"
+        ).textContent=
+            "Maximum storage level reached.";
+
+        storageButton.textContent=
+            "MAX STORAGE LEVEL";
+
+        storageButton.disabled=true;
+    }
+    else{
+        const next=
+            STORAGE_LEVELS[
+                state.storageLevel
+            ];
+
+        document.getElementById(
+            "storageNextText"
+        ).textContent=
+            "Next base capacity: "+
+            next.capacity.toLocaleString()+
+            " eggs • Cost: "+
+            formatMoney(
+                next.cost
+            );
+
+        storageButton.textContent=
+            "Upgrade Storage — "+
+            formatMoney(
+                next.cost
+            );
+
+        storageButton.disabled=
+            state.money<
+            next.cost;
+    }
+
+
+    /* DISTRIBUTION */
+
+    document.getElementById(
+        "distributionLevelText"
+    ).textContent=
+        "Level "+
+        state.distributionLevel+
+        " / 10";
+
+    document.getElementById(
+        "distributionCurrentText"
+    ).textContent=
+        getDistribution().name;
+
+    const distributionButton=
+        document.getElementById(
+            "distributionUpgradeBtn"
+        );
+
+    if(state.distributionLevel>=10){
+        document.getElementById(
+            "distributionNextText"
+        ).textContent=
+            "Maximum distribution level reached.";
+
+        distributionButton.textContent=
+            "MAX DISTRIBUTION";
+
+        distributionButton.disabled=true;
+    }
+    else{
+        const next=
+            DISTRIBUTION_LEVELS[
+                state.distributionLevel+1
+            ];
+
+        document.getElementById(
+            "distributionNextText"
+        ).textContent=
+            "Next: "+
+            next.name+
+            " • Cost: "+
+            formatMoney(
+                next.cost
+            );
+
+        distributionButton.textContent=
+            state.distributionLevel===0
+            ?"Unlock Distribution — "+formatMoney(next.cost)
+            :"Upgrade Distribution — "+formatMoney(next.cost);
+
+        distributionButton.disabled=
+            state.money<
+            next.cost;
+    }
+
+    updateBreedUI();
+    updateUpgradeTree();
+}
+
+
+/* =========================================================
+   TALENT TREE POSITIONING
+========================================================= */
+
+const TREE_CENTER={
+    x:590,
+    y:360
+};
+
+const TREE_ROOTS={
+    production:{
+        x:440,
+        y:360
+    },
+    operations:{
+        x:590,
+        y:450
+    },
+    marketing:{
+        x:740,
+        y:360
+    }
+};
+
+const TREE_PATH_ANGLES={
+    production:{
+        A:145,
+        B:180,
+        C:215
+    },
+    operations:{
+        A:50,
+        B:90,
+        C:130
+    },
+    marketing:{
+        A:-35,
+        B:0,
+        C:35
+    }
+};
+
+const TREE_PATH_SPACING={
+    production:83,
+    operations:56,
+    marketing:83
+};
+
+function polarPoint(
+    origin,
+    angle,
+    distance
+){
+    const radians=
+        angle*
+        Math.PI/
+        180;
+
+    return {
+        x:
+            origin.x+
+            Math.cos(radians)*
+            distance,
+
+        y:
+            origin.y+
+            Math.sin(radians)*
+            distance
+    };
+}
+
+function getUpgradePosition(id){
+    const upgrade=
+        UPGRADES[id];
+
+    if(
+        upgrade.path===
+        "root"
+    ){
+        return TREE_ROOTS[
+            upgrade.branch
+        ];
+    }
+
+    const root=
+        TREE_ROOTS[
+            upgrade.branch
+        ];
+
+    const angle=
+        TREE_PATH_ANGLES[
+            upgrade.branch
+        ][
+            upgrade.path
+        ];
+
+    const spacing=
+        TREE_PATH_SPACING[
+            upgrade.branch
+        ];
+
+    return polarPoint(
+        root,
+        angle,
+        spacing*
+        upgrade.step
+    );
+}
+
+
+/* =========================================================
+   RENDER TALENT TREE
+========================================================= */
+
+function renderUpgradeTree(){
+    const tree=
+        document.getElementById(
+            "upgradeTree"
+        );
+
+    const svg=
+        document.getElementById(
+            "treeLines"
+        );
+
+    tree
+    .querySelectorAll(
+        ".node"
+    )
+    .forEach(
+        node=>node.remove()
+    );
+
+    svg.innerHTML="";
+
+    Object.keys(
+        UPGRADES
+    ).forEach(id=>{
+
+        const upgrade=
+            UPGRADES[id];
+
+        const position=
+            getUpgradePosition(id);
+
+        const button=
+            document.createElement(
+                "button"
+            );
+
+        button.className="node";
+        button.id="node-"+id;
+
+        button.style.left=
+            (position.x-33)+
+            "px";
+
+        button.style.top=
+            (position.y-33)+
+            "px";
+
+        button.addEventListener(
+            "click",
+            ()=>buyUpgrade(id)
+        );
+
+        const icon=
+            document.createElement(
+                "span"
+            );
+
+        icon.className="icon";
+        icon.textContent=upgrade.icon;
+
+        const name=
+            document.createElement(
+                "span"
+            );
+
+        name.className="nodeName";
+        name.textContent=upgrade.name;
+
+        const cost=
+            document.createElement(
+                "span"
+            );
+
+        cost.className="cost";
+        cost.textContent=
+            formatMoney(
+                upgrade.cost
+            );
+
+        button.append(
+            icon,
+            name,
+            cost
+        );
+
+        tree.appendChild(
+            button
+        );
+
+        let start=
+            TREE_CENTER;
+
+        if(upgrade.requires){
+            start=
+                getUpgradePosition(
+                    upgrade.requires
+                );
+        }
+
+        const line=
+            document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "line"
+            );
+
+        line.setAttribute(
+            "x1",
+            start.x
+        );
+
+        line.setAttribute(
+            "y1",
+            start.y
+        );
+
+        line.setAttribute(
+            "x2",
+            position.x
+        );
+
+        line.setAttribute(
+            "y2",
+            position.y
+        );
+
+        line.setAttribute(
+            "class",
+            "treeLine"
+        );
+
+        line.setAttribute(
+            "id",
+            "line-"+id
+        );
+
+        svg.appendChild(line);
+    });
+}
+
+
+/* =========================================================
+   UPDATE TALENT TREE
+========================================================= */
+
+function updateUpgradeTree(){
+    let owned=0;
+
+    const branchOwned={
+        production:0,
+        operations:0,
+        marketing:0
+    };
+
+    Object.keys(
+        UPGRADES
+    ).forEach(id=>{
+
+        const upgrade=
+            UPGRADES[id];
+
+        const node=
+            document.getElementById(
+                "node-"+id
+            );
+
+        if(!node)return;
+
+        node.classList.remove(
+            "available",
+            "bought",
+            "locked"
+        );
+
+        if(hasUpgrade(id)){
+            node.classList.add(
+                "bought"
+            );
+
+            owned++;
+
+            branchOwned[
+                upgrade.branch
+            ]++;
+        }
+        else if(
+            !upgrade.requires||
+            hasUpgrade(
+                upgrade.requires
+            )
+        ){
+            node.classList.add(
+                "available"
+            );
+        }
+        else{
+            node.classList.add(
+                "locked"
+            );
+        }
+
+        const line=
+            document.getElementById(
+                "line-"+id
+            );
+
+        if(line){
+            line.classList.toggle(
+                "active",
+                hasUpgrade(id)
+            );
+        }
+    });
+
+    document.getElementById(
+        "treeProgress"
+    ).textContent=
+        owned+
+        " / "+
+        Object.keys(
+            UPGRADES
+        ).length+
+        " UPGRADES OWNED";
+
+    document.getElementById(
+        "productionLabel"
+    ).textContent=
+        "PRODUCTION & FLOCK "+
+        branchOwned.production+
+        "/15";
+
+    document.getElementById(
+        "operationsLabel"
+    ).textContent=
+        "FARM OPERATIONS "+
+        branchOwned.operations+
+        "/15";
+
+    document.getElementById(
+        "marketingLabel"
+    ).textContent=
+        "SALES & DISTRIBUTION "+
+        branchOwned.marketing+
+        "/15";
+}
+
+
+/* =========================================================
+   TOOLTIPS
+========================================================= */
+
+function setupTooltips(){
+    const tooltip=
+        document.getElementById(
+            "tooltip"
+        );
+
+    Object.keys(
+        UPGRADES
+    ).forEach(id=>{
+
+        const node=
+            document.getElementById(
+                "node-"+id
+            );
+
+        const upgrade=
+            UPGRADES[id];
+
+        if(!node)return;
+
+        node.addEventListener(
+            "mouseenter",
+            ()=>{
+
+                document.getElementById(
+                    "tooltipTitle"
+                ).textContent=
+                    upgrade.name;
+
+                document.getElementById(
+                    "tooltipDescription"
+                ).textContent=
+                    upgrade.description;
+
+                let requirement=
+                    "Cost: "+
+                    formatMoney(
+                        upgrade.cost
+                    );
+
+                if(upgrade.requires){
+                    requirement+=
+                        " | Requires "+
+                        UPGRADES[
+                            upgrade.requires
+                        ].name;
+                }
+
+                if(hasUpgrade(id)){
+                    requirement=
+                        "✓ PURCHASED — ACTIVE";
+                }
+
+                document.getElementById(
+                    "tooltipRequirement"
+                ).textContent=
+                    requirement;
+
+                tooltip.style.opacity=1;
+            }
+        );
+
+        node.addEventListener(
+            "mousemove",
+            event=>{
+
+                const x=
+                    Math.min(
+                        event.clientX+18,
+                        window.innerWidth-290
+                    );
+
+                const y=
+                    Math.min(
+                        event.clientY+18,
+                        window.innerHeight-180
+                    );
+
+                tooltip.style.left=
+                    Math.max(
+                        5,
+                        x
+                    )+
+                    "px";
+
+                tooltip.style.top=
+                    Math.max(
+                        5,
+                        y
+                    )+
+                    "px";
+            }
+        );
+
+        node.addEventListener(
+            "mouseleave",
+            ()=>{
+                tooltip.style.opacity=0;
+            }
+        );
+    });
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function saveGame(
+    manual=false
+){
+    const saveState={
+        ...state,
+        lastUpdate:Date.now()
+    };
+
+    localStorage.setItem(
+        "chickenFarmEmpireSave",
+        JSON.stringify(
+            saveState
+        )
+    );
+
+    if(manual){
+        addLog(
+            "💾 Game saved."
+        );
+
+        document.getElementById(
+            "saveStatus"
+        ).textContent=
+            "Saved just now";
+    }
+}
+
+
+/* =========================================================
+   LOAD + OLD SAVE MIGRATION
+========================================================= */
+
+function loadGame(){
+    const saved=
+        localStorage.getItem(
+            "chickenFarmEmpireSave"
+        );
+
+    if(!saved){
+        state.feed=100;
+        state.lifetimeFeedPurchased=100;
+
+        state.feedPricePerUnit=
+            randomFeedPrice();
+
+        state.nextFeedPriceChange=
+            Date.now()+
+            randomFeedMarketDelay();
+
+        state.nextFeedEventAt=
+            Date.now()+
+            randomFeedEventDelay();
+
+        state.breedCounts={
+            leghorn:1
+        };
+
+        state.activeBreed=
+            "leghorn";
+
+        addLog(
+            "Welcome to Chicken Farm Empire! Your starter flock contains 1 White Leghorn and 100 feed."
+        );
+
+        normalizeBreedCounts();
+        return;
+    }
+
+    try{
+        const parsed=
+            JSON.parse(saved);
+
+        state={
+            ...state,
+            ...parsed,
+
+            upgrades:{
+                ...(parsed.upgrades||{})
+            },
+
+            breedCounts:{
+                ...(parsed.breedCounts||{})
+            },
+
+            lastUpdate:Date.now(),
+
+            lastAutoChicken:
+                parsed.lastAutoChicken||
+                Date.now()
+        };
+
+
+        /* OLD FARM LEVEL MIGRATION */
+
+        if(
+            typeof parsed.barnLevel!==
+            "number"
+        ){
+            const oldLevel=
+                Math.max(
+                    1,
+                    Math.min(
+                        10,
+                        parsed.farmLevel||
+                        1
+                    )
+                );
+
+            state.barnLevel=
+                oldLevel;
+
+            state.storageLevel=
+                oldLevel;
+
+            state.distributionLevel=
+                Math.max(
+                    0,
+                    oldLevel-1
+                );
+        }
+
+
+        /* BREED MIGRATION */
+
+        if(
+            !parsed.breedCounts||
+            typeof parsed.breedCounts!==
+            "object"
+        ){
+            state.breedCounts={
+                leghorn:
+                    Math.max(
+                        1,
+                        Math.floor(
+                            parsed.chickens||
+                            state.chickens||
+                            1
+                        )
+                    )
+            };
+        }
+
+        if(
+            !parsed.activeBreed||
+            !BREEDS[
+                parsed.activeBreed
+            ]
+        ){
+            state.activeBreed=
+                "leghorn";
+        }
+
+
+        if(
+            typeof parsed.feed!==
+            "number"
+        ){
+            state.feed=100;
+        }
+
+        if(
+            typeof parsed.feedPricePerUnit!==
+            "number"||
+            parsed.feedPricePerUnit<
+            1
+        ){
+            state.feedPricePerUnit=
+                randomFeedPrice();
+        }
+
+        if(
+            typeof parsed.nextFeedPriceChange!==
+            "number"
+        ){
+            state.nextFeedPriceChange=
+                Date.now()+
+                randomFeedMarketDelay();
+        }
+
+        if(
+            typeof parsed.feedMarketEvent===
+            "undefined"
+        ){
+            state.feedMarketEvent=
+                null;
+        }
+
+        if(
+            typeof parsed.feedMarketEventEnds!==
+            "number"
+        ){
+            state.feedMarketEventEnds=
+                0;
+        }
+
+        if(
+            typeof parsed.nextFeedEventAt!==
+            "number"
+        ){
+            state.nextFeedEventAt=
+                Date.now()+
+                randomFeedEventDelay();
+        }
+
+        if(
+            typeof parsed.lifetimeFeedPurchased!==
+            "number"
+        ){
+            state.lifetimeFeedPurchased=
+                state.feed;
+        }
+
+        if(
+            typeof parsed.lifetimeMoney!==
+            "number"
+        ){
+            state.lifetimeMoney=
+                state.money||0;
+        }
+
+        state.barnLevel=
+            Math.max(
+                1,
+                Math.min(
+                    10,
+                    state.barnLevel
+                )
+            );
+
+        state.storageLevel=
+            Math.max(
+                1,
+                Math.min(
+                    10,
+                    state.storageLevel
+                )
+            );
+
+        state.distributionLevel=
+            Math.max(
+                0,
+                Math.min(
+                    10,
+                    state.distributionLevel
+                )
+            );
+
+        state.feed=
+            Math.max(
+                0,
+                state.feed
+            );
+
+        state.wholesaleEnabled=
+            typeof parsed.wholesaleEnabled===
+            "boolean"
+            ?parsed.wholesaleEnabled
+            :true;
+
+        normalizeBreedCounts();
+
+        if(
+            !isBreedUnlocked(
+                state.activeBreed
+            )
+        ){
+            state.activeBreed=
+                "leghorn";
+        }
+
+        if(
+            Date.now()>=
+            state.nextFeedPriceChange
+        ){
+            rollFeedMarket();
+        }
+
+        if(
+            state.feedMarketEvent&&
+            Date.now()>=
+            state.feedMarketEventEnds
+        ){
+            state.feedMarketEvent=null;
+            state.feedMarketEventEnds=0;
+
+            state.nextFeedEventAt=
+                Date.now()+
+                randomFeedEventDelay();
+        }
+
+        addLog(
+            "Saved farm loaded. Existing chickens were preserved."
+        );
+    }
+    catch(error){
+        console.error(
+            "Unable to load save:",
+            error
+        );
+    }
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetGame(){
+    const confirmed=
+        confirm(
+            "Reset your entire Chicken Farm Empire save? This cannot be undone."
+        );
+
+    if(!confirmed)return;
+
+    localStorage.removeItem(
+        "chickenFarmEmpireSave"
+    );
+
+    location.reload();
+}
+
+
+/* =========================================================
+   START GAME
+========================================================= */
+
+loadGame();
+
+normalizeBreedCounts();
+
+renderBreedCards();
+
+renderUpgradeTree();
+
+setupTooltips();
+
+updateUI();
+
+setInterval(
+    gameTick,
+    100
+);
+
+setInterval(
+    ()=>{
+        saveGame(false);
+
+        document.getElementById(
+            "saveStatus"
+        ).textContent=
+            "Autosaved";
+    },
+    2000
+);
+
+</script>
+</body>
+</html>
