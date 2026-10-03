@@ -30,6 +30,7 @@ body{
     min-height:100vh;
     font-family:Arial,Helvetica,sans-serif;
     color:#3d321d;
+
     background:
         linear-gradient(
             to bottom,
@@ -55,14 +56,19 @@ button{
 ========================================================= */
 
 .topbar{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     min-height:82px;
 
     display:grid;
-    grid-template-columns:1.3fr auto 1fr;
+
+    grid-template-columns:
+        1.3fr auto 1fr;
 
     align-items:center;
 
@@ -70,31 +76,43 @@ button{
 
     padding:10px 20px;
 
-    background:rgba(255,252,222,.97);
+    background:
+        rgba(255,252,222,.97);
 
-    border-bottom:4px solid #d3a940;
+    border-bottom:
+        4px solid #d3a940;
 
     box-shadow:
         0 4px 15px
         rgba(76,60,20,.22);
 }
 
+
 .leftTop{
+
     display:flex;
+
     align-items:center;
+
     gap:13px;
 }
 
+
 .actionButtons{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
+
 
 #getChickenBtn,
 #buyFeedBtn{
 
     min-height:54px;
+
     min-width:185px;
 
     padding:11px 17px;
@@ -108,9 +126,11 @@ button{
     transition:.12s;
 }
 
+
 #getChickenBtn{
 
-    border:3px solid #8d5917;
+    border:
+        3px solid #8d5917;
 
     background:
         linear-gradient(
@@ -128,9 +148,11 @@ button{
         #8d5917;
 }
 
+
 #buyFeedBtn{
 
-    border:3px solid #477528;
+    border:
+        3px solid #477528;
 
     background:
         linear-gradient(
@@ -148,35 +170,48 @@ button{
         #477528;
 }
 
+
 #getChickenBtn:hover,
 #buyFeedBtn:hover{
-    transform:translateY(-1px);
+
+    transform:
+        translateY(-1px);
 }
+
 
 #getChickenBtn:active,
 #buyFeedBtn:active{
-    transform:translateY(3px);
+
+    transform:
+        translateY(3px);
 }
+
 
 #getChickenBtn:disabled,
 #buyFeedBtn:disabled{
+
     opacity:.58;
+
     cursor:not-allowed;
+
     transform:none;
+
     box-shadow:none;
 }
 
+
 .feedMarketInfo{
 
-    min-width:115px;
+    min-width:135px;
 
-    padding:5px 8px;
+    padding:6px 9px;
 
     border-radius:8px;
 
     background:#fff8ce;
 
-    border:2px solid #d2b65f;
+    border:
+        2px solid #d2b65f;
 
     font-size:11px;
 
@@ -184,6 +219,7 @@ button{
 
     color:#70521e;
 }
+
 
 .feedMarketInfo strong{
 
@@ -194,12 +230,14 @@ button{
     color:#46772b;
 }
 
+
 .feedMarketInfo.cheap{
 
     background:#dcf7c8;
 
     border-color:#60a746;
 }
+
 
 .feedMarketInfo.expensive{
 
@@ -208,9 +246,12 @@ button{
     border-color:#d98d34;
 }
 
+
 .logoArea{
+
     text-align:center;
 }
+
 
 .logoArea h1{
 
@@ -226,6 +267,7 @@ button{
         0 2px #fff;
 }
 
+
 .logoArea small{
 
     display:block;
@@ -237,6 +279,7 @@ button{
     font-weight:bold;
 }
 
+
 .topStats{
 
     display:flex;
@@ -245,6 +288,7 @@ button{
 
     gap:24px;
 }
+
 
 .statTop span{
 
@@ -258,6 +302,7 @@ button{
 
     letter-spacing:1px;
 }
+
 
 .statTop strong{
 
@@ -297,6 +342,7 @@ button{
     overflow-x:auto;
 }
 
+
 .farmShell{
 
     position:relative;
@@ -307,7 +353,8 @@ button{
 
     min-height:700px;
 
-    border:5px solid #725025;
+    border:
+        5px solid #725025;
 
     border-radius:22px;
 
@@ -321,12 +368,15 @@ button{
         rgba(255,255,255,.25);
 }
 
+
 .farmSky{
 
     position:absolute;
 
     left:0;
+
     right:0;
+
     top:0;
 
     height:145px;
@@ -369,14 +419,17 @@ button{
         );
 }
 
+
 .sun{
 
     position:absolute;
 
     right:70px;
+
     top:25px;
 
     width:72px;
+
     height:72px;
 
     border-radius:50%;
@@ -388,14 +441,17 @@ button{
         #fff59a;
 }
 
+
 .hillsBack{
 
     position:absolute;
 
     top:90px;
+
     left:-5%;
 
     width:110%;
+
     height:130px;
 
     background:
@@ -424,6 +480,7 @@ button{
             transparent 27%
         );
 }
+
 
 .grassTexture{
 
@@ -469,9 +526,11 @@ button{
 
     background:#d9b171;
 
-    border:3px solid
+    border:
+        3px solid
         rgba(121,83,31,.22);
 }
+
 
 .roadMain{
 
@@ -483,8 +542,10 @@ button{
 
     height:610px;
 
-    transform:rotate(2deg);
+    transform:
+        rotate(2deg);
 }
+
 
 .roadCross{
 
@@ -496,7 +557,8 @@ button{
 
     height:105px;
 
-    transform:rotate(-3deg);
+    transform:
+        rotate(-3deg);
 }
 
 
@@ -517,6 +579,7 @@ button{
         );
 }
 
+
 .barn{
 
     left:4%;
@@ -529,7 +592,8 @@ button{
 
     background:#dc4a40;
 
-    border:5px solid #8c3029;
+    border:
+        5px solid #8c3029;
 
     border-radius:4px;
 
@@ -539,11 +603,13 @@ button{
         top .4s;
 }
 
+
 .barnRoof{
 
     position:absolute;
 
     left:-18px;
+
     top:-50px;
 
     width:
@@ -562,6 +628,7 @@ button{
         );
 }
 
+
 .barnWindow{
 
     position:absolute;
@@ -579,9 +646,11 @@ button{
 
     background:#91dbed;
 
-    border:4px solid
+    border:
+        4px solid
         #f3ddb0;
 }
+
 
 .barnDoor{
 
@@ -602,9 +671,11 @@ button{
 
     background:#773728;
 
-    border:4px solid
+    border:
+        4px solid
         #f3ddb0;
 }
+
 
 .barnDoor::before,
 .barnDoor::after{
@@ -626,13 +697,20 @@ button{
     transform-origin:center;
 }
 
+
 .barnDoor::before{
-    transform:rotate(35deg);
+
+    transform:
+        rotate(35deg);
 }
 
+
 .barnDoor::after{
-    transform:rotate(-35deg);
+
+    transform:
+        rotate(-35deg);
 }
+
 
 .barnBadge{
 
@@ -655,7 +733,8 @@ button{
 
     background:#fff0b8;
 
-    border:2px solid #87591a;
+    border:
+        2px solid #87591a;
 
     color:#6a4215;
 
@@ -750,10 +829,12 @@ button{
 
     height:75px;
 
-    border:5px solid #8c3029;
+    border:
+        5px solid #8c3029;
 
     background:#c94239;
 }
+
 
 .barnWing::before{
 
@@ -780,6 +861,7 @@ button{
         );
 }
 
+
 .barnWing2{
 
     display:none;
@@ -796,10 +878,12 @@ button{
 
     height:70px;
 
-    border:5px solid #8c3029;
+    border:
+        5px solid #8c3029;
 
     background:#bb3b34;
 }
+
 
 .barnWing2::before{
 
@@ -826,6 +910,7 @@ button{
         );
 }
 
+
 .poultryHouse{
 
     display:none;
@@ -844,10 +929,12 @@ button{
 
     background:#ede5ce;
 
-    border:5px solid #74766f;
+    border:
+        5px solid #74766f;
 
     border-radius:6px;
 }
+
 
 .poultryHouse::before{
 
@@ -869,6 +956,7 @@ button{
     font-weight:900;
 }
 
+
 .farmShell.barn-level-4 .barnWing,
 .farmShell.barn-level-5 .barnWing,
 .farmShell.barn-level-6 .barnWing,
@@ -876,24 +964,29 @@ button{
 .farmShell.barn-level-8 .barnWing,
 .farmShell.barn-level-9 .barnWing,
 .farmShell.barn-level-10 .barnWing{
+
     display:block;
 }
+
 
 .farmShell.barn-level-7 .barnWing2,
 .farmShell.barn-level-8 .barnWing2,
 .farmShell.barn-level-9 .barnWing2,
 .farmShell.barn-level-10 .barnWing2{
+
     display:block;
 }
 
+
 .farmShell.barn-level-9 .poultryHouse,
 .farmShell.barn-level-10 .poultryHouse{
+
     display:block;
 }
 
 
 /* =========================================================
-   STORAGE BUILDING
+   STORAGE
 ========================================================= */
 
 .storageShed{
@@ -910,7 +1003,8 @@ button{
 
     height:78px;
 
-    border:5px solid #666e70;
+    border:
+        5px solid #666e70;
 
     background:#d8e0df;
 
@@ -920,6 +1014,7 @@ button{
         width .4s,
         height .4s;
 }
+
 
 .storageShed::before{
 
@@ -942,6 +1037,7 @@ button{
 
     font-weight:900;
 }
+
 
 .storageShed::after{
 
@@ -968,6 +1064,7 @@ button{
             0 100%
         );
 }
+
 
 .farmShell.storage-level-2 .storageShed{
     width:145px;
@@ -1029,8 +1126,10 @@ button{
 
     background:#f6d06d;
 
-    border:5px solid #97631d;
+    border:
+        5px solid #97631d;
 }
+
 
 .coopRoof{
 
@@ -1055,6 +1154,7 @@ button{
         );
 }
 
+
 .coopDoor{
 
     position:absolute;
@@ -1070,10 +1170,12 @@ button{
 
     height:58px;
 
-    border:4px solid #744621;
+    border:
+        4px solid #744621;
 
     background:#5d3d20;
 }
+
 
 .coopSign{
 
@@ -1090,6 +1192,7 @@ button{
     color:#6d4719;
 }
 
+
 .silo{
 
     right:6%;
@@ -1100,7 +1203,8 @@ button{
 
     height:190px;
 
-    border:5px solid #7d8588;
+    border:
+        5px solid #7d8588;
 
     background:
 
@@ -1116,6 +1220,7 @@ button{
         10px 10px 5px 5px;
 }
 
+
 .silo::before{
 
     content:"";
@@ -1130,13 +1235,15 @@ button{
 
     height:58px;
 
-    border:5px solid #777f81;
+    border:
+        5px solid #777f81;
 
     background:#b3babb;
 
     border-radius:
         50% 50% 10% 10%;
 }
+
 
 .farmHouse{
 
@@ -1150,8 +1257,10 @@ button{
 
     background:#f8f4df;
 
-    border:5px solid #8f8b70;
+    border:
+        5px solid #8f8b70;
 }
+
 
 .houseRoof{
 
@@ -1174,6 +1283,7 @@ button{
             0 100%
         );
 }
+
 
 .houseDoor{
 
@@ -1212,7 +1322,8 @@ button{
 
     height:140px;
 
-    border:5px solid #8a6d2e;
+    border:
+        5px solid #8a6d2e;
 
     background:
 
@@ -1225,6 +1336,7 @@ button{
     transform:
         rotate(2deg);
 }
+
 
 .pond{
 
@@ -1248,10 +1360,12 @@ button{
             #36abd5 68%
         );
 
-    border:8px solid #598f4f;
+    border:
+        8px solid #598f4f;
 
     border-radius:50%;
 }
+
 
 .fence{
 
@@ -1270,10 +1384,13 @@ button{
             transparent 13px 36px
         );
 
-    border-top:5px solid #e3cb88;
+    border-top:
+        5px solid #e3cb88;
 
-    border-bottom:3px solid #ae8d50;
+    border-bottom:
+        3px solid #ae8d50;
 }
+
 
 .fence.top{
 
@@ -1284,6 +1401,7 @@ button{
     width:38%;
 }
 
+
 .fence.bottom{
 
     left:28%;
@@ -1292,6 +1410,7 @@ button{
 
     width:38%;
 }
+
 
 .fence.left{
 
@@ -1304,8 +1423,10 @@ button{
     transform:
         rotate(90deg);
 
-    transform-origin:left center;
+    transform-origin:
+        left center;
 }
+
 
 .fence.right{
 
@@ -1318,12 +1439,13 @@ button{
     transform:
         rotate(90deg);
 
-    transform-origin:left center;
+    transform-origin:
+        left center;
 }
 
 
 /* =========================================================
-   CHICKEN YARD
+   CHICKENS
 ========================================================= */
 
 .chickenYard{
@@ -1340,6 +1462,7 @@ button{
 
     height:195px;
 }
+
 
 .yardLabel{
 
@@ -1361,7 +1484,8 @@ button{
     background:
         rgba(255,249,208,.94);
 
-    border:2px solid #a77c2b;
+    border:
+        2px solid #a77c2b;
 
     font-size:11px;
 
@@ -1369,6 +1493,7 @@ button{
 
     color:#6d4b17;
 }
+
 
 .chickenSprite{
 
@@ -1398,6 +1523,7 @@ button{
     user-select:none;
 }
 
+
 .chickenSprite.walking{
 
     animation:
@@ -1414,16 +1540,17 @@ button{
         alternate;
 }
 
+
 .chickenSprite.idle{
 
     animation:
-
         chickenBob
         1.2s
         ease-in-out
         infinite
         alternate;
 }
+
 
 @keyframes chickenEnter{
 
@@ -1438,7 +1565,6 @@ button{
             rotate(-8deg);
     }
 
-
     100%{
 
         transform:
@@ -1446,6 +1572,7 @@ button{
             rotate(0);
     }
 }
+
 
 @keyframes chickenBob{
 
@@ -1457,6 +1584,7 @@ button{
         margin-top:-4px;
     }
 }
+
 
 .flockOverflow{
 
@@ -1474,7 +1602,8 @@ button{
 
     background:#fff7c9;
 
-    border:2px solid #a97926;
+    border:
+        2px solid #a97926;
 
     font-size:11px;
 
@@ -1485,7 +1614,7 @@ button{
 
 
 /* =========================================================
-   FEED BAG
+   FEED PILE
 ========================================================= */
 
 .feedPile{
@@ -1507,12 +1636,14 @@ button{
 
     background:#e9bd65;
 
-    border:4px solid #906720;
+    border:
+        4px solid #906720;
 
     box-shadow:
         0 6px 8px
         rgba(67,46,12,.2);
 }
+
 
 .feedPile::before{
 
@@ -1529,6 +1660,7 @@ button{
 
     font-size:25px;
 }
+
 
 .feedPile::after{
 
@@ -1552,7 +1684,7 @@ button{
 
 
 /* =========================================================
-   DELIVERY TRUCK
+   TRUCK
 ========================================================= */
 
 .deliveryTruck{
@@ -1570,6 +1702,7 @@ button{
     font-size:42px;
 }
 
+
 .farmShell.wholesale-on .deliveryTruck{
 
     display:block;
@@ -1581,14 +1714,17 @@ button{
         infinite;
 }
 
+
 @keyframes truckDrive{
 
     0%{
+
         transform:
             translateY(100px);
     }
 
     100%{
+
         transform:
             translateY(-450px);
     }
@@ -1620,6 +1756,7 @@ button{
     gap:8px;
 }
 
+
 .hudCard{
 
     padding:8px 11px;
@@ -1631,12 +1768,14 @@ button{
     background:
         rgba(255,253,229,.94);
 
-    border:2px solid #d4aa48;
+    border:
+        2px solid #d4aa48;
 
     box-shadow:
         0 4px 9px
         rgba(66,44,10,.15);
 }
+
 
 .hudCard span{
 
@@ -1651,12 +1790,14 @@ button{
     text-transform:uppercase;
 }
 
+
 .hudCard strong{
 
     font-size:16px;
 
     color:#4f391a;
 }
+
 
 .infrastructureFlag{
 
@@ -1675,12 +1816,14 @@ button{
     background:
         rgba(255,249,207,.95);
 
-    border:3px solid #b17c20;
+    border:
+        3px solid #b17c20;
 
     box-shadow:
         0 5px 10px
         rgba(67,47,12,.2);
 }
+
 
 .infrastructureFlag strong{
 
@@ -1689,9 +1832,12 @@ button{
     color:#744a14;
 }
 
+
 .infrastructureFlag small{
+
     color:#8a733e;
 }
+
 
 .farmAlert{
 
@@ -1713,7 +1859,8 @@ button{
 
     background:#fff0a9;
 
-    border:3px solid #d88722;
+    border:
+        3px solid #d88722;
 
     color:#70430f;
 
@@ -1721,6 +1868,7 @@ button{
 
     font-weight:900;
 }
+
 
 .farmAlert.danger{
 
@@ -1748,13 +1896,15 @@ button{
     margin-top:22px;
 }
 
+
 .panel{
 
     position:relative;
 
     padding:20px;
 
-    border:4px solid #c89c3f;
+    border:
+        4px solid #c89c3f;
 
     border-radius:17px;
 
@@ -1774,12 +1924,14 @@ button{
         rgba(74,57,18,.18);
 }
 
+
 .panel h2{
 
     margin:0 0 14px;
 
     color:#5f441c;
 }
+
 
 .priceDisplay{
 
@@ -1793,12 +1945,14 @@ button{
     font-weight:900;
 }
 
+
 .priceSlider{
 
     width:100%;
 
     accent-color:#f0ad32;
 }
+
 
 .rangeLabels{
 
@@ -1812,8 +1966,10 @@ button{
     font-size:12px;
 }
 
+
 .interestMeter,
-.storageMeter{
+.storageMeter,
+.feedCapacityMeter{
 
     width:100%;
 
@@ -1825,8 +1981,10 @@ button{
 
     background:#e7dfbf;
 
-    border:2px solid #9d8a59;
+    border:
+        2px solid #9d8a59;
 }
+
 
 #interestBar{
 
@@ -1840,6 +1998,7 @@ button{
             #f4d44d
         );
 }
+
 
 #storageBar{
 
@@ -1856,6 +2015,7 @@ button{
         );
 }
 
+
 #storageBar.warning{
 
     background:
@@ -1867,6 +2027,7 @@ button{
         );
 }
 
+
 #storageBar.full{
 
     background:
@@ -1877,6 +2038,47 @@ button{
             #bb2e2e
         );
 }
+
+
+#feedCapacityBar{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #72b845,
+            #c9d849
+        );
+}
+
+
+#feedCapacityBar.warning{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e6c03b,
+            #ee8d30
+        );
+}
+
+
+#feedCapacityBar.full{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e96437,
+            #c6382d
+        );
+}
+
 
 .infoGrid{
 
@@ -1890,6 +2092,7 @@ button{
     margin-top:13px;
 }
 
+
 .infoCell{
 
     padding:8px 10px;
@@ -1898,8 +2101,10 @@ button{
 
     background:#fff9d9;
 
-    border:1px solid #dcc57f;
+    border:
+        1px solid #dcc57f;
 }
+
 
 .infoCell span{
 
@@ -1912,12 +2117,14 @@ button{
     text-transform:uppercase;
 }
 
+
 .infoCell strong{
 
     color:#594018;
 
     font-size:14px;
 }
+
 
 .wholesaleStatus{
 
@@ -1929,12 +2136,16 @@ button{
 
     background:#fff4cb;
 
-    border:2px solid #d5b65c;
+    border:
+        2px solid #d5b65c;
 }
 
+
 .wholesaleStatus.locked{
+
     opacity:.65;
 }
+
 
 .toggleRow{
 
@@ -1950,6 +2161,7 @@ button{
     margin-top:12px;
 }
 
+
 .switch{
 
     position:relative;
@@ -1961,6 +2173,7 @@ button{
     height:30px;
 }
 
+
 .switch input{
 
     opacity:0;
@@ -1969,6 +2182,7 @@ button{
 
     height:0;
 }
+
 
 .sliderSwitch{
 
@@ -1984,8 +2198,10 @@ button{
 
     border-radius:30px;
 
-    border:2px solid #756f5c;
+    border:
+        2px solid #756f5c;
 }
+
 
 .sliderSwitch::before{
 
@@ -2008,10 +2224,13 @@ button{
     transition:.25s;
 }
 
+
 .switch input:checked +
 .sliderSwitch{
+
     background:#49ad58;
 }
+
 
 .switch input:checked +
 .sliderSwitch::before{
@@ -2019,6 +2238,7 @@ button{
     transform:
         translateX(27px);
 }
+
 
 .storageWarningText{
 
@@ -2033,13 +2253,15 @@ button{
     font-weight:bold;
 }
 
+
 .storageWarningText.danger{
+
     color:#b43e25;
 }
 
 
 /* =========================================================
-   FEED MARKET
+   FEED MARKET PANEL
 ========================================================= */
 
 .feedPanel{
@@ -2048,16 +2270,19 @@ button{
 
     padding:15px;
 
-    border:3px solid #7aa548;
+    border:
+        3px solid #7aa548;
 
     border-radius:13px;
 
     background:
+
         linear-gradient(
             #effbd9,
             #d5efaa
         );
 }
+
 
 .feedPanel h3{
 
@@ -2066,15 +2291,17 @@ button{
     color:#446b25;
 }
 
+
 .feedMarketGrid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(4,1fr);
 
     gap:8px;
 }
+
 
 .feedBox{
 
@@ -2085,8 +2312,10 @@ button{
     background:
         rgba(255,255,255,.62);
 
-    border:1px solid #9abd68;
+    border:
+        1px solid #9abd68;
 }
+
 
 .feedBox span{
 
@@ -2099,6 +2328,7 @@ button{
     text-transform:uppercase;
 }
 
+
 .feedBox strong{
 
     font-size:15px;
@@ -2107,13 +2337,94 @@ button{
 }
 
 
+.feedCapacityTitle{
+
+    margin:
+        14px 0 6px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    color:#4b6b2d;
+}
+
+
+.feedCapacityText{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    color:#48632b;
+}
+
+
+.feedEventBox{
+
+    margin-top:13px;
+
+    padding:11px 13px;
+
+    border-radius:9px;
+
+    border:
+        2px solid #aaa16e;
+
+    background:
+        rgba(255,255,255,.58);
+}
+
+
+.feedEventBox strong{
+
+    display:block;
+
+    color:#5d593b;
+
+    margin-bottom:4px;
+}
+
+
+.feedEventBox.good{
+
+    background:#daf5c7;
+
+    border-color:#62a949;
+}
+
+
+.feedEventBox.good strong{
+
+    color:#357321;
+}
+
+
+.feedEventBox.bad{
+
+    background:#ffe0c4;
+
+    border-color:#d57b32;
+}
+
+
+.feedEventBox.bad strong{
+
+    color:#9b461e;
+}
+
+
 /* =========================================================
    INFRASTRUCTURE
 ========================================================= */
 
 .infrastructureSection{
+
     margin-top:34px;
 }
+
 
 .sectionHeader{
 
@@ -2121,6 +2432,7 @@ button{
 
     margin-bottom:18px;
 }
+
 
 .sectionHeader h2{
 
@@ -2131,12 +2443,15 @@ button{
     color:#684617;
 }
 
+
 .sectionHeader p{
 
-    margin:6px 0 0;
+    margin:
+        6px 0 0;
 
     color:#705b35;
 }
+
 
 .infraGrid{
 
@@ -2148,15 +2463,18 @@ button{
     gap:18px;
 }
 
+
 .infraCard{
 
     padding:20px;
 
-    border:4px solid #b4812c;
+    border:
+        4px solid #b4812c;
 
     border-radius:16px;
 
     background:
+
         linear-gradient(
             #fff9d8,
             #f6e3a6
@@ -2171,9 +2489,12 @@ button{
         rgba(73,54,15,.18);
 }
 
+
 .infraIcon{
+
     font-size:38px;
 }
+
 
 .infraTitle{
 
@@ -2184,6 +2505,7 @@ button{
     color:#664516;
 }
 
+
 .infraLevel{
 
     margin-top:3px;
@@ -2192,6 +2514,7 @@ button{
 
     font-weight:bold;
 }
+
 
 .infraStat{
 
@@ -2204,12 +2527,16 @@ button{
     background:
         rgba(255,255,255,.58);
 
-    border:1px solid #d7bd72;
+    border:
+        1px solid #d7bd72;
 }
 
+
 .infraStat strong{
+
     color:#724b11;
 }
+
 
 .infraNext{
 
@@ -2222,6 +2549,7 @@ button{
     color:#715b30;
 }
 
+
 .infraBtn{
 
     width:100%;
@@ -2230,7 +2558,8 @@ button{
 
     padding:12px;
 
-    border:3px solid #815317;
+    border:
+        3px solid #815317;
 
     border-radius:9px;
 
@@ -2250,6 +2579,7 @@ button{
         #815317;
 }
 
+
 .infraBtn:disabled{
 
     cursor:not-allowed;
@@ -2265,7 +2595,7 @@ button{
 
 
 /* =========================================================
-   NEW COMPACT TALENT TREE
+   COMPACT TALENT TREE
 ========================================================= */
 
 .treeSection{
@@ -2279,9 +2609,11 @@ button{
 
     border-radius:22px;
 
-    border:5px solid #8b6727;
+    border:
+        5px solid #8b6727;
 
     background:
+
         linear-gradient(
             #fff2ae,
             #f1d378
@@ -2296,6 +2628,7 @@ button{
         rgba(78,57,20,.2);
 }
 
+
 .sectionTitle{
 
     margin:0;
@@ -2307,6 +2640,7 @@ button{
     letter-spacing:3px;
 }
 
+
 .sectionSubtitle{
 
     text-align:center;
@@ -2317,12 +2651,14 @@ button{
         7px 0 18px;
 }
 
+
 .treeWrapper{
 
     width:100%;
 
     overflow-x:auto;
 }
+
 
 .tree{
 
@@ -2338,7 +2674,8 @@ button{
 
     border-radius:18px;
 
-    border:4px solid #9b772d;
+    border:
+        4px solid #9b772d;
 
     background:
 
@@ -2370,6 +2707,7 @@ button{
         #f7efca;
 }
 
+
 .tree svg{
 
     position:absolute;
@@ -2383,6 +2721,7 @@ button{
     pointer-events:none;
 }
 
+
 .treeLine{
 
     stroke:#94876b;
@@ -2391,6 +2730,7 @@ button{
 
     opacity:.62;
 }
+
 
 .treeLine.active{
 
@@ -2406,6 +2746,7 @@ button{
             #68ff90
         );
 }
+
 
 .centerNode{
 
@@ -2431,9 +2772,11 @@ button{
 
     text-align:center;
 
-    border:6px solid #8a5d18;
+    border:
+        6px solid #8a5d18;
 
     background:
+
         radial-gradient(
             circle at 50% 30%,
             #ffdf69,
@@ -2455,6 +2798,7 @@ button{
         rgba(255,195,52,.45);
 }
 
+
 .centerNode span{
 
     display:block;
@@ -2463,6 +2807,7 @@ button{
 
     margin-bottom:3px;
 }
+
 
 .branchLabel{
 
@@ -2478,7 +2823,8 @@ button{
     background:
         rgba(255,250,218,.95);
 
-    border:2px solid
+    border:
+        2px solid
         rgba(143,105,37,.35);
 
     font-size:15px;
@@ -2490,6 +2836,7 @@ button{
     white-space:nowrap;
 }
 
+
 .productionLabel{
 
     left:32px;
@@ -2499,17 +2846,19 @@ button{
     color:#2d853c;
 }
 
+
 .operationsLabel{
 
     left:50%;
 
-    bottom:20px;
+    bottom:8px;
 
     transform:
         translateX(-50%);
 
     color:#a25e1d;
 }
+
 
 .marketingLabel{
 
@@ -2519,6 +2868,7 @@ button{
 
     color:#306cac;
 }
+
 
 .treeProgress{
 
@@ -2540,7 +2890,8 @@ button{
 
     background:#fff7c9;
 
-    border:2px solid #b78a35;
+    border:
+        2px solid #b78a35;
 
     color:#704c18;
 
@@ -2548,6 +2899,7 @@ button{
 
     font-weight:900;
 }
+
 
 .node{
 
@@ -2571,7 +2923,8 @@ button{
 
     border-radius:50%;
 
-    border:4px solid #93886d;
+    border:
+        4px solid #93886d;
 
     background:#fff9dc;
 
@@ -2594,6 +2947,7 @@ button{
         box-shadow .15s;
 }
 
+
 .node:hover{
 
     transform:
@@ -2601,6 +2955,7 @@ button{
 
     z-index:25;
 }
+
 
 .node .icon{
 
@@ -2613,12 +2968,14 @@ button{
     margin-bottom:2px;
 }
 
+
 .node .nodeName{
 
     display:block;
 
     max-width:57px;
 }
+
 
 .node .cost{
 
@@ -2630,6 +2987,7 @@ button{
 
     font-size:7.5px;
 }
+
 
 .node.available{
 
@@ -2648,6 +3006,7 @@ button{
         rgba(72,57,23,.16);
 }
 
+
 .node.locked{
 
     opacity:.34;
@@ -2656,13 +3015,15 @@ button{
         grayscale(.9);
 }
 
+
 .node.bought{
 
     opacity:1;
 
     color:white;
 
-    border:5px solid #ffda55;
+    border:
+        5px solid #ffda55;
 
     background:
 
@@ -2681,9 +3042,12 @@ button{
         #65f18a;
 }
 
+
 .node.bought .cost{
+
     color:#fff1ad;
 }
+
 
 .node.bought::after{
 
@@ -2709,7 +3073,8 @@ button{
 
     background:#148840;
 
-    border:2px solid white;
+    border:
+        2px solid white;
 
     color:white;
 
@@ -2735,6 +3100,7 @@ button{
     margin-top:30px;
 }
 
+
 .log{
 
     height:180px;
@@ -2743,7 +3109,8 @@ button{
 
     padding:10px;
 
-    border:2px solid #d2bd7e;
+    border:
+        2px solid #d2bd7e;
 
     border-radius:8px;
 
@@ -2751,6 +3118,7 @@ button{
 
     font-size:13px;
 }
+
 
 .logEntry{
 
@@ -2760,6 +3128,7 @@ button{
         1px solid #ebddb2;
 }
 
+
 .smallBtn{
 
     margin-top:12px;
@@ -2768,7 +3137,8 @@ button{
 
     border-radius:7px;
 
-    border:2px solid #956622;
+    border:
+        2px solid #956622;
 
     background:#f6c858;
 
@@ -2777,9 +3147,12 @@ button{
     font-weight:bold;
 }
 
+
 .resetBtn{
+
     background:#e88468;
 }
+
 
 .tooltip{
 
@@ -2797,7 +3170,8 @@ button{
 
     border-radius:9px;
 
-    border:3px solid #9e7121;
+    border:
+        3px solid #9e7121;
 
     background:#fff8ce;
 
@@ -2808,13 +3182,18 @@ button{
         rgba(72,51,15,.3);
 }
 
+
 .tooltip strong{
+
     color:#925a11;
 }
 
+
 .toolDesc{
+
     margin-top:5px;
 }
+
 
 .toolReq{
 
@@ -2840,12 +3219,14 @@ button{
         text-align:center;
     }
 
+
     .leftTop,
     .topStats{
 
         justify-content:center;
     }
 }
+
 
 @media(max-width:1150px){
 
@@ -2857,6 +3238,17 @@ button{
     }
 }
 
+
+@media(max-width:800px){
+
+    .feedMarketGrid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
 @media(max-width:700px){
 
     .actionButtons{
@@ -2864,10 +3256,12 @@ button{
         flex-direction:column;
     }
 
+
     .leftTop{
 
         flex-direction:column;
     }
+
 
     .bottomPanels{
 
@@ -2917,11 +3311,11 @@ id="feedMarketInfo"
 Feed:
 
 <strong id="headerFeed">
-3
+100 / 150
 </strong>
 
 <span id="headerFeedPrice">
-$0.08 each
+$15.00 each
 </span>
 
 <br>
@@ -3000,7 +3394,7 @@ Feed
 </span>
 
 <strong id="topFeed">
-3
+100
 </strong>
 
 </div>
@@ -3076,11 +3470,11 @@ Barn Capacity
 <div class="hudCard">
 
 <span>
-Feed
+Feed Storage
 </span>
 
 <strong id="farmFeedCount">
-3
+100 / 150
 </strong>
 
 </div>
@@ -3102,7 +3496,7 @@ Egg Inventory
 <div class="hudCard">
 
 <span>
-Storage
+Egg Storage
 </span>
 
 <strong id="farmStorageCount">
@@ -3395,7 +3789,20 @@ Feed Owned
 </span>
 
 <strong id="feedOwnedText">
-3
+100
+</strong>
+
+</div>
+
+
+<div class="feedBox">
+
+<span>
+Feed Capacity
+</span>
+
+<strong id="feedCapacityText">
+150
 </strong>
 
 </div>
@@ -3408,7 +3815,7 @@ Current Price
 </span>
 
 <strong id="feedPriceText">
-$0.08 / feed
+$15.00 / feed
 </strong>
 
 </div>
@@ -3421,7 +3828,7 @@ $0.08 / feed
 </span>
 
 <strong id="feedBagCostText">
-$0.80
+$150.00
 </strong>
 
 </div>
@@ -3430,11 +3837,47 @@ $0.80
 </div>
 
 
+<div class="feedCapacityTitle">
+Feed Silo Capacity
+</div>
+
+
+<div class="feedCapacityMeter">
+
+<div id="feedCapacityBar"></div>
+
+</div>
+
+
+<div
+class="feedCapacityText"
+id="feedStorageText"
+>
+100 / 150 feed stored
+</div>
+
+
+<div
+class="feedEventBox"
+id="feedEventBox"
+>
+
+<strong id="feedEventTitle">
+🌾 Normal Feed Market
+</strong>
+
+<div id="feedEventDescription">
+No special market event is active.
+</div>
+
+</div>
+
+
 <p
 id="feedMarketMessage"
 style="margin:10px 0 0;font-size:12px;color:#557636;"
 >
-Feed prices change randomly.
+Normal feed prices range from $10 to $20 per feed.
 </p>
 
 
@@ -3606,7 +4049,7 @@ Storage has room available.
 </h2>
 
 <p>
-Barn, storage and distribution are upgraded separately.
+Barn, egg storage and distribution are upgraded separately.
 </p>
 
 </div>
@@ -3782,7 +4225,7 @@ Unlock Distribution
 
 
 <!-- =====================================================
-     COMPACT TALENT TREE
+     TALENT TREE
 ===================================================== -->
 
 <section class="treeSection">
@@ -3794,8 +4237,7 @@ FARM TALENT TREE
 
 
 <div class="sectionSubtitle">
-All 45 upgrades now fit into one compact radial-style tree.
-Choose different paths through production, farm operations, and sales.
+Production, operations and sales upgrades all fit into one compact farm talent tree.
 </div>
 
 
@@ -3900,18 +4342,17 @@ Farm Rules
 
 <p>
 Every new chicken consumes <strong>1 feed</strong>.
-This applies to manual chickens and automatic hatchery chickens.
+New farms begin with <strong>100 feed</strong>.
 </p>
 
 <p>
-Feed prices still use the current system in this version.
-We have not yet applied the planned $10–$20 feed market.
+Normal feed prices range from <strong>$10–$20 per feed</strong>.
+Temporary feed-market events can push prices above or below that range.
 </p>
 
 <p>
-Purchased skills are bright green with a check mark.
-Available skills are gold.
-Locked skills are faded.
+Basic feed storage holds <strong>150 feed</strong>.
+Feed Silos, Grain Co-op and Mega Farm Systems greatly expand that capacity.
 </p>
 
 
@@ -3974,11 +4415,52 @@ const FEED_BAG_SIZE =
 
 
 const FEED_MIN_CENTS =
-4;
+1000;
 
 
 const FEED_MAX_CENTS =
-14;
+2000;
+
+
+const FEED_EVENTS = [
+
+{
+id:"harvest",
+name:"Great Harvest",
+icon:"🌽",
+multiplier:.70,
+type:"good",
+description:"A huge grain harvest cuts feed prices by 30%."
+},
+
+{
+id:"surplus",
+name:"Grain Surplus",
+icon:"🌾",
+multiplier:.85,
+type:"good",
+description:"Local suppliers have excess grain. Feed prices are 15% lower."
+},
+
+{
+id:"fuel",
+name:"Fuel Price Spike",
+icon:"⛽",
+multiplier:1.15,
+type:"bad",
+description:"Higher transportation costs increase feed prices by 15%."
+},
+
+{
+id:"shortage",
+name:"Crop Shortage",
+icon:"🌧️",
+multiplier:1.30,
+type:"bad",
+description:"Poor crop conditions increase feed prices by 30%."
+}
+
+];
 
 
 function randomFeedPrice(){
@@ -4008,6 +4490,34 @@ return (
 Math.floor(
 Math.random() *
 21
+)
+) *
+1000;
+
+}
+
+
+function randomFeedEventDelay(){
+
+return (
+75 +
+Math.floor(
+Math.random() *
+76
+)
+) *
+1000;
+
+}
+
+
+function randomFeedEventDuration(){
+
+return (
+45 +
+Math.floor(
+Math.random() *
+46
 )
 ) *
 1000;
@@ -4047,7 +4557,7 @@ const BARN_LEVELS = [
 
 
 /* =========================================================
-   STORAGE
+   EGG STORAGE
 ========================================================= */
 
 const STORAGE_LEVELS = [
@@ -4165,1046 +4675,554 @@ multiplier:5
 
 /* =========================================================
    TALENT TREE
-
-   15 PRODUCTION
-   15 OPERATIONS
-   15 SALES
-
-   Each branch now starts from one main node
-   and splits into multiple paths.
 ========================================================= */
 
 const UPGRADES = {
 
 
-/* =====================================================
-   PRODUCTION ROOT
-===================================================== */
-
 feed:{
-
 name:"Better Feed",
-
 cost:75,
-
 requires:null,
-
-description:
-"Better feed increases egg production by 12%.",
-
+description:"Better feed increases egg production by 12%.",
 icon:"🌾",
-
 branch:"production",
-
 path:"root",
-
 step:1
-
 },
 
 
-
-/* PRODUCTION PATH A */
-
 nest:{
-
 name:"Warm Nests",
-
 cost:300,
-
 requires:"feed",
-
-description:
-"Comfortable nests increase production by 15%.",
-
+description:"Comfortable nests increase production by 15%.",
 icon:"🪺",
-
 branch:"production",
-
 path:"A",
-
 step:1
-
 },
 
 
 breed:{
-
 name:"Layer Breed",
-
 cost:1200,
-
 requires:"nest",
-
-description:
-"Specialized laying hens increase production by 20%.",
-
+description:"Specialized laying hens increase production by 20%.",
 icon:"🐣",
-
 branch:"production",
-
 path:"A",
-
 step:2
-
 },
 
 
 precision:{
-
 name:"Precision Feed",
-
 cost:6000,
-
 requires:"breed",
-
-description:
-"Precision feeding increases production by 25%.",
-
+description:"Precision feeding increases production by 25%.",
 icon:"🧪",
-
 branch:"production",
-
 path:"A",
-
 step:3
-
 },
 
 
 golden:{
-
 name:"Golden Genetics",
-
 cost:30000,
-
 requires:"precision",
-
-description:
-"Elite genetics increases production by 50%.",
-
+description:"Elite genetics increases production by 50%.",
 icon:"✨",
-
 branch:"production",
-
 path:"A",
-
 step:4
-
 },
 
 
-
-/* PRODUCTION PATH B */
-
 minerals:{
-
 name:"Mineral Blend",
-
 cost:120000,
-
 requires:"feed",
-
-description:
-"Premium minerals increase production by 18%.",
-
+description:"Premium minerals increase production by 18%.",
 icon:"🧂",
-
 branch:"production",
-
 path:"B",
-
 step:1
-
 },
 
 
 climate:{
-
 name:"Climate Control",
-
 cost:450000,
-
 requires:"minerals",
-
-description:
-"Climate-controlled housing increases production by 20%.",
-
+description:"Climate-controlled housing increases production by 20%.",
 icon:"🌡️",
-
 branch:"production",
-
 path:"B",
-
 step:2
-
 },
 
 
 vet:{
-
 name:"Vet Program",
-
 cost:1500000,
-
 requires:"climate",
-
-description:
-"A flock health program increases production by 18%.",
-
+description:"A flock health program increases production by 18%.",
 icon:"🩺",
-
 branch:"production",
-
 path:"B",
-
 step:3
-
 },
 
 
 selective:{
-
 name:"Selective Breeding",
-
 cost:5000000,
-
 requires:"vet",
-
-description:
-"Selective breeding increases production by 25%.",
-
+description:"Selective breeding increases production by 25%.",
 icon:"🧬",
-
 branch:"production",
-
 path:"B",
-
 step:4
-
 },
 
 
 hatcheryGenetics:{
-
 name:"Hatchery Genetics",
-
 cost:15000000,
-
 requires:"selective",
-
-description:
-"Advanced hatchery genetics increase production by 30%.",
-
+description:"Advanced hatchery genetics increase production by 30%.",
 icon:"🥚",
-
 branch:"production",
-
 path:"B",
-
 step:5
-
 },
 
 
-
-/* PRODUCTION PATH C */
-
 biosecure:{
-
 name:"Biosecure Housing",
-
 cost:50000000,
-
 requires:"feed",
-
-description:
-"Biosecure housing increases production by 15%.",
-
+description:"Biosecure housing increases production by 15%.",
 icon:"🛡️",
-
 branch:"production",
-
 path:"C",
-
 step:1
-
 },
 
 
 nutritionAI:{
-
 name:"Nutrition AI",
-
 cost:150000000,
-
 requires:"biosecure",
-
-description:
-"AI nutrition planning increases production by 25%.",
-
+description:"AI nutrition planning increases production by 25%.",
 icon:"🧠",
-
 branch:"production",
-
 path:"C",
-
 step:2
-
 },
 
 
 eliteLayers:{
-
 name:"Elite Layers",
-
 cost:450000000,
-
 requires:"nutritionAI",
-
-description:
-"Elite layer lines increase production by 35%.",
-
+description:"Elite layer lines increase production by 35%.",
 icon:"🏅",
-
 branch:"production",
-
 path:"C",
-
 step:3
-
 },
 
 
 genomic:{
-
 name:"Genomic Optimization",
-
 cost:1500000000,
-
 requires:"eliteLayers",
-
-description:
-"Genomic optimization increases production by 45%.",
-
+description:"Genomic optimization increases production by 45%.",
 icon:"🔬",
-
 branch:"production",
-
 path:"C",
-
 step:4
-
 },
 
 
 legendary:{
-
 name:"Legendary Flock",
-
 cost:5000000000,
-
 requires:"genomic",
-
-description:
-"The ultimate flock doubles egg production.",
-
+description:"The ultimate flock doubles egg production.",
 icon:"👑",
-
 branch:"production",
-
 path:"C",
-
 step:5
-
 },
 
 
 
-/* =====================================================
-   OPERATIONS ROOT
-===================================================== */
+/* OPERATIONS */
 
 conveyor:{
-
 name:"Egg Conveyor",
-
 cost:650,
-
 requires:null,
-
-description:
-"Wholesale capacity rises 25% and egg storage increases 25%.",
-
+description:"Wholesale capacity rises 25% and egg storage increases 25%.",
 icon:"⚙️",
-
 branch:"operations",
-
 path:"root",
-
 step:1
-
 },
 
 
-
-/* OPERATIONS PATH A */
-
 incubator:{
-
 name:"Incubator",
-
 cost:3000,
-
 requires:"conveyor",
-
-description:
-"Automatically raises one chicken every 30 seconds using 1 feed.",
-
+description:"Automatically raises one chicken every 30 seconds using 1 feed.",
 icon:"🔥",
-
 branch:"operations",
-
 path:"A",
-
 step:1
-
 },
 
 
 brooder:{
-
 name:"Auto Brooder",
-
 cost:12000,
-
 requires:"incubator",
-
-description:
-"Automatically raises one chicken every 12 seconds.",
-
+description:"Automatically raises one chicken every 12 seconds.",
 icon:"🐥",
-
 branch:"operations",
-
 path:"A",
-
 step:2
-
 },
 
 
 manager:{
-
 name:"Farm Manager",
-
 cost:28000,
-
 requires:"brooder",
-
-description:
-"Production and sales increase by 20%.",
-
+description:"Production and sales increase by 20%.",
 icon:"👨‍🌾",
-
 branch:"operations",
-
 path:"A",
-
 step:3
-
 },
 
 
 robotics:{
-
 name:"Farm Robotics",
-
 cost:85000,
-
 requires:"manager",
-
-description:
-"Raises three chickens every 10 seconds when feed is available.",
-
+description:"Raises three chickens every 10 seconds when feed is available.",
 icon:"🤖",
-
 branch:"operations",
-
 path:"A",
-
 step:4
-
 },
 
 
-
-/* OPERATIONS PATH B */
-
 feedSilo:{
-
 name:"Feed Silos",
-
 cost:300000,
-
 requires:"conveyor",
-
-description:
-"Feed purchases increase from 10 feed to 20 feed.",
-
+description:"Feed storage increases to 1,000 and feed purchases increase to 25 at a time.",
 icon:"🌾",
-
 branch:"operations",
-
 path:"B",
-
 step:1
-
 },
 
 
 bulkFeed:{
-
 name:"Bulk Feed Contract",
-
 cost:1000000,
-
 requires:"feedSilo",
-
-description:
-"Bulk purchasing reduces feed cost by 15%.",
-
+description:"Bulk purchasing reduces feed costs by 15%.",
 icon:"📄",
-
 branch:"operations",
-
 path:"B",
-
 step:2
-
 },
 
 
 grainCoop:{
-
 name:"Grain Co-op",
-
 cost:3000000,
-
 requires:"bulkFeed",
-
-description:
-"Feed purchases increase to 40 feed and become cheaper.",
-
+description:"Feed storage increases to 5,000, purchases increase to 100 feed, and feed costs fall another 10%.",
 icon:"🚜",
-
 branch:"operations",
-
 path:"B",
-
 step:3
-
 },
 
 
 barnEngineering:{
-
 name:"Barn Engineering",
-
 cost:10000000,
-
 requires:"grainCoop",
-
-description:
-"Improved barn design increases chicken capacity by 25%.",
-
+description:"Improved barn design increases chicken capacity by 25%.",
 icon:"🏗️",
-
 branch:"operations",
-
 path:"B",
-
 step:4
-
 },
 
 
 highDensity:{
-
 name:"High Density Housing",
-
 cost:35000000,
-
 requires:"barnEngineering",
-
-description:
-"High-density housing increases chicken capacity another 50%.",
-
+description:"High-density housing increases chicken capacity another 50%.",
 icon:"🏠",
-
 branch:"operations",
-
 path:"B",
-
 step:5
-
 },
 
 
-
-/* OPERATIONS PATH C */
-
 coldStorage:{
-
 name:"Cold Storage",
-
 cost:100000000,
-
 requires:"conveyor",
-
-description:
-"Refrigerated storage increases egg capacity by 75%.",
-
+description:"Refrigerated storage increases egg capacity by 75%.",
 icon:"❄️",
-
 branch:"operations",
-
 path:"C",
-
 step:1
-
 },
 
 
 autoPacking:{
-
 name:"Automated Packing",
-
 cost:300000000,
-
 requires:"coldStorage",
-
-description:
-"Packing automation improves wholesale sales and storage.",
-
+description:"Packing automation improves wholesale sales and egg storage.",
 icon:"📦",
-
 branch:"operations",
-
 path:"C",
-
 step:2
-
 },
 
 
 fleetLogistics:{
-
 name:"Fleet Logistics",
-
 cost:900000000,
-
 requires:"autoPacking",
-
-description:
-"Fleet logistics increase wholesale capacity by 80%.",
-
+description:"Fleet logistics increase wholesale capacity by 80%.",
 icon:"🚛",
-
 branch:"operations",
-
 path:"C",
-
 step:3
-
 },
 
 
 autonomousHatchery:{
-
 name:"Autonomous Hatchery",
-
 cost:3000000000,
-
 requires:"fleetLogistics",
-
-description:
-"Raises eight chickens every eight seconds.",
-
+description:"Raises eight chickens every eight seconds.",
 icon:"🏭",
-
 branch:"operations",
-
 path:"C",
-
 step:4
-
 },
 
 
 megaSystems:{
-
 name:"Mega Farm Systems",
-
 cost:10000000000,
-
 requires:"autonomousHatchery",
-
-description:
-"Raises twenty chickens every five seconds and boosts the entire farm.",
-
+description:"Feed storage rises to 25,000, automation raises 20 chickens every five seconds, and the entire farm receives major bonuses.",
 icon:"🌐",
-
 branch:"operations",
-
 path:"C",
-
 step:5
-
 },
 
 
 
-/* =====================================================
-   SALES ROOT
-===================================================== */
+/* SALES */
 
 sign:{
-
 name:"Roadside Sign",
-
 cost:100,
-
 requires:null,
-
-description:
-"Retail egg demand increases by 15%.",
-
+description:"Retail egg demand increases by 15%.",
 icon:"🪧",
-
 branch:"marketing",
-
 path:"root",
-
 step:1
-
 },
 
 
-
-/* SALES PATH A */
-
 delivery:{
-
 name:"Local Delivery",
-
 cost:450,
-
 requires:"sign",
-
-description:
-"Retail and wholesale demand increase.",
-
+description:"Retail and wholesale demand increase.",
 icon:"🚚",
-
 branch:"marketing",
-
 path:"A",
-
 step:1
-
 },
 
 
 brand:{
-
 name:"Farm Brand",
-
 cost:2000,
-
 requires:"delivery",
-
-description:
-"Customers tolerate higher retail prices.",
-
+description:"Customers tolerate higher retail prices.",
 icon:"📣",
-
 branch:"marketing",
-
 path:"A",
-
 step:2
-
 },
 
 
 grocery:{
-
 name:"Grocery Deal",
-
 cost:10000,
-
 requires:"brand",
-
-description:
-"Grocery placement increases retail and wholesale demand.",
-
+description:"Grocery placement increases retail and wholesale demand.",
 icon:"🏪",
-
 branch:"marketing",
-
 path:"A",
-
 step:3
-
 },
 
 
 national:{
-
 name:"National Ads",
-
 cost:50000,
-
 requires:"grocery",
-
-description:
-"National advertising greatly increases egg demand.",
-
+description:"National advertising greatly increases egg demand.",
 icon:"📺",
-
 branch:"marketing",
-
 path:"A",
-
 step:4
-
 },
 
 
-
-/* SALES PATH B */
-
 farmersMarkets:{
-
 name:"Farmers Markets",
-
 cost:200000,
-
 requires:"sign",
-
-description:
-"Farmers markets increase demand and minimum public interest.",
-
+description:"Farmers markets increase demand and minimum public interest.",
 icon:"🧺",
-
 branch:"marketing",
-
 path:"B",
-
 step:1
-
 },
 
 
 restaurantContracts:{
-
 name:"Restaurant Contracts",
-
 cost:750000,
-
 requires:"farmersMarkets",
-
-description:
-"Restaurant contracts increase wholesale demand.",
-
+description:"Restaurant contracts increase wholesale demand.",
 icon:"🍳",
-
 branch:"marketing",
-
 path:"B",
-
 step:2
-
 },
 
 
 dynamicPricing:{
-
 name:"Dynamic Pricing",
-
 cost:2500000,
-
 requires:"restaurantContracts",
-
-description:
-"Smart pricing reduces the penalty from expensive eggs.",
-
+description:"Smart pricing reduces the penalty from expensive eggs.",
 icon:"📈",
-
 branch:"marketing",
-
 path:"B",
-
 step:3
-
 },
 
 
 regionalDistributor:{
-
 name:"Regional Distributor",
-
 cost:8000000,
-
 requires:"dynamicPricing",
-
-description:
-"Regional distribution increases wholesale demand by 60%.",
-
+description:"Regional distribution increases wholesale demand by 60%.",
 icon:"🗺️",
-
 branch:"marketing",
-
 path:"B",
-
 step:4
-
 },
 
 
 chainDeal:{
-
 name:"Grocery Chain",
-
 cost:25000000,
-
 requires:"regionalDistributor",
-
-description:
-"Major grocery chains dramatically expand demand.",
-
+description:"Major grocery chains dramatically expand demand.",
 icon:"🛒",
-
 branch:"marketing",
-
 path:"B",
-
 step:5
-
 },
 
 
-
-/* SALES PATH C */
-
 premiumBrand:{
-
 name:"Premium Brand",
-
 cost:80000000,
-
 requires:"sign",
-
-description:
-"Premium branding improves price tolerance.",
-
+description:"Premium branding improves price tolerance.",
 icon:"⭐",
-
 branch:"marketing",
-
 path:"C",
-
 step:1
-
 },
 
 
 exportLicense:{
-
 name:"Export License",
-
 cost:250000000,
-
 requires:"premiumBrand",
-
-description:
-"International access increases wholesale demand.",
-
+description:"International access increases wholesale demand.",
 icon:"🌎",
-
 branch:"marketing",
-
 path:"C",
-
 step:2
-
 },
 
 
 nationalRetailer:{
-
 name:"National Retailer",
-
 cost:800000000,
-
 requires:"exportLicense",
-
-description:
-"National retail placement greatly increases demand.",
-
+description:"National retail placement greatly increases demand.",
 icon:"🏬",
-
 branch:"marketing",
-
 path:"C",
-
 step:3
-
 },
 
 
 globalDistribution:{
-
 name:"Global Distribution",
-
 cost:2500000000,
-
 requires:"nationalRetailer",
-
-description:
-"Global distribution doubles late-game wholesale reach.",
-
+description:"Global distribution doubles late-game wholesale reach.",
 icon:"✈️",
-
 branch:"marketing",
-
 path:"C",
-
 step:4
-
 },
 
 
 householdName:{
-
 name:"Household Name",
-
 cost:8000000000,
-
 requires:"globalDistribution",
-
-description:
-"Your eggs become a household brand with enormous demand.",
-
+description:"Your eggs become a household brand with enormous demand.",
 icon:"🏆",
-
 branch:"marketing",
-
 path:"C",
-
 step:5
-
 }
 
 };
@@ -5219,13 +5237,21 @@ let state = {
 
 chickens:1,
 
-feed:3,
+feed:100,
 
-feedPricePerUnit:.08,
+feedPricePerUnit:15,
 
 nextFeedPriceChange:
 Date.now() +
 30000,
+
+feedMarketEvent:null,
+
+feedMarketEventEnds:0,
+
+nextFeedEventAt:
+Date.now() +
+randomFeedEventDelay(),
 
 eggs:0,
 
@@ -5249,7 +5275,7 @@ lifetimeMoney:0,
 
 lifetimeChickens:1,
 
-lifetimeFeedPurchased:3,
+lifetimeFeedPurchased:100,
 
 lastUpdate:
 Date.now(),
@@ -5366,8 +5392,47 @@ return !!state.upgrades[id];
 
 
 /* =========================================================
-   FEED
+   FEED CAPACITY
 ========================================================= */
+
+function getFeedCapacity(){
+
+let capacity =
+150;
+
+
+if(
+hasUpgrade(
+"feedSilo"
+)
+)
+capacity =
+1000;
+
+
+if(
+hasUpgrade(
+"grainCoop"
+)
+)
+capacity =
+5000;
+
+
+if(
+hasUpgrade(
+"megaSystems"
+)
+)
+capacity =
+25000;
+
+
+return capacity;
+
+}
+
+
 
 function getFeedBagSize(){
 
@@ -5381,7 +5446,7 @@ hasUpgrade(
 )
 )
 size =
-20;
+25;
 
 
 if(
@@ -5390,13 +5455,123 @@ hasUpgrade(
 )
 )
 size =
-40;
+100;
 
 
 return size;
 
 }
 
+
+
+/* =========================================================
+   FEED MARKET EVENTS
+========================================================= */
+
+function getActiveFeedEvent(){
+
+if(
+!state.feedMarketEvent
+)
+return null;
+
+
+return FEED_EVENTS.find(
+event =>
+event.id ===
+state.feedMarketEvent
+) ||
+null;
+
+}
+
+
+
+function getFeedEventMultiplier(){
+
+const event =
+getActiveFeedEvent();
+
+
+return event
+?
+event.multiplier
+:
+1;
+
+}
+
+
+
+function startRandomFeedEvent(){
+
+const event =
+FEED_EVENTS[
+Math.floor(
+Math.random() *
+FEED_EVENTS.length
+)
+];
+
+
+state.feedMarketEvent =
+event.id;
+
+
+state.feedMarketEventEnds =
+Date.now() +
+randomFeedEventDuration();
+
+
+addLog(
+event.icon +
+" FEED MARKET EVENT: " +
+event.name +
+" — " +
+event.description
+);
+
+}
+
+
+
+function endFeedMarketEvent(){
+
+const event =
+getActiveFeedEvent();
+
+
+if(event)
+{
+
+addLog(
+"🌾 " +
+event.name +
+" has ended. Feed prices returned to the normal market."
+);
+
+}
+
+
+state.feedMarketEvent =
+null;
+
+
+state.feedMarketEventEnds =
+0;
+
+
+state.nextFeedEventAt =
+Date.now() +
+randomFeedEventDelay();
+
+}
+
+
+
+/* =========================================================
+   FEED PRICING
+========================================================= */
 
 function getFeedDiscountMultiplier(){
 
@@ -5436,24 +5611,56 @@ return mult;
 }
 
 
+
 function getEffectiveFeedPrice(){
 
 return (
 state.feedPricePerUnit *
+getFeedEventMultiplier() *
 getFeedDiscountMultiplier()
 );
 
 }
 
 
+
+function getAvailableFeedSpace(){
+
+return Math.max(
+0,
+getFeedCapacity() -
+state.feed
+);
+
+}
+
+
+
+function getFeedPurchaseAmount(){
+
+return Math.max(
+0,
+Math.min(
+getFeedBagSize(),
+Math.floor(
+getAvailableFeedSpace()
+)
+)
+);
+
+}
+
+
+
 function getFeedBagCost(){
 
 return (
 getEffectiveFeedPrice() *
-getFeedBagSize()
+getFeedPurchaseAmount()
 );
 
 }
+
 
 
 function rollFeedMarket(){
@@ -5469,10 +5676,15 @@ randomFeedMarketDelay();
 }
 
 
+
 function updateFeedMarket(){
 
+const now =
+Date.now();
+
+
 if(
-Date.now() >=
+now >=
 state.nextFeedPriceChange
 )
 {
@@ -5481,13 +5693,61 @@ rollFeedMarket();
 
 }
 
+
+if(
+state.feedMarketEvent
+)
+{
+
+if(
+now >=
+state.feedMarketEventEnds
+)
+{
+
+endFeedMarketEvent();
+
+}
+
+}
+else if(
+now >=
+state.nextFeedEventAt
+)
+{
+
+startRandomFeedEvent();
+
+}
+
 }
 
 
+
+/* =========================================================
+   BUY FEED
+========================================================= */
+
 function buyFeed(){
 
-const bagSize =
-getFeedBagSize();
+const amount =
+getFeedPurchaseAmount();
+
+
+if(
+amount <=
+0
+)
+{
+
+addLog(
+"🌾 Your feed silo is full. Unlock more feed storage in Farm Operations."
+);
+
+
+return;
+
+}
 
 
 const cost =
@@ -5505,9 +5765,9 @@ addLog(
 formatMoney(
 cost
 ) +
-" to buy a " +
-bagSize +
-"-feed bag."
+" to buy " +
+amount +
+" feed."
 );
 
 
@@ -5521,11 +5781,11 @@ cost;
 
 
 state.feed +=
-bagSize;
+amount;
 
 
 state.lifetimeFeedPurchased +=
-bagSize;
+amount;
 
 
 noFeedLogged =
@@ -5534,12 +5794,16 @@ false;
 
 addLog(
 "🌾 Bought " +
-bagSize +
+amount +
 " feed for " +
 formatMoney(
 cost
 ) +
-"."
+" at " +
+formatMoney(
+getEffectiveFeedPrice()
+) +
+" per feed."
 );
 
 
@@ -6615,7 +6879,7 @@ updateUI();
 
 
 /* =========================================================
-   INFRASTRUCTURE UPGRADES
+   INFRASTRUCTURE
 ========================================================= */
 
 function upgradeBarn(){
@@ -6835,7 +7099,7 @@ saveGame();
 
 
 /* =========================================================
-   BUY TALENT
+   TALENT PURCHASE
 ========================================================= */
 
 function buyUpgrade(id){
@@ -6927,6 +7191,45 @@ upgrade.name +
 );
 
 
+if(
+id ===
+"feedSilo"
+)
+{
+
+addLog(
+"🌾 Feed storage increased to 1,000."
+);
+
+}
+
+
+if(
+id ===
+"grainCoop"
+)
+{
+
+addLog(
+"🌾 Feed storage increased to 5,000."
+);
+
+}
+
+
+if(
+id ===
+"megaSystems"
+)
+{
+
+addLog(
+"🌾 Feed storage increased to 25,000."
+);
+
+}
+
+
 updateUI();
 
 
@@ -6937,7 +7240,7 @@ saveGame();
 
 
 /* =========================================================
-   ACTIVITY LOG
+   LOG
 ========================================================= */
 
 function addLog(message){
@@ -7291,11 +7594,15 @@ state.lastUpdate =
 now;
 
 
+/* FEED MARKET */
+
 updateFeedMarket();
 
 
 
-/* PRODUCE */
+/* =====================================================
+   EGG PRODUCTION
+===================================================== */
 
 const productionRate =
 getEggsPerSecond();
@@ -7365,7 +7672,9 @@ false;
 
 
 
-/* RETAIL */
+/* =====================================================
+   RETAIL SALES
+===================================================== */
 
 const retailCapacity =
 getRetailSalesPerSecond() *
@@ -7397,7 +7706,9 @@ retailRevenue;
 
 
 
-/* WHOLESALE */
+/* =====================================================
+   WHOLESALE SALES
+===================================================== */
 
 const wholesaleCapacity =
 getWholesaleSalesPerSecond() *
@@ -7487,8 +7798,26 @@ storageCapacity
 0;
 
 
+const feedCapacity =
+getFeedCapacity();
+
+
+const feedRatio =
+feedCapacity >
+0
+?
+state.feed /
+feedCapacity
+:
+0;
+
+
 const feedBagSize =
 getFeedBagSize();
+
+
+const feedPurchaseAmount =
+getFeedPurchaseAmount();
 
 
 const effectiveFeedPrice =
@@ -7512,8 +7841,14 @@ Date.now()
 );
 
 
+const activeFeedEvent =
+getActiveFeedEvent();
 
-/* HEADER */
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 document.getElementById(
 "topChickens"
@@ -7552,6 +7887,10 @@ document.getElementById(
 ).textContent =
 formatNumber(
 state.feed
+) +
+" / " +
+formatNumber(
+feedCapacity
 );
 
 
@@ -7584,7 +7923,9 @@ state.distributionLevel;
 
 
 
-/* FEED MARKET COLOR */
+/* =====================================================
+   FEED HEADER COLOR
+===================================================== */
 
 const feedMarketInfo =
 document.getElementById(
@@ -7599,8 +7940,8 @@ feedMarketInfo.classList.remove(
 
 
 if(
-state.feedPricePerUnit <=
-.06
+effectiveFeedPrice <=
+12
 )
 {
 
@@ -7610,8 +7951,8 @@ feedMarketInfo.classList.add(
 
 }
 else if(
-state.feedPricePerUnit >=
-.12
+effectiveFeedPrice >=
+18
 )
 {
 
@@ -7623,7 +7964,9 @@ feedMarketInfo.classList.add(
 
 
 
-/* BUY FEED */
+/* =====================================================
+   BUY FEED BUTTON
+===================================================== */
 
 const buyFeedButton =
 document.getElementById(
@@ -7631,9 +7974,26 @@ document.getElementById(
 );
 
 
+if(
+feedPurchaseAmount <=
+0
+)
+{
+
+buyFeedButton.textContent =
+"🌾 Feed Silo Full";
+
+
+buyFeedButton.disabled =
+true;
+
+}
+else
+{
+
 buyFeedButton.textContent =
 "🌾 Buy " +
-feedBagSize +
+feedPurchaseAmount +
 " Feed — " +
 formatMoney(
 feedBagCost
@@ -7644,9 +8004,13 @@ buyFeedButton.disabled =
 state.money <
 feedBagCost;
 
+}
 
 
-/* FARM HUD */
+
+/* =====================================================
+   FARM HUD
+===================================================== */
 
 document.getElementById(
 "farmChickenCount"
@@ -7673,6 +8037,10 @@ document.getElementById(
 ).textContent =
 formatNumber(
 state.feed
+) +
+" / " +
+formatNumber(
+feedCapacity
 );
 
 
@@ -7729,7 +8097,9 @@ barnCapacity
 
 
 
-/* ALERT */
+/* =====================================================
+   FARM ALERT
+===================================================== */
 
 const farmAlert =
 document.getElementById(
@@ -7758,7 +8128,7 @@ farmAlert.classList.add(
 
 
 farmAlert.textContent =
-"⚠️ Inventory exceeds storage capacity.";
+"⚠️ Inventory exceeds egg-storage capacity.";
 
 }
 else if(
@@ -7809,6 +8179,20 @@ farmAlert.textContent =
 
 }
 else if(
+state.feed >
+feedCapacity
+)
+{
+
+farmAlert.style.display =
+"block";
+
+
+farmAlert.textContent =
+"🌾 Feed is over your current silo capacity. Existing feed is safe, but you cannot buy more until there is space.";
+
+}
+else if(
 storageRatio >=
 .80
 )
@@ -7832,7 +8216,9 @@ farmAlert.style.display =
 
 
 
-/* RETAIL */
+/* =====================================================
+   RETAIL
+===================================================== */
 
 document.getElementById(
 "priceDisplay"
@@ -7898,13 +8284,23 @@ estimatedRevenue
 
 
 
-/* FEED */
+/* =====================================================
+   FEED MARKET PANEL
+===================================================== */
 
 document.getElementById(
 "feedOwnedText"
 ).textContent =
 formatNumber(
 state.feed
+);
+
+
+document.getElementById(
+"feedCapacityText"
+).textContent =
+formatNumber(
+feedCapacity
 );
 
 
@@ -7927,62 +8323,187 @@ feedBagSize +
 document.getElementById(
 "feedBagCostText"
 ).textContent =
+feedPurchaseAmount >
+0
+?
 formatMoney(
 feedBagCost
+)
+:
+"FULL";
+
+
+document.getElementById(
+"feedStorageText"
+).textContent =
+formatNumber(
+state.feed
+) +
+" / " +
+formatNumber(
+feedCapacity
+) +
+" feed stored";
+
+
+const feedCapacityBar =
+document.getElementById(
+"feedCapacityBar"
 );
 
 
-const feedMessage =
+feedCapacityBar.classList.remove(
+"warning",
+"full"
+);
+
+
+feedCapacityBar.style.width =
+Math.min(
+100,
+feedRatio *
+100
+) +
+"%";
+
+
+if(
+feedRatio >=
+1
+)
+{
+
+feedCapacityBar.classList.add(
+"full"
+);
+
+}
+else if(
+feedRatio >=
+.80
+)
+{
+
+feedCapacityBar.classList.add(
+"warning"
+);
+
+}
+
+
+
+/* =====================================================
+   FEED EVENT DISPLAY
+===================================================== */
+
+const feedEventBox =
 document.getElementById(
-"feedMarketMessage"
+"feedEventBox"
+);
+
+
+feedEventBox.classList.remove(
+"good",
+"bad"
 );
 
 
 if(
-state.feedPricePerUnit <=
-.05
+activeFeedEvent
 )
 {
 
-feedMessage.textContent =
-"🔥 Very cheap feed! Good time to buy.";
-
-}
-else if(
-state.feedPricePerUnit <=
-.08
+const eventSecondsRemaining =
+Math.max(
+0,
+Math.ceil(
+(
+state.feedMarketEventEnds -
+Date.now()
+) /
+1000
 )
-{
+);
 
-feedMessage.textContent =
-"Feed prices are currently below average.";
 
-}
-else if(
-state.feedPricePerUnit >=
-.13
-)
-{
+feedEventBox.classList.add(
+activeFeedEvent.type
+);
 
-feedMessage.textContent =
-"Feed is expensive. Market changes in " +
-feedSecondsRemaining +
+
+document.getElementById(
+"feedEventTitle"
+).textContent =
+activeFeedEvent.icon +
+" " +
+activeFeedEvent.name;
+
+
+document.getElementById(
+"feedEventDescription"
+).textContent =
+activeFeedEvent.description +
+" Event ends in " +
+eventSecondsRemaining +
 " seconds.";
+
+
+document.getElementById(
+"feedMarketMessage"
+).textContent =
+"Normal market price: " +
+formatMoney(
+state.feedPricePerUnit
+) +
+". Event-adjusted price: " +
+formatMoney(
+effectiveFeedPrice
+) +
+".";
 
 }
 else
 {
 
-feedMessage.textContent =
-"Feed prices are average. Market changes in " +
-feedSecondsRemaining +
+const nextEventSeconds =
+Math.max(
+0,
+Math.ceil(
+(
+state.nextFeedEventAt -
+Date.now()
+) /
+1000
+)
+);
+
+
+document.getElementById(
+"feedEventTitle"
+).textContent =
+"🌾 Normal Feed Market";
+
+
+document.getElementById(
+"feedEventDescription"
+).textContent =
+"No special event is active. Another market event may begin in about " +
+nextEventSeconds +
 " seconds.";
+
+
+document.getElementById(
+"feedMarketMessage"
+).textContent =
+"Normal feed prices range from $10 to $20 per feed.";
 
 }
 
 
 
-/* WHOLESALE */
+/* =====================================================
+   WHOLESALE
+===================================================== */
 
 const wholesaleToggle =
 document.getElementById(
@@ -8112,7 +8633,9 @@ storageCapacity
 
 
 
-/* STORAGE */
+/* =====================================================
+   EGG STORAGE
+===================================================== */
 
 const storageBar =
 document.getElementById(
@@ -8238,7 +8761,9 @@ storageWarning.textContent =
 
 
 
-/* BARN INFRASTRUCTURE */
+/* =====================================================
+   BARN INFRASTRUCTURE
+===================================================== */
 
 document.getElementById(
 "barnLevelText"
@@ -8319,7 +8844,9 @@ next.cost;
 
 
 
-/* STORAGE INFRASTRUCTURE */
+/* =====================================================
+   STORAGE INFRASTRUCTURE
+===================================================== */
 
 document.getElementById(
 "storageLevelText"
@@ -8400,7 +8927,9 @@ next.cost;
 
 
 
-/* DISTRIBUTION INFRASTRUCTURE */
+/* =====================================================
+   DISTRIBUTION
+===================================================== */
 
 document.getElementById(
 "distributionLevelText"
@@ -8492,7 +9021,9 @@ next.cost;
 
 
 
-/* GET CHICKEN BUTTON */
+/* =====================================================
+   GET CHICKEN BUTTON
+===================================================== */
 
 const cooldownLeft =
 Math.max(
@@ -8566,20 +9097,8 @@ updateUpgradeTree();
 
 
 /* =========================================================
-   COMPACT TALENT TREE LAYOUT
+   COMPACT TALENT TREE POSITIONING
 ========================================================= */
-
-/*
-The tree uses one central farm node.
-
-Each category has one gateway node.
-
-Each gateway then splits into 3 paths.
-
-This makes all 45 talents visible in roughly
-the same space that the old 15-talent tree used.
-*/
-
 
 const TREE_CENTER = {
 
@@ -8604,7 +9123,7 @@ operations:{
 
 x:590,
 
-y:500
+y:450
 
 },
 
@@ -8617,7 +9136,6 @@ y:360
 }
 
 };
-
 
 
 const TREE_PATH_ANGLES = {
@@ -8634,11 +9152,11 @@ C:215
 
 operations:{
 
-A:55,
+A:50,
 
 B:90,
 
-C:125
+C:130
 
 },
 
@@ -8655,12 +9173,11 @@ C:35
 };
 
 
-
 const TREE_PATH_SPACING = {
 
 production:83,
 
-operations:78,
+operations:56,
 
 marketing:83
 
@@ -8888,7 +9405,6 @@ upgrade.cost
 );
 
 
-
 button.append(
 icon,
 name,
@@ -8901,8 +9417,6 @@ button
 );
 
 
-
-/* DRAW CONNECTION */
 
 let fromPosition =
 TREE_CENTER;
@@ -9091,7 +9605,6 @@ id
 
 }
 );
-
 
 
 document.getElementById(
@@ -9350,6 +9863,14 @@ if(
 )
 {
 
+state.feed =
+100;
+
+
+state.lifetimeFeedPurchased =
+100;
+
+
 state.feedPricePerUnit =
 randomFeedPrice();
 
@@ -9359,8 +9880,13 @@ Date.now() +
 randomFeedMarketDelay();
 
 
+state.nextFeedEventAt =
+Date.now() +
+randomFeedEventDelay();
+
+
 addLog(
-"Welcome to Chicken Farm Empire! You received 3 starter feed."
+"Welcome to Chicken Farm Empire! You received 100 starter feed."
 );
 
 
@@ -9402,7 +9928,7 @@ Date.now()
 
 
 
-/* MIGRATE OLD FARM LEVEL */
+/* OLD FARM LEVEL MIGRATION */
 
 if(
 typeof parsed.barnLevel !==
@@ -9440,7 +9966,9 @@ oldLevel -
 
 
 
-/* MIGRATE PRE-FEED SAVES */
+/*
+PRE-FEED SAVE MIGRATION
+*/
 
 if(
 typeof parsed.feed !==
@@ -9449,14 +9977,27 @@ typeof parsed.feed !==
 {
 
 state.feed =
-3;
+100;
 
 }
 
 
+
+/*
+OLD CHEAP-FEED SAVE MIGRATION
+
+Old versions stored feed prices around
+$0.04-$0.14.
+
+If an existing save still has that old price,
+roll a new $10-$20 market price.
+*/
+
 if(
 typeof parsed.feedPricePerUnit !==
-"number"
+"number" ||
+parsed.feedPricePerUnit <
+1
 )
 {
 
@@ -9475,6 +10016,43 @@ typeof parsed.nextFeedPriceChange !==
 state.nextFeedPriceChange =
 Date.now() +
 randomFeedMarketDelay();
+
+}
+
+
+if(
+typeof parsed.feedMarketEvent ===
+"undefined"
+)
+{
+
+state.feedMarketEvent =
+null;
+
+}
+
+
+if(
+typeof parsed.feedMarketEventEnds !==
+"number"
+)
+{
+
+state.feedMarketEventEnds =
+0;
+
+}
+
+
+if(
+typeof parsed.nextFeedEventAt !==
+"number"
+)
+{
+
+state.nextFeedEventAt =
+Date.now() +
+randomFeedEventDelay();
 
 }
 
@@ -9550,6 +10128,28 @@ rollFeedMarket();
 }
 
 
+if(
+state.feedMarketEvent &&
+Date.now() >=
+state.feedMarketEventEnds
+)
+{
+
+state.feedMarketEvent =
+null;
+
+
+state.feedMarketEventEnds =
+0;
+
+
+state.nextFeedEventAt =
+Date.now() +
+randomFeedEventDelay();
+
+}
+
+
 addLog(
 "Saved farm loaded."
 );
@@ -9562,7 +10162,20 @@ getStorageCapacity()
 {
 
 addLog(
-"⚠️ Existing egg inventory exceeds current storage."
+"⚠️ Existing egg inventory exceeds current egg storage."
+);
+
+}
+
+
+if(
+state.feed >
+getFeedCapacity()
+)
+{
+
+addLog(
+"🌾 Your existing feed exceeds the new silo capacity. No feed was removed, but you cannot buy more until inventory drops or you unlock larger feed storage."
 );
 
 }
@@ -9612,7 +10225,7 @@ location.reload();
 
 
 /* =========================================================
-   START
+   START GAME
 ========================================================= */
 
 loadGame();
