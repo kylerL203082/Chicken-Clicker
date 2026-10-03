@@ -17,8 +17,10 @@
     --red:#d85845;
     --shadow:0 10px 28px rgba(74,49,11,.14);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
     margin:0;
     min-height:100vh;
@@ -29,10 +31,14 @@ body{
         radial-gradient(circle at 95% 10%,rgba(111,205,255,.22),transparent 30%),
         linear-gradient(180deg,#fffdf5 0%,#f8f1d9 45%,#eef6dc 100%);
 }
+
 button,input,select{font-family:inherit}
 button{cursor:pointer}
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
+
 .topbar{
     position:sticky;
     top:0;
@@ -43,12 +49,24 @@ button{cursor:pointer}
     gap:20px;
     min-height:98px;
     padding:12px 22px;
-    background:linear-gradient(110deg,rgba(255,248,206,.98),rgba(234,255,220,.98) 40%,rgba(223,244,255,.98));
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,248,206,.98),
+            rgba(234,255,220,.98) 40%,
+            rgba(223,244,255,.98)
+        );
     border-bottom:4px solid #e2ab36;
     box-shadow:0 6px 20px rgba(76,52,15,.15);
     backdrop-filter:blur(6px);
 }
-.topActions{display:flex;align-items:center;gap:12px}
+
+.topActions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
 .actionBtn{
     min-width:195px;
     min-height:60px;
@@ -58,24 +76,43 @@ button{cursor:pointer}
     font-weight:900;
     transition:.12s;
 }
+
 #getChickenBtn{
     color:#563511;
     border:3px solid #99631a;
     background:linear-gradient(135deg,#ffe271,#f4a82e);
     box-shadow:0 5px 0 #99631a,0 9px 15px rgba(108,67,11,.16);
 }
+
 #buyFeedBtn{
     color:#234b1c;
     border:3px solid #4a8b39;
     background:linear-gradient(135deg,#c7f48a,#6fc953);
     box-shadow:0 5px 0 #4a8b39,0 9px 15px rgba(48,112,37,.14);
 }
+
 .actionBtn:hover:not(:disabled){transform:translateY(-2px)}
 .actionBtn:active:not(:disabled){transform:translateY(3px);box-shadow:none}
 .actionBtn:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
+
 .logoArea{text-align:center}
-.logoArea h1{margin:0;color:#533819;font-size:30px;letter-spacing:2px;text-shadow:0 2px white}
-.logoArea small{display:block;margin-top:4px;color:#96691b;font-size:12px;font-weight:900}
+
+.logoArea h1{
+    margin:0;
+    color:#533819;
+    font-size:30px;
+    letter-spacing:2px;
+    text-shadow:0 2px white;
+}
+
+.logoArea small{
+    display:block;
+    margin-top:4px;
+    color:#96691b;
+    font-size:12px;
+    font-weight:900;
+}
+
 .activeBreedTop{
     display:inline-block;
     margin-top:6px;
@@ -87,16 +124,64 @@ button{cursor:pointer}
     font-size:11px;
     font-weight:900;
 }
-.topStats{display:flex;justify-content:flex-end;gap:22px}
-.topStat{min-width:70px;padding:7px 9px;border-radius:11px;background:rgba(255,255,255,.55)}
-.topStat span{display:block;color:#766442;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
-.topStat strong{display:block;margin-top:2px;color:#a2690b;font-size:20px}
 
-/* PAGE */
-.page{width:min(1500px,calc(100% - 30px));margin:25px auto 70px}
-.overviewHeader{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:15px}
-.overviewHeader h2{margin:0;color:#51391a;font-size:26px}
-.overviewHeader p{margin:5px 0 0;color:var(--muted)}
+.topStats{
+    display:flex;
+    justify-content:flex-end;
+    gap:22px;
+}
+
+.topStat{
+    min-width:70px;
+    padding:7px 9px;
+    border-radius:11px;
+    background:rgba(255,255,255,.55);
+}
+
+.topStat span{
+    display:block;
+    color:#766442;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.topStat strong{
+    display:block;
+    margin-top:2px;
+    color:#a2690b;
+    font-size:20px;
+}
+
+/* =========================================================
+   PAGE / OVERVIEW
+========================================================= */
+
+.page{
+    width:min(1500px,calc(100% - 30px));
+    margin:25px auto 70px;
+}
+
+.overviewHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+.overviewHeader h2{
+    margin:0;
+    color:#51391a;
+    font-size:26px;
+}
+
+.overviewHeader p{
+    margin:5px 0 0;
+    color:var(--muted);
+}
+
 .saveStatus{
     padding:6px 10px;
     border-radius:20px;
@@ -106,7 +191,13 @@ button{cursor:pointer}
     font-size:11px;
     font-weight:900;
 }
-.statGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+
+.statGrid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
 .statCard{
     position:relative;
     overflow:hidden;
@@ -117,16 +208,44 @@ button{cursor:pointer}
     background:white;
     box-shadow:0 7px 17px rgba(74,53,19,.09);
 }
-.statCard::before{content:"";position:absolute;left:0;right:0;top:0;height:6px}
+
+.statCard::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    height:6px;
+}
+
 .statCard:nth-child(1)::before{background:linear-gradient(90deg,#f8ba38,#ffdb6f)}
 .statCard:nth-child(2)::before{background:linear-gradient(90deg,#e0a857,#f6d580)}
 .statCard:nth-child(3)::before{background:linear-gradient(90deg,#5ab968,#8edc74)}
 .statCard:nth-child(4)::before{background:linear-gradient(90deg,#7dbc45,#c6db54)}
 .statCard:nth-child(5)::before{background:linear-gradient(90deg,#4fa8df,#79d0ee)}
 .statCard:nth-child(6)::before{background:linear-gradient(90deg,#8a63c7,#b287e6)}
-.statCard .label{color:#7d6b4a;font-size:10px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase}
-.statCard .value{margin-top:8px;color:#473117;font-size:28px;font-weight:900}
-.statCard .sub{margin-top:6px;color:#877653;font-size:11px}
+
+.statCard .label{
+    color:#7d6b4a;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1.1px;
+    text-transform:uppercase;
+}
+
+.statCard .value{
+    margin-top:8px;
+    color:#473117;
+    font-size:28px;
+    font-weight:900;
+}
+
+.statCard .sub{
+    margin-top:6px;
+    color:#877653;
+    font-size:11px;
+}
+
 .alert{
     display:none;
     margin-top:15px;
@@ -138,10 +257,160 @@ button{cursor:pointer}
     font-size:13px;
     font-weight:900;
 }
-.alert.danger{border-color:#cc5542;background:#ffd9cf;color:#7c2d1e}
 
-/* PANELS */
-.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.alert.danger{
+    border-color:#cc5542;
+    background:#ffd9cf;
+    color:#7c2d1e;
+}
+
+/* =========================================================
+   FARM EVENTS
+========================================================= */
+
+.eventHub{
+    position:relative;
+    overflow:hidden;
+    margin-top:17px;
+    padding:17px;
+    border:3px solid #b7a47c;
+    border-radius:17px;
+    background:linear-gradient(135deg,#fffef6,#f5f0e3);
+    box-shadow:0 7px 18px rgba(74,53,19,.09);
+    transition:.2s;
+}
+
+.eventHub.positive{
+    border-color:#55ad59;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(118,222,105,.24),transparent 32%),
+        linear-gradient(135deg,#f1ffe7,#e4f8d5);
+}
+
+.eventHub.negative{
+    border-color:#cf624c;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(255,112,86,.18),transparent 32%),
+        linear-gradient(135deg,#fff0e9,#f8ddd4);
+}
+
+.eventHub.rare{
+    border-color:#a666d8;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(198,117,255,.25),transparent 33%),
+        radial-gradient(circle at 0% 100%,rgba(255,209,70,.22),transparent 35%),
+        linear-gradient(135deg,#f7edff,#fff6cf);
+    box-shadow:
+        0 0 0 3px rgba(177,92,225,.10),
+        0 8px 20px rgba(87,48,116,.16);
+}
+
+.eventTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.eventTitleRow{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.eventIcon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+    border:2px solid rgba(78,60,30,.20);
+    border-radius:14px;
+    background:rgba(255,255,255,.72);
+    font-size:29px;
+}
+
+.eventLabel{
+    color:#8b7958;
+    font-size:9px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1.1px;
+}
+
+.eventName{
+    margin-top:2px;
+    color:#49351b;
+    font-size:21px;
+    font-weight:900;
+}
+
+.eventCountdown{
+    min-width:92px;
+    padding:7px 10px;
+    border-radius:9px;
+    background:rgba(255,255,255,.72);
+    color:#5e4b2d;
+    font-size:12px;
+    font-weight:900;
+    text-align:center;
+}
+
+.eventDescription{
+    margin-top:11px;
+    color:#66583f;
+    font-size:12px;
+    line-height:1.42;
+}
+
+.eventEffect{
+    margin-top:7px;
+    color:#553b18;
+    font-size:12px;
+    font-weight:900;
+}
+
+.eventProgress{
+    width:100%;
+    height:11px;
+    margin-top:13px;
+    overflow:hidden;
+    border-radius:20px;
+    background:rgba(105,91,64,.18);
+}
+
+.eventProgressBar{
+    height:100%;
+    width:0;
+    border-radius:20px;
+    background:#a89b7c;
+    transition:width .2s linear;
+}
+
+.eventHub.positive .eventProgressBar{
+    background:linear-gradient(90deg,#49ae52,#9cda63);
+}
+
+.eventHub.negative .eventProgressBar{
+    background:linear-gradient(90deg,#d94e42,#e48c46);
+}
+
+.eventHub.rare .eventProgressBar{
+    background:linear-gradient(90deg,#8e55c2,#d978df,#f3bc43);
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:24px;
+}
+
 .panel{
     position:relative;
     padding:22px;
@@ -150,11 +419,35 @@ button{cursor:pointer}
     background:rgba(255,253,246,.95);
     box-shadow:var(--shadow);
 }
-.panel h2{margin:0 0 16px;color:#53391b;font-size:23px}
+
+.panel h2{
+    margin:0 0 16px;
+    color:#53391b;
+    font-size:23px;
+}
+
 .panel h3{color:#60481f}
-.priceDisplay{margin:8px 0 12px;font-size:43px;font-weight:900;color:#319d52}
-.priceSlider{width:100%;accent-color:#eaa52f}
-.rangeLabels{display:flex;justify-content:space-between;margin-top:3px;color:#8c7955;font-size:11px}
+
+.priceDisplay{
+    margin:8px 0 12px;
+    font-size:43px;
+    font-weight:900;
+    color:#319d52;
+}
+
+.priceSlider{
+    width:100%;
+    accent-color:#eaa52f;
+}
+
+.rangeLabels{
+    display:flex;
+    justify-content:space-between;
+    margin-top:3px;
+    color:#8c7955;
+    font-size:11px;
+}
+
 .meter{
     width:100%;
     height:20px;
@@ -163,7 +456,12 @@ button{cursor:pointer}
     border-radius:20px;
     background:#ded9c8;
 }
-.meterFill{height:100%;transition:width .2s}
+
+.meterFill{
+    height:100%;
+    transition:width .2s;
+}
+
 #interestBar{background:linear-gradient(90deg,#49bd5d,#9ddd59,#f6d64d)}
 #storageBar{background:linear-gradient(90deg,#4bae5a,#efd154)}
 #storageBar.warning{background:linear-gradient(90deg,#efc540,#ea7e31)}
@@ -171,27 +469,70 @@ button{cursor:pointer}
 #feedCapacityBar{background:linear-gradient(90deg,#4db45b,#b8db4e)}
 #feedCapacityBar.warning{background:linear-gradient(90deg,#eac03a,#eb8933)}
 #feedCapacityBar.full{background:linear-gradient(90deg,#e76840,#c83d31)}
-.infoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:14px}
+
+.infoGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+    margin-top:14px;
+}
+
 .infoCell{
     padding:10px 11px;
     border:1px solid #decf9e;
     border-radius:10px;
     background:linear-gradient(135deg,#fff9dd,#f9f3e2);
 }
-.infoCell span{display:block;color:#867554;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
-.infoCell strong{display:block;margin-top:4px;color:#4c391e;font-size:14px}
 
-/* WHOLESALE */
+.infoCell span{
+    display:block;
+    color:#867554;
+    font-size:9px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+}
+
+.infoCell strong{
+    display:block;
+    margin-top:4px;
+    color:#4c391e;
+    font-size:14px;
+}
+
+/* =========================================================
+   WHOLESALE
+========================================================= */
+
 .wholesaleStatus{
     padding:14px;
     border:2px solid #69a5cc;
     border-radius:12px;
     background:linear-gradient(135deg,#e4f6ff,#f1ecff);
 }
-.wholesaleStatus.locked{opacity:.62;filter:grayscale(.25)}
-.toggleRow{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}
-.switch{position:relative;display:inline-block;width:58px;height:30px}
+
+.wholesaleStatus.locked{
+    opacity:.62;
+    filter:grayscale(.25);
+}
+
+.toggleRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    margin-top:12px;
+}
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:58px;
+    height:30px;
+}
+
 .switch input{opacity:0;width:0;height:0}
+
 .sliderSwitch{
     position:absolute;
     inset:0;
@@ -201,6 +542,7 @@ button{cursor:pointer}
     background:#aaa38e;
     transition:.2s;
 }
+
 .sliderSwitch::before{
     content:"";
     position:absolute;
@@ -212,10 +554,14 @@ button{cursor:pointer}
     background:white;
     transition:.2s;
 }
+
 .switch input:checked + .sliderSwitch{background:#4fac59}
 .switch input:checked + .sliderSwitch::before{transform:translateX(27px)}
 
-/* FEED */
+/* =========================================================
+   FEED
+========================================================= */
+
 .feedPanel{
     margin-top:18px;
     padding:16px;
@@ -225,18 +571,74 @@ button{cursor:pointer}
         radial-gradient(circle at 100% 0%,rgba(255,235,100,.32),transparent 32%),
         linear-gradient(135deg,#e9fad7,#d6efaa);
 }
-.feedPanel h3{margin:0 0 11px;color:#3c6c2a}
-.feedGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.feedBox{padding:10px;border:1px solid #99bd6e;border-radius:9px;background:rgba(255,255,255,.66)}
-.feedBox span{display:block;color:#667d49;font-size:9px;font-weight:800;text-transform:uppercase}
-.feedBox strong{display:block;margin-top:3px;color:#395b25;font-size:14px}
-.feedMeterTitle{margin:13px 0 6px;color:#506b31;font-size:12px;font-weight:900}
-.feedEvent{margin-top:13px;padding:11px 12px;border:2px solid #a79d6c;border-radius:9px;background:rgba(255,255,255,.6)}
-.feedEvent strong{display:block;margin-bottom:4px}
-.feedEvent.good{border-color:#61aa48;background:#d8f5c7}
-.feedEvent.bad{border-color:#d27732;background:#ffe0c3}
 
-/* BREEDS */
+.feedPanel h3{
+    margin:0 0 11px;
+    color:#3c6c2a;
+}
+
+.feedGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+}
+
+.feedBox{
+    padding:10px;
+    border:1px solid #99bd6e;
+    border-radius:9px;
+    background:rgba(255,255,255,.66);
+}
+
+.feedBox span{
+    display:block;
+    color:#667d49;
+    font-size:9px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.feedBox strong{
+    display:block;
+    margin-top:3px;
+    color:#395b25;
+    font-size:14px;
+}
+
+.feedMeterTitle{
+    margin:13px 0 6px;
+    color:#506b31;
+    font-size:12px;
+    font-weight:900;
+}
+
+.feedEvent{
+    margin-top:13px;
+    padding:11px 12px;
+    border:2px solid #a79d6c;
+    border-radius:9px;
+    background:rgba(255,255,255,.6);
+}
+
+.feedEvent strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.feedEvent.good{
+    border-color:#61aa48;
+    background:#d8f5c7;
+}
+
+.feedEvent.bad{
+    border-color:#d27732;
+    background:#ffe0c3;
+}
+
+/* =========================================================
+   BREEDS
+========================================================= */
+
 .breedSection{
     margin-top:38px;
     padding:23px;
@@ -248,10 +650,31 @@ button{cursor:pointer}
         linear-gradient(135deg,#fff7c7,#f5fff0 48%,#eaf7ff);
     box-shadow:0 10px 28px rgba(88,60,15,.14);
 }
-.sectionHeader{margin-bottom:17px;text-align:center}
-.sectionHeader h2{margin:0;color:#5c3d17;font-size:29px;letter-spacing:1px}
-.sectionHeader p{margin:6px 0 0;color:#776342}
-.flockSummary{display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:10px;margin-bottom:18px}
+
+.sectionHeader{
+    margin-bottom:17px;
+    text-align:center;
+}
+
+.sectionHeader h2{
+    margin:0;
+    color:#5c3d17;
+    font-size:29px;
+    letter-spacing:1px;
+}
+
+.sectionHeader p{
+    margin:6px 0 0;
+    color:#776342;
+}
+
+.flockSummary{
+    display:grid;
+    grid-template-columns:1.3fr repeat(4,1fr);
+    gap:10px;
+    margin-bottom:18px;
+}
+
 .flockSummaryBox{
     padding:13px;
     border:2px solid rgba(132,94,26,.22);
@@ -259,17 +682,39 @@ button{cursor:pointer}
     background:rgba(255,255,255,.74);
     box-shadow:0 4px 10px rgba(76,52,14,.06);
 }
+
 .flockSummaryBox:nth-child(1){border-top:5px solid #eba83b}
 .flockSummaryBox:nth-child(2){border-top:5px solid #55b95e}
 .flockSummaryBox:nth-child(3){border-top:5px solid #b470ca}
 .flockSummaryBox:nth-child(4){border-top:5px solid #4da6db}
 .flockSummaryBox:nth-child(5){border-top:5px solid #dc744e}
-.flockSummaryBox span{display:block;color:#817052;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
-.flockSummaryBox strong{display:block;margin-top:5px;color:#503718;font-size:17px}
-.breedGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+
+.flockSummaryBox span{
+    display:block;
+    color:#817052;
+    font-size:9px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.flockSummaryBox strong{
+    display:block;
+    margin-top:5px;
+    color:#503718;
+    font-size:17px;
+}
+
+.breedGrid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
 .breedCard{
     --breedAccent:#e5aa37;
     --breedSoft:#fff1bc;
+
     position:relative;
     overflow:hidden;
     min-height:315px;
@@ -282,10 +727,34 @@ button{cursor:pointer}
     box-shadow:0 8px 18px rgba(70,53,22,.10);
     transition:.16s;
 }
-.breedCard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--breedAccent)}
-.breedCard:hover{transform:translateY(-4px);box-shadow:0 13px 22px rgba(70,53,22,.16)}
-.breedCard.active{box-shadow:0 0 0 5px rgba(255,255,255,.8),0 0 0 8px var(--breedAccent),0 13px 23px rgba(70,53,22,.17)}
-.breedCard.locked{filter:saturate(.45);opacity:.72}
+
+.breedCard::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:7px;
+    background:var(--breedAccent);
+}
+
+.breedCard:hover{
+    transform:translateY(-4px);
+    box-shadow:0 13px 22px rgba(70,53,22,.16);
+}
+
+.breedCard.active{
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,.8),
+        0 0 0 8px var(--breedAccent),
+        0 13px 23px rgba(70,53,22,.17);
+}
+
+.breedCard.locked{
+    filter:saturate(.45);
+    opacity:.72;
+}
+
 .activeBadge{
     display:none;
     position:absolute;
@@ -298,7 +767,9 @@ button{cursor:pointer}
     font-size:9px;
     font-weight:900;
 }
+
 .breedCard.active .activeBadge{display:block}
+
 .breedIconBubble{
     width:58px;
     height:58px;
@@ -311,8 +782,23 @@ button{cursor:pointer}
     box-shadow:0 5px 10px rgba(65,48,16,.10);
     font-size:31px;
 }
-.breedName{margin-top:9px;color:#4c3417;font-size:17px;font-weight:900}
-.breedSpecialty{margin-top:3px;color:var(--breedAccent);font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+
+.breedName{
+    margin-top:9px;
+    color:#4c3417;
+    font-size:17px;
+    font-weight:900;
+}
+
+.breedSpecialty{
+    margin-top:3px;
+    color:var(--breedAccent);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+}
+
 .breedProfile{
     min-height:50px;
     margin-top:9px;
@@ -324,10 +810,40 @@ button{cursor:pointer}
     line-height:1.38;
     font-style:italic;
 }
-.breedCount{margin-top:9px;padding:7px;border-radius:8px;background:var(--breedSoft);color:#5b4727;font-size:11px;font-weight:900}
-.breedEffect{min-height:49px;margin-top:8px;color:#64583f;font-size:10.5px;line-height:1.35}
-.breedPrice{margin-top:8px;color:#835919;font-size:10.5px;font-weight:900}
-.unlockText{min-height:30px;margin-top:6px;color:#a35d35;font-size:9.5px;font-weight:900}
+
+.breedCount{
+    margin-top:9px;
+    padding:7px;
+    border-radius:8px;
+    background:var(--breedSoft);
+    color:#5b4727;
+    font-size:11px;
+    font-weight:900;
+}
+
+.breedEffect{
+    min-height:49px;
+    margin-top:8px;
+    color:#64583f;
+    font-size:10.5px;
+    line-height:1.35;
+}
+
+.breedPrice{
+    margin-top:8px;
+    color:#835919;
+    font-size:10.5px;
+    font-weight:900;
+}
+
+.unlockText{
+    min-height:30px;
+    margin-top:6px;
+    color:#a35d35;
+    font-size:9.5px;
+    font-weight:900;
+}
+
 .breedSelectBtn{
     width:100%;
     margin-top:9px;
@@ -338,10 +854,23 @@ button{cursor:pointer}
     color:#513719;
     font-weight:900;
 }
-.breedSelectBtn:disabled{cursor:not-allowed;border-color:#aaa392;background:#ddd8ca;color:#90897b}
-.breedCard.active .breedSelectBtn{background:var(--breedAccent);color:white}
 
-/* INFRASTRUCTURE */
+.breedSelectBtn:disabled{
+    cursor:not-allowed;
+    border-color:#aaa392;
+    background:#ddd8ca;
+    color:#90897b;
+}
+
+.breedCard.active .breedSelectBtn{
+    background:var(--breedAccent);
+    color:white;
+}
+
+/* =========================================================
+   INFRASTRUCTURE
+========================================================= */
+
 .infrastructure{
     margin-top:36px;
     padding:22px;
@@ -350,16 +879,56 @@ button{cursor:pointer}
     background:linear-gradient(135deg,#effbdd,#fff7d8);
     box-shadow:0 9px 24px rgba(61,86,23,.10);
 }
-.infraGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.infraCard{padding:19px;border:2px solid #c9a34b;border-radius:15px;background:white;box-shadow:0 7px 17px rgba(72,53,15,.10)}
+
+.infraGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.infraCard{
+    padding:19px;
+    border:2px solid #c9a34b;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 7px 17px rgba(72,53,15,.10);
+}
+
 .infraCard:nth-child(1){border-top:7px solid #d85e46}
 .infraCard:nth-child(2){border-top:7px solid #559bc2}
 .infraCard:nth-child(3){border-top:7px solid #8b65c4}
+
 .infraIcon{font-size:36px}
-.infraTitle{margin-top:4px;color:#654518;font-size:20px;font-weight:900}
-.infraLevel{margin-top:3px;color:#987020;font-size:13px;font-weight:900}
-.infraStat{margin-top:13px;padding:10px;border:1px solid #d4bd7b;border-radius:8px;background:#fff9e5}
-.infraNext{min-height:47px;margin-top:10px;color:#715d36;font-size:12px}
+
+.infraTitle{
+    margin-top:4px;
+    color:#654518;
+    font-size:20px;
+    font-weight:900;
+}
+
+.infraLevel{
+    margin-top:3px;
+    color:#987020;
+    font-size:13px;
+    font-weight:900;
+}
+
+.infraStat{
+    margin-top:13px;
+    padding:10px;
+    border:1px solid #d4bd7b;
+    border-radius:8px;
+    background:#fff9e5;
+}
+
+.infraNext{
+    min-height:47px;
+    margin-top:10px;
+    color:#715d36;
+    font-size:12px;
+}
+
 .infraBtn{
     width:100%;
     padding:11px;
@@ -369,20 +938,48 @@ button{cursor:pointer}
     color:#563511;
     font-weight:900;
 }
-.infraBtn:disabled{cursor:not-allowed;border-color:#b9ae91;background:#ded8c6;color:#968d79}
 
-/* TALENT TREE */
+.infraBtn:disabled{
+    cursor:not-allowed;
+    border-color:#b9ae91;
+    background:#ded8c6;
+    color:#968d79;
+}
+
+/* =========================================================
+   TALENT TREE
+========================================================= */
+
 .treeSection{
     margin-top:38px;
     padding:23px 14px 28px;
     border:4px solid #8d6a2a;
     border-radius:21px;
-    background:radial-gradient(circle at 50% 0%,rgba(255,234,118,.55),transparent 32%),linear-gradient(135deg,#fff0a6,#f5db7a);
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,234,118,.55),transparent 32%),
+        linear-gradient(135deg,#fff0a6,#f5db7a);
     box-shadow:0 11px 26px rgba(72,53,15,.16);
 }
-.treeTitle{margin:0;text-align:center;color:#633f15;font-size:29px;letter-spacing:3px}
-.treeSubtitle{margin:7px 0 18px;text-align:center;color:#896d30}
-.treeWrapper{width:100%;overflow-x:auto}
+
+.treeTitle{
+    margin:0;
+    text-align:center;
+    color:#633f15;
+    font-size:29px;
+    letter-spacing:3px;
+}
+
+.treeSubtitle{
+    margin:7px 0 18px;
+    text-align:center;
+    color:#896d30;
+}
+
+.treeWrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
 .tree{
     position:relative;
     width:1180px;
@@ -398,9 +995,28 @@ button{cursor:pointer}
         radial-gradient(circle at 50% 80%,rgba(215,121,52,.14),transparent 25%),
         #fff5cf;
 }
-.tree svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.treeLine{stroke:#94876b;stroke-width:3;opacity:.60}
-.treeLine.active{stroke:#26ad50;stroke-width:6;opacity:1;filter:drop-shadow(0 0 6px #70f18c)}
+
+.tree svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.treeLine{
+    stroke:#94876b;
+    stroke-width:3;
+    opacity:.60;
+}
+
+.treeLine.active{
+    stroke:#26ad50;
+    stroke-width:6;
+    opacity:1;
+    filter:drop-shadow(0 0 6px #70f18c);
+}
+
 .centerNode{
     position:absolute;
     z-index:10;
@@ -418,9 +1034,17 @@ button{cursor:pointer}
     text-align:center;
     font-size:15px;
     font-weight:900;
-    box-shadow:0 0 0 7px #fff2a1,0 0 28px rgba(239,181,44,.46);
+    box-shadow:
+        0 0 0 7px #fff2a1,
+        0 0 28px rgba(239,181,44,.46);
 }
-.centerNode span{display:block;margin-bottom:2px;font-size:26px}
+
+.centerNode span{
+    display:block;
+    margin-bottom:2px;
+    font-size:26px;
+}
+
 .treeProgress{
     position:absolute;
     z-index:12;
@@ -435,6 +1059,7 @@ button{cursor:pointer}
     font-size:12px;
     font-weight:900;
 }
+
 .branchLabel{
     position:absolute;
     z-index:12;
@@ -446,9 +1071,17 @@ button{cursor:pointer}
     font-weight:900;
     letter-spacing:1px;
 }
+
 .productionLabel{left:30px;top:28px;color:#278440}
 .marketingLabel{right:30px;top:28px;color:#3472b9}
-.operationsLabel{left:50%;bottom:9px;transform:translateX(-50%);color:#a15d1d}
+
+.operationsLabel{
+    left:50%;
+    bottom:9px;
+    transform:translateX(-50%);
+    color:#a15d1d;
+}
+
 .node{
     position:absolute;
     z-index:8;
@@ -470,20 +1103,55 @@ button{cursor:pointer}
     box-shadow:0 4px 7px rgba(72,57,23,.14);
     transition:transform .13s;
 }
-.node:hover{z-index:25;transform:scale(1.11)}
-.node .icon{display:block;margin-bottom:2px;font-size:18px;line-height:18px}
-.node .nodeName{display:block;max-width:57px}
-.node .cost{display:block;margin-top:2px;color:#9d6915;font-size:7px}
-.node.available{border-color:#dfa923;background:#ffefa1;color:#553810;box-shadow:0 0 0 3px rgba(255,214,69,.22)}
-.node.locked{opacity:.34;filter:grayscale(.8)}
+
+.node:hover{
+    z-index:25;
+    transform:scale(1.11);
+}
+
+.node .icon{
+    display:block;
+    margin-bottom:2px;
+    font-size:18px;
+    line-height:18px;
+}
+
+.node .nodeName{
+    display:block;
+    max-width:57px;
+}
+
+.node .cost{
+    display:block;
+    margin-top:2px;
+    color:#9d6915;
+    font-size:7px;
+}
+
+.node.available{
+    border-color:#dfa923;
+    background:#ffefa1;
+    color:#553810;
+    box-shadow:0 0 0 3px rgba(255,214,69,.22);
+}
+
+.node.locked{
+    opacity:.34;
+    filter:grayscale(.8);
+}
+
 .node.bought{
     opacity:1;
     border:5px solid #ffdc5b;
     background:radial-gradient(circle at 50% 30%,#55ca69,#218a46 72%);
-    box-shadow:0 0 0 4px #fff1a8,0 0 18px #69e98a;
+    box-shadow:
+        0 0 0 4px #fff1a8,
+        0 0 18px #69e98a;
     color:white;
 }
+
 .node.bought .cost{color:#fff0ac}
+
 .node.bought::after{
     content:"✓";
     position:absolute;
@@ -501,10 +1169,32 @@ button{cursor:pointer}
     font-size:11px;
 }
 
-/* BOTTOM */
-.bottomGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
-.log{height:190px;overflow:auto;padding:10px;border:1px solid #d9c99d;border-radius:8px;background:#fffaf0;font-size:12px}
-.logEntry{padding:5px 0;border-bottom:1px solid #e7dbb8}
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.bottomGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:28px;
+}
+
+.log{
+    height:190px;
+    overflow:auto;
+    padding:10px;
+    border:1px solid #d9c99d;
+    border-radius:8px;
+    background:#fffaf0;
+    font-size:12px;
+}
+
+.logEntry{
+    padding:5px 0;
+    border-bottom:1px solid #e7dbb8;
+}
+
 .smallBtn{
     margin:10px 7px 0 0;
     padding:9px 13px;
@@ -514,7 +1204,9 @@ button{cursor:pointer}
     color:#563914;
     font-weight:800;
 }
+
 .resetBtn{background:#e88b70}
+
 .tooltip{
     position:fixed;
     z-index:9999;
@@ -528,12 +1220,13 @@ button{cursor:pointer}
     box-shadow:0 8px 20px rgba(72,51,15,.28);
     color:#574419;
 }
+
 .tooltip strong{color:#925a11}
 .toolDesc{margin-top:5px}
 .toolReq{margin-top:7px;color:#9e6416;font-weight:bold}
 
 /* =========================================================
-   DEVELOPER CONSOLE
+   DEV CONSOLE
 ========================================================= */
 
 #devButton{
@@ -586,7 +1279,7 @@ body.dev-unlocked #devBanner{display:block}
     left:12px;
     bottom:64px;
     z-index:4999;
-    width:380px;
+    width:390px;
     max-height:78vh;
     overflow-y:auto;
     padding:14px;
@@ -595,7 +1288,6 @@ body.dev-unlocked #devBanner{display:block}
     background:#171b20;
     color:#e8edf0;
     box-shadow:0 15px 40px rgba(0,0,0,.55);
-    font-family:Arial,Helvetica,sans-serif;
 }
 
 #devPanel.open{display:block}
@@ -696,6 +1388,16 @@ body.dev-unlocked #devBanner{display:block}
     color:white;
 }
 
+.devFullSelect{
+    width:100%;
+    padding:8px;
+    border:1px solid #59646d;
+    border-radius:6px;
+    background:#111519;
+    color:white;
+    margin-bottom:7px;
+}
+
 .devToggle{
     display:flex;
     justify-content:space-between;
@@ -725,17 +1427,23 @@ body.dev-unlocked #devBanner{display:block}
     border-top:1px solid #4f4545;
 }
 
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
 @media(max-width:1250px){
     .topbar{grid-template-columns:1fr;text-align:center}
     .topActions,.topStats{justify-content:center}
     .statGrid{grid-template-columns:repeat(3,1fr)}
     .breedGrid{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:900px){
     .dashboard,.infraGrid,.bottomGrid{grid-template-columns:1fr}
     .flockSummary{grid-template-columns:repeat(2,1fr)}
     .breedGrid{grid-template-columns:repeat(2,1fr)}
 }
+
 @media(max-width:700px){
     .topActions{flex-direction:column}
     .statGrid{grid-template-columns:repeat(2,1fr)}
@@ -751,21 +1459,49 @@ body.dev-unlocked #devBanner{display:block}
 <header class="topbar">
 
 <div class="topActions">
-    <button class="actionBtn" id="getChickenBtn" onclick="getChicken()">🐔 Get Chicken — 1 Feed</button>
-    <button class="actionBtn" id="buyFeedBtn" onclick="buyFeed()">🌾 Buy 10 Feed</button>
+<button class="actionBtn" id="getChickenBtn" onclick="getChicken()">
+🐔 Get Chicken — 1 Feed
+</button>
+
+<button class="actionBtn" id="buyFeedBtn" onclick="buyFeed()">
+🌾 Buy 10 Feed
+</button>
 </div>
 
 <div class="logoArea">
-    <h1>🐔 CHICKEN FARM EMPIRE</h1>
-    <small id="farmNameTop">Barn Lv. 1 • Storage Lv. 1 • Distribution Lv. 0</small>
-    <div class="activeBreedTop" id="activeBreedTop">Active Breed: Sunnybrook Layer</div>
+<h1>🐔 CHICKEN FARM EMPIRE</h1>
+
+<small id="farmNameTop">
+Barn Lv. 1 • Storage Lv. 1 • Distribution Lv. 0
+</small>
+
+<div class="activeBreedTop" id="activeBreedTop">
+Active Breed: Sunnybrook Layer
+</div>
 </div>
 
 <div class="topStats">
-    <div class="topStat"><span>Chickens</span><strong id="topChickens">1</strong></div>
-    <div class="topStat"><span>Money</span><strong id="topMoney">$0.00</strong></div>
-    <div class="topStat"><span>Eggs</span><strong id="topEggs">0</strong></div>
-    <div class="topStat"><span>Feed</span><strong id="topFeed">100</strong></div>
+
+<div class="topStat">
+<span>Chickens</span>
+<strong id="topChickens">1</strong>
+</div>
+
+<div class="topStat">
+<span>Money</span>
+<strong id="topMoney">$0.00</strong>
+</div>
+
+<div class="topStat">
+<span>Eggs</span>
+<strong id="topEggs">0</strong>
+</div>
+
+<div class="topStat">
+<span>Feed</span>
+<strong id="topFeed">100</strong>
+</div>
+
 </div>
 
 </header>
@@ -775,11 +1511,16 @@ body.dev-unlocked #devBanner{display:block}
 <section>
 
 <div class="overviewHeader">
-    <div>
-        <h2>Farm Overview</h2>
-        <p>Build your flock, develop rare breeds and grow your egg empire.</p>
-    </div>
-    <div class="saveStatus" id="saveStatus">✓ Autosave enabled</div>
+
+<div>
+<h2>Farm Overview</h2>
+<p>Build your flock, develop rare breeds and grow your egg empire.</p>
+</div>
+
+<div class="saveStatus" id="saveStatus">
+✓ Autosave enabled
+</div>
+
 </div>
 
 <div class="statGrid">
@@ -824,6 +1565,48 @@ body.dev-unlocked #devBanner{display:block}
 
 <div class="alert" id="farmAlert"></div>
 
+<div class="eventHub" id="farmEventHub">
+
+<div class="eventTop">
+
+<div class="eventTitleRow">
+
+<div class="eventIcon" id="farmEventIcon">
+📅
+</div>
+
+<div>
+<div class="eventLabel" id="farmEventLabel">
+FARM EVENTS
+</div>
+
+<div class="eventName" id="farmEventName">
+Things Are Quiet
+</div>
+</div>
+
+</div>
+
+<div class="eventCountdown" id="farmEventCountdown">
+Waiting...
+</div>
+
+</div>
+
+<div class="eventDescription" id="farmEventDescription">
+No major farm event is active.
+</div>
+
+<div class="eventEffect" id="farmEventEffect">
+Keep building your farm while you wait for the next opportunity or challenge.
+</div>
+
+<div class="eventProgress">
+<div class="eventProgressBar" id="farmEventProgressBar"></div>
+</div>
+
+</div>
+
 </section>
 
 <section class="dashboard">
@@ -834,7 +1617,9 @@ body.dev-unlocked #devBanner{display:block}
 
 <div>Your Selling Price</div>
 
-<div class="priceDisplay" id="priceDisplay">$0.20</div>
+<div class="priceDisplay" id="priceDisplay">
+$0.20
+</div>
 
 <input
 id="priceSlider"
@@ -919,22 +1704,40 @@ oninput="changePrice(this.value)"
 
 </div>
 
-<div class="feedMeterTitle">Feed Capacity</div>
+<div class="feedMeterTitle">
+Feed Capacity
+</div>
 
 <div class="meter">
 <div class="meterFill" id="feedCapacityBar"></div>
 </div>
 
-<div id="feedStorageText" style="margin-top:6px;font-size:12px;font-weight:700;color:#526d34;">
+<div
+id="feedStorageText"
+style="margin-top:6px;font-size:12px;font-weight:700;color:#526d34;"
+>
 100 / 150 feed stored
 </div>
 
 <div class="feedEvent" id="feedEventBox">
-<strong id="feedEventTitle">🌾 Normal Feed Market</strong>
-<div id="feedEventDescription" style="font-size:12px;">No special market event is active.</div>
+
+<strong id="feedEventTitle">
+🌾 Normal Feed Market
+</strong>
+
+<div
+id="feedEventDescription"
+style="font-size:12px;"
+>
+No special feed-market event is active.
 </div>
 
-<div id="feedMarketMessage" style="margin-top:8px;font-size:11px;color:#58743c;">
+</div>
+
+<div
+id="feedMarketMessage"
+style="margin-top:8px;font-size:11px;color:#58743c;"
+>
 Normal feed prices range from $10 to $20 per feed.
 </div>
 
@@ -948,18 +1751,35 @@ Normal feed prices range from $10 to $20 per feed.
 
 <div class="wholesaleStatus" id="wholesaleStatus">
 
-<strong id="wholesaleTitle">Wholesale Locked</strong>
+<strong id="wholesaleTitle">
+Wholesale Locked
+</strong>
 
-<p id="wholesaleDescription" style="margin:7px 0 0;font-size:12px;">
+<p
+id="wholesaleDescription"
+style="margin:7px 0 0;font-size:12px;"
+>
 Purchase Distribution Level 1 to unlock wholesale.
 </p>
 
 <div class="toggleRow">
-<span>Auto-sell surplus eggs</span>
+
+<span>
+Auto-sell surplus eggs
+</span>
+
 <label class="switch">
-<input type="checkbox" id="wholesaleToggle" onchange="toggleWholesale(this.checked)">
+
+<input
+type="checkbox"
+id="wholesaleToggle"
+onchange="toggleWholesale(this.checked)"
+>
+
 <span class="sliderSwitch"></span>
+
 </label>
+
 </div>
 
 </div>
@@ -1004,11 +1824,17 @@ Purchase Distribution Level 1 to unlock wholesale.
 <div class="meterFill" id="storageBar"></div>
 </div>
 
-<div id="storageText" style="margin-top:7px;font-size:12px;font-weight:800;">
+<div
+id="storageText"
+style="margin-top:7px;font-size:12px;font-weight:800;"
+>
 0 / 500 eggs
 </div>
 
-<div id="storageWarningText" style="margin-top:5px;font-size:11px;color:#886b31;">
+<div
+id="storageWarningText"
+style="margin-top:5px;font-size:11px;color:#886b31;"
+>
 Storage has room available.
 </div>
 
@@ -1019,8 +1845,13 @@ Storage has room available.
 <section class="breedSection">
 
 <div class="sectionHeader">
+
 <h2>🐔 FLOCK MANAGEMENT</h2>
-<p>Discover specialized chickens with personalities, strengths and different roles on your farm.</p>
+
+<p>
+Discover specialized chickens with personalities, strengths and different roles on your farm.
+</p>
+
 </div>
 
 <div class="flockSummary">
@@ -1059,37 +1890,108 @@ Storage has room available.
 <section class="infrastructure">
 
 <div class="sectionHeader">
+
 <h2>🏗️ FARM INFRASTRUCTURE</h2>
-<p>Expand the systems that support your growing flock.</p>
+
+<p>
+Expand the systems that support your growing flock.
+</p>
+
 </div>
 
 <div class="infraGrid">
 
 <div class="infraCard">
+
 <div class="infraIcon">🏚️</div>
-<div class="infraTitle">Chicken Barn</div>
-<div class="infraLevel" id="barnLevelText">Level 1 / 10</div>
-<div class="infraStat">Current capacity: <strong id="barnCurrentCapacity">40 chickens</strong></div>
-<div class="infraNext" id="barnNextText">Next barn holds 150 chickens.</div>
-<button class="infraBtn" id="barnUpgradeBtn" onclick="upgradeBarn()">Upgrade Barn</button>
+
+<div class="infraTitle">
+Chicken Barn
+</div>
+
+<div class="infraLevel" id="barnLevelText">
+Level 1 / 10
+</div>
+
+<div class="infraStat">
+Current capacity:
+<strong id="barnCurrentCapacity">40 chickens</strong>
+</div>
+
+<div class="infraNext" id="barnNextText">
+Next barn holds 150 chickens.
+</div>
+
+<button
+class="infraBtn"
+id="barnUpgradeBtn"
+onclick="upgradeBarn()"
+>
+Upgrade Barn
+</button>
+
 </div>
 
 <div class="infraCard">
+
 <div class="infraIcon">📦</div>
-<div class="infraTitle">Egg Storage</div>
-<div class="infraLevel" id="storageLevelText">Level 1 / 10</div>
-<div class="infraStat">Current capacity: <strong id="storageCurrentCapacity">500 eggs</strong></div>
-<div class="infraNext" id="storageNextText">Next storage holds 2,000 eggs.</div>
-<button class="infraBtn" id="storageUpgradeBtn" onclick="upgradeStorage()">Upgrade Storage</button>
+
+<div class="infraTitle">
+Egg Storage
+</div>
+
+<div class="infraLevel" id="storageLevelText">
+Level 1 / 10
+</div>
+
+<div class="infraStat">
+Current capacity:
+<strong id="storageCurrentCapacity">500 eggs</strong>
+</div>
+
+<div class="infraNext" id="storageNextText">
+Next storage holds 2,000 eggs.
+</div>
+
+<button
+class="infraBtn"
+id="storageUpgradeBtn"
+onclick="upgradeStorage()"
+>
+Upgrade Storage
+</button>
+
 </div>
 
 <div class="infraCard">
+
 <div class="infraIcon">🚚</div>
-<div class="infraTitle">Distribution</div>
-<div class="infraLevel" id="distributionLevelText">Level 0 / 10</div>
-<div class="infraStat">Current network: <strong id="distributionCurrentText">Not established</strong></div>
-<div class="infraNext" id="distributionNextText">Purchase your first wholesale contract.</div>
-<button class="infraBtn" id="distributionUpgradeBtn" onclick="upgradeDistribution()">Unlock Distribution</button>
+
+<div class="infraTitle">
+Distribution
+</div>
+
+<div class="infraLevel" id="distributionLevelText">
+Level 0 / 10
+</div>
+
+<div class="infraStat">
+Current network:
+<strong id="distributionCurrentText">Not established</strong>
+</div>
+
+<div class="infraNext" id="distributionNextText">
+Purchase your first wholesale contract.
+</div>
+
+<button
+class="infraBtn"
+id="distributionUpgradeBtn"
+onclick="upgradeDistribution()"
+>
+Unlock Distribution
+</button>
+
 </div>
 
 </div>
@@ -1098,7 +2000,9 @@ Storage has room available.
 
 <section class="treeSection">
 
-<h2 class="treeTitle">FARM TALENT TREE</h2>
+<h2 class="treeTitle">
+FARM TALENT TREE
+</h2>
 
 <div class="treeSubtitle">
 Build specialized production, operations and sales systems.
@@ -1108,27 +2012,48 @@ Build specialized production, operations and sales systems.
 
 <div class="tree" id="upgradeTree">
 
-<div class="treeProgress" id="treeProgress">0 / 45 UPGRADES OWNED</div>
+<div class="treeProgress" id="treeProgress">
+0 / 45 UPGRADES OWNED
+</div>
 
-<div class="branchLabel productionLabel" id="productionLabel">
+<div
+class="branchLabel productionLabel"
+id="productionLabel"
+>
 PRODUCTION & FLOCK 0/15
 </div>
 
-<div class="branchLabel marketingLabel" id="marketingLabel">
+<div
+class="branchLabel marketingLabel"
+id="marketingLabel"
+>
 SALES & DISTRIBUTION 0/15
 </div>
 
-<div class="branchLabel operationsLabel" id="operationsLabel">
+<div
+class="branchLabel operationsLabel"
+id="operationsLabel"
+>
 FARM OPERATIONS 0/15
 </div>
 
-<svg id="treeLines" viewBox="0 0 1180 780" preserveAspectRatio="none"></svg>
+<svg
+id="treeLines"
+viewBox="0 0 1180 780"
+preserveAspectRatio="none"
+></svg>
 
 <div class="centerNode">
+
 <div>
+
 <span>🐔</span>
-YOUR<br>FARM
+
+YOUR<br>
+FARM
+
 </div>
+
 </div>
 
 </div>
@@ -1140,8 +2065,14 @@ YOUR<br>FARM
 <div class="bottomGrid">
 
 <div class="panel">
+
 <h2>📜 Farm Activity</h2>
-<div class="log" id="gameLog"></div>
+
+<div
+class="log"
+id="gameLog"
+></div>
+
 </div>
 
 <div class="panel">
@@ -1149,21 +2080,30 @@ YOUR<br>FARM
 <h2>🎮 Game Information</h2>
 
 <p>
-Every chicken consumes <strong>1 feed</strong>.
-The active breed determines which chicken you add.
+Every chicken consumes <strong>1 feed</strong>. The active breed determines which chicken you add.
 </p>
 
 <p>
-Each breed has its own personality and economic role.
-A mixed flock combines its bonuses based on flock composition.
+Farm events can temporarily help or hurt production, sales, feed prices and automation.
 </p>
 
 <p>
-Automation raises your currently selected breed and normally pays its purchase cost.
+Rare events have a small chance to appear and can create unusually powerful opportunities.
 </p>
 
-<button class="smallBtn" onclick="saveGame(true)">Save Game</button>
-<button class="smallBtn resetBtn" onclick="resetGame()">Reset Game</button>
+<button
+class="smallBtn"
+onclick="saveGame(true)"
+>
+Save Game
+</button>
+
+<button
+class="smallBtn resetBtn"
+onclick="resetGame()"
+>
+Reset Game
+</button>
 
 </div>
 
@@ -1172,26 +2112,47 @@ Automation raises your currently selected breed and normally pays its purchase c
 </main>
 
 <div class="tooltip" id="tooltip">
-<strong id="tooltipTitle"></strong>
-<div class="toolDesc" id="tooltipDescription"></div>
-<div class="toolReq" id="tooltipRequirement"></div>
-</div>
 
-<!-- DEVELOPER UI -->
+<strong id="tooltipTitle"></strong>
+
+<div
+class="toolDesc"
+id="tooltipDescription"
+></div>
+
+<div
+class="toolReq"
+id="tooltipRequirement"
+></div>
+
+</div>
 
 <div id="devBanner">
 🛠 DEVELOPER MODE ACTIVE
 </div>
 
-<button id="devButton" onclick="openDeveloperAccess()">
+<button
+id="devButton"
+onclick="openDeveloperAccess()"
+>
 DEV
 </button>
 
 <div id="devPanel">
 
 <div class="devHeader">
-<strong>🛠 DEVELOPER CONSOLE</strong>
-<button class="devClose" onclick="toggleDeveloperPanel()">✕</button>
+
+<strong>
+🛠 DEVELOPER CONSOLE
+</strong>
+
+<button
+class="devClose"
+onclick="toggleDeveloperPanel()"
+>
+✕
+</button>
+
 </div>
 
 <div class="devSection">
@@ -1199,17 +2160,32 @@ DEV
 <h4>Quick Money</h4>
 
 <div class="devButtons">
+
 <button class="devBtn green" onclick="devAddMoney(100)">+$100</button>
 <button class="devBtn green" onclick="devAddMoney(1000)">+$1K</button>
 <button class="devBtn green" onclick="devAddMoney(100000)">+$100K</button>
 <button class="devBtn green" onclick="devAddMoney(1000000)">+$1M</button>
 <button class="devBtn green" onclick="devAddMoney(1000000000)">+$1B</button>
 <button class="devBtn green" onclick="devAddMoney(1000000000000)">+$1T</button>
+
 </div>
 
 <div class="devInputRow">
-<input id="devMoneyInput" type="number" min="0" placeholder="Set exact money">
-<button class="devBtn green" onclick="devSetMoney()">SET</button>
+
+<input
+id="devMoneyInput"
+type="number"
+min="0"
+placeholder="Set exact money"
+>
+
+<button
+class="devBtn green"
+onclick="devSetMoney()"
+>
+SET
+</button>
+
 </div>
 
 </div>
@@ -1219,22 +2195,50 @@ DEV
 <h4>Resources</h4>
 
 <div class="devButtons">
+
 <button class="devBtn gold" onclick="devAddFeed(100)">+100 Feed</button>
 <button class="devBtn gold" onclick="devAddFeed(1000)">+1K Feed</button>
 <button class="devBtn gold" onclick="devAddFeed(10000)">+10K Feed</button>
 <button class="devBtn gold" onclick="devAddEggs(1000)">+1K Eggs</button>
 <button class="devBtn gold" onclick="devAddEggs(100000)">+100K Eggs</button>
 <button class="devBtn gold" onclick="devAddEggs(1000000)">+1M Eggs</button>
+
 </div>
 
 <div class="devInputRow">
-<input id="devFeedInput" type="number" min="0" placeholder="Set exact feed">
-<button class="devBtn gold" onclick="devSetFeed()">SET</button>
+
+<input
+id="devFeedInput"
+type="number"
+min="0"
+placeholder="Set exact feed"
+>
+
+<button
+class="devBtn gold"
+onclick="devSetFeed()"
+>
+SET
+</button>
+
 </div>
 
 <div class="devInputRow">
-<input id="devEggInput" type="number" min="0" placeholder="Set exact eggs">
-<button class="devBtn gold" onclick="devSetEggs()">SET</button>
+
+<input
+id="devEggInput"
+type="number"
+min="0"
+placeholder="Set exact eggs"
+>
+
+<button
+class="devBtn gold"
+onclick="devSetEggs()"
+>
+SET
+</button>
+
 </div>
 
 </div>
@@ -1244,20 +2248,90 @@ DEV
 <h4>Chicken Breeds</h4>
 
 <div class="devButtons">
-<button class="devBtn purple" onclick="devAddActiveChickens(10)">+10 Active Breed</button>
-<button class="devBtn purple" onclick="devAddActiveChickens(100)">+100 Active Breed</button>
-<button class="devBtn purple" onclick="devAddEveryBreed(100)">+100 Every Breed</button>
-<button class="devBtn purple" onclick="devUnlockAllBreeds()">Unlock All Breeds</button>
+
+<button class="devBtn purple" onclick="devAddActiveChickens(10)">
++10 Active Breed
+</button>
+
+<button class="devBtn purple" onclick="devAddActiveChickens(100)">
++100 Active Breed
+</button>
+
+<button class="devBtn purple" onclick="devAddEveryBreed(100)">
++100 Every Breed
+</button>
+
+<button class="devBtn purple" onclick="devUnlockAllBreeds()">
+Unlock All Breeds
+</button>
+
 </div>
 
 <div class="devSelectRow">
+
 <select id="devBreedSelect"></select>
-<input id="devBreedAmount" type="number" min="0" value="100">
-<button class="devBtn purple" onclick="devSetBreedCount()">SET</button>
+
+<input
+id="devBreedAmount"
+type="number"
+min="0"
+value="100"
+>
+
+<button
+class="devBtn purple"
+onclick="devSetBreedCount()"
+>
+SET
+</button>
+
+</div>
+
+</div>
+
+<div class="devSection">
+
+<h4>Farm Events</h4>
+
+<select
+class="devFullSelect"
+id="devEventSelect"
+></select>
+
+<div class="devButtons">
+
+<button
+class="devBtn green"
+onclick="devTriggerSelectedEvent()"
+>
+Trigger Selected Event
+</button>
+
+<button
+class="devBtn purple"
+onclick="devTriggerRandomRareEvent()"
+>
+Trigger Random Rare
+</button>
+
+<button
+class="devBtn"
+onclick="devTriggerRandomNormalEvent()"
+>
+Trigger Random Normal
+</button>
+
+<button
+class="devBtn red"
+onclick="devEndCurrentEvent()"
+>
+End Current Event
+</button>
+
 </div>
 
 <div class="devInfo">
-Set any breed's exact owned count. Developer changes can exceed normal barn capacity for testing.
+The dropdown contains all 5 positive events, all 5 negative events and all rare events.
 </div>
 
 </div>
@@ -1267,13 +2341,27 @@ Set any breed's exact owned count. Developer changes can exceed normal barn capa
 <h4>Progression</h4>
 
 <div class="devButtons">
-<button class="devBtn" onclick="devUnlockAllSkills()">Unlock All Skills</button>
-<button class="devBtn" onclick="devMaxInfrastructure()">Max Infrastructure</button>
-<button class="devBtn green" onclick="devMaxGame()">👑 MAX GAME</button>
-<button class="devBtn" onclick="devGiveTestingPack()">Testing Pack</button>
+
+<button class="devBtn" onclick="devUnlockAllSkills()">
+Unlock All Skills
+</button>
+
+<button class="devBtn" onclick="devMaxInfrastructure()">
+Max Infrastructure
+</button>
+
+<button class="devBtn green" onclick="devMaxGame()">
+👑 MAX GAME
+</button>
+
+<button class="devBtn" onclick="devGiveTestingPack()">
+Testing Pack
+</button>
+
 </div>
 
 <div class="devSelectRow">
+
 <select id="devBarnLevel">
 <option value="1">Barn 1</option>
 <option value="2">Barn 2</option>
@@ -1286,11 +2374,17 @@ Set any breed's exact owned count. Developer changes can exceed normal barn capa
 <option value="9">Barn 9</option>
 <option value="10">Barn 10</option>
 </select>
+
 <span></span>
-<button class="devBtn" onclick="devSetBarn()">SET</button>
+
+<button class="devBtn" onclick="devSetBarn()">
+SET
+</button>
+
 </div>
 
 <div class="devSelectRow">
+
 <select id="devStorageLevel">
 <option value="1">Storage 1</option>
 <option value="2">Storage 2</option>
@@ -1303,11 +2397,17 @@ Set any breed's exact owned count. Developer changes can exceed normal barn capa
 <option value="9">Storage 9</option>
 <option value="10">Storage 10</option>
 </select>
+
 <span></span>
-<button class="devBtn" onclick="devSetStorage()">SET</button>
+
+<button class="devBtn" onclick="devSetStorage()">
+SET
+</button>
+
 </div>
 
 <div class="devSelectRow">
+
 <select id="devDistributionLevel">
 <option value="0">Distribution 0</option>
 <option value="1">Distribution 1</option>
@@ -1321,8 +2421,13 @@ Set any breed's exact owned count. Developer changes can exceed normal barn capa
 <option value="9">Distribution 9</option>
 <option value="10">Distribution 10</option>
 </select>
+
 <span></span>
-<button class="devBtn" onclick="devSetDistribution()">SET</button>
+
+<button class="devBtn" onclick="devSetDistribution()">
+SET
+</button>
+
 </div>
 
 </div>
@@ -1332,18 +2437,32 @@ Set any breed's exact owned count. Developer changes can exceed normal barn capa
 <h4>Cheat Toggles</h4>
 
 <label class="devToggle">
-<span>Unlimited Money</span>
-<input type="checkbox" id="devUnlimitedMoney" onchange="devToggleUnlimitedMoney(this.checked)">
+
+<span>
+Unlimited Money
+</span>
+
+<input
+type="checkbox"
+id="devUnlimitedMoney"
+onchange="devToggleUnlimitedMoney(this.checked)"
+>
+
 </label>
 
 <label class="devToggle">
-<span>Unlimited Feed</span>
-<input type="checkbox" id="devUnlimitedFeed" onchange="devToggleUnlimitedFeed(this.checked)">
-</label>
 
-<div class="devInfo">
-Unlimited Money removes purchase-cost requirements. Unlimited Feed lets chickens and automation operate without consuming feed.
-</div>
+<span>
+Unlimited Feed
+</span>
+
+<input
+type="checkbox"
+id="devUnlimitedFeed"
+onchange="devToggleUnlimitedFeed(this.checked)"
+>
+
+</label>
 
 </div>
 
@@ -1352,8 +2471,21 @@ Unlimited Money removes purchase-cost requirements. Unlimited Feed lets chickens
 <h4>Developer Access</h4>
 
 <div class="devButtons">
-<button class="devBtn" onclick="saveGame(true)">Force Save</button>
-<button class="devBtn red" onclick="lockDeveloperMode()">Lock Developer Mode</button>
+
+<button
+class="devBtn"
+onclick="saveGame(true)"
+>
+Force Save
+</button>
+
+<button
+class="devBtn red"
+onclick="lockDeveloperMode()"
+>
+Lock Developer Mode
+</button>
+
 </div>
 
 </div>
@@ -1367,10 +2499,14 @@ Unlimited Money removes purchase-cost requirements. Unlimited Feed lets chickens
 ========================================================= */
 
 const DEV_CODE="Kbug8282";
-const DEV_UNLOCK_KEY="chickenFarmEmpireDevUnlocked";
+
+const DEV_UNLOCK_KEY=
+"chickenFarmEmpireDevUnlocked";
 
 let developerUnlocked=
-localStorage.getItem(DEV_UNLOCK_KEY)==="true";
+localStorage.getItem(
+DEV_UNLOCK_KEY
+)==="true";
 
 /* =========================================================
    FEED MARKET
@@ -1381,6 +2517,7 @@ const FEED_MIN_CENTS=1000;
 const FEED_MAX_CENTS=2000;
 
 const FEED_EVENTS=[
+
 {
 id:"harvest",
 name:"Great Harvest",
@@ -1389,6 +2526,7 @@ multiplier:.70,
 type:"good",
 description:"A huge grain harvest cuts feed prices by 30%."
 },
+
 {
 id:"surplus",
 name:"Grain Surplus",
@@ -1397,6 +2535,7 @@ multiplier:.85,
 type:"good",
 description:"Local suppliers have excess grain. Feed prices are 15% lower."
 },
+
 {
 id:"fuel",
 name:"Fuel Price Spike",
@@ -1405,6 +2544,7 @@ multiplier:1.15,
 type:"bad",
 description:"Higher transportation costs increase feed prices by 15%."
 },
+
 {
 id:"shortage",
 name:"Crop Shortage",
@@ -1413,28 +2553,248 @@ multiplier:1.30,
 type:"bad",
 description:"Poor crop conditions increase feed prices by 30%."
 }
+
 ];
 
-function randomFeedPrice(){
-const cents=
-FEED_MIN_CENTS+
+/* =========================================================
+   FARM EVENT SYSTEM
+   EXACTLY 5 POSITIVE + 5 NEGATIVE
+========================================================= */
+
+const FARM_EVENTS=[
+
+/* POSITIVE 1 */
+{
+id:"eggRush",
+polarity:"positive",
+name:"Egg Rush",
+icon:"🥚",
+duration:60,
+description:"Local shoppers suddenly cannot get enough eggs.",
+effectText:"Retail demand is doubled for 60 seconds.",
+modifiers:{
+retail:2
+}
+},
+
+/* POSITIVE 2 */
+{
+id:"perfectWeather",
+polarity:"positive",
+name:"Perfect Laying Weather",
+icon:"☀️",
+duration:60,
+description:"Ideal temperatures and daylight have the whole flock producing at peak efficiency.",
+effectText:"Egg production +50% for 60 seconds.",
+modifiers:{
+production:1.5
+}
+},
+
+/* POSITIVE 3 */
+{
+id:"feedClearance",
+polarity:"positive",
+name:"Feed Mill Clearance",
+icon:"🌾",
+duration:60,
+description:"A nearby feed mill is clearing excess inventory before a new shipment arrives.",
+effectText:"Feed prices are 50% cheaper for 60 seconds.",
+modifiers:{
+feedPrice:.50
+}
+},
+
+/* POSITIVE 4 */
+{
+id:"truckingBoom",
+polarity:"positive",
+name:"Trucking Boom",
+icon:"🚚",
+duration:75,
+description:"Extra freight capacity has opened up across your distribution network.",
+effectText:"Wholesale sales capacity is doubled for 75 seconds.",
+modifiers:{
+wholesale:2
+}
+},
+
+/* POSITIVE 5 */
+{
+id:"breakfastCraze",
+polarity:"positive",
+name:"Breakfast Craze",
+icon:"🍳",
+duration:60,
+description:"A breakfast trend has exploded across social media and customers are willing to pay more.",
+effectText:"Retail demand +50% and customers tolerate much higher egg prices.",
+modifiers:{
+retail:1.5,
+priceTolerance:.35
+}
+},
+
+/* NEGATIVE 1 */
+{
+id:"coldSnap",
+polarity:"negative",
+name:"Cold Snap",
+icon:"❄️",
+duration:60,
+description:"A sudden cold front is stressing the flock and reducing laying activity.",
+effectText:"Egg production -25%. Climate Control greatly reduces the penalty.",
+modifiers:{
+production:.75
+}
+},
+
+/* NEGATIVE 2 */
+{
+id:"dieselCrunch",
+polarity:"negative",
+name:"Diesel Crunch",
+icon:"⛽",
+duration:60,
+description:"Transportation costs spike and available freight capacity becomes limited.",
+effectText:"Feed costs +25% and wholesale capacity -20%. Fleet Logistics reduces the damage.",
+modifiers:{
+feedPrice:1.25,
+wholesale:.80
+}
+},
+
+/* NEGATIVE 3 */
+{
+id:"illnessScare",
+polarity:"negative",
+name:"Avian Illness Scare",
+icon:"🦠",
+duration:60,
+description:"Rumors of illness make customers cautious even though your farm remains operational.",
+effectText:"Retail demand -40% and egg value -10%. Biosecure Housing reduces the penalty.",
+modifiers:{
+retail:.60,
+eggValue:.90
+}
+},
+
+/* NEGATIVE 4 */
+{
+id:"equipmentBreakdown",
+polarity:"negative",
+name:"Equipment Breakdown",
+icon:"🔧",
+duration:60,
+description:"A key piece of automated farm equipment has failed and maintenance crews are scrambling.",
+effectText:"Automation runs at half speed. Farm Robotics and Farm Manager reduce the penalty.",
+modifiers:{
+automation:.50
+}
+},
+
+/* NEGATIVE 5 */
+{
+id:"heatWave",
+polarity:"negative",
+name:"Heat Wave",
+icon:"🥵",
+duration:60,
+description:"Extreme temperatures are stressing the flock and increasing operating costs.",
+effectText:"Egg production -30% and feed prices +15%. Climate Control reduces the penalty.",
+modifiers:{
+production:.70,
+feedPrice:1.15
+}
+}
+
+];
+
+/* =========================================================
+   RARE EVENT POOL
+========================================================= */
+
+const RARE_EVENTS=[
+
+{
+id:"goldenEggFrenzy",
+name:"Golden Egg Frenzy",
+icon:"🌟",
+duration:45,
+description:"A bizarre streak of premium golden eggs has begun appearing throughout the flock.",
+effectText:"Production +50% and egg value ×4 for 45 seconds.",
+modifiers:{
+production:1.5,
+eggValue:4
+}
+},
+
+{
+id:"mysteryInvestor",
+name:"Mystery Investor",
+icon:"💼",
+duration:60,
+description:"A wealthy investor has taken an unexpected interest in your chicken empire.",
+effectText:"Immediate cash investment plus +50% retail and wholesale demand for 60 seconds.",
+modifiers:{
+retail:1.5,
+wholesale:1.5
+}
+},
+
+{
+id:"perfectSeason",
+name:"Perfect Farming Season",
+icon:"🌈",
+duration:90,
+description:"Weather, grain supply and consumer demand have aligned almost perfectly.",
+effectText:"Production +80%, retail +80%, wholesale +50% and feed costs -30% for 90 seconds.",
+modifiers:{
+production:1.8,
+retail:1.8,
+wholesale:1.5,
+feedPrice:.70
+}
+},
+
+{
+id:"legendaryBreeder",
+name:"Legendary Breeder Expo",
+icon:"🧬",
+duration:60,
+description:"The country's best breeders have arrived with elite genetics and heavily discounted stock.",
+effectText:"Chicken breed purchase costs -80%, automation ×2 and production +25%.",
+modifiers:{
+breedCost:.20,
+automation:2,
+production:1.25
+}
+},
+
+{
+id:"nationalEggContract",
+name:"National Egg Emergency",
+icon:"🚨",
+duration:60,
+description:"A nationwide supply shortage has created an emergency demand for eggs.",
+effectText:"Wholesale demand ×4, retail demand ×2 and egg value +75% for 60 seconds.",
+modifiers:{
+wholesale:4,
+retail:2,
+eggValue:1.75
+}
+}
+
+];
+
+const RARE_EVENT_CHANCE=.06;
+
+function randomFarmEventDelay(){
+return(
+90+
 Math.floor(
-Math.random()*
-(FEED_MAX_CENTS-FEED_MIN_CENTS+1)
-);
-return cents/100;
-}
-
-function randomFeedMarketDelay(){
-return(25+Math.floor(Math.random()*21))*1000;
-}
-
-function randomFeedEventDelay(){
-return(75+Math.floor(Math.random()*76))*1000;
-}
-
-function randomFeedEventDuration(){
-return(45+Math.floor(Math.random()*46))*1000;
+Math.random()*91
+)
+)*1000;
 }
 
 /* =========================================================
@@ -1442,6 +2802,7 @@ return(45+Math.floor(Math.random()*46))*1000;
 ========================================================= */
 
 const BARN_LEVELS=[
+
 {level:1,capacity:40,cost:0},
 {level:2,capacity:150,cost:150},
 {level:3,capacity:450,cost:800},
@@ -1452,9 +2813,11 @@ const BARN_LEVELS=[
 {level:8,capacity:16000,cost:400000},
 {level:9,capacity:32000,cost:1200000},
 {level:10,capacity:75000,cost:4000000}
+
 ];
 
 const STORAGE_LEVELS=[
+
 {level:1,capacity:500,cost:0},
 {level:2,capacity:2000,cost:100},
 {level:3,capacity:6000,cost:500},
@@ -1465,9 +2828,11 @@ const STORAGE_LEVELS=[
 {level:8,capacity:600000,cost:280000},
 {level:9,capacity:1500000,cost:850000},
 {level:10,capacity:4000000,cost:2500000}
+
 ];
 
 const DISTRIBUTION_LEVELS=[
+
 {level:0,name:"Not established",cost:0,multiplier:0},
 {level:1,name:"Local Wholesale Contract",cost:250,multiplier:1},
 {level:2,name:"County Distribution",cost:1200,multiplier:1.30},
@@ -1479,6 +2844,7 @@ const DISTRIBUTION_LEVELS=[
 {level:8,name:"National Warehousing",cost:2000000,multiplier:3.65},
 {level:9,name:"National Distribution",cost:6000000,multiplier:4.25},
 {level:10,name:"Continental Supply Network",cost:18000000,multiplier:5}
+
 ];
 
 /* =========================================================
@@ -1724,7 +3090,7 @@ robotics:{name:"Farm Robotics",cost:85000,requires:"manager",description:"Raises
 
 feedSilo:{name:"Feed Silos",cost:300000,requires:"conveyor",description:"Feed storage increases to 1,000 and purchases increase to 25 feed.",icon:"🌾",branch:"operations",path:"B",step:1},
 bulkFeed:{name:"Bulk Feed Contract",cost:1000000,requires:"feedSilo",description:"Bulk purchasing reduces feed costs by 15%.",icon:"📄",branch:"operations",path:"B",step:2},
-grainCoop:{name:"Grain Co-op",cost:3000000,requires:"bulkFeed",description:"Feed storage increases to 5,000 and purchases increase to 100 feed.",icon:"🚜",branch:"operations",path:"B",step:3},
+grainCoop:{name:"Grain Co-op",cost:3000000,requires:"bulkFeed",description:"Feed storage increases to 5,000 and feed purchases increase to 100 feed.",icon:"🚜",branch:"operations",path:"B",step:3},
 barnEngineering:{name:"Barn Engineering",cost:10000000,requires:"grainCoop",description:"Improved barn design increases chicken capacity by 25%.",icon:"🏗️",branch:"operations",path:"B",step:4},
 highDensity:{name:"High Density Housing",cost:35000000,requires:"barnEngineering",description:"Chicken capacity increases another 50%.",icon:"🏠",branch:"operations",path:"B",step:5},
 
@@ -1759,6 +3125,7 @@ householdName:{name:"Household Name",cost:8000000000,requires:"globalDistributio
 ========================================================= */
 
 let state={
+
 chickens:1,
 
 breedCounts:{
@@ -1768,35 +3135,70 @@ leghorn:1
 activeBreed:"leghorn",
 
 feed:100,
+
 feedPricePerUnit:15,
-nextFeedPriceChange:Date.now()+30000,
+
+nextFeedPriceChange:
+Date.now()+30000,
+
 feedMarketEvent:null,
+
 feedMarketEventEnds:0,
-nextFeedEventAt:Date.now()+randomFeedEventDelay(),
+
+nextFeedEventAt:
+Date.now()+
+randomFeedEventDelay(),
+
+activeFarmEventId:null,
+
+activeFarmEventType:null,
+
+farmEventStartedAt:0,
+
+farmEventEnds:0,
+
+nextFarmEventAt:
+Date.now()+
+randomFarmEventDelay(),
+
+farmEventBonusText:"",
 
 eggs:0,
+
 money:0,
+
 eggPrice:.20,
 
 barnLevel:1,
+
 storageLevel:1,
+
 distributionLevel:0,
 
 upgrades:{},
+
 wholesaleEnabled:true,
 
 lifetimeEggs:0,
+
 lifetimeMoney:0,
+
 lifetimeChickens:1,
+
 lifetimeFeedPurchased:100,
 
 devAllBreeds:false,
+
 devUnlimitedMoney:false,
+
 devUnlimitedFeed:false,
 
 lastUpdate:Date.now(),
+
 lastChickenClick:0,
+
 lastAutoChicken:Date.now()
+
 };
 
 let storageFullLogged=false;
@@ -1804,28 +3206,79 @@ let barnFullLogged=false;
 let noFeedLogged=false;
 
 /* =========================================================
-   FORMATTING
+   FORMATTERS
 ========================================================= */
 
 function formatMoney(number){
-if(number>=1000000000000)return "$"+(number/1000000000000).toFixed(2)+"T";
-if(number>=1000000000)return "$"+(number/1000000000).toFixed(2)+"B";
-if(number>=1000000)return "$"+(number/1000000).toFixed(2)+"M";
-if(number>=1000)return "$"+(number/1000).toFixed(2)+"K";
-return "$"+number.toFixed(2);
+
+if(number>=1000000000000)
+return "$"+
+(number/1000000000000).toFixed(2)+
+"T";
+
+if(number>=1000000000)
+return "$"+
+(number/1000000000).toFixed(2)+
+"B";
+
+if(number>=1000000)
+return "$"+
+(number/1000000).toFixed(2)+
+"M";
+
+if(number>=1000)
+return "$"+
+(number/1000).toFixed(2)+
+"K";
+
+return "$"+
+Number(number||0).toFixed(2);
+
 }
 
 function formatNumber(number){
-if(number>=1000000000000)return (number/1000000000000).toFixed(2)+"T";
-if(number>=1000000000)return (number/1000000000).toFixed(2)+"B";
-if(number>=1000000)return (number/1000000).toFixed(2)+"M";
-if(number>=1000)return (number/1000).toFixed(2)+"K";
-return Math.floor(number).toLocaleString();
+
+if(number>=1000000000000)
+return(
+number/1000000000000
+).toFixed(2)+"T";
+
+if(number>=1000000000)
+return(
+number/1000000000
+).toFixed(2)+"B";
+
+if(number>=1000000)
+return(
+number/1000000
+).toFixed(2)+"M";
+
+if(number>=1000)
+return(
+number/1000
+).toFixed(2)+"K";
+
+return Math.floor(
+number||0
+).toLocaleString();
+
 }
 
 function formatPercent(value){
-const percent=Math.round(value*100);
-return(percent>=0?"+":"")+percent+"%";
+
+const percent=
+Math.round(
+value*100
+);
+
+return(
+percent>=0
+?"+"
+:""
+)+
+percent+
+"%";
+
 }
 
 function hasUpgrade(id){
@@ -1833,99 +3286,668 @@ return !!state.upgrades[id];
 }
 
 /* =========================================================
+   FARM EVENTS
+========================================================= */
+
+function getActiveFarmEvent(){
+
+if(
+!state.activeFarmEventId||
+!state.activeFarmEventType
+)
+return null;
+
+const pool=
+state.activeFarmEventType==="rare"
+?RARE_EVENTS
+:FARM_EVENTS;
+
+return pool.find(
+event=>
+event.id===
+state.activeFarmEventId
+)||
+null;
+
+}
+
+function getFarmEventModifiers(){
+
+const event=
+getActiveFarmEvent();
+
+const modifiers={
+production:1,
+retail:1,
+wholesale:1,
+eggValue:1,
+feedPrice:1,
+automation:1,
+breedCost:1,
+priceTolerance:0
+};
+
+if(!event)
+return modifiers;
+
+Object.keys(
+event.modifiers||
+{}
+).forEach(
+key=>
+{
+
+modifiers[key]=
+event.modifiers[key];
+
+}
+);
+
+/* NEGATIVE EVENT MITIGATION */
+
+if(
+event.id==="coldSnap"&&
+hasUpgrade("climate")
+)
+{
+
+modifiers.production=.95;
+
+}
+
+if(
+event.id==="dieselCrunch"&&
+hasUpgrade("fleetLogistics")
+)
+{
+
+modifiers.feedPrice=1.10;
+modifiers.wholesale=.95;
+
+}
+
+if(
+event.id==="illnessScare"&&
+hasUpgrade("biosecure")
+)
+{
+
+modifiers.retail=.90;
+modifiers.eggValue=.98;
+
+}
+
+if(
+event.id==="equipmentBreakdown"
+)
+{
+
+if(
+hasUpgrade("robotics")
+)
+{
+
+modifiers.automation=.85;
+
+}
+else if(
+hasUpgrade("manager")
+)
+{
+
+modifiers.automation=.70;
+
+}
+
+}
+
+if(
+event.id==="heatWave"&&
+hasUpgrade("climate")
+)
+{
+
+modifiers.production=.95;
+modifiers.feedPrice=1.05;
+
+}
+
+return modifiers;
+
+}
+
+function getEventProductionMultiplier(){
+return getFarmEventModifiers().production;
+}
+
+function getEventRetailMultiplier(){
+return getFarmEventModifiers().retail;
+}
+
+function getEventWholesaleMultiplier(){
+return getFarmEventModifiers().wholesale;
+}
+
+function getEventEggValueMultiplier(){
+return getFarmEventModifiers().eggValue;
+}
+
+function getEventFeedPriceMultiplier(){
+return getFarmEventModifiers().feedPrice;
+}
+
+function getEventAutomationMultiplier(){
+return getFarmEventModifiers().automation;
+}
+
+function getEventBreedCostMultiplier(){
+return getFarmEventModifiers().breedCost;
+}
+
+function getEventPriceToleranceBonus(){
+return getFarmEventModifiers().priceTolerance;
+}
+
+function getCurrentBreedCost(
+breed=
+getActiveBreed()
+)
+{
+
+return(
+breed.cost*
+getEventBreedCostMultiplier()
+);
+
+}
+
+function applyFarmEventStartBonus(event){
+
+state.farmEventBonusText="";
+
+if(
+event.id===
+"mysteryInvestor"
+)
+{
+
+const estimatedIncome=
+Math.max(
+1,
+getEstimatedRevenuePerSecond()
+);
+
+const bonus=
+Math.min(
+1000000000,
+Math.max(
+10000,
+estimatedIncome*
+120,
+state.lifetimeMoney*
+.02
+)
+);
+
+state.money+=
+bonus;
+
+state.lifetimeMoney+=
+bonus;
+
+state.farmEventBonusText=
+" Investor bonus received: "+
+formatMoney(
+bonus
+)+
+".";
+
+addLog(
+"💼 RARE EVENT BONUS: Investor deposited "+
+formatMoney(
+bonus
+)+
+"."
+);
+
+}
+
+}
+
+function startFarmEvent(
+type,
+id,
+developerTriggered=false
+)
+{
+
+const pool=
+type==="rare"
+?RARE_EVENTS
+:FARM_EVENTS;
+
+const event=
+pool.find(
+item=>
+item.id===
+id
+);
+
+if(!event)
+return;
+
+const previous=
+getActiveFarmEvent();
+
+if(previous)
+{
+
+addLog(
+"📅 "+
+previous.name+
+" was replaced by another event."
+);
+
+}
+
+state.activeFarmEventType=
+type;
+
+state.activeFarmEventId=
+event.id;
+
+state.farmEventStartedAt=
+Date.now();
+
+state.farmEventEnds=
+Date.now()+
+event.duration*
+1000;
+
+state.nextFarmEventAt=
+0;
+
+applyFarmEventStartBonus(
+event
+);
+
+addLog(
+(
+type==="rare"
+?"🌟 RARE EVENT: "
+:event.polarity==="positive"
+?"✅ POSITIVE EVENT: "
+:"⚠️ NEGATIVE EVENT: "
+)+
+event.name+
+" — "+
+event.effectText+
+(
+developerTriggered
+?" [DEV]"
+:""
+)
+);
+
+updateUI();
+
+}
+
+function endFarmEvent(){
+
+const event=
+getActiveFarmEvent();
+
+if(event)
+{
+
+addLog(
+"📅 "+
+event.name+
+" ended."
+);
+
+}
+
+state.activeFarmEventType=
+null;
+
+state.activeFarmEventId=
+null;
+
+state.farmEventStartedAt=
+0;
+
+state.farmEventEnds=
+0;
+
+state.farmEventBonusText="";
+
+state.nextFarmEventAt=
+Date.now()+
+randomFarmEventDelay();
+
+}
+
+function startRandomNormalFarmEvent(){
+
+const event=
+FARM_EVENTS[
+Math.floor(
+Math.random()*
+FARM_EVENTS.length
+)
+];
+
+startFarmEvent(
+"normal",
+event.id
+);
+
+}
+
+function startRandomRareFarmEvent(){
+
+const event=
+RARE_EVENTS[
+Math.floor(
+Math.random()*
+RARE_EVENTS.length
+)
+];
+
+startFarmEvent(
+"rare",
+event.id
+);
+
+}
+
+function startRandomFarmEvent(){
+
+if(
+Math.random()<
+RARE_EVENT_CHANCE
+)
+{
+
+startRandomRareFarmEvent();
+
+}
+else
+{
+
+startRandomNormalFarmEvent();
+
+}
+
+}
+
+function updateFarmEventSystem(){
+
+const now=
+Date.now();
+
+if(
+state.activeFarmEventId
+)
+{
+
+if(
+now>=
+state.farmEventEnds
+)
+{
+
+endFarmEvent();
+
+}
+
+}
+else if(
+now>=
+state.nextFarmEventAt
+)
+{
+
+startRandomFarmEvent();
+
+}
+
+}
+
+/* =========================================================
    BREEDS
 ========================================================= */
 
 function getBreedCount(id){
-return Number(state.breedCounts[id]||0);
+
+return Number(
+state.breedCounts[id]||
+0
+);
+
 }
 
 function getBreedTotal(){
-return BREED_ORDER.reduce((total,id)=>total+getBreedCount(id),0);
+
+return BREED_ORDER.reduce(
+(total,id)=>
+total+
+getBreedCount(id),
+0
+);
+
 }
 
 function normalizeBreedCounts(){
 
-if(!state.breedCounts||typeof state.breedCounts!=="object"){
+if(
+!state.breedCounts||
+typeof state.breedCounts!==
+"object"
+)
+{
+
 state.breedCounts={};
+
 }
 
-BREED_ORDER.forEach(id=>{
-if(typeof state.breedCounts[id]!=="number"||state.breedCounts[id]<0){
+BREED_ORDER.forEach(
+id=>
+{
+
+if(
+typeof state.breedCounts[id]!==
+"number"||
+state.breedCounts[id]<
+0
+)
+{
+
 state.breedCounts[id]=0;
+
 }
-});
 
-let breedTotal=getBreedTotal();
-
-const target=Math.max(
-1,
-Math.floor(state.chickens||1)
+}
 );
 
-if(breedTotal===0){
-state.breedCounts.leghorn=target;
-breedTotal=target;
+let breedTotal=
+getBreedTotal();
+
+const target=
+Math.max(
+1,
+Math.floor(
+state.chickens||
+1
+)
+);
+
+if(
+breedTotal===
+0
+)
+{
+
+state.breedCounts.leghorn=
+target;
+
+breedTotal=
+target;
+
 }
 
-if(breedTotal<target){
-state.breedCounts.leghorn+=target-breedTotal;
+if(
+breedTotal<
+target
+)
+{
+
+state.breedCounts.leghorn+=
+target-
+breedTotal;
+
 }
 
-state.chickens=getBreedTotal();
+state.chickens=
+getBreedTotal();
 
-if(!BREEDS[state.activeBreed]){
-state.activeBreed="leghorn";
+if(
+!BREEDS[
+state.activeBreed
+]
+)
+{
+
+state.activeBreed=
+"leghorn";
+
 }
 
 }
 
 function getBreedShare(id){
-const total=Math.max(1,getBreedTotal());
-return getBreedCount(id)/total;
+
+const total=
+Math.max(
+1,
+getBreedTotal()
+);
+
+return(
+getBreedCount(id)/
+total
+);
+
 }
 
 function getWeightedBreedStat(stat){
+
 return BREED_ORDER.reduce(
 (total,id)=>
 total+
 getBreedShare(id)*
-Number(BREEDS[id][stat]||0),
+Number(
+BREEDS[id][stat]||
+0
+),
 0
 );
+
 }
 
 function getBreedProductionMultiplier(){
-return Math.max(.20,1+getWeightedBreedStat("production"));
+
+return Math.max(
+.20,
+1+
+getWeightedBreedStat(
+"production"
+)
+);
+
 }
 
 function getBreedRetailMultiplier(){
-return Math.max(.20,1+getWeightedBreedStat("retail"));
+
+return Math.max(
+.20,
+1+
+getWeightedBreedStat(
+"retail"
+)
+);
+
 }
 
 function getBreedWholesaleMultiplier(){
-return Math.max(.20,1+getWeightedBreedStat("wholesale"));
+
+return Math.max(
+.20,
+1+
+getWeightedBreedStat(
+"wholesale"
+)
+);
+
 }
 
 function getBreedEggValueMultiplier(){
-return Math.max(.20,1+getWeightedBreedStat("eggValue"));
+
+return Math.max(
+.20,
+1+
+getWeightedBreedStat(
+"eggValue"
+)
+);
+
 }
 
 function getBreedPriceTolerance(){
-return Math.max(0,getWeightedBreedStat("priceTolerance"));
+
+return Math.max(
+0,
+getWeightedBreedStat(
+"priceTolerance"
+)
+);
+
 }
 
 function getBreedFeedDiscount(){
-return Math.min(.25,Math.max(0,getWeightedBreedStat("feedDiscount")));
+
+return Math.min(
+.25,
+Math.max(
+0,
+getWeightedBreedStat(
+"feedDiscount"
+)
+)
+);
+
 }
 
 function getBreedAutomationMultiplier(){
-return Math.max(.50,1+getWeightedBreedStat("automation"));
+
+return Math.max(
+.50,
+1+
+getWeightedBreedStat(
+"automation"
+)
+);
+
 }
 
 function isBreedUnlocked(id){
 
-if(state.devAllBreeds)return true;
+if(
+state.devAllBreeds
+)
+return true;
 
 switch(id){
 
@@ -1968,14 +3990,29 @@ return false;
 
 function selectBreed(id){
 
-if(!BREEDS[id])return;
-
-if(!isBreedUnlocked(id)){
-addLog("🔒 "+BREEDS[id].name+" is still locked. "+BREEDS[id].unlock);
+if(
+!BREEDS[id]
+)
 return;
+
+if(
+!isBreedUnlocked(id)
+)
+{
+
+addLog(
+"🔒 "+
+BREEDS[id].name+
+" is still locked. "+
+BREEDS[id].unlock
+);
+
+return;
+
 }
 
-state.activeBreed=id;
+state.activeBreed=
+id;
 
 addLog(
 BREEDS[id].icon+
@@ -1990,37 +4027,79 @@ saveGame();
 }
 
 function getActiveBreed(){
-return BREEDS[state.activeBreed]||BREEDS.leghorn;
+
+return(
+BREEDS[
+state.activeBreed
+]||
+BREEDS.leghorn
+);
+
 }
 
-function addBreedChickens(id,amount){
+function addBreedChickens(
+id,
+amount
+)
+{
 
-if(!state.breedCounts[id]){
+if(
+!state.breedCounts[id]
+)
+{
+
 state.breedCounts[id]=0;
+
 }
 
-state.breedCounts[id]+=amount;
-state.chickens=getBreedTotal();
-state.lifetimeChickens+=amount;
+state.breedCounts[id]+=
+amount;
+
+state.chickens=
+getBreedTotal();
+
+state.lifetimeChickens+=
+amount;
 
 }
 
 function renderBreedCards(){
 
-const grid=document.getElementById("breedGrid");
+const grid=
+document.getElementById(
+"breedGrid"
+);
+
 grid.innerHTML="";
 
-BREED_ORDER.forEach(id=>{
+BREED_ORDER.forEach(
+id=>
+{
 
-const breed=BREEDS[id];
+const breed=
+BREEDS[id];
 
-const card=document.createElement("div");
+const card=
+document.createElement(
+"div"
+);
 
-card.className="breedCard";
-card.id="breed-card-"+id;
+card.className=
+"breedCard";
 
-card.style.setProperty("--breedAccent",breed.accent);
-card.style.setProperty("--breedSoft",breed.soft);
+card.id=
+"breed-card-"+
+id;
+
+card.style.setProperty(
+"--breedAccent",
+breed.accent
+);
+
+card.style.setProperty(
+"--breedSoft",
+breed.soft
+);
 
 card.innerHTML=`
 
@@ -2044,7 +4123,10 @@ ${breed.specialty}
 "${breed.profile}"
 </div>
 
-<div class="breedCount" id="breed-count-${id}">
+<div
+class="breedCount"
+id="breed-count-${id}"
+>
 Owned: 0
 </div>
 
@@ -2052,13 +4134,21 @@ Owned: 0
 ${breed.effect}
 </div>
 
-<div class="breedPrice">
+<div
+class="breedPrice"
+id="breed-price-${id}"
+>
 Chicken Cost:
-${breed.cost>0?formatMoney(breed.cost):"FREE"}
+${breed.cost>0
+?formatMoney(breed.cost)
+:"FREE"}
 + 1 Feed
 </div>
 
-<div class="unlockText" id="breed-unlock-${id}">
+<div
+class="unlockText"
+id="breed-unlock-${id}"
+>
 ${breed.unlock}
 </div>
 
@@ -2072,84 +4162,220 @@ Select Breed
 
 `;
 
-grid.appendChild(card);
+grid.appendChild(
+card
+);
 
-});
+}
+);
 
 }
 
 function updateBreedUI(){
 
-const active=getActiveBreed();
+const active=
+getActiveBreed();
 
-document.getElementById("activeBreedTop").textContent=
-"Active Breed: "+active.icon+" "+active.name;
+document.getElementById(
+"activeBreedTop"
+).textContent=
+"Active Breed: "+
+active.icon+
+" "+
+active.name;
 
-document.getElementById("flockActiveBreed").textContent=
-active.icon+" "+active.name;
+document.getElementById(
+"flockActiveBreed"
+).textContent=
+active.icon+
+" "+
+active.name;
 
-document.getElementById("flockProductionBonus").textContent=
-formatPercent(getBreedProductionMultiplier()-1);
+document.getElementById(
+"flockProductionBonus"
+).textContent=
+formatPercent(
+getBreedProductionMultiplier()-
+1
+);
 
-document.getElementById("flockEggValueBonus").textContent=
-formatPercent(getBreedEggValueMultiplier()-1);
+document.getElementById(
+"flockEggValueBonus"
+).textContent=
+formatPercent(
+getBreedEggValueMultiplier()-
+1
+);
 
-document.getElementById("flockRetailBonus").textContent=
-formatPercent(getBreedRetailMultiplier()-1);
+document.getElementById(
+"flockRetailBonus"
+).textContent=
+formatPercent(
+getBreedRetailMultiplier()-
+1
+);
 
-document.getElementById("flockWholesaleBonus").textContent=
-formatPercent(getBreedWholesaleMultiplier()-1);
+document.getElementById(
+"flockWholesaleBonus"
+).textContent=
+formatPercent(
+getBreedWholesaleMultiplier()-
+1
+);
 
-BREED_ORDER.forEach(id=>{
+BREED_ORDER.forEach(
+id=>
+{
 
-const card=document.getElementById("breed-card-"+id);
-const button=document.getElementById("breed-btn-"+id);
-const count=document.getElementById("breed-count-"+id);
-const unlock=document.getElementById("breed-unlock-"+id);
+const card=
+document.getElementById(
+"breed-card-"+
+id
+);
 
-if(!card||!button)return;
+const button=
+document.getElementById(
+"breed-btn-"+
+id
+);
 
-const breed=BREEDS[id];
-const unlocked=isBreedUnlocked(id);
-const activeBreed=state.activeBreed===id;
+const count=
+document.getElementById(
+"breed-count-"+
+id
+);
 
-card.classList.toggle("locked",!unlocked);
-card.classList.toggle("active",activeBreed);
+const unlock=
+document.getElementById(
+"breed-unlock-"+
+id
+);
+
+const price=
+document.getElementById(
+"breed-price-"+
+id
+);
+
+if(
+!card||
+!button
+)
+return;
+
+const breed=
+BREEDS[id];
+
+const unlocked=
+isBreedUnlocked(id);
+
+const activeBreed=
+state.activeBreed===
+id;
+
+const currentCost=
+breed.cost*
+getEventBreedCostMultiplier();
+
+card.classList.toggle(
+"locked",
+!unlocked
+);
+
+card.classList.toggle(
+"active",
+activeBreed
+);
 
 count.textContent=
 "Owned: "+
-formatNumber(getBreedCount(id))+
+formatNumber(
+getBreedCount(id)
+)+
 " ("+
-Math.round(getBreedShare(id)*100)+
+Math.round(
+getBreedShare(id)*
+100
+)+
 "% of flock)";
 
-if(unlocked){
+if(price)
+{
+
+price.textContent=
+"Chicken Cost: "+
+(
+currentCost>
+0
+?formatMoney(currentCost)
+:"FREE"
+)+
+(
+state.devUnlimitedFeed
+?" + ∞ Feed"
+:" + 1 Feed"
+);
+
+}
+
+if(
+unlocked
+)
+{
 
 unlock.textContent=
-state.devAllBreeds&&developerUnlocked
+state.devAllBreeds&&
+developerUnlocked
 ?"🛠 Developer Unlocked"
 :"✓ Unlocked";
 
-unlock.style.color="#3f8b45";
+unlock.style.color=
+"#3f8b45";
 
-}else{
+}
+else
+{
 
-unlock.textContent="🔒 "+breed.unlock;
-unlock.style.color="#a35d35";
+unlock.textContent=
+"🔒 "+
+breed.unlock;
+
+unlock.style.color=
+"#a35d35";
 
 }
 
-button.disabled=!unlocked;
+button.disabled=
+!unlocked;
 
-if(activeBreed){
-button.textContent="✓ Active Breed";
-}else if(unlocked){
-button.textContent="Select Breed";
-}else{
-button.textContent="Locked";
+if(
+activeBreed
+)
+{
+
+button.textContent=
+"✓ Active Breed";
+
+}
+else if(
+unlocked
+)
+{
+
+button.textContent=
+"Select Breed";
+
+}
+else
+{
+
+button.textContent=
+"Locked";
+
 }
 
-});
+}
+);
 
 }
 
@@ -2157,13 +4383,84 @@ button.textContent="Locked";
    FEED SYSTEM
 ========================================================= */
 
+function randomFeedPrice(){
+
+const cents=
+FEED_MIN_CENTS+
+Math.floor(
+Math.random()*
+(
+FEED_MAX_CENTS-
+FEED_MIN_CENTS+
+1
+)
+);
+
+return cents/100;
+
+}
+
+function randomFeedMarketDelay(){
+
+return(
+25+
+Math.floor(
+Math.random()*21
+)
+)*1000;
+
+}
+
+function randomFeedEventDelay(){
+
+return(
+75+
+Math.floor(
+Math.random()*76
+)
+)*1000;
+
+}
+
+function randomFeedEventDuration(){
+
+return(
+45+
+Math.floor(
+Math.random()*46
+)
+)*1000;
+
+}
+
 function getFeedCapacity(){
 
-let capacity=150;
+let capacity=
+150;
 
-if(hasUpgrade("feedSilo"))capacity=1000;
-if(hasUpgrade("grainCoop"))capacity=5000;
-if(hasUpgrade("megaSystems"))capacity=25000;
+if(
+hasUpgrade(
+"feedSilo"
+)
+)
+capacity=
+1000;
+
+if(
+hasUpgrade(
+"grainCoop"
+)
+)
+capacity=
+5000;
+
+if(
+hasUpgrade(
+"megaSystems"
+)
+)
+capacity=
+25000;
 
 return capacity;
 
@@ -2171,10 +4468,24 @@ return capacity;
 
 function getFeedBagSize(){
 
-let size=FEED_BAG_SIZE;
+let size=
+FEED_BAG_SIZE;
 
-if(hasUpgrade("feedSilo"))size=25;
-if(hasUpgrade("grainCoop"))size=100;
+if(
+hasUpgrade(
+"feedSilo"
+)
+)
+size=
+25;
+
+if(
+hasUpgrade(
+"grainCoop"
+)
+)
+size=
+100;
 
 return size;
 
@@ -2182,31 +4493,64 @@ return size;
 
 function getActiveFeedEvent(){
 
-if(!state.feedMarketEvent)return null;
+if(
+!state.feedMarketEvent
+)
+return null;
 
-return FEED_EVENTS.find(
-event=>event.id===state.feedMarketEvent
-)||null;
+return(
+FEED_EVENTS.find(
+event=>
+event.id===
+state.feedMarketEvent
+)||
+null
+);
 
 }
 
 function getFeedEventMultiplier(){
 
-const event=getActiveFeedEvent();
+const event=
+getActiveFeedEvent();
 
-return event?event.multiplier:1;
+return(
+event
+?event.multiplier
+:1
+);
 
 }
 
 function getFeedDiscountMultiplier(){
 
-let multiplier=1;
+let multiplier=
+1;
 
-if(hasUpgrade("bulkFeed"))multiplier*=.85;
-if(hasUpgrade("grainCoop"))multiplier*=.90;
-if(hasUpgrade("megaSystems"))multiplier*=.90;
+if(
+hasUpgrade(
+"bulkFeed"
+)
+)
+multiplier*=.85;
 
-multiplier*=1-getBreedFeedDiscount();
+if(
+hasUpgrade(
+"grainCoop"
+)
+)
+multiplier*=.90;
+
+if(
+hasUpgrade(
+"megaSystems"
+)
+)
+multiplier*=.90;
+
+multiplier*=
+1-
+getBreedFeedDiscount();
 
 return multiplier;
 
@@ -2217,7 +4561,8 @@ function getEffectiveFeedPrice(){
 return(
 state.feedPricePerUnit*
 getFeedEventMultiplier()*
-getFeedDiscountMultiplier()
+getFeedDiscountMultiplier()*
+getEventFeedPriceMultiplier()
 );
 
 }
@@ -2226,7 +4571,8 @@ function getAvailableFeedSpace(){
 
 return Math.max(
 0,
-getFeedCapacity()-state.feed
+getFeedCapacity()-
+state.feed
 );
 
 }
@@ -2237,7 +4583,9 @@ return Math.max(
 0,
 Math.min(
 getFeedBagSize(),
-Math.floor(getAvailableFeedSpace())
+Math.floor(
+getAvailableFeedSpace()
+)
 )
 );
 
@@ -2245,16 +4593,21 @@ Math.floor(getAvailableFeedSpace())
 
 function getFeedBagCost(){
 
-return getEffectiveFeedPrice()*getFeedPurchaseAmount();
+return(
+getEffectiveFeedPrice()*
+getFeedPurchaseAmount()
+);
 
 }
 
 function rollFeedMarket(){
 
-state.feedPricePerUnit=randomFeedPrice();
+state.feedPricePerUnit=
+randomFeedPrice();
 
 state.nextFeedPriceChange=
-Date.now()+randomFeedMarketDelay();
+Date.now()+
+randomFeedMarketDelay();
 
 }
 
@@ -2262,13 +4615,18 @@ function startRandomFeedEvent(){
 
 const event=
 FEED_EVENTS[
-Math.floor(Math.random()*FEED_EVENTS.length)
+Math.floor(
+Math.random()*
+FEED_EVENTS.length
+)
 ];
 
-state.feedMarketEvent=event.id;
+state.feedMarketEvent=
+event.id;
 
 state.feedMarketEventEnds=
-Date.now()+randomFeedEventDuration();
+Date.now()+
+randomFeedEventDuration();
 
 addLog(
 event.icon+
@@ -2282,35 +4640,70 @@ event.description
 
 function endFeedMarketEvent(){
 
-const event=getActiveFeedEvent();
+const event=
+getActiveFeedEvent();
 
-if(event){
-addLog("🌾 "+event.name+" ended.");
+if(
+event
+)
+{
+
+addLog(
+"🌾 "+
+event.name+
+" ended."
+);
+
 }
 
-state.feedMarketEvent=null;
-state.feedMarketEventEnds=0;
+state.feedMarketEvent=
+null;
+
+state.feedMarketEventEnds=
+0;
 
 state.nextFeedEventAt=
-Date.now()+randomFeedEventDelay();
+Date.now()+
+randomFeedEventDelay();
 
 }
 
 function updateFeedMarket(){
 
-const now=Date.now();
+const now=
+Date.now();
 
-if(now>=state.nextFeedPriceChange){
+if(
+now>=
+state.nextFeedPriceChange
+)
+{
+
 rollFeedMarket();
+
 }
 
-if(state.feedMarketEvent){
+if(
+state.feedMarketEvent
+)
+{
 
-if(now>=state.feedMarketEventEnds){
+if(
+now>=
+state.feedMarketEventEnds
+)
+{
+
 endFeedMarketEvent();
+
 }
 
-}else if(now>=state.nextFeedEventAt){
+}
+else if(
+now>=
+state.nextFeedEventAt
+)
+{
 
 startRandomFeedEvent();
 
@@ -2320,19 +4713,32 @@ startRandomFeedEvent();
 
 function buyFeed(){
 
-const amount=getFeedPurchaseAmount();
+const amount=
+getFeedPurchaseAmount();
 
-if(amount<=0){
-addLog("🌾 Feed storage is full.");
+if(
+amount<=
+0
+)
+{
+
+addLog(
+"🌾 Feed storage is full."
+);
+
 return;
+
 }
 
-const cost=getFeedBagCost();
+const cost=
+getFeedBagCost();
 
 if(
 !state.devUnlimitedMoney&&
-state.money<cost
-){
+state.money<
+cost
+)
+{
 
 addLog(
 "You need "+
@@ -2343,15 +4749,27 @@ amount+
 );
 
 return;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+cost;
+
 }
 
-state.feed+=amount;
-state.lifetimeFeedPurchased+=amount;
-noFeedLogged=false;
+state.feed+=
+amount;
+
+state.lifetimeFeedPurchased+=
+amount;
+
+noFeedLogged=
+false;
 
 addLog(
 "🌾 Bought "+
@@ -2374,32 +4792,67 @@ saveGame();
 ========================================================= */
 
 function getBarn(){
-return BARN_LEVELS[state.barnLevel-1];
+
+return BARN_LEVELS[
+state.barnLevel-
+1
+];
+
 }
 
 function getStorage(){
-return STORAGE_LEVELS[state.storageLevel-1];
+
+return STORAGE_LEVELS[
+state.storageLevel-
+1
+];
+
 }
 
 function getDistribution(){
-return DISTRIBUTION_LEVELS[state.distributionLevel];
+
+return DISTRIBUTION_LEVELS[
+state.distributionLevel
+];
+
 }
 
 function getChickenCapacity(){
 
-let capacity=getBarn().capacity;
+let capacity=
+getBarn().capacity;
 
-if(hasUpgrade("barnEngineering"))capacity*=1.25;
-if(hasUpgrade("highDensity"))capacity*=1.50;
-if(hasUpgrade("megaSystems"))capacity*=1.50;
+if(
+hasUpgrade(
+"barnEngineering"
+)
+)
+capacity*=1.25;
 
-return Math.floor(capacity);
+if(
+hasUpgrade(
+"highDensity"
+)
+)
+capacity*=1.50;
+
+if(
+hasUpgrade(
+"megaSystems"
+)
+)
+capacity*=1.50;
+
+return Math.floor(
+capacity
+);
 
 }
 
 function getStorageCapacity(){
 
-let capacity=getStorage().capacity;
+let capacity=
+getStorage().capacity;
 
 if(hasUpgrade("conveyor"))capacity*=1.25;
 if(hasUpgrade("manager"))capacity*=1.20;
@@ -2408,7 +4861,9 @@ if(hasUpgrade("coldStorage"))capacity*=1.75;
 if(hasUpgrade("autoPacking"))capacity*=1.15;
 if(hasUpgrade("megaSystems"))capacity*=1.50;
 
-return Math.floor(capacity);
+return Math.floor(
+capacity
+);
 
 }
 
@@ -2416,7 +4871,8 @@ function getBarnSpaceRemaining(){
 
 return Math.max(
 0,
-getChickenCapacity()-state.chickens
+getChickenCapacity()-
+state.chickens
 );
 
 }
@@ -2427,9 +4883,11 @@ getChickenCapacity()-state.chickens
 
 function getProductionMultiplier(){
 
-let multiplier=1;
+let multiplier=
+1;
 
 const boosts={
+
 feed:1.12,
 nest:1.15,
 breed:1.20,
@@ -2447,13 +4905,23 @@ genomic:1.45,
 legendary:2,
 manager:1.20,
 megaSystems:1.50
+
 };
 
-Object.keys(boosts).forEach(id=>{
-if(hasUpgrade(id)){
-multiplier*=boosts[id];
+Object.keys(
+boosts
+).forEach(
+id=>
+{
+
+if(
+hasUpgrade(id)
+)
+multiplier*=
+boosts[id];
+
 }
-});
+);
 
 return multiplier;
 
@@ -2466,7 +4934,8 @@ state.chickens/
 12
 )*
 getProductionMultiplier()*
-getBreedProductionMultiplier();
+getBreedProductionMultiplier()*
+getEventProductionMultiplier();
 
 }
 
@@ -2481,11 +4950,16 @@ Math.max(
 0,
 Math.min(
 1,
-(state.eggPrice-.01)/.98
+(
+state.eggPrice-
+.01
+)/
+.98
 )
 );
 
-let penalty=.92;
+let penalty=
+.92;
 
 if(hasUpgrade("brand"))penalty=.78;
 if(hasUpgrade("dynamicPricing"))penalty=.62;
@@ -2494,11 +4968,14 @@ if(hasUpgrade("householdName"))penalty=.36;
 
 penalty*=
 Math.max(
-.35,
-1-getBreedPriceTolerance()
+.15,
+1-
+getBreedPriceTolerance()-
+getEventPriceToleranceBonus()
 );
 
-let minimum=.08;
+let minimum=
+.08;
 
 if(hasUpgrade("farmersMarkets"))minimum=.10;
 if(hasUpgrade("premiumBrand"))minimum=.14;
@@ -2508,7 +4985,10 @@ return Math.max(
 minimum,
 1-
 penalty*
-Math.pow(normalized,1.18)
+Math.pow(
+normalized,
+1.18
+)
 );
 
 }
@@ -2519,9 +4999,11 @@ Math.pow(normalized,1.18)
 
 function getRetailMultiplier(){
 
-let multiplier=1;
+let multiplier=
+1;
 
 const boosts={
+
 sign:1.15,
 delivery:1.20,
 grocery:1.35,
@@ -2530,19 +5012,36 @@ farmersMarkets:1.25,
 chainDeal:1.50,
 nationalRetailer:1.75,
 householdName:2
+
 };
 
-Object.keys(boosts).forEach(id=>{
-if(hasUpgrade(id)){
-multiplier*=boosts[id];
-}
-});
+Object.keys(
+boosts
+).forEach(
+id=>
+{
 
-if(hasUpgrade("manager")){
+if(
+hasUpgrade(id)
+)
+multiplier*=
+boosts[id];
+
+}
+);
+
+if(
+hasUpgrade(
+"manager"
+)
+)
 multiplier*=1.20;
-}
 
-multiplier*=getBreedRetailMultiplier();
+multiplier*=
+getBreedRetailMultiplier();
+
+multiplier*=
+getEventRetailMultiplier();
 
 return multiplier;
 
@@ -2550,14 +5049,19 @@ return multiplier;
 
 function getDistributionRetailBonus(){
 
-return 1+state.distributionLevel*.05;
+return(
+1+
+state.distributionLevel*
+.05
+);
 
 }
 
 function getRetailSalesPerSecond(){
 
 const base=
-state.chickens*.06+
+state.chickens*
+.06+
 1.25;
 
 return(
@@ -2573,14 +5077,18 @@ function getRetailEggValue(){
 
 return(
 state.eggPrice*
-getBreedEggValueMultiplier()
+getBreedEggValueMultiplier()*
+getEventEggValueMultiplier()
 );
 
 }
 
 function wholesaleUnlocked(){
 
-return state.distributionLevel>0;
+return(
+state.distributionLevel>
+0
+);
 
 }
 
@@ -2589,10 +5097,11 @@ function getWholesalePrice(){
 return Math.max(
 .01,
 Math.min(
-.30,
+2,
 state.eggPrice*
 .40*
-getBreedEggValueMultiplier()
+getBreedEggValueMultiplier()*
+getEventEggValueMultiplier()
 )
 );
 
@@ -2600,9 +5109,11 @@ getBreedEggValueMultiplier()
 
 function getWholesaleTalentMultiplier(){
 
-let multiplier=1;
+let multiplier=
+1;
 
 const boosts={
+
 delivery:1.20,
 grocery:1.30,
 national:1.40,
@@ -2617,15 +5128,29 @@ robotics:1.25,
 autoPacking:1.60,
 fleetLogistics:1.80,
 megaSystems:1.50
+
 };
 
-Object.keys(boosts).forEach(id=>{
-if(hasUpgrade(id)){
-multiplier*=boosts[id];
-}
-});
+Object.keys(
+boosts
+).forEach(
+id=>
+{
 
-multiplier*=getBreedWholesaleMultiplier();
+if(
+hasUpgrade(id)
+)
+multiplier*=
+boosts[id];
+
+}
+);
+
+multiplier*=
+getBreedWholesaleMultiplier();
+
+multiplier*=
+getEventWholesaleMultiplier();
 
 return multiplier;
 
@@ -2636,12 +5161,12 @@ function getWholesaleSalesPerSecond(){
 if(
 !wholesaleUnlocked()||
 !state.wholesaleEnabled
-){
+)
 return 0;
-}
 
 const base=
-state.chickens*.03+
+state.chickens*
+.03+
 2;
 
 return(
@@ -2654,18 +5179,25 @@ getWholesaleTalentMultiplier()
 
 function toggleWholesale(enabled){
 
-if(!wholesaleUnlocked()){
+if(
+!wholesaleUnlocked()
+)
+{
 
-state.wholesaleEnabled=false;
+state.wholesaleEnabled=
+false;
 
 document.getElementById(
 "wholesaleToggle"
-).checked=false;
+).checked=
+false;
 
 return;
+
 }
 
-state.wholesaleEnabled=!!enabled;
+state.wholesaleEnabled=
+!!enabled;
 
 addLog(
 state.wholesaleEnabled
@@ -2683,21 +5215,36 @@ saveGame();
 
 function getChicken(){
 
-const now=Date.now();
+const now=
+Date.now();
 
 if(
-now-state.lastChickenClick<
+now-
+state.lastChickenClick<
 900
-){
+)
 return;
-}
 
-const breed=getActiveBreed();
+const breed=
+getActiveBreed();
 
-if(!isBreedUnlocked(state.activeBreed)){
+const breedCost=
+getCurrentBreedCost(
+breed
+);
 
-state.activeBreed="leghorn";
+if(
+!isBreedUnlocked(
+state.activeBreed
+)
+)
+{
+
+state.activeBreed=
+"leghorn";
+
 updateUI();
+
 return;
 
 }
@@ -2705,66 +5252,98 @@ return;
 if(
 state.chickens>=
 getChickenCapacity()
-){
+)
+{
 
-if(!barnFullLogged){
+if(
+!barnFullLogged
+)
+{
 
 addLog(
 "🏚️ Barn full. Upgrade your barn before adding more chickens."
 );
 
-barnFullLogged=true;
+barnFullLogged=
+true;
 
 }
 
 return;
+
 }
 
 if(
 !state.devUnlimitedFeed&&
-state.feed<1
-){
+state.feed<
+1
+)
+{
 
-if(!noFeedLogged){
+if(
+!noFeedLogged
+)
+{
 
 addLog(
 "🌾 You need feed before adding another chicken."
 );
 
-noFeedLogged=true;
+noFeedLogged=
+true;
 
 }
 
 return;
+
 }
 
 if(
 !state.devUnlimitedMoney&&
-state.money<breed.cost
-){
+state.money<
+breedCost
+)
+{
 
 addLog(
 "You need "+
-formatMoney(breed.cost)+
+formatMoney(
+breedCost
+)+
 " to raise a "+
 breed.name+
 "."
 );
 
 return;
+
 }
 
-barnFullLogged=false;
-noFeedLogged=false;
+barnFullLogged=
+false;
+noFeedLogged=
+false;
 
-state.lastChickenClick=now;
+state.lastChickenClick=
+now;
 
-if(!state.devUnlimitedFeed){
+if(
+!state.devUnlimitedFeed
+)
+{
+
 state.feed-=1;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=breed.cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+breedCost;
+
 }
 
 addBreedChickens(
@@ -2782,8 +5361,10 @@ state.devUnlimitedFeed
 :" for 1 feed"
 )+
 (
-breed.cost>0&&!state.devUnlimitedMoney
-?" + "+formatMoney(breed.cost)
+breedCost>
+0&&
+!state.devUnlimitedMoney
+?" + "+formatMoney(breedCost)
 :""
 )+
 "."
@@ -2794,45 +5375,69 @@ updateUI();
 }
 
 /* =========================================================
-   PRICE + INFRASTRUCTURE
+   PRICE
 ========================================================= */
 
 function changePrice(value){
 
 state.eggPrice=
-Number(value)/100;
+Number(value)/
+100;
 
 updateUI();
 
 }
 
+/* =========================================================
+   INFRASTRUCTURE PURCHASES
+========================================================= */
+
 function upgradeBarn(){
 
-if(state.barnLevel>=10)return;
+if(
+state.barnLevel>=
+10
+)
+return;
 
 const next=
-BARN_LEVELS[state.barnLevel];
+BARN_LEVELS[
+state.barnLevel
+];
 
 if(
 !state.devUnlimitedMoney&&
-state.money<next.cost
-){
+state.money<
+next.cost
+)
+{
 
 addLog(
 "You need "+
-formatMoney(next.cost)+
+formatMoney(
+next.cost
+)+
 " to upgrade the barn."
 );
 
 return;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=next.cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+next.cost;
+
 }
 
 state.barnLevel++;
-barnFullLogged=false;
+
+barnFullLogged=
+false;
 
 addLog(
 "🏚️ Barn upgraded to Level "+
@@ -2847,31 +5452,50 @@ saveGame();
 
 function upgradeStorage(){
 
-if(state.storageLevel>=10)return;
+if(
+state.storageLevel>=
+10
+)
+return;
 
 const next=
-STORAGE_LEVELS[state.storageLevel];
+STORAGE_LEVELS[
+state.storageLevel
+];
 
 if(
 !state.devUnlimitedMoney&&
-state.money<next.cost
-){
+state.money<
+next.cost
+)
+{
 
 addLog(
 "You need "+
-formatMoney(next.cost)+
+formatMoney(
+next.cost
+)+
 " to upgrade egg storage."
 );
 
 return;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=next.cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+next.cost;
+
 }
 
 state.storageLevel++;
-storageFullLogged=false;
+
+storageFullLogged=
+false;
 
 addLog(
 "📦 Egg Storage upgraded to Level "+
@@ -2886,35 +5510,58 @@ saveGame();
 
 function upgradeDistribution(){
 
-if(state.distributionLevel>=10)return;
+if(
+state.distributionLevel>=
+10
+)
+return;
 
 const next=
 DISTRIBUTION_LEVELS[
-state.distributionLevel+1
+state.distributionLevel+
+1
 ];
 
 if(
 !state.devUnlimitedMoney&&
-state.money<next.cost
-){
+state.money<
+next.cost
+)
+{
 
 addLog(
 "You need "+
-formatMoney(next.cost)+
+formatMoney(
+next.cost
+)+
 " to upgrade distribution."
 );
 
 return;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=next.cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+next.cost;
+
 }
 
 state.distributionLevel++;
 
-if(state.distributionLevel===1){
-state.wholesaleEnabled=true;
+if(
+state.distributionLevel===
+1
+)
+{
+
+state.wholesaleEnabled=
+true;
+
 }
 
 addLog(
@@ -2936,19 +5583,22 @@ saveGame();
 
 function buyUpgrade(id){
 
-const upgrade=UPGRADES[id];
+const upgrade=
+UPGRADES[id];
 
 if(
 !upgrade||
 hasUpgrade(id)
-){
+)
 return;
-}
 
 if(
 upgrade.requires&&
-!hasUpgrade(upgrade.requires)
-){
+!hasUpgrade(
+upgrade.requires
+)
+)
+{
 
 addLog(
 "Unlock "+
@@ -2959,29 +5609,42 @@ upgrade.requires
 );
 
 return;
+
 }
 
 if(
 !state.devUnlimitedMoney&&
-state.money<upgrade.cost
-){
+state.money<
+upgrade.cost
+)
+{
 
 addLog(
 "You need "+
-formatMoney(upgrade.cost)+
+formatMoney(
+upgrade.cost
+)+
 " to purchase "+
 upgrade.name+
 "."
 );
 
 return;
+
 }
 
-if(!state.devUnlimitedMoney){
-state.money-=upgrade.cost;
+if(
+!state.devUnlimitedMoney
+)
+{
+
+state.money-=
+upgrade.cost;
+
 }
 
-state.upgrades[id]=true;
+state.upgrades[id]=
+true;
 
 addLog(
 "✓ PURCHASED: "+
@@ -2994,7 +5657,7 @@ saveGame();
 }
 
 /* =========================================================
-   LOG
+   ACTIVITY LOG
 ========================================================= */
 
 function addLog(message){
@@ -3004,12 +5667,16 @@ document.getElementById(
 "gameLog"
 );
 
+if(!log)
+return;
+
 const div=
 document.createElement(
 "div"
 );
 
-div.className="logEntry";
+div.className=
+"logEntry";
 
 div.textContent=
 new Date().toLocaleTimeString(
@@ -3023,10 +5690,20 @@ second:"2-digit"
 " — "+
 message;
 
-log.prepend(div);
+log.prepend(
+div
+);
 
-while(log.children.length>50){
-log.removeChild(log.lastChild);
+while(
+log.children.length>
+60
+)
+{
+
+log.removeChild(
+log.lastChild
+);
+
 }
 
 }
@@ -3036,33 +5713,76 @@ log.removeChild(log.lastChild);
 
 function updateAutoChickens(){
 
-const now=Date.now();
+const now=
+Date.now();
 
-let amount=0;
-let interval=Infinity;
+let amount=
+0;
 
-if(hasUpgrade("megaSystems")){
+let interval=
+Infinity;
+
+if(
+hasUpgrade(
+"megaSystems"
+)
+)
+{
+
 amount=20;
 interval=5000;
+
 }
-else if(hasUpgrade("autonomousHatchery")){
+else if(
+hasUpgrade(
+"autonomousHatchery"
+)
+)
+{
+
 amount=8;
 interval=8000;
+
 }
-else if(hasUpgrade("robotics")){
+else if(
+hasUpgrade(
+"robotics"
+)
+)
+{
+
 amount=3;
 interval=10000;
+
 }
-else if(hasUpgrade("brooder")){
+else if(
+hasUpgrade(
+"brooder"
+)
+)
+{
+
 amount=1;
 interval=12000;
+
 }
-else if(hasUpgrade("incubator")){
+else if(
+hasUpgrade(
+"incubator"
+)
+)
+{
+
 amount=1;
 interval=30000;
+
 }
 
-if(amount===0)return;
+if(
+amount===
+0
+)
+return;
 
 amount=
 Math.max(
@@ -3073,62 +5793,116 @@ getBreedAutomationMultiplier()
 )
 );
 
+interval=
+interval/
+Math.max(
+.1,
+getEventAutomationMultiplier()
+);
+
 const room=
 Math.floor(
 getBarnSpaceRemaining()
 );
 
-if(room<=0){
-state.lastAutoChicken=now;
+if(
+room<=
+0
+)
+{
+
+state.lastAutoChicken=
+now;
+
 return;
+
 }
 
 if(
 !state.devUnlimitedFeed&&
-state.feed<1
-){
-state.lastAutoChicken=now;
+state.feed<
+1
+)
+{
+
+state.lastAutoChicken=
+now;
+
 return;
+
 }
 
-if(!isBreedUnlocked(state.activeBreed)){
-state.activeBreed="leghorn";
+if(
+!isBreedUnlocked(
+state.activeBreed
+)
+)
+{
+
+state.activeBreed=
+"leghorn";
+
 }
 
-const breed=getActiveBreed();
+const breed=
+getActiveBreed();
+
+const breedCost=
+getCurrentBreedCost(
+breed
+);
 
 const elapsed=
-now-state.lastAutoChicken;
+now-
+state.lastAutoChicken;
 
-if(elapsed<interval)return;
+if(
+elapsed<
+interval
+)
+return;
 
 const batches=
 Math.floor(
-elapsed/interval
+elapsed/
+interval
 );
 
 const wanted=
-batches*amount;
+batches*
+amount;
 
 let affordableByMoney=
 Infinity;
 
 if(
-breed.cost>0&&
+breedCost>
+0&&
 !state.devUnlimitedMoney
-){
+)
+{
+
 affordableByMoney=
 Math.floor(
-state.money/breed.cost
+state.money/
+breedCost
 );
+
 }
 
 let availableFeed=
 Infinity;
 
-if(!state.devUnlimitedFeed){
+if(
+!state.devUnlimitedFeed
+)
+{
+
 availableFeed=
-Math.floor(state.feed);
+Math.floor(
+state.feed
+);
+
 }
 
 const gained=
@@ -3143,16 +5917,31 @@ state.lastAutoChicken+=
 batches*
 interval;
 
-if(gained<=0)return;
+if(
+gained<=
+0
+)
+return;
 
-if(!state.devUnlimitedFeed){
-state.feed-=gained;
+if(
+!state.devUnlimitedFeed
+)
+{
+
+state.feed-=
+gained;
+
 }
 
-if(!state.devUnlimitedMoney){
+if(
+!state.devUnlimitedMoney
+)
+{
+
 state.money-=
 gained*
-breed.cost;
+breedCost;
+
 }
 
 addBreedChickens(
@@ -3166,7 +5955,8 @@ gained+
 " "+
 breed.name+
 (
-gained===1
+gained===
+1
 ?" chicken"
 :" chickens"
 )+
@@ -3176,7 +5966,7 @@ gained===1
 }
 
 /* =========================================================
-   REVENUE
+   REVENUE ESTIMATE
 ========================================================= */
 
 function getEstimatedRevenuePerSecond(){
@@ -3199,7 +5989,8 @@ retail
 const remaining=
 Math.max(
 0,
-production-retailSold
+production-
+retailSold
 );
 
 const wholesaleSold=
@@ -3210,8 +6001,10 @@ wholesale
 
 if(
 state.eggs>
-production*5
-){
+production*
+5
+)
+{
 
 return(
 retail*
@@ -3241,12 +6034,15 @@ getWholesalePrice()
 
 function gameTick(){
 
-const now=Date.now();
+const now=
+Date.now();
 
 let dt=
 (
-now-state.lastUpdate
-)/1000;
+now-
+state.lastUpdate
+)/
+1000;
 
 dt=
 Math.min(
@@ -3254,11 +6050,14 @@ dt,
 5
 );
 
-state.lastUpdate=now;
+state.lastUpdate=
+now;
 
 updateFeedMarket();
 
-/* PRODUCE */
+updateFarmEventSystem();
+
+/* PRODUCE EGGS */
 
 const production=
 getEggsPerSecond();
@@ -3269,43 +6068,57 @@ getStorageCapacity();
 const storageAvailable=
 Math.max(
 0,
-storageCapacity-state.eggs
+storageCapacity-
+state.eggs
 );
 
 const produced=
 Math.min(
-production*dt,
+production*
+dt,
 storageAvailable
 );
 
-state.eggs+=produced;
-state.lifetimeEggs+=produced;
+state.eggs+=
+produced;
+
+state.lifetimeEggs+=
+produced;
 
 if(
-state.eggs>=storageCapacity
-){
+state.eggs>=
+storageCapacity
+)
+{
 
-if(!storageFullLogged){
+if(
+!storageFullLogged
+)
+{
 
 addLog(
 "⚠️ Egg storage is full. Egg production has paused."
 );
 
-storageFullLogged=true;
+storageFullLogged=
+true;
 
 }
 
 }
 else if(
 state.eggs<
-storageCapacity*.8
-){
+storageCapacity*
+.8
+)
+{
 
-storageFullLogged=false;
+storageFullLogged=
+false;
 
 }
 
-/* RETAIL */
+/* RETAIL SALES */
 
 const retailCapacity=
 getRetailSalesPerSecond()*
@@ -3321,11 +6134,16 @@ const retailRevenue=
 retailSold*
 getRetailEggValue();
 
-state.eggs-=retailSold;
-state.money+=retailRevenue;
-state.lifetimeMoney+=retailRevenue;
+state.eggs-=
+retailSold;
 
-/* WHOLESALE */
+state.money+=
+retailRevenue;
+
+state.lifetimeMoney+=
+retailRevenue;
+
+/* WHOLESALE SALES */
 
 const wholesaleCapacity=
 getWholesaleSalesPerSecond()*
@@ -3341,9 +6159,14 @@ const wholesaleRevenue=
 wholesaleSold*
 getWholesalePrice();
 
-state.eggs-=wholesaleSold;
-state.money+=wholesaleRevenue;
-state.lifetimeMoney+=wholesaleRevenue;
+state.eggs-=
+wholesaleSold;
+
+state.money+=
+wholesaleRevenue;
+
+state.lifetimeMoney+=
+wholesaleRevenue;
 
 updateAutoChickens();
 
@@ -3352,7 +6175,216 @@ updateUI();
 }
 
 /* =========================================================
-   UPDATE UI
+   FARM EVENT UI
+========================================================= */
+
+function updateFarmEventUI(){
+
+const hub=
+document.getElementById(
+"farmEventHub"
+);
+
+const icon=
+document.getElementById(
+"farmEventIcon"
+);
+
+const label=
+document.getElementById(
+"farmEventLabel"
+);
+
+const name=
+document.getElementById(
+"farmEventName"
+);
+
+const description=
+document.getElementById(
+"farmEventDescription"
+);
+
+const effect=
+document.getElementById(
+"farmEventEffect"
+);
+
+const countdown=
+document.getElementById(
+"farmEventCountdown"
+);
+
+const progress=
+document.getElementById(
+"farmEventProgressBar"
+);
+
+if(
+!hub||
+!icon||
+!label||
+!name||
+!description||
+!effect||
+!countdown||
+!progress
+)
+return;
+
+hub.classList.remove(
+"positive",
+"negative",
+"rare"
+);
+
+const event=
+getActiveFarmEvent();
+
+if(
+!event
+)
+{
+
+const seconds=
+Math.max(
+0,
+Math.ceil(
+(
+state.nextFarmEventAt-
+Date.now()
+)/
+1000
+)
+);
+
+icon.textContent=
+"📅";
+
+label.textContent=
+"FARM EVENTS";
+
+name.textContent=
+"Things Are Quiet";
+
+description.textContent=
+"No major farm event is active.";
+
+effect.textContent=
+"Another farm event may begin in about "+
+seconds+
+" seconds.";
+
+countdown.textContent=
+seconds+
+"s";
+
+progress.style.width=
+"0%";
+
+return;
+
+}
+
+const now=
+Date.now();
+
+const remaining=
+Math.max(
+0,
+state.farmEventEnds-
+now
+);
+
+const total=
+Math.max(
+1,
+state.farmEventEnds-
+state.farmEventStartedAt
+);
+
+const percent=
+Math.max(
+0,
+Math.min(
+100,
+remaining/
+total*
+100
+)
+);
+
+icon.textContent=
+event.icon;
+
+name.textContent=
+event.name;
+
+description.textContent=
+event.description;
+
+effect.textContent=
+event.effectText+
+(
+state.farmEventBonusText||
+""
+);
+
+countdown.textContent=
+Math.ceil(
+remaining/
+1000
+)+
+"s";
+
+progress.style.width=
+percent+
+"%";
+
+if(
+state.activeFarmEventType===
+"rare"
+)
+{
+
+hub.classList.add(
+"rare"
+);
+
+label.textContent=
+"🌟 RARE EVENT";
+
+}
+else if(
+event.polarity===
+"positive"
+)
+{
+
+hub.classList.add(
+"positive"
+);
+
+label.textContent=
+"✅ POSITIVE EVENT";
+
+}
+else
+{
+
+hub.classList.add(
+"negative"
+);
+
+label.textContent=
+"⚠️ NEGATIVE EVENT";
+
+}
+
+}
+
+/* =========================================================
+   MAIN UI UPDATE
 ========================================================= */
 
 function updateUI(){
@@ -3383,16 +6415,20 @@ const storageCapacity=
 getStorageCapacity();
 
 const storageRatio=
-storageCapacity>0
-?state.eggs/storageCapacity
+storageCapacity>
+0
+?state.eggs/
+storageCapacity
 :0;
 
 const feedCapacity=
 getFeedCapacity();
 
 const feedRatio=
-feedCapacity>0
-?state.feed/feedCapacity
+feedCapacity>
+0
+?state.feed/
+feedCapacity
 :0;
 
 const feedBagSize=
@@ -3410,6 +6446,11 @@ getFeedBagCost();
 const activeBreed=
 getActiveBreed();
 
+const activeBreedCost=
+getCurrentBreedCost(
+activeBreed
+);
+
 const activeFeedEvent=
 getActiveFeedEvent();
 
@@ -3418,24 +6459,34 @@ getActiveFeedEvent();
 document.getElementById(
 "topChickens"
 ).textContent=
-formatNumber(state.chickens);
+formatNumber(
+state.chickens
+);
 
 document.getElementById(
 "topMoney"
 ).textContent=
-formatMoney(state.money);
+state.devUnlimitedMoney
+?"∞"
+:formatMoney(
+state.money
+);
 
 document.getElementById(
 "topEggs"
 ).textContent=
-formatNumber(state.eggs);
+formatNumber(
+state.eggs
+);
 
 document.getElementById(
 "topFeed"
 ).textContent=
 state.devUnlimitedFeed
 ?"∞"
-:formatNumber(state.feed);
+:formatNumber(
+state.feed
+);
 
 document.getElementById(
 "farmNameTop"
@@ -3452,18 +6503,24 @@ state.distributionLevel;
 document.getElementById(
 "overviewChickens"
 ).textContent=
-formatNumber(state.chickens);
+formatNumber(
+state.chickens
+);
 
 document.getElementById(
 "overviewBarnCapacity"
 ).textContent=
 "Barn capacity: "+
-formatNumber(barnCapacity);
+formatNumber(
+barnCapacity
+);
 
 document.getElementById(
 "overviewEggs"
 ).textContent=
-formatNumber(state.eggs);
+formatNumber(
+state.eggs
+);
 
 document.getElementById(
 "overviewProduction"
@@ -3476,12 +6533,16 @@ document.getElementById(
 ).textContent=
 state.devUnlimitedMoney
 ?"∞"
-:formatMoney(state.money);
+:formatMoney(
+state.money
+);
 
 document.getElementById(
 "overviewIncome"
 ).textContent=
-formatMoney(income)+
+formatMoney(
+income
+)+
 "/sec";
 
 document.getElementById(
@@ -3489,19 +6550,24 @@ document.getElementById(
 ).textContent=
 state.devUnlimitedFeed
 ?"∞"
-:formatNumber(state.feed);
+:formatNumber(
+state.feed
+);
 
 document.getElementById(
 "overviewFeedCapacity"
 ).textContent=
 "Capacity: "+
-formatNumber(feedCapacity);
+formatNumber(
+feedCapacity
+);
 
 document.getElementById(
 "overviewInterest"
 ).textContent=
 Math.round(
-interest*100
+interest*
+100
 )+
 "%";
 
@@ -3534,21 +6600,30 @@ alert.classList.remove(
 );
 
 if(
-state.eggs>=storageCapacity
-){
+state.eggs>=
+storageCapacity
+)
+{
 
-alert.style.display="block";
-alert.classList.add("danger");
+alert.style.display=
+"block";
+
+alert.classList.add(
+"danger"
+);
 
 alert.textContent=
 "⚠️ Egg storage is full. Production is paused until eggs are sold or storage is upgraded.";
 
 }
 else if(
-state.chickens>=barnCapacity
-){
+state.chickens>=
+barnCapacity
+)
+{
 
-alert.style.display="block";
+alert.style.display=
+"block";
 
 alert.textContent=
 "🏚️ Your barn is full. Upgrade it before adding more chickens.";
@@ -3556,32 +6631,44 @@ alert.textContent=
 }
 else if(
 !state.devUnlimitedFeed&&
-state.feed<1
-){
+state.feed<
+1
+)
+{
 
-alert.style.display="block";
+alert.style.display=
+"block";
 
 alert.textContent=
 "🌾 You are out of feed.";
 
 }
 else if(
-storageRatio>=.8
-){
+storageRatio>=
+.8
+)
+{
 
-alert.style.display="block";
+alert.style.display=
+"block";
 
 alert.textContent=
 "⚠️ Egg storage is over 80% full.";
 
 }
-else{
+else
+{
 
-alert.style.display="none";
+alert.style.display=
+"none";
 
 }
 
-/* CHICKEN BUTTON */
+/* FARM EVENT */
+
+updateFarmEventUI();
+
+/* GET CHICKEN */
 
 const chickenButton=
 document.getElementById(
@@ -3599,45 +6686,66 @@ state.lastChickenClick
 );
 
 const chickenPriceText=
-activeBreed.cost>0&&
+activeBreedCost>
+0&&
 !state.devUnlimitedMoney
-?" + "+formatMoney(activeBreed.cost)
+?" + "+
+formatMoney(
+activeBreedCost
+)
 :"";
 
 if(
-state.chickens>=barnCapacity
-){
+state.chickens>=
+barnCapacity
+)
+{
 
-chickenButton.disabled=true;
-chickenButton.textContent="🏚️ Barn Full";
+chickenButton.disabled=
+true;
+
+chickenButton.textContent=
+"🏚️ Barn Full";
 
 }
 else if(
 !state.devUnlimitedFeed&&
-state.feed<1
-){
+state.feed<
+1
+)
+{
 
-chickenButton.disabled=true;
-chickenButton.textContent="🌾 Need Feed";
+chickenButton.disabled=
+true;
+
+chickenButton.textContent=
+"🌾 Need Feed";
 
 }
 else if(
 !state.devUnlimitedMoney&&
-state.money<activeBreed.cost
-){
+state.money<
+activeBreedCost
+)
+{
 
-chickenButton.disabled=true;
+chickenButton.disabled=
+true;
 
 chickenButton.textContent=
 activeBreed.icon+
 " Need "+
-formatMoney(activeBreed.cost);
+formatMoney(
+activeBreedCost
+);
 
 }
-else{
+else
+{
 
 chickenButton.disabled=
-cooldown>0;
+cooldown>
+0;
 
 chickenButton.textContent=
 activeBreed.icon+
@@ -3652,7 +6760,7 @@ chickenPriceText;
 
 }
 
-/* FEED BUTTON */
+/* BUY FEED */
 
 const feedButton=
 document.getElementById(
@@ -3660,18 +6768,25 @@ document.getElementById(
 );
 
 if(
-feedPurchaseAmount<=0
-){
+feedPurchaseAmount<=
+0
+)
+{
 
-feedButton.disabled=true;
-feedButton.textContent="🌾 Feed Storage Full";
+feedButton.disabled=
+true;
+
+feedButton.textContent=
+"🌾 Feed Storage Full";
 
 }
-else{
+else
+{
 
 feedButton.disabled=
 !state.devUnlimitedMoney&&
-state.money<feedBagCost;
+state.money<
+feedBagCost;
 
 feedButton.textContent=
 "🌾 Buy "+
@@ -3680,7 +6795,9 @@ feedPurchaseAmount+
 (
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(feedBagCost)
+:formatMoney(
+feedBagCost
+)
 );
 
 }
@@ -3697,21 +6814,24 @@ document.getElementById(
 "priceSlider"
 ).value=
 Math.round(
-state.eggPrice*100
+state.eggPrice*
+100
 );
 
 document.getElementById(
 "interestText"
 ).textContent=
 Math.round(
-interest*100
+interest*
+100
 )+
 "%";
 
 document.getElementById(
 "interestBar"
 ).style.width=
-interest*100+
+interest*
+100+
 "%";
 
 document.getElementById(
@@ -3736,28 +6856,33 @@ getRetailEggValue()
 document.getElementById(
 "revenueText"
 ).textContent=
-formatMoney(income)+
+formatMoney(
+income
+)+
 "/sec";
 
 document.getElementById(
 "breedProductionText"
 ).textContent=
 formatPercent(
-getBreedProductionMultiplier()-1
+getBreedProductionMultiplier()-
+1
 );
 
 document.getElementById(
 "breedRetailText"
 ).textContent=
 formatPercent(
-getBreedRetailMultiplier()-1
+getBreedRetailMultiplier()-
+1
 );
 
 document.getElementById(
 "breedWholesaleText"
 ).textContent=
 formatPercent(
-getBreedWholesaleMultiplier()-1
+getBreedWholesaleMultiplier()-
+1
 );
 
 /* FEED */
@@ -3767,17 +6892,23 @@ document.getElementById(
 ).textContent=
 state.devUnlimitedFeed
 ?"∞"
-:formatNumber(state.feed);
+:formatNumber(
+state.feed
+);
 
 document.getElementById(
 "feedCapacityText"
 ).textContent=
-formatNumber(feedCapacity);
+formatNumber(
+feedCapacity
+);
 
 document.getElementById(
 "feedPriceText"
 ).textContent=
-formatMoney(effectiveFeedPrice)+
+formatMoney(
+effectiveFeedPrice
+)+
 " / feed";
 
 document.getElementById(
@@ -3789,11 +6920,14 @@ feedBagSize+
 document.getElementById(
 "feedBagCostText"
 ).textContent=
-feedPurchaseAmount>0
+feedPurchaseAmount>
+0
 ?(
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(feedBagCost)
+:formatMoney(
+feedBagCost
+)
 )
 :"FULL";
 
@@ -3802,9 +6936,13 @@ document.getElementById(
 ).textContent=
 state.devUnlimitedFeed
 ?"Developer Unlimited Feed is ACTIVE"
-:formatNumber(state.feed)+
+:formatNumber(
+state.feed
+)+
 " / "+
-formatNumber(feedCapacity)+
+formatNumber(
+feedCapacity
+)+
 " feed stored";
 
 const feedBar=
@@ -3822,22 +6960,42 @@ state.devUnlimitedFeed
 ?"100%"
 :Math.min(
 100,
-feedRatio*100
+feedRatio*
+100
 )+
 "%";
 
-if(!state.devUnlimitedFeed){
+if(
+!state.devUnlimitedFeed
+)
+{
 
-if(feedRatio>=1){
-feedBar.classList.add("full");
+if(
+feedRatio>=
+1
+)
+{
+
+feedBar.classList.add(
+"full"
+);
+
 }
-else if(feedRatio>=.8){
-feedBar.classList.add("warning");
-}
+else if(
+feedRatio>=
+.8
+)
+{
+
+feedBar.classList.add(
+"warning"
+);
 
 }
 
-/* FEED EVENTS */
+}
+
+/* FEED MARKET EVENT */
 
 const feedEventBox=
 document.getElementById(
@@ -3849,7 +7007,10 @@ feedEventBox.classList.remove(
 "bad"
 );
 
-if(activeFeedEvent){
+if(
+activeFeedEvent
+)
+{
 
 const secondsLeft=
 Math.max(
@@ -3858,7 +7019,8 @@ Math.ceil(
 (
 state.feedMarketEventEnds-
 Date.now()
-)/1000
+)/
+1000
 )
 );
 
@@ -3895,16 +7057,18 @@ effectiveFeedPrice
 ".";
 
 }
-else{
+else
+{
 
-const nextEvent=
+const nextFeedEvent=
 Math.max(
 0,
 Math.ceil(
 (
 state.nextFeedEventAt-
 Date.now()
-)/1000
+)/
+1000
 )
 );
 
@@ -3916,8 +7080,8 @@ document.getElementById(
 document.getElementById(
 "feedEventDescription"
 ).textContent=
-"No special event is active. Next possible event in about "+
-nextEvent+
+"No special feed-market event is active. Next possible feed event in about "+
+nextFeedEvent+
 " seconds.";
 
 document.getElementById(
@@ -3939,9 +7103,14 @@ document.getElementById(
 "wholesaleStatus"
 );
 
-if(wholesaleUnlocked()){
+if(
+wholesaleUnlocked()
+)
+{
 
-wholesaleToggle.disabled=false;
+wholesaleToggle.disabled=
+false;
+
 wholesaleToggle.checked=
 state.wholesaleEnabled;
 
@@ -3963,10 +7132,14 @@ getDistribution().name+
 " is handling wholesale egg sales.";
 
 }
-else{
+else
+{
 
-wholesaleToggle.disabled=true;
-wholesaleToggle.checked=false;
+wholesaleToggle.disabled=
+true;
+
+wholesaleToggle.checked=
+false;
 
 wholesaleStatus.classList.add(
 "locked"
@@ -4034,25 +7207,49 @@ storageBar.classList.remove(
 storageBar.style.width=
 Math.min(
 100,
-storageRatio*100
+storageRatio*
+100
 )+
 "%";
 
-if(storageRatio>=1){
-storageBar.classList.add("full");
+if(
+storageRatio>=
+1
+)
+{
+
+storageBar.classList.add(
+"full"
+);
+
 }
-else if(storageRatio>=.8){
-storageBar.classList.add("warning");
+else if(
+storageRatio>=
+.8
+)
+{
+
+storageBar.classList.add(
+"warning"
+);
+
 }
 
 document.getElementById(
 "storageText"
 ).textContent=
-formatNumber(state.eggs)+
+formatNumber(
+state.eggs
+)+
 " / "+
-formatNumber(storageCapacity)+
+formatNumber(
+storageCapacity
+)+
 " eggs ("+
-Math.round(storageRatio*100)+
+Math.round(
+storageRatio*
+100
+)+
 "%)";
 
 const storageWarning=
@@ -4060,17 +7257,32 @@ document.getElementById(
 "storageWarningText"
 );
 
-if(storageRatio>=1){
+if(
+storageRatio>=
+1
+)
+{
+
 storageWarning.textContent=
 "Storage full — production is paused.";
+
 }
-else if(storageRatio>=.8){
+else if(
+storageRatio>=
+.8
+)
+{
+
 storageWarning.textContent=
 "Storage is getting full.";
+
 }
-else{
+else
+{
+
 storageWarning.textContent=
 "Storage has room available.";
+
 }
 
 /* BARN */
@@ -4085,7 +7297,9 @@ state.barnLevel+
 document.getElementById(
 "barnCurrentCapacity"
 ).textContent=
-formatNumber(barnCapacity)+
+formatNumber(
+barnCapacity
+)+
 " chickens";
 
 const barnButton=
@@ -4093,7 +7307,11 @@ document.getElementById(
 "barnUpgradeBtn"
 );
 
-if(state.barnLevel>=10){
+if(
+state.barnLevel>=
+10
+)
+{
 
 document.getElementById(
 "barnNextText"
@@ -4103,10 +7321,12 @@ document.getElementById(
 barnButton.textContent=
 "MAX BARN LEVEL";
 
-barnButton.disabled=true;
+barnButton.disabled=
+true;
 
 }
-else{
+else
+{
 
 const next=
 BARN_LEVELS[
@@ -4119,19 +7339,24 @@ document.getElementById(
 "Next capacity: "+
 next.capacity.toLocaleString()+
 " chickens • Cost: "+
-formatMoney(next.cost);
+formatMoney(
+next.cost
+);
 
 barnButton.textContent=
 "Upgrade Barn — "+
 (
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(next.cost)
+:formatMoney(
+next.cost
+)
 );
 
 barnButton.disabled=
 !state.devUnlimitedMoney&&
-state.money<next.cost;
+state.money<
+next.cost;
 
 }
 
@@ -4147,7 +7372,9 @@ state.storageLevel+
 document.getElementById(
 "storageCurrentCapacity"
 ).textContent=
-formatNumber(storageCapacity)+
+formatNumber(
+storageCapacity
+)+
 " eggs";
 
 const storageButton=
@@ -4155,7 +7382,11 @@ document.getElementById(
 "storageUpgradeBtn"
 );
 
-if(state.storageLevel>=10){
+if(
+state.storageLevel>=
+10
+)
+{
 
 document.getElementById(
 "storageNextText"
@@ -4165,10 +7396,12 @@ document.getElementById(
 storageButton.textContent=
 "MAX STORAGE LEVEL";
 
-storageButton.disabled=true;
+storageButton.disabled=
+true;
 
 }
-else{
+else
+{
 
 const next=
 STORAGE_LEVELS[
@@ -4181,19 +7414,24 @@ document.getElementById(
 "Next base capacity: "+
 next.capacity.toLocaleString()+
 " eggs • Cost: "+
-formatMoney(next.cost);
+formatMoney(
+next.cost
+);
 
 storageButton.textContent=
 "Upgrade Storage — "+
 (
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(next.cost)
+:formatMoney(
+next.cost
+)
 );
 
 storageButton.disabled=
 !state.devUnlimitedMoney&&
-state.money<next.cost;
+state.money<
+next.cost;
 
 }
 
@@ -4216,7 +7454,11 @@ document.getElementById(
 "distributionUpgradeBtn"
 );
 
-if(state.distributionLevel>=10){
+if(
+state.distributionLevel>=
+10
+)
+{
 
 document.getElementById(
 "distributionNextText"
@@ -4226,14 +7468,17 @@ document.getElementById(
 distributionButton.textContent=
 "MAX DISTRIBUTION";
 
-distributionButton.disabled=true;
+distributionButton.disabled=
+true;
 
 }
-else{
+else
+{
 
 const next=
 DISTRIBUTION_LEVELS[
-state.distributionLevel+1
+state.distributionLevel+
+1
 ];
 
 document.getElementById(
@@ -4242,37 +7487,47 @@ document.getElementById(
 "Next: "+
 next.name+
 " • Cost: "+
-formatMoney(next.cost);
+formatMoney(
+next.cost
+);
 
 distributionButton.textContent=
-state.distributionLevel===0
+state.distributionLevel===
+0
 ?"Unlock Distribution — "+
 (
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(next.cost)
+:formatMoney(
+next.cost
+)
 )
 :"Upgrade Distribution — "+
 (
 state.devUnlimitedMoney
 ?"FREE"
-:formatMoney(next.cost)
+:formatMoney(
+next.cost
+)
 );
 
 distributionButton.disabled=
 !state.devUnlimitedMoney&&
-state.money<next.cost;
+state.money<
+next.cost;
 
 }
 
 updateBreedUI();
+
 updateUpgradeTree();
+
 updateDeveloperUI();
 
 }
 
 /* =========================================================
-   TREE POSITIONING
+   TALENT TREE POSITIONING
 ========================================================= */
 
 const TREE_CENTER={
@@ -4281,28 +7536,62 @@ y:360
 };
 
 const TREE_ROOTS={
-production:{x:440,y:360},
-operations:{x:590,y:450},
-marketing:{x:740,y:360}
+
+production:{
+x:440,
+y:360
+},
+
+operations:{
+x:590,
+y:450
+},
+
+marketing:{
+x:740,
+y:360
+}
+
 };
 
 const TREE_PATH_ANGLES={
-production:{A:145,B:180,C:215},
-operations:{A:50,B:90,C:130},
-marketing:{A:-35,B:0,C:35}
+
+production:{
+A:145,
+B:180,
+C:215
+},
+
+operations:{
+A:50,
+B:90,
+C:130
+},
+
+marketing:{
+A:-35,
+B:0,
+C:35
+}
+
 };
 
 const TREE_PATH_SPACING={
+
 production:83,
+
 operations:56,
+
 marketing:83
+
 };
 
 function polarPoint(
 origin,
 angle,
 distance
-){
+)
+{
 
 const radians=
 angle*
@@ -4310,13 +7599,21 @@ Math.PI/
 180;
 
 return{
+
 x:
 origin.x+
-Math.cos(radians)*distance,
+Math.cos(
+radians
+)*
+distance,
 
 y:
 origin.y+
-Math.sin(radians)*distance
+Math.sin(
+radians
+)*
+distance
+
 };
 
 }
@@ -4326,10 +7623,16 @@ function getUpgradePosition(id){
 const upgrade=
 UPGRADES[id];
 
-if(upgrade.path==="root"){
+if(
+upgrade.path===
+"root"
+)
+{
+
 return TREE_ROOTS[
 upgrade.branch
 ];
+
 }
 
 const root=
@@ -4359,7 +7662,7 @@ upgrade.step
 }
 
 /* =========================================================
-   RENDER TREE
+   RENDER TALENT TREE
 ========================================================= */
 
 function renderUpgradeTree(){
@@ -4377,40 +7680,56 @@ document.getElementById(
 tree.querySelectorAll(
 ".node"
 ).forEach(
-node=>node.remove()
+node=>
+node.remove()
 );
 
 svg.innerHTML="";
 
 Object.keys(
 UPGRADES
-).forEach(id=>{
+).forEach(
+id=>
+{
 
 const upgrade=
 UPGRADES[id];
 
 const position=
-getUpgradePosition(id);
+getUpgradePosition(
+id
+);
 
 const button=
 document.createElement(
 "button"
 );
 
-button.className="node";
-button.id="node-"+id;
+button.className=
+"node";
+
+button.id=
+"node-"+
+id;
 
 button.style.left=
-(position.x-33)+
+(
+position.x-
+33
+)+
 "px";
 
 button.style.top=
-(position.y-33)+
+(
+position.y-
+33
+)+
 "px";
 
 button.addEventListener(
 "click",
-()=>buyUpgrade(id)
+()=>
+buyUpgrade(id)
 );
 
 const icon=
@@ -4418,7 +7737,9 @@ document.createElement(
 "span"
 );
 
-icon.className="icon";
+icon.className=
+"icon";
+
 icon.textContent=
 upgrade.icon;
 
@@ -4427,7 +7748,9 @@ document.createElement(
 "span"
 );
 
-name.className="nodeName";
+name.className=
+"nodeName";
+
 name.textContent=
 upgrade.name;
 
@@ -4436,7 +7759,9 @@ document.createElement(
 "span"
 );
 
-cost.className="cost";
+cost.className=
+"cost";
+
 cost.textContent=
 formatMoney(
 upgrade.cost
@@ -4455,7 +7780,10 @@ button
 let start=
 TREE_CENTER;
 
-if(upgrade.requires){
+if(
+upgrade.requires
+)
+{
 
 start=
 getUpgradePosition(
@@ -4497,42 +7825,57 @@ line.setAttribute(
 
 line.setAttribute(
 "id",
-"line-"+id
+"line-"+
+id
 );
 
-svg.appendChild(line);
+svg.appendChild(
+line
+);
 
-});
+}
+);
 
 }
 
 /* =========================================================
-   UPDATE TREE
+   UPDATE TALENT TREE
 ========================================================= */
 
 function updateUpgradeTree(){
 
-let owned=0;
+let owned=
+0;
 
 const branchOwned={
+
 production:0,
+
 operations:0,
+
 marketing:0
+
 };
 
 Object.keys(
 UPGRADES
-).forEach(id=>{
+).forEach(
+id=>
+{
 
 const upgrade=
 UPGRADES[id];
 
 const node=
 document.getElementById(
-"node-"+id
+"node-"+
+id
 );
 
-if(!node)return;
+if(
+!node
+)
+return;
 
 node.classList.remove(
 "available",
@@ -4540,7 +7883,10 @@ node.classList.remove(
 "locked"
 );
 
-if(hasUpgrade(id)){
+if(
+hasUpgrade(id)
+)
+{
 
 node.classList.add(
 "bought"
@@ -4558,14 +7904,16 @@ else if(
 hasUpgrade(
 upgrade.requires
 )
-){
+)
+{
 
 node.classList.add(
 "available"
 );
 
 }
-else{
+else
+{
 
 node.classList.add(
 "locked"
@@ -4575,10 +7923,14 @@ node.classList.add(
 
 const line=
 document.getElementById(
-"line-"+id
+"line-"+
+id
 );
 
-if(line){
+if(
+line
+)
+{
 
 line.classList.toggle(
 "active",
@@ -4587,7 +7939,8 @@ hasUpgrade(id)
 
 }
 
-});
+}
+);
 
 document.getElementById(
 "treeProgress"
@@ -4635,21 +7988,28 @@ document.getElementById(
 
 Object.keys(
 UPGRADES
-).forEach(id=>{
+).forEach(
+id=>
+{
 
 const node=
 document.getElementById(
-"node-"+id
+"node-"+
+id
 );
 
 const upgrade=
 UPGRADES[id];
 
-if(!node)return;
+if(
+!node
+)
+return;
 
 node.addEventListener(
 "mouseenter",
-()=>{
+()=>
+{
 
 document.getElementById(
 "tooltipTitle"
@@ -4667,7 +8027,10 @@ formatMoney(
 upgrade.cost
 );
 
-if(upgrade.requires){
+if(
+upgrade.requires
+)
+{
 
 requirement+=
 " | Requires "+
@@ -4677,7 +8040,10 @@ upgrade.requires
 
 }
 
-if(hasUpgrade(id)){
+if(
+hasUpgrade(id)
+)
+{
 
 requirement=
 "✓ PURCHASED — ACTIVE";
@@ -4689,33 +8055,45 @@ document.getElementById(
 ).textContent=
 requirement;
 
-tooltip.style.opacity=1;
+tooltip.style.opacity=
+1;
 
 }
 );
 
 node.addEventListener(
 "mousemove",
-event=>{
+event=>
+{
 
 const x=
 Math.min(
-event.clientX+18,
-window.innerWidth-290
+event.clientX+
+18,
+window.innerWidth-
+290
 );
 
 const y=
 Math.min(
-event.clientY+18,
-window.innerHeight-180
+event.clientY+
+18,
+window.innerHeight-
+180
 );
 
 tooltip.style.left=
-Math.max(5,x)+
+Math.max(
+5,
+x
+)+
 "px";
 
 tooltip.style.top=
-Math.max(5,y)+
+Math.max(
+5,
+y
+)+
 "px";
 
 }
@@ -4723,14 +8101,17 @@ Math.max(5,y)+
 
 node.addEventListener(
 "mouseleave",
-()=>{
+()=>
+{
 
-tooltip.style.opacity=0;
+tooltip.style.opacity=
+0;
 
 }
 );
 
-});
+}
+);
 
 }
 
@@ -4740,9 +8121,13 @@ tooltip.style.opacity=0;
 
 function openDeveloperAccess(){
 
-if(developerUnlocked){
+if(
+developerUnlocked
+)
+{
 
 toggleDeveloperPanel();
+
 return;
 
 }
@@ -4752,11 +8137,20 @@ prompt(
 "Enter developer code:"
 );
 
-if(code===null)return;
+if(
+code===
+null
+)
+return;
 
-if(code===DEV_CODE){
+if(
+code===
+DEV_CODE
+)
+{
 
-developerUnlocked=true;
+developerUnlocked=
+true;
 
 localStorage.setItem(
 DEV_UNLOCK_KEY,
@@ -4780,7 +8174,8 @@ addLog(
 updateDeveloperUI();
 
 }
-else{
+else
+{
 
 alert(
 "Incorrect developer code."
@@ -4792,9 +8187,13 @@ alert(
 
 function toggleDeveloperPanel(){
 
-if(!developerUnlocked){
+if(
+!developerUnlocked
+)
+{
 
 openDeveloperAccess();
+
 return;
 
 }
@@ -4809,14 +8208,18 @@ document.getElementById(
 
 function lockDeveloperMode(){
 
-developerUnlocked=false;
+developerUnlocked=
+false;
 
 localStorage.removeItem(
 DEV_UNLOCK_KEY
 );
 
-state.devUnlimitedMoney=false;
-state.devUnlimitedFeed=false;
+state.devUnlimitedMoney=
+false;
+
+state.devUnlimitedFeed=
+false;
 
 document.body.classList.remove(
 "dev-unlocked"
@@ -4833,19 +8236,24 @@ addLog(
 );
 
 saveGame();
+
 updateUI();
 
 }
 
 function requireDeveloper(){
 
-if(!developerUnlocked){
+if(
+!developerUnlocked
+)
+{
 
 alert(
 "Developer Mode is locked."
 );
 
 return false;
+
 }
 
 return true;
@@ -4859,7 +8267,10 @@ document.getElementById(
 "devButton"
 );
 
-if(!button)return;
+if(
+!button
+)
+return;
 
 button.classList.toggle(
 "unlocked",
@@ -4889,17 +8300,23 @@ document.getElementById(
 document.getElementById(
 "devBarnLevel"
 ).value=
-String(state.barnLevel);
+String(
+state.barnLevel
+);
 
 document.getElementById(
 "devStorageLevel"
 ).value=
-String(state.storageLevel);
+String(
+state.storageLevel
+);
 
 document.getElementById(
 "devDistributionLevel"
 ).value=
-String(state.distributionLevel);
+String(
+state.distributionLevel
+);
 
 }
 
@@ -4912,14 +8329,17 @@ document.getElementById(
 
 select.innerHTML="";
 
-BREED_ORDER.forEach(id=>{
+BREED_ORDER.forEach(
+id=>
+{
 
 const option=
 document.createElement(
 "option"
 );
 
-option.value=id;
+option.value=
+id;
 
 option.textContent=
 BREEDS[id].icon+
@@ -4930,7 +8350,139 @@ select.appendChild(
 option
 );
 
-});
+}
+);
+
+}
+
+function populateDeveloperEvents(){
+
+const select=
+document.getElementById(
+"devEventSelect"
+);
+
+select.innerHTML="";
+
+const positiveGroup=
+document.createElement(
+"optgroup"
+);
+
+positiveGroup.label=
+"Positive Events";
+
+FARM_EVENTS.filter(
+event=>
+event.polarity===
+"positive"
+).forEach(
+event=>
+{
+
+const option=
+document.createElement(
+"option"
+);
+
+option.value=
+"normal:"+
+event.id;
+
+option.textContent=
+event.icon+
+" "+
+event.name;
+
+positiveGroup.appendChild(
+option
+);
+
+}
+);
+
+const negativeGroup=
+document.createElement(
+"optgroup"
+);
+
+negativeGroup.label=
+"Negative Events";
+
+FARM_EVENTS.filter(
+event=>
+event.polarity===
+"negative"
+).forEach(
+event=>
+{
+
+const option=
+document.createElement(
+"option"
+);
+
+option.value=
+"normal:"+
+event.id;
+
+option.textContent=
+event.icon+
+" "+
+event.name;
+
+negativeGroup.appendChild(
+option
+);
+
+}
+);
+
+const rareGroup=
+document.createElement(
+"optgroup"
+);
+
+rareGroup.label=
+"Rare Events";
+
+RARE_EVENTS.forEach(
+event=>
+{
+
+const option=
+document.createElement(
+"option"
+);
+
+option.value=
+"rare:"+
+event.id;
+
+option.textContent=
+"🌟 "+
+event.icon+
+" "+
+event.name;
+
+rareGroup.appendChild(
+option
+);
+
+}
+);
+
+select.appendChild(
+positiveGroup
+);
+
+select.appendChild(
+negativeGroup
+);
+
+select.appendChild(
+rareGroup
+);
 
 }
 
@@ -4938,24 +8490,36 @@ function devAfterChange(message){
 
 normalizeBreedCounts();
 
-if(message){
+if(
+message
+)
+{
+
 addLog(
 "🛠 DEV: "+
 message
 );
+
 }
 
 updateUI();
+
 saveGame();
 
 }
 
 function devAddMoney(amount){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.money+=amount;
-state.lifetimeMoney+=amount;
+state.money+=
+amount;
+
+state.lifetimeMoney+=
+amount;
 
 devAfterChange(
 "Added "+
@@ -4967,19 +8531,27 @@ formatMoney(amount)+
 
 function devSetMoney(){
 
-if(!requireDeveloper())return;
-
-const input=
-document.getElementById(
-"devMoneyInput"
-);
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
-Number(input.value);
+Number(
+document.getElementById(
+"devMoneyInput"
+).value
+);
 
-if(!Number.isFinite(value)||value<0)return;
+if(
+!Number.isFinite(value)||
+value<
+0
+)
+return;
 
-state.money=value;
+state.money=
+value;
 
 state.lifetimeMoney=
 Math.max(
@@ -4997,9 +8569,13 @@ formatMoney(value)+
 
 function devAddFeed(amount){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.feed+=amount;
+state.feed+=
+amount;
 
 devAfterChange(
 "Added "+
@@ -5011,7 +8587,10 @@ formatNumber(amount)+
 
 function devSetFeed(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
 Number(
@@ -5020,9 +8599,15 @@ document.getElementById(
 ).value
 );
 
-if(!Number.isFinite(value)||value<0)return;
+if(
+!Number.isFinite(value)||
+value<
+0
+)
+return;
 
-state.feed=value;
+state.feed=
+value;
 
 devAfterChange(
 "Feed set to "+
@@ -5034,9 +8619,13 @@ formatNumber(value)+
 
 function devAddEggs(amount){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.eggs+=amount;
+state.eggs+=
+amount;
 
 devAfterChange(
 "Added "+
@@ -5048,7 +8637,10 @@ formatNumber(amount)+
 
 function devSetEggs(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
 Number(
@@ -5057,9 +8649,15 @@ document.getElementById(
 ).value
 );
 
-if(!Number.isFinite(value)||value<0)return;
+if(
+!Number.isFinite(value)||
+value<
+0
+)
+return;
 
-state.eggs=value;
+state.eggs=
+value;
 
 devAfterChange(
 "Egg inventory set to "+
@@ -5071,7 +8669,10 @@ formatNumber(value)+
 
 function devAddActiveChickens(amount){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 addBreedChickens(
 state.activeBreed,
@@ -5090,17 +8691,29 @@ getActiveBreed().name+
 
 function devAddEveryBreed(amount){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-BREED_ORDER.forEach(id=>{
+BREED_ORDER.forEach(
+id=>
+{
 
-if(!state.breedCounts[id]){
+if(
+!state.breedCounts[id]
+)
+{
+
 state.breedCounts[id]=0;
+
 }
 
-state.breedCounts[id]+=amount;
+state.breedCounts[id]+=
+amount;
 
-});
+}
+);
 
 state.lifetimeChickens+=
 amount*
@@ -5116,7 +8729,10 @@ amount+
 
 function devSetBreedCount(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const id=
 document.getElementById(
@@ -5133,13 +8749,15 @@ document.getElementById(
 if(
 !BREEDS[id]||
 !Number.isFinite(amount)||
-amount<0
-){
+amount<
+0
+)
 return;
-}
 
 state.breedCounts[id]=
-Math.floor(amount);
+Math.floor(
+amount
+);
 
 devAfterChange(
 BREEDS[id].name+
@@ -5152,9 +8770,13 @@ formatNumber(amount)+
 
 function devUnlockAllBreeds(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.devAllBreeds=true;
+state.devAllBreeds=
+true;
 
 devAfterChange(
 "All chicken breeds unlocked."
@@ -5162,17 +8784,144 @@ devAfterChange(
 
 }
 
+function devTriggerSelectedEvent(){
+
+if(
+!requireDeveloper()
+)
+return;
+
+const value=
+document.getElementById(
+"devEventSelect"
+).value;
+
+if(
+!value
+)
+return;
+
+const parts=
+value.split(
+":"
+);
+
+const type=
+parts[0];
+
+const id=
+parts[1];
+
+startFarmEvent(
+type,
+id,
+true
+);
+
+saveGame();
+
+}
+
+function devTriggerRandomNormalEvent(){
+
+if(
+!requireDeveloper()
+)
+return;
+
+const event=
+FARM_EVENTS[
+Math.floor(
+Math.random()*
+FARM_EVENTS.length
+)
+];
+
+startFarmEvent(
+"normal",
+event.id,
+true
+);
+
+saveGame();
+
+}
+
+function devTriggerRandomRareEvent(){
+
+if(
+!requireDeveloper()
+)
+return;
+
+const event=
+RARE_EVENTS[
+Math.floor(
+Math.random()*
+RARE_EVENTS.length
+)
+];
+
+startFarmEvent(
+"rare",
+event.id,
+true
+);
+
+saveGame();
+
+}
+
+function devEndCurrentEvent(){
+
+if(
+!requireDeveloper()
+)
+return;
+
+if(
+!getActiveFarmEvent()
+)
+{
+
+addLog(
+"🛠 DEV: No farm event is currently active."
+);
+
+return;
+
+}
+
+endFarmEvent();
+
+addLog(
+"🛠 DEV: Current farm event ended."
+);
+
+updateUI();
+
+saveGame();
+
+}
+
 function devUnlockAllSkills(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 Object.keys(
 UPGRADES
-).forEach(id=>{
+).forEach(
+id=>
+{
 
-state.upgrades[id]=true;
+state.upgrades[id]=
+true;
 
-});
+}
+);
 
 devAfterChange(
 "All talent-tree upgrades unlocked."
@@ -5182,12 +8931,22 @@ devAfterChange(
 
 function devMaxInfrastructure(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.barnLevel=10;
-state.storageLevel=10;
-state.distributionLevel=10;
-state.wholesaleEnabled=true;
+state.barnLevel=
+10;
+
+state.storageLevel=
+10;
+
+state.distributionLevel=
+10;
+
+state.wholesaleEnabled=
+true;
 
 devAfterChange(
 "All infrastructure set to maximum."
@@ -5197,29 +8956,48 @@ devAfterChange(
 
 function devGiveTestingPack(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
-state.money+=10000000;
-state.lifetimeMoney+=10000000;
+state.money+=
+10000000;
 
-state.feed+=10000;
-state.eggs+=100000;
+state.lifetimeMoney+=
+10000000;
 
-BREED_ORDER.forEach(id=>{
+state.feed+=
+10000;
 
-if(!state.breedCounts[id]){
+state.eggs+=
+100000;
+
+BREED_ORDER.forEach(
+id=>
+{
+
+if(
+!state.breedCounts[id]
+)
+{
+
 state.breedCounts[id]=0;
+
 }
 
-state.breedCounts[id]+=100;
+state.breedCounts[id]+=
+100;
 
-});
+}
+);
 
 state.lifetimeChickens+=
 100*
 BREED_ORDER.length;
 
-state.devAllBreeds=true;
+state.devAllBreeds=
+true;
 
 devAfterChange(
 "Testing pack applied."
@@ -5229,7 +9007,10 @@ devAfterChange(
 
 function devMaxGame(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 state.money=
 1000000000000;
@@ -5240,26 +9021,42 @@ state.lifetimeMoney=
 state.feed=
 25000;
 
-state.barnLevel=10;
-state.storageLevel=10;
-state.distributionLevel=10;
+state.barnLevel=
+10;
 
-state.wholesaleEnabled=true;
-state.devAllBreeds=true;
+state.storageLevel=
+10;
+
+state.distributionLevel=
+10;
+
+state.wholesaleEnabled=
+true;
+
+state.devAllBreeds=
+true;
 
 Object.keys(
 UPGRADES
-).forEach(id=>{
+).forEach(
+id=>
+{
 
-state.upgrades[id]=true;
+state.upgrades[id]=
+true;
 
-});
+}
+);
 
-BREED_ORDER.forEach(id=>{
+BREED_ORDER.forEach(
+id=>
+{
 
-state.breedCounts[id]=10000;
+state.breedCounts[id]=
+10000;
 
-});
+}
+);
 
 state.chickens=
 getBreedTotal();
@@ -5284,7 +9081,10 @@ devAfterChange(
 
 function devSetBarn(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
 Number(
@@ -5312,7 +9112,10 @@ state.barnLevel+
 
 function devSetStorage(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
 Number(
@@ -5340,7 +9143,10 @@ state.storageLevel+
 
 function devSetDistribution(){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 const value=
 Number(
@@ -5358,8 +9164,15 @@ value
 )
 );
 
-if(state.distributionLevel>0){
-state.wholesaleEnabled=true;
+if(
+state.distributionLevel>
+0
+)
+{
+
+state.wholesaleEnabled=
+true;
+
 }
 
 devAfterChange(
@@ -5372,7 +9185,10 @@ state.distributionLevel+
 
 function devToggleUnlimitedMoney(enabled){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 state.devUnlimitedMoney=
 !!enabled;
@@ -5387,7 +9203,10 @@ enabled
 
 function devToggleUnlimitedFeed(enabled){
 
-if(!requireDeveloper())return;
+if(
+!requireDeveloper()
+)
+return;
 
 state.devUnlimitedFeed=
 !!enabled;
@@ -5401,16 +9220,21 @@ enabled
 }
 
 /* =========================================================
-   SAVE
+   SAVE GAME
 ========================================================= */
 
 function saveGame(
 manual=false
-){
+)
+{
 
 const saveState={
+
 ...state,
-lastUpdate:Date.now()
+
+lastUpdate:
+Date.now()
+
 };
 
 localStorage.setItem(
@@ -5420,7 +9244,10 @@ saveState
 )
 );
 
-if(manual){
+if(
+manual
+)
+{
 
 addLog(
 "💾 Game saved."
@@ -5436,7 +9263,7 @@ document.getElementById(
 }
 
 /* =========================================================
-   LOAD
+   LOAD GAME
 ========================================================= */
 
 function loadGame(){
@@ -5446,10 +9273,16 @@ localStorage.getItem(
 "chickenFarmEmpireSave"
 );
 
-if(!saved){
+if(
+!saved
+)
+{
 
-state.feed=100;
-state.lifetimeFeedPurchased=100;
+state.feed=
+100;
+
+state.lifetimeFeedPurchased=
+100;
 
 state.feedPricePerUnit=
 randomFeedPrice();
@@ -5461,6 +9294,10 @@ randomFeedMarketDelay();
 state.nextFeedEventAt=
 Date.now()+
 randomFeedEventDelay();
+
+state.nextFarmEventAt=
+Date.now()+
+randomFarmEventDelay();
 
 state.breedCounts={
 leghorn:1
@@ -5479,40 +9316,58 @@ return;
 
 }
 
-try{
+try
+{
 
 const parsed=
-JSON.parse(saved);
+JSON.parse(
+saved
+);
 
 state={
+
 ...state,
+
 ...parsed,
 
 upgrades:{
-...(parsed.upgrades||{})
+...(
+parsed.upgrades||
+{}
+)
 },
 
 breedCounts:{
-...(parsed.breedCounts||{})
+...(
+parsed.breedCounts||
+{}
+)
 },
 
-lastUpdate:Date.now(),
+lastUpdate:
+Date.now(),
 
 lastAutoChicken:
 parsed.lastAutoChicken||
 Date.now()
+
 };
 
-/* OLD SAVE MIGRATION */
+/* OLD FARM LEVEL MIGRATION */
 
-if(typeof parsed.barnLevel!=="number"){
+if(
+typeof parsed.barnLevel!==
+"number"
+)
+{
 
 const oldLevel=
 Math.max(
 1,
 Math.min(
 10,
-parsed.farmLevel||1
+parsed.farmLevel||
+1
 )
 );
 
@@ -5525,15 +9380,20 @@ oldLevel;
 state.distributionLevel=
 Math.max(
 0,
-oldLevel-1
+oldLevel-
+1
 );
 
 }
 
+/* BREED MIGRATION */
+
 if(
 !parsed.breedCounts||
-typeof parsed.breedCounts!=="object"
-){
+typeof parsed.breedCounts!==
+"object"
+)
+{
 
 state.breedCounts={
 
@@ -5556,21 +9416,34 @@ if(
 !BREEDS[
 parsed.activeBreed
 ]
-){
+)
+{
 
 state.activeBreed=
 "leghorn";
 
 }
 
-if(typeof parsed.feed!=="number"){
-state.feed=100;
+/* FEED MIGRATION */
+
+if(
+typeof parsed.feed!==
+"number"
+)
+{
+
+state.feed=
+100;
+
 }
 
 if(
-typeof parsed.feedPricePerUnit!=="number"||
-parsed.feedPricePerUnit<1
-){
+typeof parsed.feedPricePerUnit!==
+"number"||
+parsed.feedPricePerUnit<
+1
+)
+{
 
 state.feedPricePerUnit=
 randomFeedPrice();
@@ -5578,8 +9451,10 @@ randomFeedPrice();
 }
 
 if(
-typeof parsed.nextFeedPriceChange!=="number"
-){
+typeof parsed.nextFeedPriceChange!==
+"number"
+)
+{
 
 state.nextFeedPriceChange=
 Date.now()+
@@ -5588,20 +9463,32 @@ randomFeedMarketDelay();
 }
 
 if(
-typeof parsed.feedMarketEvent==="undefined"
-){
-state.feedMarketEvent=null;
+typeof parsed.feedMarketEvent===
+"undefined"
+)
+{
+
+state.feedMarketEvent=
+null;
+
 }
 
 if(
-typeof parsed.feedMarketEventEnds!=="number"
-){
-state.feedMarketEventEnds=0;
+typeof parsed.feedMarketEventEnds!==
+"number"
+)
+{
+
+state.feedMarketEventEnds=
+0;
+
 }
 
 if(
-typeof parsed.nextFeedEventAt!=="number"
-){
+typeof parsed.nextFeedEventAt!==
+"number"
+)
+{
 
 state.nextFeedEventAt=
 Date.now()+
@@ -5609,36 +9496,161 @@ randomFeedEventDelay();
 
 }
 
+/* FARM EVENT MIGRATION */
+
 if(
-typeof parsed.lifetimeFeedPurchased!=="number"
-){
+typeof parsed.activeFarmEventId===
+"undefined"
+)
+{
+
+state.activeFarmEventId=
+null;
+
+}
+
+if(
+typeof parsed.activeFarmEventType===
+"undefined"
+)
+{
+
+state.activeFarmEventType=
+null;
+
+}
+
+if(
+typeof parsed.farmEventStartedAt!==
+"number"
+)
+{
+
+state.farmEventStartedAt=
+0;
+
+}
+
+if(
+typeof parsed.farmEventEnds!==
+"number"
+)
+{
+
+state.farmEventEnds=
+0;
+
+}
+
+if(
+typeof parsed.nextFarmEventAt!==
+"number"||
+parsed.nextFarmEventAt<=
+0
+)
+{
+
+state.nextFarmEventAt=
+Date.now()+
+randomFarmEventDelay();
+
+}
+
+if(
+typeof parsed.farmEventBonusText!==
+"string"
+)
+{
+
+state.farmEventBonusText=
+"";
+
+}
+
+if(
+state.activeFarmEventId&&
+Date.now()>=
+state.farmEventEnds
+)
+{
+
+state.activeFarmEventId=
+null;
+
+state.activeFarmEventType=
+null;
+
+state.farmEventStartedAt=
+0;
+
+state.farmEventEnds=
+0;
+
+state.farmEventBonusText=
+"";
+
+state.nextFarmEventAt=
+Date.now()+
+randomFarmEventDelay();
+
+}
+
+/* OTHER MIGRATION */
+
+if(
+typeof parsed.lifetimeFeedPurchased!==
+"number"
+)
+{
+
 state.lifetimeFeedPurchased=
 state.feed;
+
 }
 
 if(
-typeof parsed.lifetimeMoney!=="number"
-){
+typeof parsed.lifetimeMoney!==
+"number"
+)
+{
+
 state.lifetimeMoney=
-state.money||0;
+state.money||
+0;
+
 }
 
 if(
-typeof parsed.devAllBreeds!=="boolean"
-){
-state.devAllBreeds=false;
+typeof parsed.devAllBreeds!==
+"boolean"
+)
+{
+
+state.devAllBreeds=
+false;
+
 }
 
 if(
-typeof parsed.devUnlimitedMoney!=="boolean"
-){
-state.devUnlimitedMoney=false;
+typeof parsed.devUnlimitedMoney!==
+"boolean"
+)
+{
+
+state.devUnlimitedMoney=
+false;
+
 }
 
 if(
-typeof parsed.devUnlimitedFeed!=="boolean"
-){
-state.devUnlimitedFeed=false;
+typeof parsed.devUnlimitedFeed!==
+"boolean"
+)
+{
+
+state.devUnlimitedFeed=
+false;
+
 }
 
 state.barnLevel=
@@ -5675,7 +9687,8 @@ state.feed
 );
 
 state.wholesaleEnabled=
-typeof parsed.wholesaleEnabled==="boolean"
+typeof parsed.wholesaleEnabled===
+"boolean"
 ?parsed.wholesaleEnabled
 :true;
 
@@ -5685,26 +9698,36 @@ if(
 !isBreedUnlocked(
 state.activeBreed
 )
-){
+)
+{
+
 state.activeBreed=
 "leghorn";
+
 }
 
 if(
 Date.now()>=
 state.nextFeedPriceChange
-){
+)
+{
+
 rollFeedMarket();
+
 }
 
 if(
 state.feedMarketEvent&&
 Date.now()>=
 state.feedMarketEventEnds
-){
+)
+{
 
-state.feedMarketEvent=null;
-state.feedMarketEventEnds=0;
+state.feedMarketEvent=
+null;
+
+state.feedMarketEventEnds=
+0;
 
 state.nextFeedEventAt=
 Date.now()+
@@ -5717,7 +9740,8 @@ addLog(
 );
 
 }
-catch(error){
+catch(error)
+{
 
 console.error(
 "Unable to load save:",
@@ -5729,7 +9753,7 @@ error
 }
 
 /* =========================================================
-   RESET
+   RESET GAME
 ========================================================= */
 
 function resetGame(){
@@ -5739,7 +9763,10 @@ confirm(
 "Reset your entire Chicken Farm Empire save? This cannot be undone."
 );
 
-if(!confirmed)return;
+if(
+!confirmed
+)
+return;
 
 localStorage.removeItem(
 "chickenFarmEmpireSave"
@@ -5750,7 +9777,7 @@ location.reload();
 }
 
 /* =========================================================
-   START
+   START GAME
 ========================================================= */
 
 loadGame();
@@ -5765,7 +9792,12 @@ setupTooltips();
 
 populateDeveloperBreeds();
 
-if(developerUnlocked){
+populateDeveloperEvents();
+
+if(
+developerUnlocked
+)
+{
 
 document.body.classList.add(
 "dev-unlocked"
@@ -5781,9 +9813,12 @@ gameTick,
 );
 
 setInterval(
-()=>{
+()=>
+{
 
-saveGame(false);
+saveGame(
+false
+);
 
 document.getElementById(
 "saveStatus"
