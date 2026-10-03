@@ -7,15 +7,14 @@
 <title>Chicken Farm Empire</title>
 
 <style>
+
 :root{
     --cream:#fff9df;
     --brown:#6c451d;
     --darkBrown:#4d3016;
     --gold:#ffc94f;
     --green:#4fae46;
-    --deepGreen:#24783b;
     --grass:#79cf54;
-    --panel:#fffdf1;
 }
 
 *{
@@ -31,6 +30,7 @@ body{
     min-height:100vh;
     font-family:Arial,Helvetica,sans-serif;
     color:#3d321d;
+
     background:
         linear-gradient(
             to bottom,
@@ -56,98 +56,187 @@ button{
 ========================================================= */
 
 .topbar{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
     min-height:78px;
+
     display:grid;
+
     grid-template-columns:1fr auto 1fr;
+
     align-items:center;
+
     gap:20px;
+
     padding:10px 20px;
+
     background:rgba(255,252,222,.97);
+
     border-bottom:4px solid #d3a940;
-    box-shadow:0 4px 15px rgba(76,60,20,.22);
+
+    box-shadow:
+        0 4px 15px
+        rgba(76,60,20,.22);
+
 }
+
 
 .leftTop{
+
     display:flex;
+
     align-items:center;
+
     gap:15px;
+
 }
+
 
 #getChickenBtn{
-    min-width:205px;
+
+    min-width:220px;
+
     padding:14px 20px;
+
     border-radius:13px;
+
     border:3px solid #8d5917;
-    background:linear-gradient(#ffd463,#efa72f);
+
+    background:
+        linear-gradient(
+            #ffd463,
+            #efa72f
+        );
+
     color:#563316;
+
     font-weight:900;
+
     font-size:18px;
+
     box-shadow:
-        inset 0 2px rgba(255,255,255,.65),
-        0 5px 0 #8d5917,
-        0 8px 14px rgba(90,61,14,.2);
+        inset 0 2px
+        rgba(255,255,255,.65),
+
+        0 5px 0
+        #8d5917,
+
+        0 8px 14px
+        rgba(90,61,14,.2);
+
     transition:.12s;
+
 }
+
 
 #getChickenBtn:hover{
-    transform:translateY(-1px);
-    background:linear-gradient(#ffe27e,#f5b63a);
+
+    transform:
+        translateY(-1px);
+
 }
+
 
 #getChickenBtn:active{
-    transform:translateY(4px);
+
+    transform:
+        translateY(4px);
+
     box-shadow:
-        inset 0 2px rgba(255,255,255,.65),
-        0 1px 0 #8d5917;
+        0 1px 0
+        #8d5917;
+
 }
+
 
 #getChickenBtn:disabled{
+
     opacity:.62;
-    transform:none;
+
     cursor:not-allowed;
+
+    transform:none;
+
     box-shadow:none;
+
 }
+
 
 .logoArea{
+
     text-align:center;
+
 }
+
 
 .logoArea h1{
+
     margin:0;
+
     font-size:27px;
+
     letter-spacing:2px;
+
     color:#4c351a;
-    text-shadow:0 2px #fff;
+
+    text-shadow:
+        0 2px #fff;
+
 }
+
 
 .logoArea small{
+
     display:block;
+
     margin-top:3px;
+
     color:#987026;
+
     font-weight:bold;
+
 }
+
 
 .topStats{
+
     display:flex;
+
     justify-content:flex-end;
+
     gap:26px;
+
 }
+
 
 .statTop span{
+
     display:block;
+
     font-size:12px;
+
     color:#796747;
+
     text-transform:uppercase;
+
     letter-spacing:1px;
+
 }
 
+
 .statTop strong{
+
     display:block;
+
     font-size:20px;
+
     color:#a36b12;
+
 }
 
 
@@ -156,9 +245,16 @@ button{
 ========================================================= */
 
 .game{
+
     max-width:1550px;
+
     margin:auto;
-    padding:22px 18px 60px;
+
+    padding:
+        22px
+        18px
+        60px;
+
 }
 
 
@@ -167,406 +263,981 @@ button{
 ========================================================= */
 
 .farmViewport{
+
     width:100%;
+
     overflow-x:auto;
+
 }
+
 
 .farmShell{
+
     position:relative;
+
     overflow:hidden;
+
     min-width:1050px;
+
     min-height:700px;
+
     border:5px solid #725025;
+
     border-radius:22px;
+
     background:#79cc4e;
+
     box-shadow:
-        0 12px 30px rgba(77,63,26,.27),
-        inset 0 0 0 4px rgba(255,255,255,.25);
+        0 12px 30px
+        rgba(77,63,26,.27),
+
+        inset 0 0 0 4px
+        rgba(255,255,255,.25);
+
 }
+
 
 .farmSky{
+
     position:absolute;
+
     left:0;
+
     right:0;
+
     top:0;
+
     height:145px;
+
     background:
-        radial-gradient(circle at 10% 30%,white 0 22px,transparent 23px),
-        radial-gradient(circle at 13% 27%,white 0 31px,transparent 32px),
-        radial-gradient(circle at 16% 31%,white 0 22px,transparent 23px),
-        radial-gradient(circle at 78% 35%,white 0 21px,transparent 22px),
-        radial-gradient(circle at 81% 31%,white 0 29px,transparent 30px),
-        radial-gradient(circle at 84% 35%,white 0 18px,transparent 19px),
-        linear-gradient(#71cff5,#bcebf8);
+
+        radial-gradient(
+            circle at 10% 30%,
+            white 0 22px,
+            transparent 23px
+        ),
+
+        radial-gradient(
+            circle at 13% 27%,
+            white 0 31px,
+            transparent 32px
+        ),
+
+        radial-gradient(
+            circle at 16% 31%,
+            white 0 22px,
+            transparent 23px
+        ),
+
+        radial-gradient(
+            circle at 78% 35%,
+            white 0 21px,
+            transparent 22px
+        ),
+
+        radial-gradient(
+            circle at 81% 31%,
+            white 0 29px,
+            transparent 30px
+        ),
+
+        linear-gradient(
+            #71cff5,
+            #bcebf8
+        );
+
 }
+
 
 .sun{
+
     position:absolute;
+
     right:70px;
+
     top:25px;
+
     width:72px;
+
     height:72px;
+
     border-radius:50%;
+
     background:#ffe66f;
-    box-shadow:0 0 35px #fff59a;
+
+    box-shadow:
+        0 0 35px
+        #fff59a;
+
 }
+
 
 .hillsBack{
+
     position:absolute;
+
     top:90px;
+
     left:-5%;
+
     width:110%;
+
     height:130px;
+
     background:
-        radial-gradient(ellipse at 12% 90%,#5fa845 0 22%,transparent 23%),
-        radial-gradient(ellipse at 32% 100%,#4f9840 0 28%,transparent 29%),
-        radial-gradient(ellipse at 55% 100%,#63ab48 0 28%,transparent 29%),
-        radial-gradient(ellipse at 78% 100%,#51933c 0 26%,transparent 27%),
-        radial-gradient(ellipse at 98% 100%,#61aa46 0 26%,transparent 27%);
+
+        radial-gradient(
+            ellipse at 12% 90%,
+            #5fa845 0 22%,
+            transparent 23%
+        ),
+
+        radial-gradient(
+            ellipse at 32% 100%,
+            #4f9840 0 28%,
+            transparent 29%
+        ),
+
+        radial-gradient(
+            ellipse at 55% 100%,
+            #63ab48 0 28%,
+            transparent 29%
+        ),
+
+        radial-gradient(
+            ellipse at 78% 100%,
+            #51933c 0 26%,
+            transparent 27%
+        );
+
 }
 
+
 .grassTexture{
+
     position:absolute;
-    inset:140px 0 0;
+
+    inset:
+        140px 0 0;
+
     background:
-        radial-gradient(circle,rgba(255,255,255,.17) 1px,transparent 2px) 0 0/22px 22px,
-        radial-gradient(circle,rgba(52,125,37,.18) 1px,transparent 2px) 8px 12px/26px 26px,
-        linear-gradient(#82d354,#69ba45);
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.17)
+            1px,
+            transparent 2px
+        )
+        0 0 / 22px 22px,
+
+        radial-gradient(
+            circle,
+            rgba(52,125,37,.18)
+            1px,
+            transparent 2px
+        )
+        8px 12px / 26px 26px,
+
+        linear-gradient(
+            #82d354,
+            #69ba45
+        );
+
 }
 
 
 /* =========================================================
-   FARM ROADS
+   ROADS
 ========================================================= */
 
 .road{
+
     position:absolute;
+
     z-index:4;
+
     background:#d9b171;
-    border:3px solid rgba(121,83,31,.22);
+
+    border:3px solid
+        rgba(121,83,31,.22);
+
 }
+
 
 .roadMain{
-    left:46%;
+
+    left:47%;
+
     top:145px;
-    width:125px;
+
+    width:120px;
+
     height:610px;
-    transform:rotate(2deg);
+
+    transform:
+        rotate(2deg);
+
 }
 
+
 .roadCross{
+
     left:21%;
-    top:440px;
+
+    top:445px;
+
     width:800px;
+
     height:105px;
-    transform:rotate(-3deg);
+
+    transform:
+        rotate(-3deg);
+
 }
 
 
 /* =========================================================
-   MAIN BARN
+   BARN
 ========================================================= */
 
 .building{
+
     position:absolute;
+
     z-index:20;
-    filter:drop-shadow(0 10px 7px rgba(65,47,20,.25));
+
+    filter:
+        drop-shadow(
+            0 10px 7px
+            rgba(65,47,20,.25)
+        );
+
 }
+
 
 .barn{
+
     left:4%;
-    top:245px;
+
     width:150px;
+
     height:120px;
+
+    top:250px;
+
     background:#dc4a40;
+
     border:5px solid #8c3029;
+
     border-radius:4px;
+
     transition:
-        width .45s,
-        height .45s,
-        top .45s,
-        background .45s;
+        width .4s,
+        height .4s,
+        top .4s;
+
 }
+
 
 .barnRoof{
+
     position:absolute;
+
     left:-18px;
+
     top:-50px;
-    width:calc(100% + 36px);
+
+    width:
+        calc(100% + 36px);
+
     height:60px;
+
     background:#52392d;
-    clip-path:polygon(14% 0,86% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            14% 0,
+            86% 0,
+            100% 100%,
+            0 100%
+        );
+
 }
 
-.barnDoor{
+
+.barnWindow{
+
     position:absolute;
+
+    top:15%;
+
     left:50%;
-    bottom:0;
-    width:31%;
-    height:60%;
-    min-width:42px;
-    transform:translateX(-50%);
-    background:#773728;
-    border:4px solid #f3ddb0;
+
+    transform:
+        translateX(-50%);
+
+    width:24%;
+
+    height:22%;
+
+    background:#91dbed;
+
+    border:4px solid
+        #f3ddb0;
+
 }
+
+
+.barnDoor{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    width:31%;
+
+    min-width:42px;
+
+    height:60%;
+
+    transform:
+        translateX(-50%);
+
+    background:#773728;
+
+    border:4px solid
+        #f3ddb0;
+
+}
+
 
 .barnDoor::before,
 .barnDoor::after{
+
     content:"";
+
     position:absolute;
+
     left:48%;
+
     top:-4px;
+
     width:4px;
+
     height:108%;
+
     background:#f3ddb0;
+
     transform-origin:center;
+
 }
+
 
 .barnDoor::before{
-    transform:rotate(35deg);
+
+    transform:
+        rotate(35deg);
+
 }
+
 
 .barnDoor::after{
-    transform:rotate(-35deg);
+
+    transform:
+        rotate(-35deg);
+
 }
 
-.barnWindow{
-    position:absolute;
-    top:14%;
-    left:50%;
-    transform:translateX(-50%);
-    width:24%;
-    height:23%;
-    background:#91dbed;
-    border:4px solid #f3ddb0;
-}
 
 .barnBadge{
+
     position:absolute;
-    z-index:4;
+
+    z-index:5;
+
     left:50%;
-    top:8px;
-    transform:translateX(-50%);
-    padding:4px 7px;
+
+    top:7px;
+
+    transform:
+        translateX(-50%);
+
     white-space:nowrap;
+
+    padding:4px 7px;
+
     border-radius:5px;
+
     background:#fff0b8;
+
     border:2px solid #87591a;
+
     color:#6a4215;
+
     font-size:10px;
+
     font-weight:900;
-}
 
-
-/* EVERY LEVEL MAKES THE BARN LARGER */
-
-.farmShell.level1 .barn{
-    width:150px;
-    height:120px;
-    top:250px;
-}
-
-.farmShell.level2 .barn{
-    width:175px;
-    height:135px;
-    top:238px;
-}
-
-.farmShell.level3 .barn{
-    width:200px;
-    height:150px;
-    top:225px;
-}
-
-.farmShell.level4 .barn{
-    width:225px;
-    height:165px;
-    top:210px;
-}
-
-.farmShell.level5 .barn{
-    width:250px;
-    height:180px;
-    top:195px;
-}
-
-.farmShell.level6 .barn{
-    width:275px;
-    height:195px;
-    top:180px;
-}
-
-.farmShell.level7 .barn{
-    width:300px;
-    height:210px;
-    top:166px;
-}
-
-.farmShell.level8 .barn{
-    width:325px;
-    height:225px;
-    top:152px;
-}
-
-.farmShell.level9 .barn{
-    width:350px;
-    height:240px;
-    top:138px;
-}
-
-.farmShell.level10 .barn{
-    width:385px;
-    height:260px;
-    top:122px;
-    background:#ce3f37;
-}
-
-
-/* BARN EXPANSIONS */
-
-.barnWing{
-    display:none;
-    position:absolute;
-    z-index:18;
-    left:3%;
-    top:355px;
-    width:245px;
-    height:75px;
-    border:5px solid #8c3029;
-    background:#c94239;
-}
-
-.barnWing::before{
-    content:"";
-    position:absolute;
-    left:-10px;
-    top:-30px;
-    width:255px;
-    height:35px;
-    background:#4f392e;
-    clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);
-}
-
-.barnWing2{
-    display:none;
-    position:absolute;
-    z-index:17;
-    left:2%;
-    top:415px;
-    width:300px;
-    height:70px;
-    border:5px solid #8c3029;
-    background:#bb3b34;
-}
-
-.barnWing2::before{
-    content:"";
-    position:absolute;
-    left:-10px;
-    top:-28px;
-    width:310px;
-    height:33px;
-    background:#4f392e;
-    clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);
-}
-
-.poultryHouse{
-    display:none;
-    position:absolute;
-    z-index:16;
-    left:2%;
-    bottom:35px;
-    width:330px;
-    height:58px;
-    background:#ede5ce;
-    border:5px solid #74766f;
-    border-radius:6px;
-}
-
-.poultryHouse::before{
-    content:"POULTRY HOUSE";
-    position:absolute;
-    left:50%;
-    top:17px;
-    transform:translateX(-50%);
-    color:#595b56;
-    font-size:11px;
-    font-weight:900;
-}
-
-.farmShell.level4 .barnWing,
-.farmShell.level5 .barnWing,
-.farmShell.level6 .barnWing,
-.farmShell.level7 .barnWing,
-.farmShell.level8 .barnWing,
-.farmShell.level9 .barnWing,
-.farmShell.level10 .barnWing{
-    display:block;
-}
-
-.farmShell.level7 .barnWing2,
-.farmShell.level8 .barnWing2,
-.farmShell.level9 .barnWing2,
-.farmShell.level10 .barnWing2{
-    display:block;
-}
-
-.farmShell.level9 .poultryHouse,
-.farmShell.level10 .poultryHouse{
-    display:block;
 }
 
 
 /* =========================================================
-   OTHER FARM BUILDINGS
+   BARN LEVEL VISUALS
+========================================================= */
+
+.farmShell.barn-level-1 .barn{
+
+    width:150px;
+
+    height:120px;
+
+    top:250px;
+
+}
+
+
+.farmShell.barn-level-2 .barn{
+
+    width:175px;
+
+    height:135px;
+
+    top:238px;
+
+}
+
+
+.farmShell.barn-level-3 .barn{
+
+    width:200px;
+
+    height:150px;
+
+    top:225px;
+
+}
+
+
+.farmShell.barn-level-4 .barn{
+
+    width:225px;
+
+    height:165px;
+
+    top:210px;
+
+}
+
+
+.farmShell.barn-level-5 .barn{
+
+    width:250px;
+
+    height:180px;
+
+    top:195px;
+
+}
+
+
+.farmShell.barn-level-6 .barn{
+
+    width:275px;
+
+    height:195px;
+
+    top:180px;
+
+}
+
+
+.farmShell.barn-level-7 .barn{
+
+    width:300px;
+
+    height:210px;
+
+    top:165px;
+
+}
+
+
+.farmShell.barn-level-8 .barn{
+
+    width:325px;
+
+    height:225px;
+
+    top:150px;
+
+}
+
+
+.farmShell.barn-level-9 .barn{
+
+    width:350px;
+
+    height:240px;
+
+    top:135px;
+
+}
+
+
+.farmShell.barn-level-10 .barn{
+
+    width:390px;
+
+    height:260px;
+
+    top:118px;
+
+}
+
+
+/* =========================================================
+   BARN WINGS
+========================================================= */
+
+.barnWing{
+
+    display:none;
+
+    position:absolute;
+
+    z-index:18;
+
+    left:3%;
+
+    top:365px;
+
+    width:245px;
+
+    height:75px;
+
+    border:5px solid #8c3029;
+
+    background:#c94239;
+
+}
+
+
+.barnWing::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+
+    top:-30px;
+
+    width:255px;
+
+    height:35px;
+
+    background:#4f392e;
+
+    clip-path:
+        polygon(
+            8% 0,
+            92% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+.barnWing2{
+
+    display:none;
+
+    position:absolute;
+
+    z-index:17;
+
+    left:2%;
+
+    top:425px;
+
+    width:300px;
+
+    height:70px;
+
+    border:5px solid #8c3029;
+
+    background:#bb3b34;
+
+}
+
+
+.barnWing2::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+
+    top:-28px;
+
+    width:310px;
+
+    height:33px;
+
+    background:#4f392e;
+
+    clip-path:
+        polygon(
+            7% 0,
+            93% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+.poultryHouse{
+
+    display:none;
+
+    position:absolute;
+
+    z-index:16;
+
+    left:2%;
+
+    bottom:30px;
+
+    width:330px;
+
+    height:58px;
+
+    background:#ede5ce;
+
+    border:5px solid #74766f;
+
+    border-radius:6px;
+
+}
+
+
+.poultryHouse::before{
+
+    content:"POULTRY HOUSE";
+
+    position:absolute;
+
+    left:50%;
+
+    top:17px;
+
+    transform:
+        translateX(-50%);
+
+    color:#595b56;
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+
+.farmShell.barn-level-4 .barnWing,
+.farmShell.barn-level-5 .barnWing,
+.farmShell.barn-level-6 .barnWing,
+.farmShell.barn-level-7 .barnWing,
+.farmShell.barn-level-8 .barnWing,
+.farmShell.barn-level-9 .barnWing,
+.farmShell.barn-level-10 .barnWing{
+
+    display:block;
+
+}
+
+
+.farmShell.barn-level-7 .barnWing2,
+.farmShell.barn-level-8 .barnWing2,
+.farmShell.barn-level-9 .barnWing2,
+.farmShell.barn-level-10 .barnWing2{
+
+    display:block;
+
+}
+
+
+.farmShell.barn-level-9 .poultryHouse,
+.farmShell.barn-level-10 .poultryHouse{
+
+    display:block;
+
+}
+
+
+/* =========================================================
+   STORAGE BUILDING
+========================================================= */
+
+.storageShed{
+
+    position:absolute;
+
+    z-index:20;
+
+    right:3%;
+
+    bottom:45px;
+
+    width:125px;
+
+    height:78px;
+
+    border:5px solid #666e70;
+
+    background:#d8e0df;
+
+    border-radius:4px;
+
+    transition:
+        width .4s,
+        height .4s;
+
+}
+
+
+.storageShed::before{
+
+    content:"EGG STORAGE";
+
+    position:absolute;
+
+    left:50%;
+
+    top:29px;
+
+    transform:
+        translateX(-50%);
+
+    white-space:nowrap;
+
+    color:#586062;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+
+.storageShed::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+
+    top:-33px;
+
+    width:
+        calc(100% + 20px);
+
+    height:38px;
+
+    background:#56676c;
+
+    clip-path:
+        polygon(
+            8% 0,
+            92% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+.farmShell.storage-level-2 .storageShed{
+
+    width:145px;
+
+}
+
+
+.farmShell.storage-level-3 .storageShed{
+
+    width:165px;
+
+}
+
+
+.farmShell.storage-level-4 .storageShed{
+
+    width:185px;
+
+    height:85px;
+
+}
+
+
+.farmShell.storage-level-5 .storageShed{
+
+    width:205px;
+
+    height:90px;
+
+}
+
+
+.farmShell.storage-level-6 .storageShed{
+
+    width:225px;
+
+    height:95px;
+
+}
+
+
+.farmShell.storage-level-7 .storageShed{
+
+    width:245px;
+
+    height:100px;
+
+}
+
+
+.farmShell.storage-level-8 .storageShed{
+
+    width:265px;
+
+    height:105px;
+
+}
+
+
+.farmShell.storage-level-9 .storageShed{
+
+    width:285px;
+
+    height:110px;
+
+}
+
+
+.farmShell.storage-level-10 .storageShed{
+
+    width:310px;
+
+    height:120px;
+
+}
+
+
+/* =========================================================
+   FARM HOUSE + SILO + COOP
 ========================================================= */
 
 .coop{
-    left:30%;
-    top:278px;
-    width:150px;
+
+    left:31%;
+
+    top:280px;
+
+    width:145px;
+
     height:100px;
+
     background:#f6d06d;
+
     border:5px solid #97631d;
+
 }
+
 
 .coopRoof{
+
     position:absolute;
+
     left:-15px;
+
     top:-42px;
-    width:175px;
+
+    width:170px;
+
     height:48px;
+
     background:#b34731;
-    clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+
 }
+
 
 .coopDoor{
+
     position:absolute;
+
     left:50%;
-    transform:translateX(-50%);
+
     bottom:0;
+
+    transform:
+        translateX(-50%);
+
     width:45px;
+
     height:58px;
+
     border:4px solid #744621;
+
     background:#5d3d20;
+
 }
+
 
 .coopSign{
+
     position:absolute;
+
     top:12px;
+
     left:10px;
-    color:#6d4719;
+
     font-size:11px;
+
     font-weight:900;
+
+    color:#6d4719;
+
 }
 
+
 .silo{
-    right:7%;
+
+    right:6%;
+
     top:220px;
-    width:82px;
+
+    width:80px;
+
     height:190px;
+
     border:5px solid #7d8588;
+
     background:
+
         repeating-linear-gradient(
             0deg,
             #cdd3d2 0,
@@ -574,312 +1245,472 @@ button{
             #b6bfbe 13px,
             #b6bfbe 15px
         );
-    border-radius:10px 10px 5px 5px;
+
+    border-radius:
+        10px 10px 5px 5px;
+
 }
+
 
 .silo::before{
+
     content:"";
+
     position:absolute;
+
     left:-5px;
+
     top:-46px;
-    width:82px;
+
+    width:80px;
+
     height:58px;
+
     border:5px solid #777f81;
+
     background:#b3babb;
-    border-radius:50% 50% 10% 10%;
+
+    border-radius:
+        50% 50% 10% 10%;
+
 }
+
 
 .farmHouse{
-    right:19%;
+
+    right:18%;
+
     top:290px;
+
     width:160px;
+
     height:110px;
+
     background:#f8f4df;
+
     border:5px solid #8f8b70;
+
 }
+
 
 .houseRoof{
+
     position:absolute;
+
     left:-18px;
+
     top:-50px;
+
     width:185px;
+
     height:60px;
+
     background:#536a7a;
-    clip-path:polygon(50% 0,100% 100%,0 100%);
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 100%,
+            0 100%
+        );
+
 }
+
 
 .houseDoor{
+
     position:absolute;
+
     bottom:0;
+
     left:50%;
-    transform:translateX(-50%);
+
     width:35px;
+
     height:62px;
+
+    transform:
+        translateX(-50%);
+
     background:#9b563a;
-}
 
-.houseWindow{
-    position:absolute;
-    width:34px;
-    height:34px;
-    background:#8ad9ed;
-    border:4px solid white;
-    top:27px;
-}
-
-.houseWindow.one{
-    left:15px;
-}
-
-.houseWindow.two{
-    right:15px;
-}
-
-
-/* STORAGE BUILDING */
-
-.storageShed{
-    position:absolute;
-    z-index:20;
-    right:4%;
-    bottom:42px;
-    width:180px;
-    height:92px;
-    border:5px solid #666e70;
-    background:#d8e0df;
-    border-radius:4px;
-}
-
-.storageShed::before{
-    content:"EGG STORAGE";
-    position:absolute;
-    left:50%;
-    top:32px;
-    transform:translateX(-50%);
-    white-space:nowrap;
-    color:#586062;
-    font-size:12px;
-    font-weight:900;
-}
-
-.storageShed::after{
-    content:"";
-    position:absolute;
-    left:-10px;
-    top:-34px;
-    width:190px;
-    height:39px;
-    background:#56676c;
-    clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);
 }
 
 
 /* =========================================================
-   FARM DECOR
+   FARM DECORATION
 ========================================================= */
 
 .cropField{
+
     position:absolute;
+
     z-index:6;
+
     right:5%;
+
     top:455px;
-    width:255px;
-    height:145px;
+
+    width:250px;
+
+    height:140px;
+
     border:5px solid #8a6d2e;
+
     background:
+
         repeating-linear-gradient(
             15deg,
             #d8b541 0 13px,
             #b99730 14px 21px
         );
-    transform:rotate(2deg);
+
+    transform:
+        rotate(2deg);
+
 }
+
 
 .pond{
+
     position:absolute;
+
     z-index:7;
+
     left:35%;
-    top:525px;
-    width:180px;
-    height:100px;
+
+    top:530px;
+
+    width:175px;
+
+    height:95px;
+
     background:
-        radial-gradient(ellipse at 40% 35%,#82e8ff,#36abd5 68%);
+
+        radial-gradient(
+            ellipse at 40% 35%,
+            #82e8ff,
+            #36abd5 68%
+        );
+
     border:8px solid #598f4f;
+
     border-radius:50%;
-    transform:rotate(-5deg);
+
 }
 
+
 .fence{
+
     position:absolute;
+
     z-index:30;
+
     height:13px;
+
     background:
+
         repeating-linear-gradient(
             90deg,
             #f2e2a6 0 9px,
             #9a7a3f 10px 12px,
             transparent 13px 36px
         );
+
     border-top:5px solid #e3cb88;
+
     border-bottom:3px solid #ae8d50;
+
 }
+
 
 .fence.top{
-    left:27%;
+
+    left:28%;
+
     top:410px;
-    width:39%;
+
+    width:38%;
+
 }
+
 
 .fence.bottom{
-    left:27%;
+
+    left:28%;
+
     top:620px;
-    width:39%;
+
+    width:38%;
+
 }
+
 
 .fence.left{
-    left:26%;
+
+    left:27%;
+
     top:418px;
+
     width:210px;
-    transform:rotate(90deg);
+
+    transform:
+        rotate(90deg);
+
     transform-origin:left center;
+
 }
 
+
 .fence.right{
+
     left:66%;
+
     top:418px;
+
     width:210px;
-    transform:rotate(90deg);
+
+    transform:
+        rotate(90deg);
+
     transform-origin:left center;
+
 }
 
 
 /* =========================================================
-   CHICKENS
+   CHICKEN YARD
 ========================================================= */
 
 .chickenYard{
+
     position:absolute;
+
     z-index:25;
-    left:27%;
+
+    left:28%;
+
     top:420px;
-    width:39%;
+
+    width:38%;
+
     height:195px;
+
 }
+
 
 .yardLabel{
+
     position:absolute;
+
     z-index:45;
+
     left:50%;
+
     top:6px;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     padding:6px 12px;
+
     border-radius:9px;
-    background:rgba(255,249,208,.94);
+
+    background:
+        rgba(255,249,208,.94);
+
     border:2px solid #a77c2b;
+
     font-size:11px;
+
     font-weight:900;
+
     color:#6d4b17;
+
 }
+
 
 .chickenSprite{
+
     position:absolute;
+
     z-index:40;
+
     width:28px;
+
     height:28px;
+
     font-size:23px;
+
     line-height:28px;
+
     text-align:center;
-    filter:drop-shadow(0 3px 2px rgba(64,47,24,.25));
-    transform-origin:center bottom;
+
+    filter:
+        drop-shadow(
+            0 3px 2px
+            rgba(64,47,24,.25)
+        );
+
+    transform-origin:
+        center bottom;
+
     user-select:none;
+
 }
+
 
 .chickenSprite.walking{
+
     animation:
-        chickenEnter 1.25s cubic-bezier(.14,.69,.33,1.03),
-        chickenBob .65s ease-in-out 1.25s infinite alternate;
+
+        chickenEnter
+        1.25s
+        cubic-bezier(.14,.69,.33,1.03),
+
+        chickenBob
+        .65s
+        ease-in-out
+        1.25s
+        infinite
+        alternate;
+
 }
+
 
 .chickenSprite.idle{
-    animation:chickenBob 1.2s ease-in-out infinite alternate;
+
+    animation:
+
+        chickenBob
+        1.2s
+        ease-in-out
+        infinite
+        alternate;
+
 }
+
 
 @keyframes chickenEnter{
+
     0%{
+
         left:-260px;
+
         top:-140px;
-        transform:scale(.7) rotate(-8deg);
+
+        transform:
+            scale(.7)
+            rotate(-8deg);
+
     }
 
-    30%{
-        transform:scale(.9) rotate(7deg);
-    }
-
-    65%{
-        transform:scale(1.1) rotate(-5deg);
-    }
 
     100%{
-        transform:scale(1) rotate(0);
+
+        transform:
+            scale(1)
+            rotate(0);
+
     }
+
 }
 
+
 @keyframes chickenBob{
+
     from{
+
         margin-top:0;
+
     }
 
     to{
+
         margin-top:-4px;
+
     }
+
 }
 
+
 .flockOverflow{
+
     position:absolute;
+
     z-index:60;
+
     right:5px;
+
     bottom:4px;
+
     padding:7px 10px;
+
     border-radius:7px;
+
     background:#fff7c9;
+
     border:2px solid #a97926;
+
     font-size:11px;
+
     font-weight:900;
+
     color:#624313;
+
 }
 
 
 /* =========================================================
-   WHOLESALE TRUCK
+   TRUCK
 ========================================================= */
 
 .deliveryTruck{
+
     display:none;
+
     position:absolute;
+
     z-index:55;
-    left:47%;
+
+    left:48%;
+
     top:590px;
+
     font-size:42px;
-    filter:drop-shadow(0 4px 3px rgba(50,40,20,.3));
+
 }
+
 
 .farmShell.wholesale-on .deliveryTruck{
+
     display:block;
-    animation:truckDrive 9s linear infinite;
+
+    animation:
+        truckDrive
+        9s
+        linear
+        infinite;
+
 }
 
-@keyframes truckDrive{
-    0%{
-        transform:translateY(100px);
-    }
 
-    50%{
-        transform:translateY(-180px);
+@keyframes truckDrive{
+
+    0%{
+
+        transform:
+            translateY(100px);
+
     }
 
     100%{
-        transform:translateY(-400px);
+
+        transform:
+            translateY(-450px);
+
     }
+
 }
 
 
@@ -888,81 +1719,153 @@ button{
 ========================================================= */
 
 .farmHud{
+
     position:absolute;
+
     z-index:80;
+
     left:18px;
+
     top:18px;
+
     display:grid;
-    grid-template-columns:repeat(2,minmax(125px,1fr));
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(135px,1fr)
+        );
+
     gap:8px;
+
 }
+
 
 .hudCard{
+
     padding:8px 11px;
-    min-width:140px;
+
+    min-width:145px;
+
     border-radius:10px;
-    background:rgba(255,253,229,.94);
+
+    background:
+        rgba(255,253,229,.94);
+
     border:2px solid #d4aa48;
-    box-shadow:0 4px 9px rgba(66,44,10,.15);
+
+    box-shadow:
+        0 4px 9px
+        rgba(66,44,10,.15);
+
 }
+
 
 .hudCard span{
+
     display:block;
-    color:#7c6841;
+
     font-size:9px;
+
+    color:#7c6841;
+
     letter-spacing:1px;
+
     text-transform:uppercase;
+
 }
+
 
 .hudCard strong{
-    color:#4f391a;
+
     font-size:16px;
+
+    color:#4f391a;
+
 }
 
-.levelFlag{
+
+.infrastructureFlag{
+
     position:absolute;
+
     z-index:85;
+
     right:18px;
+
     top:18px;
-    max-width:260px;
+
     padding:11px 14px;
+
     border-radius:10px;
-    background:rgba(255,249,207,.95);
+
+    background:
+        rgba(255,249,207,.95);
+
     border:3px solid #b17c20;
-    box-shadow:0 5px 10px rgba(67,47,12,.2);
+
+    box-shadow:
+        0 5px 10px
+        rgba(67,47,12,.2);
+
 }
 
-.levelFlag strong{
+
+.infrastructureFlag strong{
+
     display:block;
+
     color:#744a14;
-    font-size:17px;
+
 }
 
-.levelFlag small{
+
+.infrastructureFlag small{
+
     color:#8a733e;
+
 }
+
 
 .farmAlert{
+
     display:none;
+
     position:absolute;
+
     z-index:90;
+
     right:18px;
-    top:92px;
-    max-width:310px;
+
+    top:105px;
+
+    max-width:330px;
+
     padding:9px 12px;
+
     border-radius:9px;
+
     background:#fff0a9;
+
     border:3px solid #d88722;
+
     color:#70430f;
+
     font-size:12px;
+
     font-weight:900;
-    box-shadow:0 5px 10px rgba(67,47,12,.2);
+
 }
 
+
 .farmAlert.danger{
+
     background:#ffd0ba;
+
     border-color:#c64c32;
+
     color:#7c2619;
+
 }
 
 
@@ -971,254 +1874,545 @@ button{
 ========================================================= */
 
 .dashboard{
+
     display:grid;
-    grid-template-columns:1fr 1fr 1.08fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
+
     margin-top:22px;
+
 }
+
 
 .panel{
+
     position:relative;
+
     padding:20px;
+
     border:4px solid #c89c3f;
+
     border-radius:17px;
+
     background:
-        linear-gradient(rgba(255,255,255,.96),rgba(255,249,216,.96));
+
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,249,216,.96)
+        );
+
     box-shadow:
-        0 7px 0 #8b672b,
-        0 12px 22px rgba(74,57,18,.18);
+
+        0 7px 0
+        #8b672b,
+
+        0 12px 22px
+        rgba(74,57,18,.18);
+
 }
+
 
 .panel h2{
+
     margin:0 0 14px;
+
     color:#5f441c;
+
 }
+
 
 .priceDisplay{
-    margin:5px 0 12px;
+
+    margin:
+        5px 0 12px;
+
     font-size:40px;
+
     color:#28924b;
+
     font-weight:900;
+
 }
+
 
 .priceSlider{
+
     width:100%;
+
     accent-color:#f0ad32;
+
 }
+
 
 .rangeLabels{
+
     display:flex;
-    justify-content:space-between;
+
+    justify-content:
+        space-between;
+
     color:#8e805d;
+
     font-size:12px;
+
 }
+
 
 .interestMeter,
-.levelMeter,
 .storageMeter{
+
     width:100%;
+
     height:19px;
+
     overflow:hidden;
+
     border-radius:20px;
+
     background:#e7dfbf;
+
     border:2px solid #9d8a59;
+
 }
+
 
 #interestBar{
+
     height:100%;
-    background:linear-gradient(90deg,#50bf5b,#f4d44d);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #50bf5b,
+            #f4d44d
+        );
+
 }
 
-#levelBar{
-    height:100%;
-    background:linear-gradient(90deg,#e2a332,#f8d866);
-}
 
 #storageBar{
+
     height:100%;
+
     width:0%;
-    background:linear-gradient(90deg,#54b958,#e5ce3f);
-    transition:.2s;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #54b958,
+            #e5ce3f
+        );
+
 }
+
 
 #storageBar.warning{
-    background:linear-gradient(90deg,#e8c13d,#eb812e);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e8c13d,
+            #eb812e
+        );
+
 }
+
 
 #storageBar.full{
-    background:linear-gradient(90deg,#e45a34,#bb2e2e);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e45a34,
+            #bb2e2e
+        );
+
 }
+
 
 .infoGrid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:9px;
+
     margin-top:13px;
+
 }
+
 
 .infoCell{
+
     padding:8px 10px;
+
     border-radius:7px;
+
     background:#fff9d9;
+
     border:1px solid #dcc57f;
+
 }
+
 
 .infoCell span{
+
     display:block;
+
     color:#8b7850;
+
     font-size:10px;
+
     text-transform:uppercase;
+
 }
+
 
 .infoCell strong{
+
     color:#594018;
+
     font-size:14px;
+
 }
+
 
 .wholesaleStatus{
+
     margin:10px 0;
+
     padding:11px;
+
     border-radius:9px;
+
     background:#fff4cb;
+
     border:2px solid #d5b65c;
+
 }
+
 
 .wholesaleStatus.locked{
-    opacity:.6;
-    filter:grayscale(.5);
+
+    opacity:.65;
+
 }
+
 
 .toggleRow{
+
     display:flex;
+
     align-items:center;
-    justify-content:space-between;
+
+    justify-content:
+        space-between;
+
     gap:12px;
+
     margin-top:12px;
+
 }
+
 
 .switch{
+
     position:relative;
+
     display:inline-block;
+
     width:58px;
+
     height:30px;
+
 }
+
 
 .switch input{
+
     opacity:0;
+
     width:0;
+
     height:0;
+
 }
+
 
 .sliderSwitch{
+
     position:absolute;
+
     cursor:pointer;
+
     inset:0;
+
     background:#aaa38e;
+
     transition:.25s;
+
     border-radius:30px;
+
     border:2px solid #756f5c;
+
 }
+
 
 .sliderSwitch::before{
+
     content:"";
+
     position:absolute;
+
     width:21px;
+
     height:21px;
+
     left:3px;
+
     top:2px;
+
     background:white;
+
     border-radius:50%;
+
     transition:.25s;
+
 }
 
-.switch input:checked + .sliderSwitch{
+
+.switch input:checked +
+.sliderSwitch{
+
     background:#49ad58;
+
 }
 
-.switch input:checked + .sliderSwitch::before{
-    transform:translateX(27px);
+
+.switch input:checked +
+.sliderSwitch::before{
+
+    transform:
+        translateX(27px);
+
 }
+
 
 .storageWarningText{
+
     min-height:34px;
+
     margin-top:8px;
+
     color:#8f6724;
+
     font-size:12px;
+
     font-weight:bold;
+
 }
+
 
 .storageWarningText.danger{
+
     color:#b43e25;
+
 }
 
-.levelName{
-    color:#a16816;
-    font-size:23px;
-    font-weight:900;
+
+/* =========================================================
+   INFRASTRUCTURE
+========================================================= */
+
+.infrastructureSection{
+
+    margin-top:34px;
+
 }
 
-.levelRequirements{
+
+.sectionHeader{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+
+.sectionHeader h2{
+
+    margin:0;
+
+    font-size:29px;
+
+    color:#684617;
+
+}
+
+
+.sectionHeader p{
+
+    margin:6px 0 0;
+
+    color:#705b35;
+
+}
+
+
+.infraGrid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin:13px 0;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
 }
 
-.requirementBox{
-    padding:11px;
-    border-radius:8px;
-    background:#fff4cb;
-    border:2px solid #d7b75d;
+
+.infraCard{
+
+    padding:20px;
+
+    border:4px solid #b4812c;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            #fff9d8,
+            #f6e3a6
+        );
+
+    box-shadow:
+
+        0 6px 0
+        #795720,
+
+        0 11px 20px
+        rgba(73,54,15,.18);
+
 }
 
-.requirementBox.ready{
-    background:#dcf5cc;
-    border-color:#64ae4b;
+
+.infraIcon{
+
+    font-size:38px;
+
 }
 
-.reqLabel{
-    font-size:10px;
-    color:#846f43;
-    text-transform:uppercase;
+
+.infraTitle{
+
+    font-size:22px;
+
+    font-weight:900;
+
+    color:#664516;
+
 }
 
-.reqValue{
+
+.infraLevel{
+
     margin-top:3px;
-    color:#815414;
-    font-size:17px;
-    font-weight:900;
+
+    color:#98701e;
+
+    font-weight:bold;
+
 }
 
-.requirementBox.ready .reqValue{
-    color:#268348;
-}
 
-.upgradeFarmBtn{
-    width:100%;
+.infraStat{
+
     margin-top:12px;
-    padding:13px;
-    border:3px solid #835417;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    border:1px solid #d7bd72;
+
+}
+
+
+.infraStat strong{
+
+    color:#724b11;
+
+}
+
+
+.infraNext{
+
+    margin-top:10px;
+
+    min-height:50px;
+
+    font-size:13px;
+
+    color:#715b30;
+
+}
+
+
+.infraBtn{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:12px;
+
+    border:3px solid #815317;
+
     border-radius:9px;
-    background:linear-gradient(#ffd15d,#efa934);
-    color:#573511;
-    font-size:14px;
+
+    background:
+
+        linear-gradient(
+            #ffd15d,
+            #efa934
+        );
+
+    color:#563511;
+
     font-weight:900;
-    box-shadow:0 4px 0 #835417;
+
+    box-shadow:
+        0 4px 0
+        #815317;
+
 }
 
-.upgradeFarmBtn:disabled{
+
+.infraBtn:disabled{
+
     cursor:not-allowed;
-    color:#998f70;
-    border-color:#b5a886;
-    background:#ded8c4;
-    box-shadow:none;
-}
 
-.progressHint{
-    margin-top:8px;
-    min-height:32px;
-    font-size:12px;
-    color:#7d6e49;
+    color:#9b927a;
+
+    border-color:#b6aa8c;
+
+    background:#ddd7c4;
+
+    box-shadow:none;
+
 }
 
 
@@ -1227,197 +2421,403 @@ button{
 ========================================================= */
 
 .treeSection{
+
     margin-top:38px;
-    padding:24px 15px 30px;
+
+    padding:
+        24px
+        15px
+        30px;
+
     border-radius:22px;
+
     border:5px solid #8b6727;
+
     background:
-        radial-gradient(circle at center,#f7dc77 0,#ddba54 23%,transparent 24%),
-        linear-gradient(#fff2ae,#f3d77a);
+
+        radial-gradient(
+            circle at center,
+            #f7dc77 0,
+            #ddba54 23%,
+            transparent 24%
+        ),
+
+        linear-gradient(
+            #fff2ae,
+            #f3d77a
+        );
+
     box-shadow:
-        0 10px 0 #674a20,
-        0 15px 30px rgba(78,57,20,.2);
+
+        0 10px 0
+        #674a20,
+
+        0 15px 30px
+        rgba(78,57,20,.2);
+
 }
+
 
 .sectionTitle{
+
     margin:0;
+
     text-align:center;
+
     color:#684617;
+
     letter-spacing:3px;
+
 }
+
 
 .sectionSubtitle{
+
     text-align:center;
+
     color:#927333;
-    margin:7px 0 22px;
+
+    margin:
+        7px 0 22px;
+
 }
+
 
 .treeWrapper{
+
     overflow-x:auto;
+
 }
+
 
 .tree{
+
     position:relative;
+
     width:1160px;
+
     height:715px;
+
     margin:auto;
+
     border-radius:18px;
+
     border:4px solid #9b772d;
+
     overflow:hidden;
+
     background:
-        radial-gradient(circle at center,rgba(255,226,112,.5),transparent 27%),
-        linear-gradient(90deg,rgba(73,172,61,.18),transparent 36%),
-        linear-gradient(-90deg,rgba(91,128,213,.18),transparent 36%),
+
+        radial-gradient(
+            circle at center,
+            rgba(255,226,112,.5),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(73,172,61,.18),
+            transparent 36%
+        ),
+
+        linear-gradient(
+            -90deg,
+            rgba(91,128,213,.18),
+            transparent 36%
+        ),
+
         #f8efc9;
+
 }
+
 
 .tree svg{
+
     position:absolute;
+
     inset:0;
+
     width:100%;
+
     height:100%;
+
 }
+
 
 .treeLine{
+
     stroke:#9c8a5e;
+
     stroke-width:4;
+
     opacity:.65;
+
 }
+
 
 .treeLine.active{
+
     stroke:#35a953;
+
     stroke-width:7;
+
     opacity:1;
-    filter:drop-shadow(0 0 4px #7cff94);
+
+    filter:
+        drop-shadow(
+            0 0 4px
+            #7cff94
+        );
+
 }
+
 
 .branchLabel{
+
     position:absolute;
+
     z-index:4;
+
     top:22px;
+
     font-size:17px;
+
     font-weight:900;
+
     letter-spacing:2px;
+
 }
+
 
 .productionLabel{
+
     left:110px;
+
     color:#317e36;
+
 }
+
 
 .marketingLabel{
+
     right:135px;
+
     color:#3768a5;
+
 }
+
 
 .automationLabel{
+
     top:653px;
+
     left:50%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     color:#996022;
+
 }
+
 
 .centerNode{
+
     position:absolute;
+
     z-index:5;
+
     left:520px;
+
     top:274px;
+
     width:120px;
+
     height:120px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
+
     border:6px solid #8a5d18;
-    background:linear-gradient(#ffd95f,#eaa433);
+
+    background:
+
+        linear-gradient(
+            #ffd95f,
+            #eaa433
+        );
+
     color:#5c3914;
+
     font-weight:900;
+
     box-shadow:
-        0 0 0 7px #fff3ad,
-        0 8px 15px rgba(85,58,16,.25);
+
+        0 0 0 7px
+        #fff3ad,
+
+        0 8px 15px
+        rgba(85,58,16,.25);
+
 }
+
 
 .node{
+
     position:absolute;
+
     z-index:8;
+
     width:100px;
+
     height:100px;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
     padding:6px;
+
     text-align:center;
+
     border-radius:50%;
+
     border:5px solid #9b8758;
+
     background:#fff8d9;
+
     color:#66563a;
+
     font-size:11px;
+
     font-weight:bold;
-    box-shadow:0 5px 7px rgba(83,65,24,.16);
+
+    box-shadow:
+        0 5px 7px
+        rgba(83,65,24,.16);
+
     transition:.15s;
+
 }
+
 
 .node:hover{
-    transform:scale(1.07);
+
+    transform:
+        scale(1.07);
+
 }
+
 
 .node .icon{
+
     font-size:24px;
+
 }
+
 
 .node .cost{
+
     margin-top:3px;
+
     color:#a16c17;
+
     font-size:10px;
+
 }
+
 
 .node.available{
+
     border-color:#e5a922;
+
     background:#fff1a6;
+
     color:#583b10;
-    box-shadow:
-        0 0 0 4px rgba(255,218,85,.35),
-        0 7px 11px rgba(95,69,15,.2);
+
 }
+
 
 .node.locked{
+
     opacity:.42;
-    filter:grayscale(.8);
+
+    filter:
+        grayscale(.8);
+
 }
+
 
 .node.bought{
+
     opacity:1;
+
     color:white;
+
     border:6px solid #ffdd57;
+
     background:
-        radial-gradient(circle at 50% 35%,#58cf67,#238644 72%);
+
+        radial-gradient(
+            circle at 50% 35%,
+            #58cf67,
+            #238644 72%
+        );
+
     box-shadow:
-        0 0 0 5px #fff2a8,
-        0 0 22px #6cff89,
-        0 8px 10px rgba(66,66,16,.25);
-    transform:scale(1.06);
+
+        0 0 0 5px
+        #fff2a8,
+
+        0 0 22px
+        #6cff89;
+
+    transform:
+        scale(1.06);
+
 }
+
 
 .node.bought::after{
-    content:"✓ OWNED";
-    position:absolute;
-    left:50%;
-    bottom:-18px;
-    transform:translateX(-50%);
-    padding:4px 8px;
-    min-width:75px;
-    border-radius:6px;
-    background:#197f3b;
-    border:2px solid white;
-    color:white;
-    font-size:10px;
-    font-weight:900;
-}
 
-.node.bought .cost{
-    color:#fffbe5;
+    content:"✓ OWNED";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-18px;
+
+    transform:
+        translateX(-50%);
+
+    min-width:75px;
+
+    padding:4px 8px;
+
+    border-radius:6px;
+
+    background:#197f3b;
+
+    border:2px solid white;
+
+    color:white;
+
+    font-size:10px;
+
+    font-weight:900;
+
 }
 
 
@@ -1426,67 +2826,125 @@ button{
 ========================================================= */
 
 .bottomPanels{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
+
     margin-top:30px;
+
 }
+
 
 .log{
+
     height:180px;
+
     overflow:auto;
+
     padding:10px;
+
     border:2px solid #d2bd7e;
+
     border-radius:8px;
+
     background:#fffbea;
+
     font-size:13px;
+
 }
+
 
 .logEntry{
+
     padding:5px 0;
-    border-bottom:1px solid #ebddb2;
+
+    border-bottom:
+        1px solid #ebddb2;
+
 }
+
 
 .smallBtn{
+
     margin-top:12px;
+
     padding:9px 13px;
+
     border-radius:7px;
+
     border:2px solid #956622;
+
     background:#f6c858;
+
     color:#573913;
+
     font-weight:bold;
+
 }
+
 
 .resetBtn{
+
     background:#e88468;
+
 }
+
 
 .tooltip{
+
     position:fixed;
+
     z-index:9999;
+
     width:255px;
+
     padding:13px;
+
     pointer-events:none;
+
     opacity:0;
+
     border-radius:9px;
+
     border:3px solid #9e7121;
+
     background:#fff8ce;
+
     color:#574419;
-    box-shadow:0 8px 20px rgba(72,51,15,.3);
+
+    box-shadow:
+        0 8px 20px
+        rgba(72,51,15,.3);
+
 }
+
 
 .tooltip strong{
+
     color:#925a11;
+
 }
+
 
 .toolDesc{
+
     margin-top:5px;
+
 }
 
+
 .toolReq{
+
     margin-top:7px;
+
     color:#9e6416;
+
     font-weight:bold;
+
 }
 
 
@@ -1497,25 +2955,48 @@ button{
 @media(max-width:1150px){
 
     .dashboard{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .infraGrid{
+
+        grid-template-columns:
+            1fr;
+
     }
 
 }
 
+
 @media(max-width:950px){
 
     .topbar{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
         text-align:center;
+
     }
+
 
     .leftTop,
     .topStats{
+
         justify-content:center;
+
     }
 
+
     .bottomPanels{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
 }
@@ -1526,50 +3007,85 @@ button{
 
 <body>
 
+
 <header class="topbar">
 
-    <div class="leftTop">
 
-        <button id="getChickenBtn" onclick="getChicken()">
-            🐔 Get Chicken
-        </button>
+<div class="leftTop">
 
-        <div>
-            Chickens:
-            <strong id="topChickens">1</strong>
-            <br>
-            <small id="chickenCooldown">Ready</small>
-        </div>
-
-    </div>
+<button
+id="getChickenBtn"
+onclick="getChicken()"
+>
+🐔 Get Chicken
+</button>
 
 
-    <div class="logoArea">
+<div>
 
-        <h1>🐔 CHICKEN FARM EMPIRE</h1>
+Chickens:
+<strong id="topChickens">
+1
+</strong>
 
-        <small id="farmNameTop">
-            Backyard Coop — Level 1
-        </small>
+<br>
 
-    </div>
+<small id="chickenCooldown">
+Ready
+</small>
+
+</div>
+
+</div>
 
 
-    <div class="topStats">
 
-        <div class="statTop">
-            <span>Money</span>
-            <strong id="topMoney">$0.00</strong>
-        </div>
+<div class="logoArea">
 
-        <div class="statTop">
-            <span>Eggs</span>
-            <strong id="topEggs">0</strong>
-        </div>
+<h1>
+🐔 CHICKEN FARM EMPIRE
+</h1>
 
-    </div>
+<small id="farmNameTop">
+Barn Lv. 1 • Storage Lv. 1
+</small>
+
+</div>
+
+
+
+<div class="topStats">
+
+<div class="statTop">
+
+<span>
+Money
+</span>
+
+<strong id="topMoney">
+$0.00
+</strong>
+
+</div>
+
+
+<div class="statTop">
+
+<span>
+Eggs
+</span>
+
+<strong id="topEggs">
+0
+</strong>
+
+</div>
+
+</div>
+
 
 </header>
+
 
 
 <main class="game">
@@ -1581,500 +3097,709 @@ button{
 
 <div class="farmViewport">
 
-<section class="farmShell level1" id="farmScene">
 
-    <div class="farmSky"></div>
-    <div class="sun"></div>
-    <div class="hillsBack"></div>
-    <div class="grassTexture"></div>
-
-    <div class="road roadMain"></div>
-    <div class="road roadCross"></div>
-
-
-    <div class="farmHud">
-
-        <div class="hudCard">
-            <span>Chickens</span>
-            <strong id="farmChickenCount">1</strong>
-        </div>
-
-        <div class="hudCard">
-            <span>Barn Capacity</span>
-            <strong id="farmBarnCapacity">1 / 40</strong>
-        </div>
-
-        <div class="hudCard">
-            <span>Egg Inventory</span>
-            <strong id="farmEggCount">0</strong>
-        </div>
-
-        <div class="hudCard">
-            <span>Egg Storage</span>
-            <strong id="farmStorageCount">0 / 500</strong>
-        </div>
-
-        <div class="hudCard">
-            <span>Production</span>
-            <strong id="farmProduction">0.08/sec</strong>
-        </div>
-
-        <div class="hudCard">
-            <span>Income</span>
-            <strong id="farmIncome">$0.00/sec</strong>
-        </div>
-
-    </div>
+<section
+class="
+farmShell
+barn-level-1
+storage-level-1
+"
+id="farmScene"
+>
 
 
-    <div class="levelFlag">
+<div class="farmSky"></div>
 
-        <strong id="farmLevelFlag">
-            Level 1 — Backyard Coop
-        </strong>
+<div class="sun"></div>
 
-        <small id="farmLevelSmall">
-            Barn capacity: 40 chickens
-        </small>
+<div class="hillsBack"></div>
 
-    </div>
+<div class="grassTexture"></div>
 
 
-    <div class="farmAlert" id="farmAlert"></div>
+<div class="road roadMain"></div>
+
+<div class="road roadCross"></div>
 
 
-    <!-- MAIN BARN -->
 
-    <div class="building barn">
-
-        <div class="barnRoof"></div>
-
-        <div class="barnWindow"></div>
-
-        <div class="barnDoor"></div>
-
-        <div class="barnBadge" id="barnBadge">
-            BARN LV. 1
-        </div>
-
-    </div>
+<div class="farmHud">
 
 
-    <div class="barnWing"></div>
+<div class="hudCard">
 
-    <div class="barnWing2"></div>
+<span>
+Chickens
+</span>
 
-    <div class="poultryHouse"></div>
+<strong id="farmChickenCount">
+1
+</strong>
 
-
-    <!-- SMALL COOP -->
-
-    <div class="building coop">
-
-        <div class="coopRoof"></div>
-
-        <div class="coopSign">
-            HEN HOUSE
-        </div>
-
-        <div class="coopDoor"></div>
-
-    </div>
+</div>
 
 
-    <div class="building silo"></div>
+<div class="hudCard">
+
+<span>
+Barn Capacity
+</span>
+
+<strong id="farmBarnCapacity">
+1 / 40
+</strong>
+
+</div>
 
 
-    <div class="building farmHouse">
+<div class="hudCard">
 
-        <div class="houseRoof"></div>
+<span>
+Egg Inventory
+</span>
 
-        <div class="houseDoor"></div>
+<strong id="farmEggCount">
+0
+</strong>
 
-        <div class="houseWindow one"></div>
-
-        <div class="houseWindow two"></div>
-
-    </div>
-
-
-    <div class="storageShed"></div>
+</div>
 
 
-    <div class="cropField"></div>
+<div class="hudCard">
 
-    <div class="pond"></div>
+<span>
+Storage
+</span>
 
+<strong id="farmStorageCount">
+0 / 500
+</strong>
 
-    <div class="fence top"></div>
-    <div class="fence bottom"></div>
-    <div class="fence left"></div>
-    <div class="fence right"></div>
-
-
-    <div class="chickenYard" id="chickenYard">
-
-        <div class="yardLabel">
-            🐔 CHICKEN YARD
-        </div>
-
-        <div
-            class="flockOverflow"
-            id="flockOverflow"
-            style="display:none;"
-        ></div>
-
-    </div>
+</div>
 
 
-    <div class="deliveryTruck" id="deliveryTruck">
-        🚚
-    </div>
+<div class="hudCard">
+
+<span>
+Egg Production
+</span>
+
+<strong id="farmProduction">
+0.08/sec
+</strong>
+
+</div>
+
+
+<div class="hudCard">
+
+<span>
+Income
+</span>
+
+<strong id="farmIncome">
+$0.00/sec
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+<div class="infrastructureFlag">
+
+<strong id="infrastructureTitle">
+Infrastructure
+</strong>
+
+<small id="infrastructureSmall">
+Barn 1 • Storage 1 • Distribution 0
+</small>
+
+</div>
+
+
+
+<div
+class="farmAlert"
+id="farmAlert"
+></div>
+
+
+
+<!-- BARN -->
+
+<div class="building barn">
+
+<div class="barnRoof"></div>
+
+<div class="barnWindow"></div>
+
+<div class="barnDoor"></div>
+
+<div
+class="barnBadge"
+id="barnBadge"
+>
+BARN LV. 1
+</div>
+
+</div>
+
+
+<div class="barnWing"></div>
+
+<div class="barnWing2"></div>
+
+<div class="poultryHouse"></div>
+
+
+
+<!-- COOP -->
+
+<div class="building coop">
+
+<div class="coopRoof"></div>
+
+<div class="coopSign">
+HEN HOUSE
+</div>
+
+<div class="coopDoor"></div>
+
+</div>
+
+
+
+<div class="building silo"></div>
+
+
+
+<div class="building farmHouse">
+
+<div class="houseRoof"></div>
+
+<div class="houseDoor"></div>
+
+</div>
+
+
+
+<div class="storageShed"></div>
+
+<div class="cropField"></div>
+
+<div class="pond"></div>
+
+
+
+<div class="fence top"></div>
+
+<div class="fence bottom"></div>
+
+<div class="fence left"></div>
+
+<div class="fence right"></div>
+
+
+
+<div
+class="chickenYard"
+id="chickenYard"
+>
+
+<div class="yardLabel">
+🐔 CHICKEN YARD
+</div>
+
+<div
+class="flockOverflow"
+id="flockOverflow"
+style="display:none;"
+></div>
+
+</div>
+
+
+
+<div
+class="deliveryTruck"
+id="deliveryTruck"
+>
+🚚
+</div>
 
 
 </section>
+
 
 </div>
 
 
 
 <!-- =====================================================
-     ECONOMY PANELS
+     MARKET PANELS
 ===================================================== -->
 
 <section class="dashboard">
 
 
-<!-- RETAIL MARKET -->
-
 <div class="panel">
 
-    <h2>🥚 Retail Egg Market</h2>
 
-    <div>
-        Your Selling Price
-    </div>
-
-    <div
-        class="priceDisplay"
-        id="priceDisplay"
-    >
-        $0.20
-    </div>
+<h2>
+🥚 Retail Egg Market
+</h2>
 
 
-    <input
-        id="priceSlider"
-        class="priceSlider"
-        type="range"
-        min="1"
-        max="99"
-        value="20"
-        oninput="changePrice(this.value)"
-    >
+<div>
+Your Selling Price
+</div>
 
 
-    <div class="rangeLabels">
-        <span>$0.01</span>
-        <span>$0.99</span>
-    </div>
+<div
+class="priceDisplay"
+id="priceDisplay"
+>
+$0.20
+</div>
 
 
-    <h3>
-        Public Interest
-    </h3>
+<input
+id="priceSlider"
+class="priceSlider"
+type="range"
+min="1"
+max="99"
+value="20"
+oninput="changePrice(this.value)"
+>
 
 
-    <div class="interestMeter">
-        <div id="interestBar"></div>
-    </div>
+<div class="rangeLabels">
+
+<span>
+$0.01
+</span>
+
+<span>
+$0.99
+</span>
+
+</div>
 
 
-    <div class="infoGrid">
-
-        <div class="infoCell">
-
-            <span>Public Interest</span>
-
-            <strong id="interestText">
-                100%
-            </strong>
-
-        </div>
+<h3>
+Public Interest
+</h3>
 
 
-        <div class="infoCell">
+<div class="interestMeter">
 
-            <span>Retail Demand</span>
+<div id="interestBar"></div>
 
-            <strong id="retailSpeedText">
-                0/sec
-            </strong>
-
-        </div>
+</div>
 
 
-        <div class="infoCell">
-
-            <span>Egg Production</span>
-
-            <strong id="productionText">
-                0/sec
-            </strong>
-
-        </div>
+<div class="infoGrid">
 
 
-        <div class="infoCell">
+<div class="infoCell">
 
-            <span>Combined Income</span>
+<span>
+Public Interest
+</span>
 
-            <strong id="revenueText">
-                $0/sec
-            </strong>
+<strong id="interestText">
+100%
+</strong>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="infoCell">
+
+<span>
+Retail Demand
+</span>
+
+<strong id="retailSpeedText">
+0/sec
+</strong>
+
+</div>
+
+
+<div class="infoCell">
+
+<span>
+Egg Production
+</span>
+
+<strong id="productionText">
+0/sec
+</strong>
+
+</div>
+
+
+<div class="infoCell">
+
+<span>
+Income
+</span>
+
+<strong id="revenueText">
+$0/sec
+</strong>
+
+</div>
+
+
+</div>
+
 
 </div>
 
 
 
-<!-- WHOLESALE + STORAGE -->
-
 <div class="panel">
 
-    <h2>🚚 Wholesale & Storage</h2>
+
+<h2>
+🚚 Wholesale & Storage
+</h2>
 
 
-    <div
-        class="wholesaleStatus"
-        id="wholesaleStatus"
-    >
-
-        <strong id="wholesaleTitle">
-            Wholesale Contract
-        </strong>
-
-        <p
-            id="wholesaleDescription"
-            style="margin:7px 0 0;font-size:13px;"
-        >
-            Unlocks at Farm Level 2.
-        </p>
+<div
+class="wholesaleStatus"
+id="wholesaleStatus"
+>
 
 
-        <div class="toggleRow">
-
-            <span>
-                Auto-sell surplus eggs
-            </span>
-
-            <label class="switch">
-
-                <input
-                    type="checkbox"
-                    id="wholesaleToggle"
-                    onchange="toggleWholesale(this.checked)"
-                >
-
-                <span class="sliderSwitch"></span>
-
-            </label>
-
-        </div>
-
-    </div>
+<strong id="wholesaleTitle">
+Wholesale Locked
+</strong>
 
 
-    <div class="infoGrid">
-
-        <div class="infoCell">
-
-            <span>Wholesale Price</span>
-
-            <strong id="wholesalePriceText">
-                $0.08
-            </strong>
-
-        </div>
+<p
+id="wholesaleDescription"
+style="margin:7px 0 0;font-size:13px;"
+>
+Purchase Distribution Level 1 to unlock wholesale.
+</p>
 
 
-        <div class="infoCell">
+<div class="toggleRow">
 
-            <span>Wholesale Capacity</span>
-
-            <strong id="wholesaleSpeedText">
-                0/sec
-            </strong>
-
-        </div>
+<span>
+Auto-sell surplus eggs
+</span>
 
 
-        <div class="infoCell">
+<label class="switch">
 
-            <span>Total Sales Capacity</span>
+<input
+type="checkbox"
+id="wholesaleToggle"
+onchange="toggleWholesale(this.checked)"
+>
 
-            <strong id="totalSalesText">
-                0/sec
-            </strong>
+<span class="sliderSwitch"></span>
 
-        </div>
+</label>
 
+</div>
 
-        <div class="infoCell">
-
-            <span>Storage Capacity</span>
-
-            <strong id="storageCapacityText">
-                500 eggs
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <h3 style="margin-bottom:7px;">
-        Egg Storage
-    </h3>
-
-
-    <div class="storageMeter">
-
-        <div id="storageBar"></div>
-
-    </div>
-
-
-    <div
-        style="margin-top:6px;font-weight:bold;"
-        id="storageText"
-    >
-        0 / 500 eggs
-    </div>
-
-
-    <div
-        class="storageWarningText"
-        id="storageWarningText"
-    >
-        Plenty of storage space available.
-    </div>
 
 </div>
 
 
 
-<!-- FARM EXPANSION -->
-
-<div class="panel">
-
-    <h2>🏡 Farm Expansion</h2>
+<div class="infoGrid">
 
 
-    <div
-        class="levelName"
-        id="levelName"
-    >
-        Level 1 — Backyard Coop
-    </div>
+<div class="infoCell">
+
+<span>
+Wholesale Price
+</span>
+
+<strong id="wholesalePriceText">
+Locked
+</strong>
+
+</div>
 
 
-    <p id="levelDescription">
-        A small backyard operation with room to grow.
-    </p>
+<div class="infoCell">
+
+<span>
+Wholesale Capacity
+</span>
+
+<strong id="wholesaleSpeedText">
+Locked
+</strong>
+
+</div>
 
 
-    <div class="infoGrid">
+<div class="infoCell">
 
-        <div class="infoCell">
+<span>
+Total Sales Capacity
+</span>
 
-            <span>Current Barn Capacity</span>
+<strong id="totalSalesText">
+0/sec
+</strong>
 
-            <strong id="barnCapacityText">
-                40 chickens
-            </strong>
-
-        </div>
-
-
-        <div class="infoCell">
-
-            <span>Current Egg Storage</span>
-
-            <strong id="farmStorageText">
-                500 eggs
-            </strong>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div style="margin-top:14px;" class="levelMeter">
+<div class="infoCell">
 
-        <div id="levelBar"></div>
+<span>
+Storage Capacity
+</span>
 
-    </div>
+<strong id="storageCapacityText">
+500 eggs
+</strong>
 
-
-    <div class="levelRequirements">
-
-        <div
-            class="requirementBox"
-            id="chickenReqBox"
-        >
-
-            <div class="reqLabel">
-                Chickens Required
-            </div>
-
-            <div
-                class="reqValue"
-                id="levelChickenReq"
-            >
-                25
-            </div>
-
-        </div>
+</div>
 
 
-        <div
-            class="requirementBox"
-            id="moneyReqBox"
-        >
-
-            <div class="reqLabel">
-                Upgrade Cost
-            </div>
-
-            <div
-                class="reqValue"
-                id="levelMoneyReq"
-            >
-                $75
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div
-        class="progressHint"
-        id="progressHint"
-    ></div>
+
+<h3>
+Egg Storage
+</h3>
 
 
-    <button
-        class="upgradeFarmBtn"
-        id="upgradeFarmBtn"
-        onclick="upgradeFarm()"
-    >
-        Expand Farm
-    </button>
+<div class="storageMeter">
+
+<div id="storageBar"></div>
+
+</div>
+
+
+<div
+id="storageText"
+style="margin-top:6px;font-weight:bold;"
+>
+0 / 500 eggs
+</div>
+
+
+<div
+class="storageWarningText"
+id="storageWarningText"
+>
+Plenty of storage space available.
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     INFRASTRUCTURE
+===================================================== -->
+
+<section class="infrastructureSection">
+
+
+<div class="sectionHeader">
+
+<h2>
+🏗️ FARM INFRASTRUCTURE
+</h2>
+
+<p>
+There are no farm levels anymore.
+Upgrade each part of the farm separately with money.
+</p>
+
+</div>
+
+
+
+<div class="infraGrid">
+
+
+<!-- BARN -->
+
+<div class="infraCard">
+
+
+<div class="infraIcon">
+🏚️
+</div>
+
+
+<div class="infraTitle">
+Chicken Barn
+</div>
+
+
+<div
+class="infraLevel"
+id="barnLevelText"
+>
+Level 1 / 10
+</div>
+
+
+<div class="infraStat">
+
+Current capacity:
+
+<strong id="barnCurrentCapacity">
+40 chickens
+</strong>
+
+</div>
+
+
+<div
+class="infraNext"
+id="barnNextText"
+>
+Next barn holds 150 chickens.
+</div>
+
+
+<button
+class="infraBtn"
+id="barnUpgradeBtn"
+onclick="upgradeBarn()"
+>
+Upgrade Barn
+</button>
+
+
+</div>
+
+
+
+<!-- STORAGE -->
+
+<div class="infraCard">
+
+
+<div class="infraIcon">
+📦
+</div>
+
+
+<div class="infraTitle">
+Egg Storage
+</div>
+
+
+<div
+class="infraLevel"
+id="storageLevelText"
+>
+Level 1 / 10
+</div>
+
+
+<div class="infraStat">
+
+Current capacity:
+
+<strong id="storageCurrentCapacity">
+500 eggs
+</strong>
+
+</div>
+
+
+<div
+class="infraNext"
+id="storageNextText"
+>
+Next storage holds 2,000 eggs.
+</div>
+
+
+<button
+class="infraBtn"
+id="storageUpgradeBtn"
+onclick="upgradeStorage()"
+>
+Upgrade Storage
+</button>
+
+
+</div>
+
+
+
+<!-- DISTRIBUTION -->
+
+<div class="infraCard">
+
+
+<div class="infraIcon">
+🚚
+</div>
+
+
+<div class="infraTitle">
+Distribution
+</div>
+
+
+<div
+class="infraLevel"
+id="distributionLevelText"
+>
+Level 0 / 10
+</div>
+
+
+<div class="infraStat">
+
+Wholesale network:
+
+<strong id="distributionCurrentText">
+Not established
+</strong>
+
+</div>
+
+
+<div
+class="infraNext"
+id="distributionNextText"
+>
+Purchase your first wholesale contract.
+</div>
+
+
+<button
+class="infraBtn"
+id="distributionUpgradeBtn"
+onclick="upgradeDistribution()"
+>
+Unlock Distribution
+</button>
+
+
+</div>
+
 
 </div>
 
@@ -2089,276 +3814,529 @@ button{
 
 <section class="treeSection">
 
+
 <h2 class="sectionTitle">
-    FARM TALENT TREE
+FARM TALENT TREE
 </h2>
 
+
 <div class="sectionSubtitle">
-    Production makes more eggs. Marketing sells more eggs.
-    Automation improves storage, wholesale distribution and chicken growth.
+Talent upgrades no longer require a farm level.
+Follow each connected branch and pay for the upgrades you want.
 </div>
+
 
 
 <div class="treeWrapper">
 
-<div class="tree" id="upgradeTree">
+
+<div
+class="tree"
+id="upgradeTree"
+>
 
 
 <div class="branchLabel productionLabel">
-    PRODUCTION
+PRODUCTION
 </div>
+
 
 <div class="branchLabel marketingLabel">
-    MARKETING
+MARKETING
 </div>
 
+
 <div class="branchLabel automationLabel">
-    AUTOMATION & DISTRIBUTION
+AUTOMATION & DISTRIBUTION
 </div>
+
 
 
 <svg viewBox="0 0 1160 715">
 
-<line id="line-center-feed" class="treeLine"
-x1="580" y1="335" x2="420" y2="280"/>
 
-<line id="line-feed-nest" class="treeLine"
-x1="420" y1="280" x2="300" y2="200"/>
-
-<line id="line-nest-breed" class="treeLine"
-x1="300" y1="200" x2="175" y2="120"/>
-
-<line id="line-breed-precision" class="treeLine"
-x1="175" y1="120" x2="145" y2="280"/>
-
-<line id="line-precision-golden" class="treeLine"
-x1="145" y1="280" x2="250" y2="405"/>
+<line
+id="line-center-feed"
+class="treeLine"
+x1="580"
+y1="335"
+x2="420"
+y2="280"
+/>
 
 
-<line id="line-center-sign" class="treeLine"
-x1="580" y1="335" x2="735" y2="280"/>
-
-<line id="line-sign-delivery" class="treeLine"
-x1="735" y1="280" x2="855" y2="200"/>
-
-<line id="line-delivery-brand" class="treeLine"
-x1="855" y1="200" x2="985" y2="120"/>
-
-<line id="line-brand-grocery" class="treeLine"
-x1="985" y1="120" x2="1010" y2="280"/>
-
-<line id="line-grocery-national" class="treeLine"
-x1="1010" y1="280" x2="910" y2="405"/>
+<line
+id="line-feed-nest"
+class="treeLine"
+x1="420"
+y1="280"
+x2="300"
+y2="200"
+/>
 
 
-<line id="line-center-conveyor" class="treeLine"
-x1="580" y1="335" x2="580" y2="465"/>
+<line
+id="line-nest-breed"
+class="treeLine"
+x1="300"
+y1="200"
+x2="175"
+y2="120"
+/>
 
-<line id="line-conveyor-incubator" class="treeLine"
-x1="580" y1="465" x2="470" y2="560"/>
 
-<line id="line-incubator-brooder" class="treeLine"
-x1="470" y1="560" x2="580" y2="605"/>
+<line
+id="line-breed-precision"
+class="treeLine"
+x1="175"
+y1="120"
+x2="145"
+y2="280"
+/>
 
-<line id="line-brooder-manager" class="treeLine"
-x1="580" y1="605" x2="690" y2="560"/>
 
-<line id="line-manager-robotics" class="treeLine"
-x1="690" y1="560" x2="800" y2="500"/>
+<line
+id="line-precision-golden"
+class="treeLine"
+x1="145"
+y1="280"
+x2="250"
+y2="405"
+/>
+
+
+
+<line
+id="line-center-sign"
+class="treeLine"
+x1="580"
+y1="335"
+x2="735"
+y2="280"
+/>
+
+
+<line
+id="line-sign-delivery"
+class="treeLine"
+x1="735"
+y1="280"
+x2="855"
+y2="200"
+/>
+
+
+<line
+id="line-delivery-brand"
+class="treeLine"
+x1="855"
+y1="200"
+x2="985"
+y2="120"
+/>
+
+
+<line
+id="line-brand-grocery"
+class="treeLine"
+x1="985"
+y1="120"
+x2="1010"
+y2="280"
+/>
+
+
+<line
+id="line-grocery-national"
+class="treeLine"
+x1="1010"
+y1="280"
+x2="910"
+y2="405"
+/>
+
+
+
+<line
+id="line-center-conveyor"
+class="treeLine"
+x1="580"
+y1="335"
+x2="580"
+y2="465"
+/>
+
+
+<line
+id="line-conveyor-incubator"
+class="treeLine"
+x1="580"
+y1="465"
+x2="470"
+y2="560"
+/>
+
+
+<line
+id="line-incubator-brooder"
+class="treeLine"
+x1="470"
+y1="560"
+x2="580"
+y2="605"
+/>
+
+
+<line
+id="line-brooder-manager"
+class="treeLine"
+x1="580"
+y1="605"
+x2="690"
+y2="560"
+/>
+
+
+<line
+id="line-manager-robotics"
+class="treeLine"
+x1="690"
+y1="560"
+x2="800"
+y2="500"
+/>
+
 
 </svg>
 
 
+
 <div class="centerNode">
-    🐔<br>
-    YOUR<br>
-    FARM
+🐔<br>
+YOUR<br>
+FARM
 </div>
 
 
+
 <button
-class="node production"
+class="node"
 id="node-feed"
 style="left:370px;top:230px;"
 onclick="buyUpgrade('feed')"
 >
-<span class="icon">🌾</span>
+
+<span class="icon">
+🌾
+</span>
+
 Better Feed
-<span class="cost">$75</span>
+
+<span class="cost">
+$75
+</span>
+
 </button>
 
 
+
 <button
-class="node production"
+class="node"
 id="node-nest"
 style="left:250px;top:150px;"
 onclick="buyUpgrade('nest')"
 >
-<span class="icon">🪺</span>
+
+<span class="icon">
+🪺
+</span>
+
 Warm Nests
-<span class="cost">$300</span>
+
+<span class="cost">
+$300
+</span>
+
 </button>
 
 
+
 <button
-class="node production"
+class="node"
 id="node-breed"
 style="left:125px;top:70px;"
 onclick="buyUpgrade('breed')"
 >
-<span class="icon">🐣</span>
+
+<span class="icon">
+🐣
+</span>
+
 Layer Breed
-<span class="cost">$1.2K</span>
+
+<span class="cost">
+$1.2K
+</span>
+
 </button>
 
 
+
 <button
-class="node production"
+class="node"
 id="node-precision"
 style="left:95px;top:230px;"
 onclick="buyUpgrade('precision')"
 >
-<span class="icon">🧪</span>
+
+<span class="icon">
+🧪
+</span>
+
 Precision Feed
-<span class="cost">$6K</span>
+
+<span class="cost">
+$6K
+</span>
+
 </button>
 
 
+
 <button
-class="node production"
+class="node"
 id="node-golden"
 style="left:200px;top:355px;"
 onclick="buyUpgrade('golden')"
 >
-<span class="icon">✨</span>
+
+<span class="icon">
+✨
+</span>
+
 Golden Genetics
-<span class="cost">$30K</span>
+
+<span class="cost">
+$30K
+</span>
+
 </button>
 
 
+
 <button
-class="node marketing"
+class="node"
 id="node-sign"
 style="left:685px;top:230px;"
 onclick="buyUpgrade('sign')"
 >
-<span class="icon">🪧</span>
+
+<span class="icon">
+🪧
+</span>
+
 Roadside Sign
-<span class="cost">$100</span>
+
+<span class="cost">
+$100
+</span>
+
 </button>
 
 
+
 <button
-class="node marketing"
+class="node"
 id="node-delivery"
 style="left:805px;top:150px;"
 onclick="buyUpgrade('delivery')"
 >
-<span class="icon">🚚</span>
+
+<span class="icon">
+🚚
+</span>
+
 Local Delivery
-<span class="cost">$450</span>
+
+<span class="cost">
+$450
+</span>
+
 </button>
 
 
+
 <button
-class="node marketing"
+class="node"
 id="node-brand"
 style="left:935px;top:70px;"
 onclick="buyUpgrade('brand')"
 >
-<span class="icon">📣</span>
+
+<span class="icon">
+📣
+</span>
+
 Farm Brand
-<span class="cost">$2K</span>
+
+<span class="cost">
+$2K
+</span>
+
 </button>
 
 
+
 <button
-class="node marketing"
+class="node"
 id="node-grocery"
 style="left:960px;top:230px;"
 onclick="buyUpgrade('grocery')"
 >
-<span class="icon">🏪</span>
+
+<span class="icon">
+🏪
+</span>
+
 Grocery Deal
-<span class="cost">$10K</span>
+
+<span class="cost">
+$10K
+</span>
+
 </button>
 
 
+
 <button
-class="node marketing"
+class="node"
 id="node-national"
 style="left:860px;top:355px;"
 onclick="buyUpgrade('national')"
 >
-<span class="icon">📺</span>
+
+<span class="icon">
+📺
+</span>
+
 National Ads
-<span class="cost">$50K</span>
+
+<span class="cost">
+$50K
+</span>
+
 </button>
 
 
+
 <button
-class="node automation"
+class="node"
 id="node-conveyor"
 style="left:530px;top:415px;"
 onclick="buyUpgrade('conveyor')"
 >
-<span class="icon">⚙️</span>
+
+<span class="icon">
+⚙️
+</span>
+
 Conveyor
-<span class="cost">$650</span>
+
+<span class="cost">
+$650
+</span>
+
 </button>
 
 
+
 <button
-class="node automation"
+class="node"
 id="node-incubator"
 style="left:420px;top:510px;"
 onclick="buyUpgrade('incubator')"
 >
-<span class="icon">🔥</span>
+
+<span class="icon">
+🔥
+</span>
+
 Incubator
-<span class="cost">$3K</span>
+
+<span class="cost">
+$3K
+</span>
+
 </button>
 
 
+
 <button
-class="node automation"
+class="node"
 id="node-brooder"
 style="left:530px;top:555px;"
 onclick="buyUpgrade('brooder')"
 >
-<span class="icon">🐥</span>
+
+<span class="icon">
+🐥
+</span>
+
 Auto Brooder
-<span class="cost">$12K</span>
+
+<span class="cost">
+$12K
+</span>
+
 </button>
 
 
+
 <button
-class="node automation"
+class="node"
 id="node-manager"
 style="left:640px;top:510px;"
 onclick="buyUpgrade('manager')"
 >
-<span class="icon">👨‍🌾</span>
+
+<span class="icon">
+👨‍🌾
+</span>
+
 Farm Manager
-<span class="cost">$28K</span>
+
+<span class="cost">
+$28K
+</span>
+
 </button>
 
 
+
 <button
-class="node automation"
+class="node"
 id="node-robotics"
 style="left:750px;top:450px;"
 onclick="buyUpgrade('robotics')"
 >
-<span class="icon">🤖</span>
+
+<span class="icon">
+🤖
+</span>
+
 Robotics
-<span class="cost">$85K</span>
+
+<span class="cost">
+$85K
+</span>
+
 </button>
 
 
 </div>
 
 </div>
+
 
 </section>
 
@@ -2369,7 +4347,9 @@ Robotics
 
 <div class="panel">
 
-<h2>📜 Farm Activity</h2>
+<h2>
+📜 Farm Activity
+</h2>
 
 <div
 class="log"
@@ -2379,24 +4359,27 @@ id="gameLog"
 </div>
 
 
+
 <div class="panel">
 
-<h2>Farm Rules</h2>
+<h2>
+Farm Rules
+</h2>
 
 <p>
-Each farm level provides a larger barn and more egg storage.
-You cannot add new chickens after the barn reaches capacity.
+Your barn, egg storage and distribution network are now completely separate upgrades.
 </p>
 
 <p>
-Retail customers pay your selected price. Wholesale buyers pay less,
-but they help clear excess inventory much faster.
+You can upgrade any infrastructure category whenever you have enough money.
+There are no overall farm levels.
 </p>
 
 <p>
-If egg storage fills completely, your chickens temporarily stop adding
-new eggs until enough inventory has been sold.
+If your barn fills, you cannot add more chickens.
+If egg storage fills, new egg production pauses until inventory is sold.
 </p>
+
 
 <button
 class="smallBtn"
@@ -2405,12 +4388,14 @@ onclick="saveGame(true)"
 Save Game
 </button>
 
+
 <button
 class="smallBtn resetBtn"
 onclick="resetGame()"
 >
 Reset Game
 </button>
+
 
 </div>
 
@@ -2442,113 +4427,231 @@ id="tooltipRequirement"
 </div>
 
 
+
 <script>
 
 
 /* =========================================================
-   FARM LEVELS
+   BARN UPGRADES
 ========================================================= */
 
-const FARM_LEVELS = [
+const BARN_LEVELS = [
 
 {
 level:1,
-name:"Backyard Coop",
-chickens:0,
-cost:0,
-barnCapacity:40,
-storageCapacity:500,
-description:"A small backyard operation with room to grow."
+capacity:40,
+cost:0
 },
 
 {
 level:2,
-name:"Family Coop",
-chickens:25,
-cost:75,
-barnCapacity:150,
-storageCapacity:2000,
-description:"A larger barn gives your growing flock room to expand."
+capacity:150,
+cost:150
 },
 
 {
 level:3,
-name:"Homestead Farm",
-chickens:100,
-cost:400,
-barnCapacity:450,
-storageCapacity:6000,
-description:"A proper homestead with serious egg production."
+capacity:450,
+cost:800
 },
 
 {
 level:4,
-name:"Small Egg Farm",
-chickens:300,
-cost:2000,
-barnCapacity:1000,
-storageCapacity:15000,
-description:"Your barn gains its first major expansion wing."
+capacity:1000,
+cost:3500
 },
 
 {
 level:5,
-name:"Commercial Farm",
-chickens:750,
-cost:7500,
-barnCapacity:2000,
-storageCapacity:40000,
-description:"A commercial-sized barn supports a much larger flock."
+capacity:2000,
+cost:12000
 },
 
 {
 level:6,
-name:"County Egg Company",
-chickens:1500,
-cost:25000,
-barnCapacity:4000,
-storageCapacity:100000,
-description:"Your operation now supplies customers throughout the county."
+capacity:4000,
+cost:40000
 },
 
 {
 level:7,
-name:"Regional Farm",
-chickens:3000,
-cost:80000,
-barnCapacity:8000,
-storageCapacity:250000,
-description:"A second barn wing supports thousands of chickens."
+capacity:8000,
+cost:125000
 },
 
 {
 level:8,
-name:"Industrial Egg Co.",
-chickens:6000,
-cost:250000,
-barnCapacity:16000,
-storageCapacity:600000,
-description:"Your farm has become an industrial-scale operation."
+capacity:16000,
+cost:400000
 },
 
 {
 level:9,
-name:"Egg Corporation",
-chickens:12000,
-cost:750000,
-barnCapacity:32000,
-storageCapacity:1500000,
-description:"Dedicated poultry houses join your enormous barn complex."
+capacity:32000,
+cost:1200000
 },
 
 {
 level:10,
-name:"Golden Roost Empire",
-chickens:25000,
-cost:2500000,
-barnCapacity:75000,
-storageCapacity:4000000,
-description:"One of the world's largest egg farming operations."
+capacity:75000,
+cost:4000000
+}
+
+];
+
+
+
+/* =========================================================
+   STORAGE UPGRADES
+========================================================= */
+
+const STORAGE_LEVELS = [
+
+{
+level:1,
+capacity:500,
+cost:0
+},
+
+{
+level:2,
+capacity:2000,
+cost:100
+},
+
+{
+level:3,
+capacity:6000,
+cost:500
+},
+
+{
+level:4,
+capacity:15000,
+cost:2500
+},
+
+{
+level:5,
+capacity:40000,
+cost:8500
+},
+
+{
+level:6,
+capacity:100000,
+cost:28000
+},
+
+{
+level:7,
+capacity:250000,
+cost:90000
+},
+
+{
+level:8,
+capacity:600000,
+cost:280000
+},
+
+{
+level:9,
+capacity:1500000,
+cost:850000
+},
+
+{
+level:10,
+capacity:4000000,
+cost:2500000
+}
+
+];
+
+
+
+/* =========================================================
+   DISTRIBUTION UPGRADES
+========================================================= */
+
+const DISTRIBUTION_LEVELS = [
+
+{
+level:0,
+name:"No Distribution",
+cost:0,
+multiplier:0
+},
+
+{
+level:1,
+name:"Local Wholesale Contract",
+cost:250,
+multiplier:1
+},
+
+{
+level:2,
+name:"County Distribution",
+cost:1200,
+multiplier:1.30
+},
+
+{
+level:3,
+name:"Regional Routes",
+cost:5000,
+multiplier:1.60
+},
+
+{
+level:4,
+name:"Multiple Trucks",
+cost:18000,
+multiplier:1.95
+},
+
+{
+level:5,
+name:"Commercial Distribution",
+cost:60000,
+multiplier:2.30
+},
+
+{
+level:6,
+name:"Statewide Network",
+cost:200000,
+multiplier:2.70
+},
+
+{
+level:7,
+name:"Multi-State Shipping",
+cost:650000,
+multiplier:3.15
+},
+
+{
+level:8,
+name:"National Warehousing",
+cost:2000000,
+multiplier:3.65
+},
+
+{
+level:9,
+name:"National Distribution",
+cost:6000000,
+multiplier:4.25
+},
+
+{
+level:10,
+name:"Continental Supply Network",
+cost:18000000,
+multiplier:5
 }
 
 ];
@@ -2563,139 +4666,214 @@ const UPGRADES = {
 
 
 feed:{
+
 name:"Better Feed",
+
 cost:75,
-level:1,
+
 requires:null,
-description:"Better feed increases egg production by 15%."
+
+description:
+"Better feed increases egg production by 15%."
+
 },
 
 
 nest:{
+
 name:"Warm Nests",
+
 cost:300,
-level:2,
+
 requires:"feed",
-description:"Comfortable nesting boxes increase egg production another 20%."
+
+description:
+"Comfortable nesting boxes increase production another 20%."
+
 },
 
 
 breed:{
+
 name:"Layer Breed",
+
 cost:1200,
-level:3,
+
 requires:"nest",
-description:"Specialized laying hens increase egg production another 30%."
+
+description:
+"Specialized laying hens increase production another 30%."
+
 },
 
 
 precision:{
+
 name:"Precision Feed",
+
 cost:6000,
-level:5,
+
 requires:"breed",
-description:"Scientific feeding increases egg production another 40%."
+
+description:
+"Scientific feeding increases production another 40%."
+
 },
 
 
 golden:{
+
 name:"Golden Genetics",
+
 cost:30000,
-level:7,
+
 requires:"precision",
-description:"Elite genetics doubles total egg production."
+
+description:
+"Elite genetics doubles total egg production."
+
 },
 
 
 
 sign:{
+
 name:"Roadside Sign",
+
 cost:100,
-level:1,
+
 requires:null,
-description:"Retail demand increases by 20%."
+
+description:
+"Retail egg demand increases by 20%."
+
 },
 
 
 delivery:{
+
 name:"Local Delivery",
+
 cost:450,
-level:2,
+
 requires:"sign",
-description:"Retail demand rises 30% and wholesale capacity rises 35%."
+
+description:
+"Retail demand rises 30% and wholesale capacity rises 35%."
+
 },
 
 
 brand:{
+
 name:"Farm Brand",
+
 cost:2000,
-level:4,
+
 requires:"delivery",
-description:"Customers tolerate higher retail prices, reducing the price penalty."
+
+description:
+"Customers tolerate higher retail prices."
+
 },
 
 
 grocery:{
+
 name:"Grocery Deal",
+
 cost:10000,
-level:6,
+
 requires:"brand",
-description:"Retail demand rises 60% and wholesale capacity rises 50%."
+
+description:
+"Retail demand rises 60% and wholesale capacity rises 50%."
+
 },
 
 
 national:{
+
 name:"National Ads",
+
 cost:50000,
-level:8,
+
 requires:"grocery",
-description:"Retail demand doubles and wholesale distribution expands 75%."
+
+description:
+"Retail demand doubles and wholesale capacity rises 75%."
+
 },
 
 
 
 conveyor:{
+
 name:"Egg Conveyor",
+
 cost:650,
-level:2,
+
 requires:null,
-description:"Wholesale capacity rises 35% and egg storage rises 25%."
+
+description:
+"Wholesale capacity rises 35% and egg storage increases 25%."
+
 },
 
 
 incubator:{
+
 name:"Incubator",
+
 cost:3000,
-level:4,
+
 requires:"conveyor",
-description:"Automatically raises one new chicken every 30 seconds when barn space is available."
+
+description:
+"Automatically raises one chicken every 30 seconds when barn space exists."
+
 },
 
 
 brooder:{
+
 name:"Auto Brooder",
+
 cost:12000,
-level:6,
+
 requires:"incubator",
-description:"Improves automatic chicken growth to one chicken every 12 seconds."
+
+description:
+"Automatically raises one chicken every 12 seconds."
+
 },
 
 
 manager:{
+
 name:"Farm Manager",
+
 cost:28000,
-level:7,
+
 requires:"brooder",
-description:"Production, retail sales and wholesale distribution increase by 25%. Storage increases 20%."
+
+description:
+"Production, retail sales and wholesale distribution increase 25%."
+
 },
 
 
 robotics:{
+
 name:"Farm Robotics",
+
 cost:85000,
-level:9,
+
 requires:"manager",
-description:"Raises three chickens every 10 seconds, increases wholesale capacity 50% and storage 35%."
+
+description:
+"Raises three chickens every 10 seconds and greatly improves distribution."
+
 }
 
 };
@@ -2716,7 +4894,11 @@ money:0,
 
 eggPrice:.20,
 
-farmLevel:1,
+barnLevel:1,
+
+storageLevel:1,
+
+distributionLevel:0,
 
 upgrades:{},
 
@@ -2728,28 +4910,40 @@ lifetimeMoney:0,
 
 lifetimeChickens:1,
 
-lifetimeRetailEggs:0,
-
-lifetimeWholesaleEggs:0,
-
-lastUpdate:Date.now(),
+lastUpdate:
+Date.now(),
 
 lastChickenClick:0,
 
-lastAutoChicken:Date.now()
+lastAutoChicken:
+Date.now()
 
 };
 
 
-let renderedChickenCount = -1;
 
-let renderedFarmLevel = -1;
+let renderedChickenCount =
+-1;
 
-let storageFullLogged = false;
 
-let barnFullLogged = false;
+let renderedBarnLevel =
+-1;
 
-const MAX_VISIBLE_CHICKENS = 100;
+
+let renderedStorageLevel =
+-1;
+
+
+let storageFullLogged =
+false;
+
+
+let barnFullLogged =
+false;
+
+
+const MAX_VISIBLE_CHICKENS =
+100;
 
 
 
@@ -2760,33 +4954,62 @@ const MAX_VISIBLE_CHICKENS = 100;
 function formatMoney(number){
 
 if(number >= 1000000000)
-return "$" + (number / 1000000000).toFixed(2) + "B";
+return "$" +
+(number / 1000000000).toFixed(2) +
+"B";
+
 
 if(number >= 1000000)
-return "$" + (number / 1000000).toFixed(2) + "M";
+return "$" +
+(number / 1000000).toFixed(2) +
+"M";
+
 
 if(number >= 1000)
-return "$" + (number / 1000).toFixed(2) + "K";
+return "$" +
+(number / 1000).toFixed(2) +
+"K";
 
-return "$" + number.toFixed(2);
+
+return "$" +
+number.toFixed(2);
 
 }
+
 
 
 function formatNumber(number){
 
 if(number >= 1000000000)
-return (number / 1000000000).toFixed(2) + "B";
+return (
+number /
+1000000000
+).toFixed(2) +
+"B";
+
 
 if(number >= 1000000)
-return (number / 1000000).toFixed(2) + "M";
+return (
+number /
+1000000
+).toFixed(2) +
+"M";
+
 
 if(number >= 1000)
-return (number / 1000).toFixed(2) + "K";
+return (
+number /
+1000
+).toFixed(2) +
+"K";
 
-return Math.floor(number).toLocaleString();
+
+return Math.floor(
+number
+).toLocaleString();
 
 }
+
 
 
 function hasUpgrade(id){
@@ -2798,13 +5021,31 @@ return !!state.upgrades[id];
 
 
 /* =========================================================
-   FARM CAPACITY
+   INFRASTRUCTURE VALUES
 ========================================================= */
 
-function getCurrentFarm(){
+function getBarn(){
 
-return FARM_LEVELS[
-state.farmLevel - 1
+return BARN_LEVELS[
+state.barnLevel - 1
+];
+
+}
+
+
+function getStorage(){
+
+return STORAGE_LEVELS[
+state.storageLevel - 1
+];
+
+}
+
+
+function getDistribution(){
+
+return DISTRIBUTION_LEVELS[
+state.distributionLevel
 ];
 
 }
@@ -2812,7 +5053,7 @@ state.farmLevel - 1
 
 function getChickenCapacity(){
 
-return getCurrentFarm().barnCapacity;
+return getBarn().capacity;
 
 }
 
@@ -2820,22 +5061,27 @@ return getCurrentFarm().barnCapacity;
 function getStorageCapacity(){
 
 let capacity =
-getCurrentFarm().storageCapacity;
+getStorage().capacity;
 
 
 if(hasUpgrade("conveyor"))
-capacity *= 1.25;
+capacity *=
+1.25;
 
 
 if(hasUpgrade("manager"))
-capacity *= 1.20;
+capacity *=
+1.20;
 
 
 if(hasUpgrade("robotics"))
-capacity *= 1.35;
+capacity *=
+1.35;
 
 
-return Math.floor(capacity);
+return Math.floor(
+capacity
+);
 
 }
 
@@ -2853,36 +5099,43 @@ state.chickens
 
 
 /* =========================================================
-   EGG PRODUCTION
+   PRODUCTION
 ========================================================= */
 
 function getProductionMultiplier(){
 
-let mult = 1;
+let mult =
+1;
 
 
 if(hasUpgrade("feed"))
-mult *= 1.15;
+mult *=
+1.15;
 
 
 if(hasUpgrade("nest"))
-mult *= 1.20;
+mult *=
+1.20;
 
 
 if(hasUpgrade("breed"))
-mult *= 1.30;
+mult *=
+1.30;
 
 
 if(hasUpgrade("precision"))
-mult *= 1.40;
+mult *=
+1.40;
 
 
 if(hasUpgrade("golden"))
-mult *= 2;
+mult *=
+2;
 
 
 if(hasUpgrade("manager"))
-mult *= 1.25;
+mult *=
+1.25;
 
 
 return mult;
@@ -2903,7 +5156,7 @@ getProductionMultiplier();
 
 
 /* =========================================================
-   RETAIL MARKET
+   PUBLIC INTEREST
 ========================================================= */
 
 function getPublicInterest(){
@@ -2913,25 +5166,28 @@ Math.max(
 0,
 Math.min(
 1,
-(state.eggPrice - .01) /
+(
+state.eggPrice -
+.01
+) /
 .98
 )
 );
 
 
-let penaltyStrength =
+let penalty =
 .92;
 
 
 if(hasUpgrade("brand"))
-penaltyStrength =
+penalty =
 .72;
 
 
 return Math.max(
 .08,
 1 -
-penaltyStrength *
+penalty *
 Math.pow(
 normalized,
 1.18
@@ -2940,6 +5196,11 @@ normalized,
 
 }
 
+
+
+/* =========================================================
+   RETAIL SALES
+========================================================= */
 
 function getRetailMultiplier(){
 
@@ -2977,14 +5238,16 @@ return mult;
 }
 
 
-/*
-Retail demand now scales with your flock.
+function getDistributionRetailBonus(){
 
-79 chickens at Level 2:
-79 × .06 + 2 × .75 = 6.24 base demand
+return 1 +
+(
+state.distributionLevel *
+.05
+);
 
-Public interest and marketing then modify that number.
-*/
+}
+
 
 function getRetailSalesPerSecond(){
 
@@ -2993,15 +5256,13 @@ const baseDemand =
 state.chickens *
 .06
 ) +
-(
-state.farmLevel *
-.75
-);
+1.25;
 
 
 return (
 baseDemand *
 getRetailMultiplier() *
+getDistributionRetailBonus() *
 getPublicInterest()
 );
 
@@ -3010,13 +5271,13 @@ getPublicInterest()
 
 
 /* =========================================================
-   WHOLESALE MARKET
+   WHOLESALE
 ========================================================= */
 
 function wholesaleUnlocked(){
 
-return state.farmLevel >=
-2;
+return state.distributionLevel >
+0;
 
 }
 
@@ -3035,7 +5296,7 @@ state.eggPrice *
 }
 
 
-function getWholesaleMultiplier(){
+function getWholesaleTalentMultiplier(){
 
 let mult =
 1;
@@ -3076,11 +5337,6 @@ return mult;
 }
 
 
-/*
-Wholesale is intentionally lower profit than retail,
-but can move large amounts of excess inventory.
-*/
-
 function getWholesaleSalesPerSecond(){
 
 if(
@@ -3090,19 +5346,19 @@ if(
 return 0;
 
 
-const baseCapacity =
+const base =
 (
 state.chickens *
 .03
 ) +
-(
-state.farmLevel *
-1.5
+2;
+
+
+return (
+base *
+getDistribution().multiplier *
+getWholesaleTalentMultiplier()
 );
-
-
-return baseCapacity *
-getWholesaleMultiplier();
 
 }
 
@@ -3119,19 +5375,23 @@ getWholesaleSalesPerSecond()
 
 function toggleWholesale(enabled){
 
-if(!wholesaleUnlocked()){
+if(!wholesaleUnlocked())
+{
 
 state.wholesaleEnabled =
 false;
+
 
 document.getElementById(
 "wholesaleToggle"
 ).checked =
 false;
 
+
 addLog(
-"Wholesale contracts unlock at Farm Level 2."
+"Purchase Distribution Level 1 before using wholesale."
 );
+
 
 return;
 
@@ -3145,13 +5405,14 @@ state.wholesaleEnabled =
 addLog(
 state.wholesaleEnabled
 ?
-"🚚 Wholesale contract enabled."
+"🚚 Wholesale sales enabled."
 :
-"🚚 Wholesale contract paused."
+"🚚 Wholesale sales paused."
 );
 
 
 updateUI();
+
 
 saveGame();
 
@@ -3177,7 +5438,7 @@ updateUI();
 
 
 /* =========================================================
-   FARM VISUAL CHICKENS
+   CHICKEN VISUALS
 ========================================================= */
 
 function chickenPosition(index){
@@ -3223,6 +5484,7 @@ jitterY *
 };
 
 }
+
 
 
 function createChickenSprite(
@@ -3274,18 +5536,6 @@ position.top +
 "%";
 
 
-chicken.style.animationDelay =
-animate
-?
-"0s"
-:
-(
-(index % 10) *
-.09
-) +
-"s";
-
-
 yard.insertBefore(
 chicken,
 document.getElementById(
@@ -3294,6 +5544,7 @@ document.getElementById(
 );
 
 }
+
 
 
 function renderFarmChickens(
@@ -3316,8 +5567,8 @@ MAX_VISIBLE_CHICKENS
 
 if(
 !force &&
-renderedChickenCount ===
-target
+target ===
+renderedChickenCount
 )
 {
 
@@ -3346,8 +5597,7 @@ element.remove()
 
 for(
 let i=0;
-i<target;
-i++
+i<target;i++
 )
 {
 
@@ -3366,6 +5616,7 @@ target;
 updateOverflowLabel();
 
 }
+
 
 
 function addVisualChicken(){
@@ -3397,6 +5648,7 @@ actual;
 updateOverflowLabel();
 
 }
+
 
 
 function updateOverflowLabel(){
@@ -3443,7 +5695,7 @@ overflow.style.display =
 
 
 /* =========================================================
-   FARM APPEARANCE
+   FARM VISUAL APPEARANCE
 ========================================================= */
 
 function updateFarmAppearance(){
@@ -3455,20 +5707,18 @@ document.getElementById(
 
 
 if(
-renderedFarmLevel !==
-state.farmLevel
+renderedBarnLevel !==
+state.barnLevel
 )
 {
 
 for(
-let i=1;
-i<=10;
-i++
+let i=1;i<=10;i++
 )
 {
 
 scene.classList.remove(
-"level" +
+"barn-level-" +
 i
 );
 
@@ -3476,13 +5726,44 @@ i
 
 
 scene.classList.add(
-"level" +
-state.farmLevel
+"barn-level-" +
+state.barnLevel
 );
 
 
-renderedFarmLevel =
-state.farmLevel;
+renderedBarnLevel =
+state.barnLevel;
+
+}
+
+
+if(
+renderedStorageLevel !==
+state.storageLevel
+)
+{
+
+for(
+let i=1;i<=10;i++
+)
+{
+
+scene.classList.remove(
+"storage-level-" +
+i
+);
+
+}
+
+
+scene.classList.add(
+"storage-level-" +
+state.storageLevel
+);
+
+
+renderedStorageLevel =
+state.storageLevel;
 
 }
 
@@ -3507,14 +5788,10 @@ const now =
 Date.now();
 
 
-const cooldown =
-900;
-
-
 if(
 now -
 state.lastChickenClick <
-cooldown
+900
 )
 return;
 
@@ -3529,13 +5806,15 @@ if(!barnFullLogged)
 {
 
 addLog(
-"🏚️ Barn full! Expand your farm before adding more chickens."
+"🏚️ Barn full. Upgrade your barn to add more chickens."
 );
+
 
 barnFullLogged =
 true;
 
 }
+
 
 return;
 
@@ -3568,6 +5847,227 @@ updateUI();
 
 
 /* =========================================================
+   INFRASTRUCTURE UPGRADES
+========================================================= */
+
+function upgradeBarn(){
+
+if(
+state.barnLevel >=
+BARN_LEVELS.length
+)
+return;
+
+
+const next =
+BARN_LEVELS[
+state.barnLevel
+];
+
+
+if(
+state.money <
+next.cost
+)
+{
+
+addLog(
+"You need " +
+formatMoney(
+next.cost
+) +
+" to upgrade the barn."
+);
+
+
+return;
+
+}
+
+
+state.money -=
+next.cost;
+
+
+state.barnLevel++;
+
+
+renderedBarnLevel =
+-1;
+
+
+barnFullLogged =
+false;
+
+
+addLog(
+"🏚️ Barn upgraded to Level " +
+state.barnLevel +
+"! Capacity is now " +
+getChickenCapacity().toLocaleString() +
+" chickens."
+);
+
+
+updateFarmAppearance();
+
+
+updateUI();
+
+
+saveGame();
+
+}
+
+
+
+function upgradeStorage(){
+
+if(
+state.storageLevel >=
+STORAGE_LEVELS.length
+)
+return;
+
+
+const next =
+STORAGE_LEVELS[
+state.storageLevel
+];
+
+
+if(
+state.money <
+next.cost
+)
+{
+
+addLog(
+"You need " +
+formatMoney(
+next.cost
+) +
+" to upgrade egg storage."
+);
+
+
+return;
+
+}
+
+
+state.money -=
+next.cost;
+
+
+state.storageLevel++;
+
+
+renderedStorageLevel =
+-1;
+
+
+storageFullLogged =
+false;
+
+
+addLog(
+"📦 Egg storage upgraded to Level " +
+state.storageLevel +
+"! Base capacity is now " +
+getStorage().capacity.toLocaleString() +
+" eggs."
+);
+
+
+updateFarmAppearance();
+
+
+updateUI();
+
+
+saveGame();
+
+}
+
+
+
+function upgradeDistribution(){
+
+if(
+state.distributionLevel >=
+10
+)
+return;
+
+
+const next =
+DISTRIBUTION_LEVELS[
+state.distributionLevel + 1
+];
+
+
+if(
+state.money <
+next.cost
+)
+{
+
+addLog(
+"You need " +
+formatMoney(
+next.cost
+) +
+" to upgrade distribution."
+);
+
+
+return;
+
+}
+
+
+state.money -=
+next.cost;
+
+
+state.distributionLevel++;
+
+
+if(
+state.distributionLevel ===
+1
+)
+{
+
+state.wholesaleEnabled =
+true;
+
+}
+
+
+addLog(
+"🚚 Distribution upgraded to Level " +
+state.distributionLevel +
+" — " +
+getDistribution().name +
+"."
+);
+
+
+updateFarmAppearance();
+
+
+updateUI();
+
+
+saveGame();
+
+}
+
+
+
+/* =========================================================
    BUY TALENT
 ========================================================= */
 
@@ -3581,7 +6081,9 @@ if(!upgrade)
 return;
 
 
-if(hasUpgrade(id))
+if(
+hasUpgrade(id)
+)
 {
 
 addLog(
@@ -3589,24 +6091,6 @@ upgrade.name +
 " is already owned."
 );
 
-return;
-
-}
-
-
-if(
-state.farmLevel <
-upgrade.level
-)
-{
-
-addLog(
-"Farm Level " +
-upgrade.level +
-" is required for " +
-upgrade.name +
-"."
-);
 
 return;
 
@@ -3629,6 +6113,7 @@ upgrade.requires
 " first."
 );
 
+
 return;
 
 }
@@ -3649,6 +6134,7 @@ upgrade.cost
 upgrade.name +
 "."
 );
+
 
 return;
 
@@ -3672,102 +6158,6 @@ upgrade.name +
 
 updateUI();
 
-saveGame();
-
-}
-
-
-
-/* =========================================================
-   FARM EXPANSION
-========================================================= */
-
-function upgradeFarm(){
-
-if(
-state.farmLevel >=
-FARM_LEVELS.length
-)
-return;
-
-
-const next =
-FARM_LEVELS[
-state.farmLevel
-];
-
-
-if(
-state.chickens <
-next.chickens
-)
-{
-
-addLog(
-"You need " +
-next.chickens.toLocaleString() +
-" chickens for Level " +
-next.level +
-"."
-);
-
-return;
-
-}
-
-
-if(
-state.money <
-next.cost
-)
-{
-
-addLog(
-"You need " +
-formatMoney(
-next.cost
-) +
-" to reach Level " +
-next.level +
-"."
-);
-
-return;
-
-}
-
-
-state.money -=
-next.cost;
-
-
-state.farmLevel++;
-
-
-renderedFarmLevel =
--1;
-
-
-barnFullLogged =
-false;
-
-
-addLog(
-"🏡 FARM EXPANDED! Level " +
-state.farmLevel +
-" — " +
-FARM_LEVELS[
-state.farmLevel - 1
-].name +
-". Barn capacity is now " +
-getChickenCapacity().toLocaleString() +
-" chickens."
-);
-
-
-updateFarmAppearance();
-
-updateUI();
 
 saveGame();
 
@@ -3776,7 +6166,7 @@ saveGame();
 
 
 /* =========================================================
-   ACTIVITY LOG
+   LOG
 ========================================================= */
 
 function addLog(message){
@@ -3903,7 +6293,9 @@ getBarnSpaceRemaining()
 );
 
 
-if(room <= 0)
+if(
+room <= 0
+)
 {
 
 state.lastAutoChicken =
@@ -3933,19 +6325,21 @@ interval
 );
 
 
-const requested =
+const wanted =
 batches *
 amount;
 
 
 const gained =
 Math.min(
-requested,
+wanted,
 room
 );
 
 
-if(gained <= 0)
+if(
+gained <= 0
+)
 return;
 
 
@@ -3987,7 +6381,7 @@ getChickenCapacity()
 {
 
 addLog(
-"🏚️ The barn has reached capacity."
+"🏚️ Barn capacity reached."
 );
 
 }
@@ -3997,7 +6391,7 @@ addLog(
 
 
 /* =========================================================
-   ESTIMATED REVENUE
+   ESTIMATED INCOME
 ========================================================= */
 
 function getEstimatedRevenuePerSecond(){
@@ -4006,43 +6400,22 @@ const production =
 getEggsPerSecond();
 
 
-const retailRate =
+const retail =
 getRetailSalesPerSecond();
 
 
-const wholesaleRate =
+const wholesale =
 getWholesaleSalesPerSecond();
-
-
-const backlogExists =
-state.eggs >
-production *
-4;
-
-
-if(backlogExists)
-{
-
-return (
-retailRate *
-state.eggPrice
-) +
-(
-wholesaleRate *
-getWholesalePrice()
-);
-
-}
 
 
 const retailSold =
 Math.min(
 production,
-retailRate
+retail
 );
 
 
-const productionLeft =
+const remaining =
 Math.max(
 0,
 production -
@@ -4052,9 +6425,28 @@ retailSold
 
 const wholesaleSold =
 Math.min(
-productionLeft,
-wholesaleRate
+remaining,
+wholesale
 );
+
+
+if(
+state.eggs >
+production *
+5
+)
+{
+
+return (
+retail *
+state.eggPrice
+) +
+(
+wholesale *
+getWholesalePrice()
+);
+
+}
 
 
 return (
@@ -4099,8 +6491,9 @@ state.lastUpdate =
 now;
 
 
+
 /* =====================================================
-   PRODUCE EGGS — ONLY IF STORAGE HAS ROOM
+   PRODUCE EGGS
 ===================================================== */
 
 const productionRate =
@@ -4139,13 +6532,6 @@ state.lifetimeEggs +=
 produced;
 
 
-/*
-If an old save already contains more eggs than the
-new storage limit, no eggs are deleted.
-
-Production simply stops until inventory falls below
-the limit.
-*/
 
 if(
 state.eggs >=
@@ -4153,12 +6539,15 @@ storageCapacity
 )
 {
 
-if(!storageFullLogged)
+if(
+!storageFullLogged
+)
 {
 
 addLog(
-"⚠️ Egg storage is full. Egg production has paused until inventory is sold."
+"⚠️ Egg storage is full. Production has paused until inventory is sold."
 );
+
 
 storageFullLogged =
 true;
@@ -4181,7 +6570,7 @@ false;
 
 
 /* =====================================================
-   RETAIL SALES FIRST
+   RETAIL SALES
 ===================================================== */
 
 const retailCapacity =
@@ -4213,13 +6602,9 @@ state.lifetimeMoney +=
 retailRevenue;
 
 
-state.lifetimeRetailEggs +=
-retailSold;
-
-
 
 /* =====================================================
-   WHOLESALE SELLS REMAINING SURPLUS
+   WHOLESALE SALES
 ===================================================== */
 
 const wholesaleCapacity =
@@ -4251,13 +6636,9 @@ state.lifetimeMoney +=
 wholesaleRevenue;
 
 
-state.lifetimeWholesaleEggs +=
-wholesaleSold;
-
-
 
 /* =====================================================
-   AUTOMATIC CHICKENS
+   AUTOMATION
 ===================================================== */
 
 updateAutoChickens();
@@ -4270,7 +6651,7 @@ updateUI();
 
 
 /* =========================================================
-   UI
+   UPDATE UI
 ========================================================= */
 
 function updateUI(){
@@ -4283,17 +6664,17 @@ const production =
 getEggsPerSecond();
 
 
-const retailSales =
+const retail =
 getRetailSalesPerSecond();
 
 
-const wholesaleSales =
+const wholesale =
 getWholesaleSalesPerSecond();
 
 
 const totalSales =
-retailSales +
-wholesaleSales;
+retail +
+wholesale;
 
 
 const estimatedRevenue =
@@ -4320,7 +6701,7 @@ storageCapacity
 
 
 /* =====================================================
-   TOP HEADER
+   HEADER
 ===================================================== */
 
 document.getElementById(
@@ -4350,11 +6731,12 @@ state.eggs
 document.getElementById(
 "farmNameTop"
 ).textContent =
-FARM_LEVELS[
-state.farmLevel - 1
-].name +
-" — Level " +
-state.farmLevel;
+"Barn Lv. " +
+state.barnLevel +
+" • Storage Lv. " +
+state.storageLevel +
+" • Distribution Lv. " +
+state.distributionLevel;
 
 
 
@@ -4421,29 +6803,21 @@ estimatedRevenue
 
 
 document.getElementById(
-"farmLevelFlag"
+"infrastructureSmall"
 ).textContent =
-"Level " +
-state.farmLevel +
-" — " +
-FARM_LEVELS[
-state.farmLevel - 1
-].name;
-
-
-document.getElementById(
-"farmLevelSmall"
-).textContent =
-"Barn capacity: " +
-barnCapacity.toLocaleString() +
-" chickens";
+"Barn " +
+state.barnLevel +
+" • Storage " +
+state.storageLevel +
+" • Distribution " +
+state.distributionLevel;
 
 
 document.getElementById(
 "barnBadge"
 ).textContent =
 "BARN LV. " +
-state.farmLevel +
+state.barnLevel +
 " • " +
 formatNumber(
 barnCapacity
@@ -4483,7 +6857,7 @@ farmAlert.classList.add(
 
 
 farmAlert.textContent =
-"⚠️ STORAGE OVER CAPACITY — production paused while your old inventory is sold.";
+"⚠️ Inventory exceeds your storage capacity. Production is paused while eggs are sold.";
 
 }
 else if(
@@ -4502,7 +6876,7 @@ farmAlert.classList.add(
 
 
 farmAlert.textContent =
-"⚠️ EGG STORAGE FULL — production paused.";
+"⚠️ EGG STORAGE FULL — upgrade storage or sell more eggs.";
 
 }
 else if(
@@ -4516,7 +6890,7 @@ farmAlert.style.display =
 
 
 farmAlert.textContent =
-"⚠️ Egg storage is over 80% full. Lower prices, use wholesale, or expand.";
+"⚠️ Egg storage is over 80% full.";
 
 }
 else if(
@@ -4530,7 +6904,7 @@ farmAlert.style.display =
 
 
 farmAlert.textContent =
-"🏚️ Barn full — expand your farm to add more chickens.";
+"🏚️ Barn full — purchase the next barn upgrade.";
 
 }
 else
@@ -4586,7 +6960,7 @@ interest *
 document.getElementById(
 "retailSpeedText"
 ).textContent =
-retailSales.toFixed(
+retail.toFixed(
 2
 ) +
 "/sec";
@@ -4658,7 +7032,8 @@ state.wholesaleEnabled
 document.getElementById(
 "wholesaleDescription"
 ).textContent =
-"Wholesale buyers automatically purchase surplus inventory at a lower price.";
+getDistribution().name +
+" automatically moves excess eggs at a discounted price.";
 
 }
 else
@@ -4686,7 +7061,7 @@ document.getElementById(
 document.getElementById(
 "wholesaleDescription"
 ).textContent =
-"Reach Farm Level 2 to unlock wholesale egg contracts.";
+"Purchase Distribution Level 1 to unlock wholesale sales.";
 
 }
 
@@ -4698,8 +7073,7 @@ wholesaleUnlocked()
 ?
 formatMoney(
 getWholesalePrice()
-)
-+
+) +
 " / egg"
 :
 "Locked";
@@ -4713,7 +7087,7 @@ wholesaleUnlocked()
 (
 state.wholesaleEnabled
 ?
-wholesaleSales.toFixed(
+wholesale.toFixed(
 2
 ) +
 "/sec"
@@ -4744,7 +7118,7 @@ storageCapacity
 
 
 /* =====================================================
-   STORAGE METER
+   STORAGE
 ===================================================== */
 
 const storageBar =
@@ -4792,13 +7166,6 @@ storageBar.classList.add(
 }
 
 
-const storagePercent =
-Math.round(
-storageRatio *
-100
-);
-
-
 document.getElementById(
 "storageText"
 ).textContent =
@@ -4810,7 +7177,10 @@ formatNumber(
 storageCapacity
 ) +
 " eggs (" +
-storagePercent +
+Math.round(
+storageRatio *
+100
+) +
 "%)";
 
 
@@ -4832,7 +7202,7 @@ storageCapacity
 {
 
 storageWarning.textContent =
-"OVER CAPACITY: Your old inventory is being sold, but new egg production is paused.";
+"OVER CAPACITY: no eggs were deleted, but new production is paused.";
 
 
 storageWarning.classList.add(
@@ -4847,7 +7217,7 @@ storageRatio >=
 {
 
 storageWarning.textContent =
-"Storage is full. Production has stopped until eggs are sold.";
+"Storage is full. Upgrade storage or improve distribution.";
 
 
 storageWarning.classList.add(
@@ -4862,59 +7232,33 @@ storageRatio >=
 {
 
 storageWarning.textContent =
-"Storage is almost full. Consider lowering your retail price or enabling wholesale.";
-
-}
-else if(
-storageRatio >=
-.50 &&
-wholesaleUnlocked() &&
-!state.wholesaleEnabled
-)
-{
-
-storageWarning.textContent =
-"Inventory is building. Turning on wholesale can help move surplus eggs.";
+"Storage is almost full. Consider wholesale, a lower price or a storage upgrade.";
 
 }
 else
 {
 
 storageWarning.textContent =
-"Plenty of egg storage space available.";
+"Storage has room available.";
 
 }
 
 
 
 /* =====================================================
-   FARM EXPANSION
+   BARN INFRASTRUCTURE
 ===================================================== */
 
-const current =
-FARM_LEVELS[
-state.farmLevel -
-1
-];
-
-
 document.getElementById(
-"levelName"
+"barnLevelText"
 ).textContent =
 "Level " +
-state.farmLevel +
-" — " +
-current.name;
+state.barnLevel +
+" / 10";
 
 
 document.getElementById(
-"levelDescription"
-).textContent =
-current.description;
-
-
-document.getElementById(
-"barnCapacityText"
+"barnCurrentCapacity"
 ).textContent =
 formatNumber(
 barnCapacity
@@ -4922,88 +7266,29 @@ barnCapacity
 " chickens";
 
 
+const barnButton =
 document.getElementById(
-"farmStorageText"
-).textContent =
-formatNumber(
-storageCapacity
-) +
-" eggs";
-
-
-const upgradeButton =
-document.getElementById(
-"upgradeFarmBtn"
-);
-
-
-const chickenReqBox =
-document.getElementById(
-"chickenReqBox"
-);
-
-
-const moneyReqBox =
-document.getElementById(
-"moneyReqBox"
-);
-
-
-chickenReqBox.classList.remove(
-"ready"
-);
-
-
-moneyReqBox.classList.remove(
-"ready"
+"barnUpgradeBtn"
 );
 
 
 if(
-state.farmLevel >=
-FARM_LEVELS.length
+state.barnLevel >=
+10
 )
 {
 
 document.getElementById(
-"levelChickenReq"
+"barnNextText"
 ).textContent =
-"MAX";
+"Maximum barn size reached.";
 
 
-document.getElementById(
-"levelMoneyReq"
-).textContent =
-"MAX";
+barnButton.textContent =
+"MAX BARN LEVEL";
 
 
-document.getElementById(
-"levelBar"
-).style.width =
-"100%";
-
-
-document.getElementById(
-"progressHint"
-).textContent =
-"You have built the Golden Roost Empire.";
-
-
-chickenReqBox.classList.add(
-"ready"
-);
-
-
-moneyReqBox.classList.add(
-"ready"
-);
-
-
-upgradeButton.textContent =
-"MAX FARM LEVEL";
-
-
-upgradeButton.disabled =
+barnButton.disabled =
 true;
 
 }
@@ -5011,178 +7296,210 @@ else
 {
 
 const next =
-FARM_LEVELS[
-state.farmLevel
+BARN_LEVELS[
+state.barnLevel
 ];
 
 
 document.getElementById(
-"levelChickenReq"
+"barnNextText"
 ).textContent =
-next.chickens.toLocaleString();
+"Next barn holds " +
+next.capacity.toLocaleString() +
+" chickens. Cost: " +
+formatMoney(
+next.cost
+) +
+".";
 
 
-document.getElementById(
-"levelMoneyReq"
-).textContent =
+barnButton.textContent =
+"Upgrade Barn — " +
 formatMoney(
 next.cost
 );
 
 
-const chickenReady =
-state.chickens >=
-next.chickens;
-
-
-const moneyReady =
-state.money >=
+barnButton.disabled =
+state.money <
 next.cost;
 
-
-if(chickenReady)
-chickenReqBox.classList.add(
-"ready"
-);
+}
 
 
-if(moneyReady)
-moneyReqBox.classList.add(
-"ready"
-);
 
+/* =====================================================
+   STORAGE INFRASTRUCTURE
+===================================================== */
 
-const chickenProgress =
-Math.min(
-1,
-state.chickens /
-next.chickens
-);
-
-
-const moneyProgress =
-Math.min(
-1,
-state.money /
-next.cost
-);
-
-
-const totalProgress =
-(
-chickenProgress +
-moneyProgress
-) /
-2;
+document.getElementById(
+"storageLevelText"
+).textContent =
+"Level " +
+state.storageLevel +
+" / 10";
 
 
 document.getElementById(
-"levelBar"
-).style.width =
-totalProgress *
-100 +
-"%";
+"storageCurrentCapacity"
+).textContent =
+formatNumber(
+storageCapacity
+) +
+" eggs";
 
 
-const chickensRemaining =
-Math.max(
-0,
-next.chickens -
-state.chickens
-);
-
-
-const moneyRemaining =
-Math.max(
-0,
-next.cost -
-state.money
+const storageButton =
+document.getElementById(
+"storageUpgradeBtn"
 );
 
 
 if(
-!chickenReady &&
-!moneyReady
+state.storageLevel >=
+10
 )
 {
 
 document.getElementById(
-"progressHint"
+"storageNextText"
 ).textContent =
-"Need " +
-Math.ceil(
-chickensRemaining
-).toLocaleString() +
-" more chickens and " +
-formatMoney(
-moneyRemaining
-) +
-". Next barn holds " +
-next.barnCapacity.toLocaleString() +
-" chickens.";
+"Maximum storage level reached.";
 
-}
-else if(
-!chickenReady
-)
-{
 
-document.getElementById(
-"progressHint"
-).textContent =
-"Money ready. Need " +
-Math.ceil(
-chickensRemaining
-).toLocaleString() +
-" more chickens.";
+storageButton.textContent =
+"MAX STORAGE LEVEL";
 
-}
-else if(
-!moneyReady
-)
-{
 
-document.getElementById(
-"progressHint"
-).textContent =
-"Chicken requirement complete. Need " +
-formatMoney(
-moneyRemaining
-) +
-" more.";
+storageButton.disabled =
+true;
 
 }
 else
 {
 
+const next =
+STORAGE_LEVELS[
+state.storageLevel
+];
+
+
 document.getElementById(
-"progressHint"
+"storageNextText"
 ).textContent =
-"Expansion ready! New barn capacity: " +
-next.barnCapacity.toLocaleString() +
-" chickens. New storage: " +
-next.storageCapacity.toLocaleString() +
-" eggs.";
+"Next base storage holds " +
+next.capacity.toLocaleString() +
+" eggs. Cost: " +
+formatMoney(
+next.cost
+) +
+".";
 
-}
 
-
-upgradeButton.textContent =
-"Expand to Level " +
-next.level +
-" — " +
-next.name +
-" — " +
+storageButton.textContent =
+"Upgrade Storage — " +
 formatMoney(
 next.cost
 );
 
 
-upgradeButton.disabled =
-!(
-chickenReady &&
-moneyReady
+storageButton.disabled =
+state.money <
+next.cost;
+
+}
+
+
+
+/* =====================================================
+   DISTRIBUTION INFRASTRUCTURE
+===================================================== */
+
+document.getElementById(
+"distributionLevelText"
+).textContent =
+"Level " +
+state.distributionLevel +
+" / 10";
+
+
+document.getElementById(
+"distributionCurrentText"
+).textContent =
+state.distributionLevel ===
+0
+?
+"Not established"
+:
+getDistribution().name;
+
+
+const distributionButton =
+document.getElementById(
+"distributionUpgradeBtn"
 );
+
+
+if(
+state.distributionLevel >=
+10
+)
+{
+
+document.getElementById(
+"distributionNextText"
+).textContent =
+"Maximum distribution network reached.";
+
+
+distributionButton.textContent =
+"MAX DISTRIBUTION";
+
+
+distributionButton.disabled =
+true;
+
+}
+else
+{
+
+const next =
+DISTRIBUTION_LEVELS[
+state.distributionLevel +
+1
+];
+
+
+document.getElementById(
+"distributionNextText"
+).textContent =
+"Next: " +
+next.name +
+". Cost: " +
+formatMoney(
+next.cost
+) +
+".";
+
+
+distributionButton.textContent =
+state.distributionLevel ===
+0
+?
+"Unlock Distribution — " +
+formatMoney(
+next.cost
+)
+:
+"Upgrade Distribution — " +
+formatMoney(
+next.cost
+);
+
+
+distributionButton.disabled =
+state.money <
+next.cost;
 
 }
 
@@ -5220,7 +7537,7 @@ true;
 
 
 chickenButton.textContent =
-"🏚️ Barn Full — Expand Farm";
+"🏚️ Barn Full — Upgrade Barn";
 
 
 document.getElementById(
@@ -5261,14 +7578,12 @@ cooldownLeft /
 ) +
 " sec"
 :
-(
 formatNumber(
 state.chickens
 ) +
 " / " +
 formatNumber(
 barnCapacity
-)
 );
 
 }
@@ -5276,7 +7591,7 @@ barnCapacity
 
 
 /* =====================================================
-   FARM + TREE
+   WORLD
 ===================================================== */
 
 updateFarmAppearance();
@@ -5338,13 +7653,9 @@ node.classList.add(
 
 }
 else if(
-state.farmLevel >=
-upgrade.level &&
-(
 !upgrade.requires ||
 hasUpgrade(
 upgrade.requires
-)
 )
 )
 {
@@ -5367,24 +7678,39 @@ node.classList.add(
 );
 
 
+
 const lines = [
 
 ["center-feed","feed"],
+
 ["feed-nest","nest"],
+
 ["nest-breed","breed"],
+
 ["breed-precision","precision"],
+
 ["precision-golden","golden"],
 
+
 ["center-sign","sign"],
+
 ["sign-delivery","delivery"],
+
 ["delivery-brand","brand"],
+
 ["brand-grocery","grocery"],
+
 ["grocery-national","national"],
 
+
 ["center-conveyor","conveyor"],
+
 ["conveyor-incubator","incubator"],
+
 ["incubator-brooder","brooder"],
+
 ["brooder-manager","manager"],
+
 ["manager-robotics","robotics"]
 
 ];
@@ -5487,9 +7813,7 @@ let requirement =
 "Cost: " +
 formatMoney(
 upgrade.cost
-) +
-" | Farm Level " +
-upgrade.level;
+);
 
 
 if(
@@ -5514,7 +7838,7 @@ id
 {
 
 requirement =
-"✓ PURCHASED — THIS UPGRADE IS ACTIVE";
+"✓ PURCHASED — ACTIVE";
 
 }
 
@@ -5537,33 +7861,28 @@ node.addEventListener(
 event =>
 {
 
-const desiredX =
+const x =
+Math.min(
 event.clientX +
-18;
-
-
-const desiredY =
-event.clientY +
-18;
-
-
-const maxX =
+18,
 window.innerWidth -
-275;
+275
+);
 
 
-const maxY =
+const y =
+Math.min(
+event.clientY +
+18,
 window.innerHeight -
-165;
+165
+);
 
 
 tooltip.style.left =
 Math.max(
 5,
-Math.min(
-desiredX,
-maxX
-)
+x
 ) +
 "px";
 
@@ -5571,10 +7890,7 @@ maxX
 tooltip.style.top =
 Math.max(
 5,
-Math.min(
-desiredY,
-maxY
-)
+y
 ) +
 "px";
 
@@ -5641,7 +7957,7 @@ addLog(
 
 
 /* =========================================================
-   LOAD
+   LOAD + OLD SAVE MIGRATION
 ========================================================= */
 
 function loadGame(){
@@ -5658,6 +7974,7 @@ if(!saved)
 addLog(
 "Welcome to Chicken Farm Empire!"
 );
+
 
 return;
 
@@ -5686,22 +8003,6 @@ parsed.upgrades ||
 )
 },
 
-wholesaleEnabled:
-typeof parsed.wholesaleEnabled ===
-"boolean"
-?
-parsed.wholesaleEnabled
-:
-true,
-
-lifetimeRetailEggs:
-parsed.lifetimeRetailEggs ||
-0,
-
-lifetimeWholesaleEggs:
-parsed.lifetimeWholesaleEggs ||
-0,
-
 lastUpdate:
 Date.now(),
 
@@ -5712,20 +8013,89 @@ Date.now()
 };
 
 
+
+/*
+OLD SAVE MIGRATION
+
+Previous versions used farmLevel.
+
+If the save does not already contain the new
+separate infrastructure levels, the old farm level
+is converted into roughly equivalent infrastructure.
+*/
+
 if(
-state.farmLevel <
+typeof parsed.barnLevel !==
+"number"
+)
+{
+
+const oldLevel =
+Math.max(
+1,
+Math.min(
+10,
+parsed.farmLevel ||
 1
 )
-state.farmLevel =
-1;
+);
 
 
-if(
-state.farmLevel >
-10
+state.barnLevel =
+oldLevel;
+
+
+state.storageLevel =
+oldLevel;
+
+
+state.distributionLevel =
+Math.max(
+0,
+oldLevel -
+1
+);
+
+}
+
+
+state.barnLevel =
+Math.max(
+1,
+Math.min(
+10,
+state.barnLevel
 )
-state.farmLevel =
-10;
+);
+
+
+state.storageLevel =
+Math.max(
+1,
+Math.min(
+10,
+state.storageLevel
+)
+);
+
+
+state.distributionLevel =
+Math.max(
+0,
+Math.min(
+10,
+state.distributionLevel
+)
+);
+
+
+state.wholesaleEnabled =
+typeof parsed.wholesaleEnabled ===
+"boolean"
+?
+parsed.wholesaleEnabled
+:
+true;
 
 
 addLog(
@@ -5733,18 +8103,18 @@ addLog(
 );
 
 
-const currentStorage =
+const storageCapacity =
 getStorageCapacity();
 
 
 if(
 state.eggs >
-currentStorage
+storageCapacity
 )
 {
 
 addLog(
-"⚠️ Your existing save has more eggs than the new storage capacity. Nothing was deleted; production will pause while those eggs are sold."
+"⚠️ Your existing inventory exceeds your current storage. No eggs were deleted; production will pause until inventory falls below capacity."
 );
 
 }
@@ -5792,7 +8162,7 @@ location.reload();
 
 
 /* =========================================================
-   START
+   START GAME
 ========================================================= */
 
 loadGame();
@@ -5812,10 +8182,12 @@ true
 updateUI();
 
 
+
 setInterval(
 gameTick,
 100
 );
+
 
 
 setInterval(
@@ -5825,6 +8197,7 @@ false
 ),
 2000
 );
+
 
 </script>
 
